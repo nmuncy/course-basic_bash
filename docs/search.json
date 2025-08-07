@@ -7,60 +7,67 @@
     "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research. Topics include Linux, shell scripting, Git and GitHub, Conda, and cluster computing."
   },
   {
-    "objectID": "01-the_terminal.html#what-is-a-terminal",
-    "href": "01-the_terminal.html#what-is-a-terminal",
+    "objectID": "01-the_terminal.slides.html#what-is-a-terminal",
+    "href": "01-the_terminal.slides.html#what-is-a-terminal",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "What is a terminal",
-    "text": "What is a terminal\n\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
+    "text": "What is a terminal\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
   },
   {
-    "objectID": "01-the_terminal.html#finding-the-terminal-mac",
-    "href": "01-the_terminal.html#finding-the-terminal-mac",
+    "objectID": "01-the_terminal.slides.html#finding-the-terminal-mac",
+    "href": "01-the_terminal.slides.html#finding-the-terminal-mac",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Mac",
-    "text": "Finding the terminal: Mac\n\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
+    "text": "Finding the terminal: Mac\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
   },
   {
-    "objectID": "01-the_terminal.html#finding-the-terminal-ubuntu",
-    "href": "01-the_terminal.html#finding-the-terminal-ubuntu",
+    "objectID": "01-the_terminal.slides.html#finding-the-terminal-ubuntu",
+    "href": "01-the_terminal.slides.html#finding-the-terminal-ubuntu",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Ubuntu",
-    "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\n\nApplications -&gt; Search “terminal”"
+    "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
   },
   {
-    "objectID": "01-the_terminal.html#finding-the-terminal-windows",
-    "href": "01-the_terminal.html#finding-the-terminal-windows",
+    "objectID": "01-the_terminal.slides.html#finding-the-terminal-windows",
+    "href": "01-the_terminal.slides.html#finding-the-terminal-windows",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Windows",
-    "text": "Finding the terminal: Windows\n\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
+    "text": "Finding the terminal: Windows\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
   },
   {
-    "objectID": "01-the_terminal.html#anatomy-of-commands",
-    "href": "01-the_terminal.html#anatomy-of-commands",
+    "objectID": "01-the_terminal.slides.html#anatomy-of-commands",
+    "href": "01-the_terminal.slides.html#anatomy-of-commands",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Anatomy of commands",
-    "text": "Anatomy of commands\n\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
+    "text": "Anatomy of commands\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
   },
   {
-    "objectID": "01-the_terminal.html#foundational-commands",
-    "href": "01-the_terminal.html#foundational-commands",
+    "objectID": "01-the_terminal.slides.html#foundational-commands",
+    "href": "01-the_terminal.slides.html#foundational-commands",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Foundational commands",
-    "text": "Foundational commands\n\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
+    "text": "Foundational commands\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
   },
   {
-    "objectID": "01-the_terminal.html#directory-tree",
-    "href": "01-the_terminal.html#directory-tree",
+    "objectID": "01-the_terminal.slides.html#directory-tree",
+    "href": "01-the_terminal.slides.html#directory-tree",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Directory tree",
-    "text": "Directory tree\n\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
+    "text": "Directory tree\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
   },
   {
-    "objectID": "01-the_terminal.html#make-directories",
-    "href": "01-the_terminal.html#make-directories",
+    "objectID": "01-the_terminal.slides.html#make-directories",
+    "href": "01-the_terminal.slides.html#make-directories",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Make directories",
-    "text": "Make directories\n\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
+    "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
+  },
+  {
+    "objectID": "index.slides.html#lectures",
+    "href": "index.slides.html#lectures",
+    "title": "Bash Essentials",
+    "section": "Lectures",
+    "text": "Lectures\n\nThe terminal: linux tree, commands, making directories\n\nSlides | Code | Practice\n\nVariables: strings, braces, slicing\n\nSlides | Code | Practice\n\nScripts: permissions, execution, IDEs\n\nSlides | Code | Practice\n\nFor loops: iteration, nesting\n\nSlides | Code | Practice\n\nConditionals: exit status, boolean, specials\n\nSlides | Code | Practice\n\nFor loops, cont’d: arrays, couters, dynamic control\n\nSlides | Code | Practice\n\nShell environment: shells, nano, globals, aliases\n\nSlides | Code | Practice\n\nGit and GitHub: tokens, tracking changes\n\nSlides | Code | Practice\n\nGit and GitHub, cont’d: branching, merges\n\nSlides | Code | Practice\n\nCluster computing: moving data, output\n\nSlides | Code | Practice\n\nCluster computing, cont’d: passing args, scheduling\n\nSlides | Code | Practice\n\nConda: make, export, delete environments\n\nSlides | Code | Practice\n\nProject environments: build files, triggers, sharing\n\nSlides | Code | Practice"
   },
   {
     "objectID": "index.html",

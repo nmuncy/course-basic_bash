@@ -14,10 +14,16 @@ format:
       - cosmo
       - brand
     css: styles.css
-    # toc: true
-  # revealjs:
-  #   logo: media/nd_logo.png
+  revealjs:
+    output-ext: "slides.html"
+    controls: true
+    controls-tutorial: true
+    logo: media/nd_logo.png
+    transition: slide
+    slide-number: true
 
-
+resources:
+    - code/*.sh
+    - figures/*/*.png
 
 

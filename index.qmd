@@ -4,11 +4,12 @@ author:
   name: "Nathan Muncy"
   email: "nmuncy@nd.edu"
 date: today
+
 ---
 
 ## Lectures
 1. The terminal: linux tree, commands, making directories
-    - [Slides](docs/01-the_terminal.html) | [Code](code/the_terminal.sh) | Practice
+    - [Slides](docs/01-the_terminal.slides.html) | [Code](code/the_terminal.sh) | Practice
 1. Variables: strings, braces, slicing
     - Slides | Code | Practice
 1. Scripts: permissions, execution, IDEs
