@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Bash Esssentials"
+  navbar:
+    left:
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    # toc: true
+  # revealjs:
+  #   logo: media/nd_logo.png
+
+
+
+

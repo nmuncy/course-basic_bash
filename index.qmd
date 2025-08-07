@@ -1,0 +1,35 @@
+---
+title: "Bash Essentials"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+---
+
+## Lectures
+1. The terminal: linux tree, commands, making directories
+    - [Slides](docs/01-the_terminal.html) | [Code](code/the_terminal.sh) | Practice
+1. Variables: strings, braces, slicing
+    - Slides | Code | Practice
+1. Scripts: permissions, execution, IDEs
+    - Slides | Code | Practice
+1. For loops: iteration, nesting
+    - Slides | Code | Practice
+1. Conditionals: exit status, boolean, specials
+    - Slides | Code | Practice
+1. For loops, cont'd: arrays, couters, dynamic control
+    - Slides | Code | Practice
+1. Shell environment: shells, nano, globals, aliases
+    - Slides | Code | Practice
+1. Git and GitHub: tokens, tracking changes
+    - Slides | Code | Practice
+1. Git and GitHub, cont'd: branching, merges
+    - Slides | Code | Practice
+1. Cluster computing: moving data, output
+    - Slides | Code | Practice
+1. Cluster computing, cont'd: passing args, scheduling
+    - Slides | Code | Practice
+1. Conda: make, export, delete environments
+    - Slides | Code | Practice
+1. Project environments: build files, triggers, sharing
+    - Slides | Code | Practice
