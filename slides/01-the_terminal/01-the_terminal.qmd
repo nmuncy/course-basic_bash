@@ -17,7 +17,7 @@ format:
 
 ::::::: columns
 ::: {.column width="\"50%"}
-![](figures/01_terminal.png)
+![](terminal.png)
 :::
 
 ::::: {.column width="50%"}
@@ -49,7 +49,7 @@ format:
 
 :::: {.column width="\"50%"}
 ::: {layout-nrow="2"}
-![](figures/01_find_term1.png){.fragment} ![](figures/01_find_term2.png){.fragment}
+![](find_term1.png){.fragment} ![](find_term2.png){.fragment}
 :::
 ::::
 ::::::::
@@ -68,7 +68,7 @@ format:
 :::::
 
 ::: {.column width="\"50%"}
-![](figures/01_find_term3.png){.fragment}
+![](find_term3.png){.fragment}
 :::
 :::::::
 
@@ -88,7 +88,7 @@ format:
 :::::
 
 ::: {.column width="\"50%"}
-![](figures/01_find_term4.png){.fragment}
+![](find_term4.png){.fragment}
 :::
 :::::::
 
@@ -110,7 +110,7 @@ format:
 :::::
 
 ::: {.column width="\"50%"}
-![](figures/01_cmd_1.png){.fragment}
+![](cmd_1.png){.fragment}
 :::
 :::::::
 
@@ -134,7 +134,7 @@ format:
 :::::
 
 ::: {.column width="60%"}
-![](figures/01_cmd_2.png){.fragment}
+![](cmd_2.png){.fragment}
 :::
 :::::::
 
@@ -154,7 +154,7 @@ format:
 :::::
 
 ::: {.column width="60%"}
-![](figures/01_tree_1.png){.fragment}
+![](tree_1.png){.fragment}
 :::
 :::::::
 
@@ -178,6 +178,6 @@ format:
 :::::
 
 ::: {.column width="60%"}
-![](figures/01_tree_2.png){.fragment}
+![](tree_2.png){.fragment}
 :::
 :::::::
