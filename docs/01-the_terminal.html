@@ -9,9 +9,9 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.33">
 
-  <meta name="author" content="Nathan Muncy">
-  <meta name="dcterms.date" content="2025-08-07">
-  <title>Bash Esssentials – Bash Essentials</title>
+  <meta name="author" content="Nathan M. Muncy">
+  <meta name="dcterms.date" content="2025-08-08">
+  <title>Bash Esssentials – The Terminal: Linux Tree, Commands, Making directories</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -128,77 +128,187 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Bash Essentials</h1>
+  <h1 class="title">The Terminal: Linux Tree, Commands, Making directories</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Nathan Muncy 
-</div>
-<div class="quarto-title-author-email">
-<a href="mailto:nmuncy@nd.edu">nmuncy@nd.edu</a>
+Nathan M. Muncy 
 </div>
 </div>
 </div>
 
-  <p class="date">2025-08-07</p>
+  <p class="date">2025-08-08</p>
 </section>
-<section id="lectures" class="slide level2">
-<h2>Lectures</h2>
+<section id="what-is-a-terminal" class="slide level2">
+<h2>What is a terminal</h2>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<p><img data-src="figures/01_terminal.png"></p>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">Application - provides access to the command shell</li>
+<li class="fragment">Default language - Bourne Again Shell (Bash)</li>
+<li class="fragment">Provide instruction to computer</li>
+<li class="fragment">Useful for:
+<ul>
+<li class="fragment">Automation</li>
+<li class="fragment">Triggering software</li>
+</ul></li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="finding-the-terminal-mac" class="slide level2">
+<h2>Finding the terminal: Mac</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">Easy, built-in</li>
+<li class="fragment">Applications -&gt; Other -&gt; Terminal</li>
+<li class="fragment">Cmd + Space -&gt; Search “terminal”</li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><img data-src="figures/01_find_term1.png" class="fragment"> <img data-src="figures/01_find_term2.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="finding-the-terminal-ubuntu" class="slide level2">
+<h2>Finding the terminal: Ubuntu</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>Easy, built-in</li>
+</ul>
+<ul>
+<li class="fragment">Applications -&gt; Search “terminal”</li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="figures/01_find_term3.png" class="fragment"></p>
+</div></div>
+</section>
+<section id="finding-the-terminal-windows" class="slide level2">
+<h2>Finding the terminal: Windows</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">Semi-difficult</li>
+<li class="fragment">Activate Windows Subsytem Linux
+<ul>
+<li class="fragment">See <a href="https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2">here</a></li>
+</ul></li>
+<li class="fragment">Install Ubuntu</li>
+<li class="fragment">Start -&gt; Search “Ubuntu”</li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="figures/01_find_term4.png" class="fragment"></p>
+</div></div>
+</section>
+<section id="anatomy-of-commands" class="slide level2">
+<h2>Anatomy of commands</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">Command: instruction to machine
+<ul>
+<li class="fragment">Matches executable in PATH</li>
+<li class="fragment">Composed of arguments</li>
+<li class="fragment">Separated by spaces</li>
+</ul></li>
+<li class="fragment">Types of Arguments:
 <ol type="1">
-<li>The terminal: linux tree, commands, making directories
+<li class="fragment">Option: modify command, specified with flag “-”</li>
+<li class="fragment">Parameter: provides information to command or option</li>
+</ol></li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="figures/01_cmd_1.png" class="fragment"></p>
+</div></div>
+</section>
+<section id="foundational-commands" class="slide level2">
+<h2>Foundational commands</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size: 65%;">
 <ul>
-<li><a href="docs/01-the_terminal.slides.html">Slides</a> | <a href="code/the_terminal.sh">Code</a> | Practice</li>
-</ul></li>
-<li>Variables: strings, braces, slicing
+<li class="fragment"><code>pwd</code>: print working directory</li>
+<li class="fragment"><code>ls</code>: list directory contents
 <ul>
-<li>Slides | Code | Practice</li>
+<li class="fragment"><code>ls -l</code>: list with extra info</li>
+<li class="fragment"><code>ls -a</code>: list all files</li>
+<li class="fragment"><code>ls -la</code>: combine arguments</li>
 </ul></li>
-<li>Scripts: permissions, execution, IDEs
+<li class="fragment"><code>cd</code>: change directories
 <ul>
-<li>Slides | Code | Practice</li>
+<li class="fragment"><code>cd foo</code>: go down into foo</li>
+<li class="fragment"><code>cd ..</code>: go up one level</li>
+<li class="fragment"><code>cd</code>: go HOME</li>
 </ul></li>
-<li>For loops: iteration, nesting
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figures/01_cmd_2.png" class="fragment"></p>
+</div></div>
+</section>
+<section id="directory-tree" class="slide level2">
+<h2>Directory tree</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size: 65%;">
 <ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Conditionals: exit status, boolean, specials
+<li class="fragment">Every file has a path</li>
+<li class="fragment">Separate steps of path with “/”</li>
+<li class="fragment">Top of path: “root”, OS essentials</li>
+<li class="fragment">Center: “~”, HOME, default</li>
+<li class="fragment">Below HOME: user files</li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figures/01_tree_1.png" class="fragment"></p>
+</div></div>
+</section>
+<section id="make-directories" class="slide level2">
+<h2>Make directories</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size: 65%;">
 <ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>For loops, cont’d: arrays, couters, dynamic control
+<li class="fragment"><code>mkdir</code>: creates directory, requires parameter
 <ul>
-<li>Slides | Code | Practice</li>
+<li class="fragment"><code>mkdir foo</code>: create directory “foo”</li>
 </ul></li>
-<li>Shell environment: shells, nano, globals, aliases
+<li class="fragment">Many available options:
 <ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Git and GitHub: tokens, tracking changes
+<li class="fragment"><code>mkdir -p foo/bar</code>: create directory “bar” within “foo” (and “foo” if it does not exist)</li>
+<li class="fragment">See more options with <code>man mkdir</code>
 <ul>
-<li>Slides | Code | Practice</li>
+<li class="fragment">use down arrow to scroll</li>
+<li class="fragment">use “q” to exit manual</li>
 </ul></li>
-<li>Git and GitHub, cont’d: branching, merges
+</ul></li>
+<li class="fragment"><code>tree</code>: see directory tree structure
 <ul>
-<li>Slides | Code | Practice</li>
+<li class="fragment">Mac users: install with <code>brew install tree</code></li>
 </ul></li>
-<li>Cluster computing: moving data, output
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Cluster computing, cont’d: passing args, scheduling
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Conda: make, export, delete environments
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Project environments: build files, triggers, sharing
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-</ol>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figures/01_tree_2.png" class="fragment"></p>
+</div></div>
 
 
 </section>
@@ -206,7 +316,7 @@ Nathan Muncy
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p>Bash Basics: the terminal</p>
 </div>
 </div></div>
 
@@ -231,7 +341,7 @@ Nathan Muncy
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': false,
+'controlsAuto': true,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -242,11 +352,11 @@ Nathan Muncy
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: true,
+        controls: false,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
+        controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
         controlsLayout: 'edges',

@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nathan Muncy">
-<meta name="dcterms.date" content="2025-08-07">
 
 <title>Bash Essentials – Bash Esssentials</title>
 <style>
@@ -41,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,15 +73,15 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Bash Esssentials</span>
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./media/nd_logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -90,11 +89,22 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
+        <li>
+    <a class="dropdown-item" href="./materials.html">
+ <span class="dropdown-text">Slides, Code, and Practices</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -106,9 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -128,12 +136,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 7, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -143,61 +145,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="lectures" class="level2">
-<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
+<p>These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment.</p>
+</section>
+<section id="course-materials" class="level2">
+<h2 class="anchored" data-anchor-id="course-materials">Course Materials</h2>
+<ul>
+<li><a href="./materials.html">Slides, Code, and Practices</a></li>
+</ul>
+</section>
+<section id="course-modules" class="level2">
+<h2 class="anchored" data-anchor-id="course-modules">Course Modules</h2>
 <ol type="1">
-<li>The terminal: linux tree, commands, making directories
-<ul>
-<li><a href="docs/01-the_terminal.slides.html">Slides</a> | <a href="code/the_terminal.sh">Code</a> | Practice</li>
-</ul></li>
-<li>Variables: strings, braces, slicing
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Scripts: permissions, execution, IDEs
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>For loops: iteration, nesting
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Conditionals: exit status, boolean, specials
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>For loops, cont’d: arrays, couters, dynamic control
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Shell environment: shells, nano, globals, aliases
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Git and GitHub: tokens, tracking changes
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Git and GitHub, cont’d: branching, merges
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Cluster computing: moving data, output
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Cluster computing, cont’d: passing args, scheduling
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Conda: make, export, delete environments
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
-<li>Project environments: build files, triggers, sharing
-<ul>
-<li>Slides | Code | Practice</li>
-</ul></li>
+<li>Bash Essentials</li>
+<li>Git, GitHub</li>
+<li>Cluster Computing</li>
+<li>Project Environments</li>
 </ol>
 
 
@@ -604,6 +568,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Nathan M. Muncy. Powered by <a href="https://www.quarto.org">Quarto</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

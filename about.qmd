@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research. Topics include Linux, shell scripting, Git and GitHub, Conda, and cluster computing.

@@ -2,19 +2,22 @@
 title: "The Terminal: Linux Tree, Commands, Making directories"
 author: Nathan M. Muncy
 date: today
+execute:
+    freeze: auto
+    echo: true
 format:
   revealjs:
     footer: "Bash Basics: the terminal"
-execute:
-    freeze: auto
-echo: true
+    logo: media/nd_logo.png
+    transition: slide
+    slide-number: true
 ---
 
 ## What is a terminal
 
 ::::::: columns
 ::: {.column width="\"50%"}
-![](figures/01-the_terminal/terminal.png)
+![](figures/01_terminal.png)
 :::
 
 ::::: {.column width="50%"}
@@ -46,7 +49,7 @@ echo: true
 
 :::: {.column width="\"50%"}
 ::: {layout-nrow="2"}
-![](figures/01-the_terminal/find_term1.png){.fragment} ![](figures/01-the_terminal/find_term2.png){.fragment}
+![](figures/01_find_term1.png){.fragment} ![](figures/01_find_term2.png){.fragment}
 :::
 ::::
 ::::::::
@@ -65,7 +68,7 @@ echo: true
 :::::
 
 ::: {.column width="\"50%"}
-![](figures/01-the_terminal/find_term3.png){.fragment}
+![](figures/01_find_term3.png){.fragment}
 :::
 :::::::
 
@@ -85,7 +88,7 @@ echo: true
 :::::
 
 ::: {.column width="\"50%"}
-![](figures/01-the_terminal/find_term4.png){.fragment}
+![](figures/01_find_term4.png){.fragment}
 :::
 :::::::
 
@@ -107,7 +110,7 @@ echo: true
 :::::
 
 ::: {.column width="\"50%"}
-![](figures/01-the_terminal/cmd_1.png){.fragment}
+![](figures/01_cmd_1.png){.fragment}
 :::
 :::::::
 
@@ -131,7 +134,7 @@ echo: true
 :::::
 
 ::: {.column width="60%"}
-![](figures/01-the_terminal/cmd_2.png){.fragment}
+![](figures/01_cmd_2.png){.fragment}
 :::
 :::::::
 
@@ -151,7 +154,7 @@ echo: true
 :::::
 
 ::: {.column width="60%"}
-![](figures/01-the_terminal/tree_1.png){.fragment}
+![](figures/01_tree_1.png){.fragment}
 :::
 :::::::
 
@@ -175,6 +178,6 @@ echo: true
 :::::
 
 ::: {.column width="60%"}
-![](figures/01-the_terminal/tree_2.png){.fragment}
+![](figures/01_tree_2.png){.fragment}
 :::
 :::::::
