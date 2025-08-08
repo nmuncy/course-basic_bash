@@ -1,56 +1,63 @@
 [
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
-    "href": "slides/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Course Slides, Code, and Practice Materials",
+    "section": "",
+    "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice\n\n\n\n\nVariables\nSlides\nCode\nPractice"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "What is a terminal",
     "text": "What is a terminal\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
-    "href": "slides/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Mac",
     "text": "Finding the terminal: Mac\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
-    "href": "slides/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Ubuntu",
     "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
-    "href": "slides/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Windows",
     "text": "Finding the terminal: Windows\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
-    "href": "slides/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Anatomy of commands",
     "text": "Anatomy of commands\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#foundational-commands",
-    "href": "slides/01-the_terminal/01-the_terminal.html#foundational-commands",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Foundational commands",
     "text": "Foundational commands\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#directory-tree",
-    "href": "slides/01-the_terminal/01-the_terminal.html#directory-tree",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Directory tree",
     "text": "Directory tree\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
   },
   {
-    "objectID": "slides/01-the_terminal/01-the_terminal.html#make-directories",
-    "href": "slides/01-the_terminal/01-the_terminal.html#make-directories",
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Make directories",
     "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
@@ -84,10 +91,66 @@
     "text": "Course Modules\n\nBash Essentials\nGit, GitHub\nCluster Computing\nProject Environments"
   },
   {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Course Slides, Code, and Practice Materials",
+    "objectID": "lectures/01-the_terminal/01-practice.html",
+    "href": "lectures/01-the_terminal/01-practice.html",
+    "title": "The Terminal: practice",
     "section": "",
-    "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice"
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "title": "The Terminal: practice",
+    "section": "Extra challenge",
+    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#strings",
+    "href": "lectures/02-variables/02-variables.html#strings",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Strings",
+    "text": "Strings\n\n\n\n\nSeries of key strokes:\n\nabcd1234\nHello World\n\nGood to avoid spaces (command: argument + parameter)\n\nHello_World\n\nData type - integer, boolean, list, array\nStore in a variable\nAccess with $ prefix\n\nPrint value of variable with echo\n\n\n\n\n\nfoo=\"Hello World\"\necho foo\necho $foo\n\nbar=Goodbye Sky\necho $bar\n\nfoo\nHello World\nbash: line 4: Sky: command not found\n\n\n\n\nWhy does bar=Goodbye Sky break?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#paths",
+    "href": "lectures/02-variables/02-variables.html#paths",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Paths",
+    "text": "Paths\n\n\n\n\nFile paths can be stored\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#brace-expansion",
+    "href": "lectures/02-variables/02-variables.html#brace-expansion",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Brace expansion",
+    "text": "Brace expansion"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#combining-variables",
+    "href": "lectures/02-variables/02-variables.html#combining-variables",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Combining variables",
+    "text": "Combining variables"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-front",
+    "href": "lectures/02-variables/02-variables.html#slice-front",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: front",
+    "text": "Slice: front"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-back",
+    "href": "lectures/02-variables/02-variables.html#slice-back",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: back",
+    "text": "Slice: back"
   }
 ]

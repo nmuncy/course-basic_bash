@@ -10,7 +10,8 @@ execute:
 
 | Topic | Slides | Code | Exercises |
 |---------------|--------|--------|---------|------|-----------|
-| The terminal | [Slides](slides//01-the_terminal/01-the_terminal.qmd){target="_blank"} | [Code](code/the_terminal.sh) | Practice |
+| The terminal | [Slides](lectures/01-the_terminal/01-the_terminal.qmd){target="_blank"} | [Code](code/the_terminal.sh) | [Practice](lectures/01-the_terminal/01-practice.qmd){target="_blank"} |
+| Variables | [Slides](lectures/02-variables/02-variables.qmd){target="_blank"} | Code | Practice |
 
 </details>
 

@@ -8,7 +8,7 @@ execute:
 format:
   revealjs:
     footer: "Bash Basics: the terminal"
-    logo: media/nd_logo.png
+    logo: ../../media/nd_logo.png
     transition: slide
     slide-number: true
 ---

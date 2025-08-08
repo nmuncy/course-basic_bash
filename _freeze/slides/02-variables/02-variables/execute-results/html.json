@@ -1,0 +1,19 @@
+{
+  "hash": "48cc6859d21eecbe84d7703ac8120424",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Variables: Strings, Braces, Slicing\"\nauthor: Nathan M. Muncy\ndate: today\nexecute:\n    freeze: auto\n    # echo: true\nformat:\n  revealjs:\n    footer: \"Bash Basics: variables\"\n    logo: ../../media/nd_logo.png\n    transition: slide\n    slide-number: true\nengine: knitr\n---\n\n## Strings\n::::::: columns\n::::: {.column width=\"50%\"}\n:::: {style=\"font-size: 65%;\"}\n::: incremental\n- Series of key strokes:\n  - abcd1234\n  - Hello World\n- Good to avoid spaces (command: argument + parameter)\n  - Hello_World\n- Data type - integer, boolean, list, array\n- Store in a variable\n- Access with `$` prefix\n  - Print value of variable with `echo`\n:::\n::::\n:::::\n\n::: {.fragment .column width=\"\\\"50%\"}\n\n::: {.cell}\n\n```{.bash .cell-code}\nfoo=\"Hello World\"\necho foo\necho $foo\n\nbar=Goodbye Sky\necho $bar\n```\n\n\n::: {.cell-output .cell-output-stdout}\n\n```\nfoo\nHello World\nbash: line 4: Sky: command not found\n```\n\n\n:::\n:::\n\n::::{style=\"font-size: 65%;\"}\n::::: incremental\n- Why does `bar=Goodbye Sky` break?\n:::::\n::::\n:::\n:::::::\n\n## Paths\n::::::: columns\n::::: {.column width=\"50%\"}\n:::: {style=\"font-size: 65%;\"}\n::: incremental\n- File paths can be stored\n- Two types:\n  - Relative - start current location\n  - Absolute - start at root\n:::\n::::\n:::::\n\n::: {.fragment .column width=\"\\\"50%\"}\n\n::: {.cell}\n\n```{.bash .cell-code}\npwd\n\n```\n\n\n::: {.cell-output .cell-output-stdout}\n\n```\n/Users/nmuncy2/Projects/code/NotreDame/course-basic_bash/slides/02-variables\n```\n\n\n:::\n:::\n\n:::\n:::::::\n\n\n## Brace expansion\n\n## Combining variables\n\n## Slice: front\n\n## Slice: back",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
