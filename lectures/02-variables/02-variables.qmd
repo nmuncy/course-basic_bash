@@ -212,3 +212,35 @@ echo ${int%_*}
 ```
 :::::
 ::::::::
+
+## Slice: positional
+
+::::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- Each character in a string has a position
+  - 0-indexed, abcd = 0123
+- Use ":" to specify start and end of positions
+:::
+::::
+:::::
+
+::::: {.fragment .column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+
+alpha="abcdefg"
+echo ${alpha:0:3}
+echo ${alpha:3}
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- What would '`echo ${alpha:1:4}`' say?
+- What would '`echo ${alpha:5}`' say?
+:::
+::::
+:::::
+::::::::

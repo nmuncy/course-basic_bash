@@ -7,6 +7,76 @@
     "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice\n\n\n\n\nVariables\nSlides\nCode\nPractice"
   },
   {
+    "objectID": "lectures/02-variables/02-practice.html",
+    "href": "lectures/02-variables/02-practice.html",
+    "title": "Variables: practice",
+    "section": "",
+    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\nShare both a screenshot and your $ history with your instructor"
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html#building-directory-trees",
+    "href": "lectures/02-variables/02-practice.html#building-directory-trees",
+    "title": "Variables: practice",
+    "section": "",
+    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\nShare both a screenshot and your $ history with your instructor"
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html#extra-challenge",
+    "href": "lectures/02-variables/02-practice.html#extra-challenge",
+    "title": "Variables: practice",
+    "section": "Extra challenge",
+    "text": "Extra challenge\n\n\nWhat series of commands could use use with the string “abcdefg” to print “egg”?"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html",
+    "href": "lectures/01-the_terminal/01-practice.html",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "title": "The Terminal: practice",
+    "section": "Extra challenge",
+    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bash Essentials",
+    "section": "",
+    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Bash Essentials",
+    "section": "",
+    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
+  },
+  {
+    "objectID": "index.html#course-materials",
+    "href": "index.html#course-materials",
+    "title": "Bash Essentials",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nSlides, Code, and Practices"
+  },
+  {
+    "objectID": "index.html#course-modules",
+    "href": "index.html#course-modules",
+    "title": "Bash Essentials",
+    "section": "Course Modules",
+    "text": "Course Modules\n\nBash Essentials\nGit, GitHub\nCluster Computing\nProject Environments"
+  },
+  {
     "objectID": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
     "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
@@ -63,55 +133,6 @@
     "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bash Essentials",
-    "section": "",
-    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Bash Essentials",
-    "section": "",
-    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
-  },
-  {
-    "objectID": "index.html#course-materials",
-    "href": "index.html#course-materials",
-    "title": "Bash Essentials",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nSlides, Code, and Practices"
-  },
-  {
-    "objectID": "index.html#course-modules",
-    "href": "index.html#course-modules",
-    "title": "Bash Essentials",
-    "section": "Course Modules",
-    "text": "Course Modules\n\nBash Essentials\nGit, GitHub\nCluster Computing\nProject Environments"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html",
-    "href": "lectures/01-the_terminal/01-practice.html",
-    "title": "The Terminal: practice",
-    "section": "",
-    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
-    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
-    "title": "The Terminal: practice",
-    "section": "",
-    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
-    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
-    "title": "The Terminal: practice",
-    "section": "Extra challenge",
-    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
-  },
-  {
     "objectID": "lectures/02-variables/02-variables.html#strings",
     "href": "lectures/02-variables/02-variables.html#strings",
     "title": "Variables: Strings, Braces, Slicing",
@@ -151,6 +172,13 @@
     "href": "lectures/02-variables/02-variables.html#slice-back",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Slice: back",
-    "text": "Slice: back\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract middle string\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
+    "text": "Slice: back\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract string middle\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-positional",
+    "href": "lectures/02-variables/02-variables.html#slice-positional",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: positional",
+    "text": "Slice: positional\n\n\n\n\nEach character in a string has a position\n\n0-indexed, abcd = 0123\n\nUse “:” to specify start and end of positions\n\n\n\n\nalpha=\"abcdefg\"\necho ${alpha:0:3}\necho ${alpha:3}\n\nabc\ndefg\n\n\n\n\nWhat would ‘echo ${alpha:1:4}’ say?\nWhat would ‘echo ${alpha:5}’ say?"
   }
 ]

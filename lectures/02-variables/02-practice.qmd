@@ -1,0 +1,24 @@
+---
+title: "Variables: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Building directory trees
+1. Set a variable to hold the string "aaa-bbb_ccc".
+1. Write a command that uses the variable to print "aaa".
+1. Write a command that uses the variable to print "ccc".
+1. Write a set of commands that uses the variable to print "bbb".
+1. Share both a screenshot and your `$ history` with your instructor
+
+## Extra challenge
+<!-- alpha="abcdefg"
+int=${alpha#*d}
+e=${int%f*}
+echo ${e}${alpha#*f}${alpha#*f} -->
+1. What series of commands could use use with the string "abcdefg" to print "egg"?
