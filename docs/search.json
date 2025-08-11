@@ -123,34 +123,34 @@
     "href": "lectures/02-variables/02-variables.html#paths",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Paths",
-    "text": "Paths\n\n\n\n\nFile paths can be stored\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
+    "text": "Paths\n\n\n\n\nFile paths can be stored in variable\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
   },
   {
     "objectID": "lectures/02-variables/02-variables.html#brace-expansion",
     "href": "lectures/02-variables/02-variables.html#brace-expansion",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Brace expansion",
-    "text": "Brace expansion"
+    "text": "Brace expansion\n\n\n\n\nCurly braces containing a list: ‘{1..4}’\nExpand sequential or comma-separated lists\nAppend to strings - easy file, directory generation\n\nE.g. ‘mkdir -p sub-{1..3}’\n\nCombine to generate permutations\n\nE.g. ‘for i in pref-{1..3}{a..c}; do ...’\n\nSupports nesting\nRun in subshell ‘$()’ to store in variable\n\n\n\n\necho {a..d}\necho sub-{1..3}\nperm=$(echo {1..3}{a..c})\nnest=$(echo pref-{foo,bar{1..3},baz})\necho $perm\necho $nest\n\na b c d\nsub-1 sub-2 sub-3\n1a 1b 1c 2a 2b 2c 3a 3b 3c\npref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz"
   },
   {
     "objectID": "lectures/02-variables/02-variables.html#combining-variables",
     "href": "lectures/02-variables/02-variables.html#combining-variables",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Combining variables",
-    "text": "Combining variables"
+    "text": "Combining variables\n\n\n\n\nAccess variables with ‘$’\nCombine with curly braces to:\n\nAdd suff/prefix:\n\n‘var=foo; echo ${var}bar’\n\nCombine variables\n\n‘var1=foo; var2=bar; echo ${var1}$var2’\n\nNote: reuse of ‘{}’ - key-bindings are context dependent!\n\n\n\n\n\nvar1=foo; var2=bar\necho \"1 ${var1}baz\"\necho \"2 ${var1}$var2\"\necho \"3 $var1$var2\"\necho \"4 $var1baz\"\n\n1 foobaz\n2 foobar\n3 foobar\n4 \n\n\n\n\nWhy does ‘echo \"4 $var1baz\"’ break?"
   },
   {
     "objectID": "lectures/02-variables/02-variables.html#slice-front",
     "href": "lectures/02-variables/02-variables.html#slice-front",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Slice: front",
-    "text": "Slice: front"
+    "text": "Slice: front\n\n\n\n\nOften desirable to slice strings\n\nE.g. extract “awesome” from “I_am_awesome”\n\nExtracting subject, session, or task from file name\n\nBIDS: sub-1_ses-A_task-memory\n\nCombine “#” and string with variable call to slice from string beginning\n\n“#” removes before first string match\nWildcard symbol “*” matches anything\n“##” removes before final string match\n\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name#*_}\necho ${bids_name##*_}\n\nsub-1_ses-A_task-memory\nses-A_task-memory\ntask-memory\n\n\n\n\nWhat would ‘echo ${bids_name#*-}’ say?\nHow about ‘echo ${bids_name#sub-1}’?\nHow about ‘echo ${bids_name##*-}’?"
   },
   {
     "objectID": "lectures/02-variables/02-variables.html#slice-back",
     "href": "lectures/02-variables/02-variables.html#slice-back",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Slice: back",
-    "text": "Slice: back"
+    "text": "Slice: back\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract middle string\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
   }
 ]

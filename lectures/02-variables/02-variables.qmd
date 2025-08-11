@@ -57,7 +57,7 @@ echo $bar
 ::::: {.column width="50%"}
 :::: {style="font-size: 65%;"}
 ::: incremental
-- File paths can be stored
+- File paths can be stored in variable
 - Two types:
   - Relative - start current location
   - Absolute - start at root
@@ -77,9 +77,138 @@ echo $bar
 
 
 ## Brace expansion
+::::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- Curly braces containing a list: '`{1..4}`'
+- Expand sequential or comma-separated lists
+- Append to strings - easy file, directory generation
+  - E.g. '`mkdir -p sub-{1..3}`'
+- Combine to generate permutations
+  - E.g. '`for i in pref-{1..3}{a..c}; do ...`'
+- Supports nesting
+- Run in subshell '`$()`' to store in variable
+
+:::
+::::
+:::::
+
+::::: {.fragment .column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+
+echo {a..d}
+echo sub-{1..3}
+perm=$(echo {1..3}{a..c})
+nest=$(echo pref-{foo,bar{1..3},baz})
+echo $perm
+echo $nest
+```
+:::::
+::::::::
 
 ## Combining variables
+::::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- Access variables with '`$`'
+- Combine with curly braces to:
+  - Add suff/prefix:
+    - '`var=foo; echo ${var}bar`'
+  - Combine variables
+    - '`var1=foo; var2=bar; echo ${var1}$var2`'
+  - Note: reuse of '{}' - key-bindings are context dependent!
+:::
+::::
+:::::
+
+::::: {.fragment .column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+
+var1=foo; var2=bar
+echo "1 ${var1}baz"
+echo "2 ${var1}$var2"
+echo "3 $var1$var2"
+echo "4 $var1baz"
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- Why does '`echo "4 $var1baz"`' break?
+:::
+::::
+:::::
+::::::::
 
 ## Slice: front
+::::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- Often desirable to slice strings
+  - E.g. extract "awesome" from "I_am_awesome"
+- Extracting subject, session, or task from file name
+  - BIDS: sub-1_ses-A_task-memory
+- Combine "#" and string with variable call to slice from string beginning
+  - "#" removes before first string match
+  - Wildcard symbol "*" matches anything
+  - "##" removes before final string match
+:::
+::::
+:::::
+
+::::: {.fragment .column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+
+bids_name=sub-1_ses-A_task-memory
+echo $bids_name
+echo ${bids_name#*_}
+echo ${bids_name##*_}
+
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- What would '`echo ${bids_name#*-}`' say?
+- How about '`echo ${bids_name#sub-1}`'?
+- How about '`echo ${bids_name##*-}`'?
+:::
+::::
+:::::
+::::::::
 
 ## Slice: back
+
+::::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- The "%" is used to slice from the back
+  - "%" removes after last string match
+  - "%%" removes after first string match
+- An intermediate variable can be used to extract string middle
+:::
+::::
+:::::
+
+::::: {.fragment .column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+
+bids_name=sub-1_ses-A_task-memory
+echo $bids_name
+echo ${bids_name%_*}
+echo ${bids_name%%_*}
+int=${bids_name#*_}
+echo ${int%_*}
+```
+:::::
+::::::::
