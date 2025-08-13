@@ -1,0 +1,124 @@
+---
+title: "Scripting: Permissions, Shells, and IDEs"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Bash Basics: scripting"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Scripts
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- Enter commands into terminal:
+    - Fine for few, short commands
+    - Many - tedious, error prone
+- Scripting:
+    - Save commands into file (script)
+    - Execute file
+- Utility:
+    - Reusable scripts
+    - Error checking
+    - Decrease typing
+:::
+::::
+:::::
+
+::::: {.column width="\"50%"}
+:::: {.r-stack}
+![](script_1){.fragment}
+
+![](script_2.png){.fragment}
+::::
+:::::
+::::::
+
+## Create New Script
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- `touch`: Create new file
+    - Update write-time for existing files
+- `nano`: Create and open file with built-in editor
+    - Other built-ins: vi, vim, emacs
+    - Exit sequence:
+        - `ctrl-x`: save and exit
+        - `y`: overwrite
+        - specify name, return
+- Specify interpreter via `#!`
+    - Provides path to executable
+:::
+::::
+:::::
+
+::::: {.column width="\"50%"}
+:::: {.r-stack}
+![](touch.png){.fragment}
+
+![](nano_1.png){.fragment}
+
+![](nano_2.png){.fragment}
+
+![](nano_3.png){.fragment}
+
+![](nano_4.png){.fragment}
+
+::::
+:::::
+::::::
+
+
+## Add Commands
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+::: incremental
+- Specify series of commands
+- Helpful - spend time to determine logic
+- Save work
+- Back-up work
+:::
+::::
+:::::
+
+
+::::: {.fragment .column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+#!/bin/bash
+alpha="abcdefg"
+let_e=${alpha:4:1}
+let_g=${alpha:6}
+echo ${let_e}${let_g}${let_g}
+beta="aaa-bbb_ccc"
+int_var=${beta#*-}
+echo ${int_var%_*}
+```
+:::::
+::::::
+
+## CHMOD
+
+## Execution
+
+## Shell types
+
+## IDEs
+
+## Style guides
+
+https://google.github.io/styleguide/shellguide.html

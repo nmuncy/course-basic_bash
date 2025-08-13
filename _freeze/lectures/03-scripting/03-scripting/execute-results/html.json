@@ -1,0 +1,19 @@
+{
+  "hash": "626035ee3ac82d219b3952f9f36503df",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Scripting: Permissions, Shells, and IDEs\"\nauthor: Nathan M. Muncy\ndate: today\nexecute:\n    freeze: auto\n    # echo: true\nformat:\n  revealjs:\n    footer: \"Bash Basics: scripting\"\n    logo: ../../media/nd_logo.png\n    transition: slide\n    slide-number: true\nengine: knitr\n---\n\n## Scripts\n\n:::::: columns\n::::: {.column width=\"50%\"}\n:::: {style=\"font-size: 65%;\"}\n::: incremental\n- Enter commands into terminal:\n    - Fine for few, short commands\n    - Many - tedious, error prone\n- Scripting:\n    - Save commands into file (script)\n    - Execute file\n- Utility:\n    - Reusable scripts\n    - Error checking\n    - Decrease typing\n:::\n::::\n:::::\n\n::::: {.column width=\"\\\"50%\"}\n:::: {.r-stack}\n![](script_1){.fragment}\n\n![](script_2.png){.fragment}\n::::\n:::::\n::::::\n\n## Create New Script\n\n:::::: columns\n::::: {.column width=\"50%\"}\n:::: {style=\"font-size: 65%;\"}\n::: incremental\n- `touch`: Create new file\n    - Update write-time for existing files\n- `nano`: Create and open file with built-in editor\n    - Other built-ins: vi, vim, emacs\n    - Exit sequence:\n        - `ctrl-x`: save and exit\n        - `y`: overwrite\n        - specify name, return\n- Specify interpreter via `#!`\n    - Provides path to executable\n:::\n::::\n:::::\n\n::::: {.column width=\"\\\"50%\"}\n:::: {.r-stack}\n![](touch.png){.fragment}\n\n![](nano_1.png){.fragment}\n\n![](nano_2.png){.fragment}\n\n![](nano_3.png){.fragment}\n\n![](nano_4.png){.fragment}\n\n::::\n:::::\n::::::\n\n\n## Add Commands\n\n:::::: columns\n::::: {.column width=\"50%\"}\n:::: {style=\"font-size: 65%;\"}\n::: incremental\n- Specify series of commands\n- Helpful - spend time to determine logic\n- Save work\n- Back-up work\n:::\n::::\n:::::\n\n\n::::: {.fragment .column width=\"\\\"50%\"}\n\n::: {.cell}\n\n```{.bash .cell-code}\n#!/bin/bash\nalpha=\"abcdefg\"\nlet_e=${alpha:4:1}\nlet_g=${alpha:6}\necho ${let_e}${let_g}${let_g}\nbeta=\"aaa-bbb_ccc\"\nint_var=${beta#*-}\necho ${int_var%_*}\n```\n\n\n::: {.cell-output .cell-output-stdout}\n\n```\negg\nbbb\n```\n\n\n:::\n:::\n\n:::::\n::::::\n\n## CHMOD\n\n## Execution\n\n## Shell types\n\n## IDEs\n\n## Style guides\n\nhttps://google.github.io/styleguide/shellguide.html",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

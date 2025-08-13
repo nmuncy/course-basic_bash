@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nathan M. Muncy">
   <meta name="dcterms.date" content="2025-08-13">
-  <title>Bash Esssentials – The Terminal: Linux Tree, Commands, Making directories</title>
+  <title>Bash Esssentials – Scripting: Permissions, Shells, and IDEs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -128,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">The Terminal: Linux Tree, Commands, Making directories</h1>
+  <h1 class="title">Scripting: Permissions, Shells, and IDEs</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -140,175 +206,117 @@ Nathan M. Muncy
 
   <p class="date">2025-08-13</p>
 </section>
-<section id="what-is-a-terminal" class="slide level2">
-<h2>What is a terminal</h2>
-<div class="columns">
-<div class="column" style="width:&quot;50%;">
-<p><img data-src="terminal.png"></p>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Application - provides access to the command shell</li>
-<li class="fragment">Default language - Bourne Again Shell (Bash)</li>
-<li class="fragment">Provide instruction to computer</li>
-<li class="fragment">Useful for:
-<ul>
-<li class="fragment">Automation</li>
-<li class="fragment">Triggering software</li>
-</ul></li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="finding-the-terminal-mac" class="slide level2">
-<h2>Finding the terminal: Mac</h2>
+<section id="scripts" class="slide level2">
+<h2>Scripts</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Easy, built-in</li>
-<li class="fragment">Applications -&gt; Other -&gt; Terminal</li>
-<li class="fragment">Cmd + Space -&gt; Search “terminal”</li>
+<li class="fragment">Enter commands into terminal:
+<ul>
+<li class="fragment">Fine for few, short commands</li>
+<li class="fragment">Many - tedious, error prone</li>
+</ul></li>
+<li class="fragment">Scripting:
+<ul>
+<li class="fragment">Save commands into file (script)</li>
+<li class="fragment">Execute file</li>
+</ul></li>
+<li class="fragment">Utility:
+<ul>
+<li class="fragment">Reusable scripts</li>
+<li class="fragment">Error checking</li>
+<li class="fragment">Decrease typing</li>
+</ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img data-src="find_term1.png" class="fragment"> <img data-src="find_term2.png" class="fragment"></p>
-</div>
-</div>
+<div class="r-stack">
+<p><img data-src="script_1.png" class="fragment"></p>
+<p><img data-src="script_2.png" class="fragment"></p>
 </div>
 </div></div>
 </section>
-<section id="finding-the-terminal-ubuntu" class="slide level2">
-<h2>Finding the terminal: Ubuntu</h2>
+<section id="create-new-script" class="slide level2">
+<h2>Create New Script</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li>Easy, built-in</li>
-</ul>
+<li class="fragment"><code>touch</code>: Create new file
 <ul>
-<li class="fragment">Applications -&gt; Search “terminal”</li>
+<li class="fragment">Update write-time for existing files</li>
+</ul></li>
+<li class="fragment"><code>nano</code>: Create and open file with built-in editor
+<ul>
+<li class="fragment">Other built-ins: vi, vim, emacs</li>
+<li class="fragment">Exit sequence:
+<ul>
+<li class="fragment"><code>ctrl-x</code>: save and exit</li>
+<li class="fragment"><code>y</code>: overwrite</li>
+<li class="fragment">specify name, return</li>
+</ul></li>
+</ul></li>
+<li class="fragment">Specify interpreter via <code>#!</code>
+<ul>
+<li class="fragment">Provides path to executable</li>
+</ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
-<p><img data-src="find_term3.png" class="fragment"></p>
+<div class="r-stack">
+<p><img data-src="touch.png" class="fragment"></p>
+<p><img data-src="nano_1.png" class="fragment"></p>
+<p><img data-src="nano_2.png" class="fragment"></p>
+<p><img data-src="nano_3.png" class="fragment"></p>
+<p><img data-src="nano_4.png" class="fragment"></p>
+</div>
 </div></div>
 </section>
-<section id="finding-the-terminal-windows" class="slide level2">
-<h2>Finding the terminal: Windows</h2>
+<section id="add-commands" class="slide level2">
+<h2>Add Commands</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Semi-difficult</li>
-<li class="fragment">Activate Windows Subsytem Linux
-<ul>
-<li class="fragment">See <a href="https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2">here</a></li>
-</ul></li>
-<li class="fragment">Install Ubuntu</li>
-<li class="fragment">Start -&gt; Search “Ubuntu”</li>
+<li class="fragment">Specify series of commands</li>
+<li class="fragment">Helpful - spend time to determine logic</li>
+<li class="fragment">Save work</li>
+<li class="fragment">Back-up work</li>
 </ul>
 </div>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="find_term4.png" class="fragment"></p>
+</div><div class="fragment column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a></a><span class="va">alpha</span><span class="op">=</span><span class="st">"abcdefg"</span></span>
+<span id="cb1-3"><a></a><span class="va">let_e</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">4</span><span class="op">:</span><span class="dv">1</span><span class="va">}</span></span>
+<span id="cb1-4"><a></a><span class="va">let_g</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">6</span><span class="va">}</span></span>
+<span id="cb1-5"><a></a><span class="bu">echo</span> <span class="va">${let_e}${let_g}${let_g}</span></span>
+<span id="cb1-6"><a></a><span class="va">beta</span><span class="op">=</span><span class="st">"aaa-bbb_ccc"</span></span>
+<span id="cb1-7"><a></a><span class="va">int_var</span><span class="op">=</span><span class="va">${beta</span><span class="op">#</span><span class="pp">*</span>-<span class="va">}</span></span>
+<span id="cb1-8"><a></a><span class="bu">echo</span> <span class="va">${int_var</span><span class="op">%</span>_<span class="pp">*</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>egg
+bbb</code></pre>
+</div>
+</div>
 </div></div>
 </section>
-<section id="anatomy-of-commands" class="slide level2">
-<h2>Anatomy of commands</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Command: instruction to machine
-<ul>
-<li class="fragment">Matches executable in PATH</li>
-<li class="fragment">Composed of arguments</li>
-<li class="fragment">Separated by spaces</li>
-</ul></li>
-<li class="fragment">Types of Arguments:
-<ol type="1">
-<li class="fragment">Option: modify command, specified with flag “-”</li>
-<li class="fragment">Parameter: provides information to command or option</li>
-</ol></li>
-</ul>
-</div>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="cmd_1.png" class="fragment"></p>
-</div></div>
+<section id="chmod" class="slide level2">
+<h2>CHMOD</h2>
 </section>
-<section id="foundational-commands" class="slide level2">
-<h2>Foundational commands</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment"><code>pwd</code>: print working directory</li>
-<li class="fragment"><code>ls</code>: list directory contents
-<ul>
-<li class="fragment"><code>ls -l</code>: list with extra info</li>
-<li class="fragment"><code>ls -a</code>: list all files</li>
-<li class="fragment"><code>ls -la</code>: combine arguments</li>
-</ul></li>
-<li class="fragment"><code>cd</code>: change directories
-<ul>
-<li class="fragment"><code>cd foo</code>: go down into foo</li>
-<li class="fragment"><code>cd ..</code>: go up one level</li>
-<li class="fragment"><code>cd</code>: go HOME</li>
-</ul></li>
-</ul>
-</div>
-</div><div class="column" style="width:60%;">
-<p><img data-src="cmd_2.png" class="fragment"></p>
-</div></div>
+<section id="execution" class="slide level2">
+<h2>Execution</h2>
 </section>
-<section id="directory-tree" class="slide level2">
-<h2>Directory tree</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Every file has a path</li>
-<li class="fragment">Separate steps of path with “/”</li>
-<li class="fragment">Top of path: “root”, OS essentials</li>
-<li class="fragment">Center: “~”, HOME, default</li>
-<li class="fragment">Below HOME: user files</li>
-</ul>
-</div>
-</div><div class="column" style="width:60%;">
-<p><img data-src="tree_1.png" class="fragment"></p>
-</div></div>
+<section id="shell-types" class="slide level2">
+<h2>Shell types</h2>
 </section>
-<section id="make-directories" class="slide level2">
-<h2>Make directories</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment"><code>mkdir</code>: creates directory, requires parameter
-<ul>
-<li class="fragment"><code>mkdir foo</code>: create directory “foo”</li>
-</ul></li>
-<li class="fragment">Many available options:
-<ul>
-<li class="fragment"><code>mkdir -p foo/bar</code>: create directory “bar” within “foo” (and “foo” if it does not exist)</li>
-<li class="fragment">See more options with <code>man mkdir</code>
-<ul>
-<li class="fragment">use down arrow to scroll</li>
-<li class="fragment">use “q” to exit manual</li>
-</ul></li>
-</ul></li>
-<li class="fragment"><code>tree</code>: see directory tree structure
-<ul>
-<li class="fragment">Mac users: install with <code>brew install tree</code></li>
-</ul></li>
-</ul>
-</div>
-</div><div class="column" style="width:60%;">
-<p><img data-src="tree_2.png" class="fragment"></p>
-</div></div>
+<section id="ides" class="slide level2">
+<h2>IDEs</h2>
+</section>
+<section id="style-guides" class="slide level2">
+<h2>Style guides</h2>
+<p>https://google.github.io/styleguide/shellguide.html</p>
 
 
 </section>
@@ -316,7 +324,7 @@ Nathan M. Muncy
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Bash Basics: the terminal</p>
+<p>Bash Basics: scripting</p>
 </div>
 </div></div>
 
@@ -528,6 +536,44 @@ Nathan M. Muncy
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
