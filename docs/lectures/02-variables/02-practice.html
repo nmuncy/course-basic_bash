@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nathan Muncy">
-<meta name="dcterms.date" content="2025-08-13">
+<meta name="dcterms.date" content="2025-08-15">
 
 <title>Variables: practice – Bash Esssentials</title>
 <style>
@@ -122,8 +122,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#building-directory-trees" id="toc-building-directory-trees" class="nav-link active" data-scroll-target="#building-directory-trees">Building directory trees</a></li>
-  <li><a href="#extra-challenge" id="toc-extra-challenge" class="nav-link" data-scroll-target="#extra-challenge">Extra challenge</a></li>
+  <li><a href="#string-slicing" id="toc-string-slicing" class="nav-link active" data-scroll-target="#string-slicing">String Slicing</a></li>
+  <li><a href="#building-strings" id="toc-building-strings" class="nav-link" data-scroll-target="#building-strings">Building Strings</a></li>
   </ul>
 </nav>
     </div>
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 13, 2025</p>
+      <p class="date">August 15, 2025</p>
     </div>
   </div>
   
@@ -161,24 +161,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="building-directory-trees" class="level2">
-<h2 class="anchored" data-anchor-id="building-directory-trees">Building directory trees</h2>
+<section id="string-slicing" class="level2">
+<h2 class="anchored" data-anchor-id="string-slicing">String Slicing</h2>
 <ol type="1">
 <li>Set a variable to hold the string “aaa-bbb_ccc”.</li>
+<li>Using string slicing syntax (“#” and/or “%”):
+<ol type="i">
 <li>Write a command that uses the variable to print “aaa”.</li>
 <li>Write a command that uses the variable to print “ccc”.</li>
 <li>Write a set of commands that uses the variable to print “bbb”.</li>
-<li>Share both a screenshot and your <code>$ history</code> with your instructor</li>
+</ol></li>
+<li>Repeat i-iii using positional slicing syntax (“:”).</li>
+<li>Share both a screenshot and your relevant <code>$ history</code> with your instructor.</li>
 </ol>
 </section>
-<section id="extra-challenge" class="level2">
-<h2 class="anchored" data-anchor-id="extra-challenge">Extra challenge</h2>
+<section id="building-strings" class="level2">
+<h2 class="anchored" data-anchor-id="building-strings">Building Strings</h2>
 <!-- alpha="abcdefg"
 int=${alpha#*d}
 e=${int%f*}
 echo ${e}${alpha#*f}${alpha#*f} -->
 <ol type="1">
-<li>What series of commands could use use with the string “abcdefg” to print “egg”?</li>
+<li>Write a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.</li>
+<li>Repeat 1, with positional slicing methods.</li>
+<li>Send the syntax and screenshot to your instructor.</li>
 </ol>
 
 
