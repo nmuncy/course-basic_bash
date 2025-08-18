@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-08-15">
+  <meta name="dcterms.date" content="2025-08-18">
   <title>Bash Esssentials – Scripting: Permissions, Shells, and IDEs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -204,7 +204,7 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-08-15</p>
+  <p class="date">2025-08-18</p>
 </section>
 <section id="scripts" class="slide level2">
 <h2>Scripts</h2>
@@ -212,21 +212,21 @@ Nathan M. Muncy
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Enter commands into terminal:
+<li>Enter commands into terminal:
 <ul>
-<li class="fragment">Fine for few, short commands</li>
-<li class="fragment">Many - tedious, error prone</li>
+<li>Fine for few, short commands</li>
+<li>Many - tedious, error prone</li>
 </ul></li>
-<li class="fragment">Scripting:
+<li>Scripting:
 <ul>
-<li class="fragment">Save commands into file (script)</li>
-<li class="fragment">Execute file</li>
+<li>Save commands into file (script)</li>
+<li>Execute file</li>
 </ul></li>
-<li class="fragment">Utility:
+<li>Utility:
 <ul>
-<li class="fragment">Reusable scripts</li>
-<li class="fragment">Error checking</li>
-<li class="fragment">Decrease typing</li>
+<li>Reusable scripts</li>
+<li>Error checking</li>
+<li>Decrease typing</li>
 </ul></li>
 </ul>
 </div>
@@ -243,23 +243,23 @@ Nathan M. Muncy
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment"><code>touch</code>: Create new file
+<li><code>touch</code>: Create new file
 <ul>
-<li class="fragment">Update write-time for existing files</li>
+<li>Update write-time for existing files</li>
 </ul></li>
-<li class="fragment"><code>nano</code>: Create and open file with built-in editor
+<li><code>nano</code>: Create and open file with built-in editor
 <ul>
-<li class="fragment">Other built-ins: vi, vim, emacs</li>
-<li class="fragment">Exit sequence:
+<li>Other built-ins: vi, vim, emacs</li>
+<li>Exit sequence:
 <ul>
-<li class="fragment"><code>ctrl-x</code>: save and exit</li>
-<li class="fragment"><code>y</code>: overwrite</li>
-<li class="fragment">specify name, return</li>
+<li><code>ctrl-x</code>: save and exit</li>
+<li><code>y</code>: overwrite</li>
+<li>specify name, return</li>
 </ul></li>
 </ul></li>
-<li class="fragment">Specify interpreter via <code>#!</code>
+<li>Specify interpreter via <code>#!</code>
 <ul>
-<li class="fragment">Provides path to executable</li>
+<li>Provides path to executable</li>
 </ul></li>
 </ul>
 </div>
@@ -279,22 +279,26 @@ Nathan M. Muncy
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Specify series of commands</li>
-<li class="fragment">Helpful - spend time to determine logic</li>
-<li class="fragment">Save work</li>
-<li class="fragment">Back-up work</li>
+<li>Specify series of commands</li>
+<li>Helpful - spend time to determine logic</li>
+<li>Save work for future use</li>
+<li>Back up work in case of tragedy</li>
 </ul>
 </div>
 </div><div class="fragment column" style="width:&quot;50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co">#!/bin/bash</span></span>
-<span id="cb1-2"><a></a><span class="va">alpha</span><span class="op">=</span><span class="st">"abcdefg"</span></span>
-<span id="cb1-3"><a></a><span class="va">let_e</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">4</span><span class="op">:</span><span class="dv">1</span><span class="va">}</span></span>
-<span id="cb1-4"><a></a><span class="va">let_g</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">6</span><span class="va">}</span></span>
-<span id="cb1-5"><a></a><span class="bu">echo</span> <span class="va">${let_e}${let_g}${let_g}</span></span>
-<span id="cb1-6"><a></a><span class="va">beta</span><span class="op">=</span><span class="st">"aaa-bbb_ccc"</span></span>
-<span id="cb1-7"><a></a><span class="va">int_var</span><span class="op">=</span><span class="va">${beta</span><span class="op">#</span><span class="pp">*</span>-<span class="va">}</span></span>
-<span id="cb1-8"><a></a><span class="bu">echo</span> <span class="va">${int_var</span><span class="op">%</span>_<span class="pp">*</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="co"># Use positional slicing</span></span>
+<span id="cb1-4"><a></a><span class="va">alpha</span><span class="op">=</span><span class="st">"abcdefg"</span></span>
+<span id="cb1-5"><a></a><span class="va">let_e</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">4</span><span class="op">:</span><span class="dv">1</span><span class="va">}</span></span>
+<span id="cb1-6"><a></a><span class="va">let_g</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">6</span><span class="va">}</span></span>
+<span id="cb1-7"><a></a><span class="bu">echo</span> <span class="va">${let_e}${let_g}${let_g}</span></span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="co"># Use character slicing</span></span>
+<span id="cb1-10"><a></a><span class="va">beta</span><span class="op">=</span><span class="st">"aaa-bbb_ccc"</span></span>
+<span id="cb1-11"><a></a><span class="va">int_var</span><span class="op">=</span><span class="va">${beta</span><span class="op">#</span><span class="pp">*</span>-<span class="va">}</span></span>
+<span id="cb1-12"><a></a><span class="bu">echo</span> <span class="va">${int_var</span><span class="op">%</span>_<span class="pp">*</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>egg
 bbb</code></pre>
@@ -304,12 +308,90 @@ bbb</code></pre>
 </section>
 <section id="chmod" class="slide level2">
 <h2>CHMOD</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>CHange MODe of files</li>
+<li><code>ls -l</code> shows file permissions by group
+<ul>
+<li>User, group, other</li>
+</ul></li>
+<li>Numeric access (8 bit):
+<ul>
+<li>read (4), write (2), execute (1)</li>
+<li><code>rw-</code> = 6</li>
+<li><code>rwxr-xr-x</code> = 755</li>
+</ul></li>
+<li><code>chmod 755 new_script.sh</code> - detail permission for each group</li>
+<li><code>chmod +x new_script.sh</code> - assign execute to all groups</li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="chmod_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="chmod_2.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="execution" class="slide level2">
 <h2>Execution</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>Execute in different shells
+<ul>
+<li>current vs sub shell</li>
+</ul></li>
+<li>Relevant for variable availability</li>
+<li>Method 1: source or dot execution
+<ul>
+<li><code>source new_script.sh</code></li>
+<li><code>. new_script.sh</code> is preferred</li>
+<li>Executes script in current shell</li>
+<li>Variables available for future use</li>
+<li>Ideal for creating environments</li>
+<li>Overrides permissions (discouraged)</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="exec_1.png" class="fragment"></p>
+</div></div>
 </section>
-<section id="shell-types" class="slide level2">
-<h2>Shell types</h2>
+<section id="execution-1" class="slide level2">
+<h2>Execution</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>Method 2: direct execution
+<ul>
+<li><code>./new_script.sh</code></li>
+<li>Executes script in sub-shell</li>
+<li>Variables only exist in sub-shell</li>
+<li>Ideal for executing independent scripts</li>
+</ul></li>
+<li>Method 3: interpreter execution
+<ul>
+<li><code>bash new_script.sh</code></li>
+<li>Executes script in specified shell</li>
+<li>Discouraged, specify interpreter in script</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="exec_2.png" class="fragment"></p>
+</div></div>
 </section>
 <section id="ides" class="slide level2">
 <h2>IDEs</h2>

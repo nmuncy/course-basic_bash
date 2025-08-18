@@ -168,18 +168,18 @@
     "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
   },
   {
-    "objectID": "lectures/02-variables/02-practice.html#building-directory-trees",
-    "href": "lectures/02-variables/02-practice.html#building-directory-trees",
+    "objectID": "lectures/02-variables/02-practice.html#string-slicing",
+    "href": "lectures/02-variables/02-practice.html#string-slicing",
     "title": "Variables: practice",
     "section": "",
     "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
   },
   {
-    "objectID": "lectures/02-variables/02-practice.html#extra-challenge",
-    "href": "lectures/02-variables/02-practice.html#extra-challenge",
+    "objectID": "lectures/02-variables/02-practice.html#building-strings",
+    "href": "lectures/02-variables/02-practice.html#building-strings",
     "title": "Variables: practice",
-    "section": "Extra challenge",
-    "text": "Extra challenge\n\n\nWhat series of commands could use use with the string “abcdefg” to print “egg”?"
+    "section": "Building Strings",
+    "text": "Building Strings\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.\nRepeat 1, with positional slicing methods.\nSend the syntax and screenshot to your instructor."
   },
   {
     "objectID": "lectures/03-scripting/03-scripting.html#scripts",
@@ -200,28 +200,28 @@
     "href": "lectures/03-scripting/03-scripting.html#add-commands",
     "title": "Scripting: Permissions, Shells, and IDEs",
     "section": "Add Commands",
-    "text": "Add Commands\n\n\n\n\nSpecify series of commands\nHelpful - spend time to determine logic\nSave work\nBack-up work\n\n\n\n\n#!/bin/bash\nalpha=\"abcdefg\"\nlet_e=${alpha:4:1}\nlet_g=${alpha:6}\necho ${let_e}${let_g}${let_g}\nbeta=\"aaa-bbb_ccc\"\nint_var=${beta#*-}\necho ${int_var%_*}\n\negg\nbbb"
+    "text": "Add Commands\n\n\n\n\nSpecify series of commands\nHelpful - spend time to determine logic\nSave work for future use\nBack up work in case of tragedy\n\n\n\n\n#!/bin/bash\n\n# Use positional slicing\nalpha=\"abcdefg\"\nlet_e=${alpha:4:1}\nlet_g=${alpha:6}\necho ${let_e}${let_g}${let_g}\n\n# Use character slicing\nbeta=\"aaa-bbb_ccc\"\nint_var=${beta#*-}\necho ${int_var%_*}\n\negg\nbbb"
   },
   {
     "objectID": "lectures/03-scripting/03-scripting.html#chmod",
     "href": "lectures/03-scripting/03-scripting.html#chmod",
     "title": "Scripting: Permissions, Shells, and IDEs",
     "section": "CHMOD",
-    "text": "CHMOD"
+    "text": "CHMOD\n\n\n\n\nCHange MODe of files\nls -l shows file permissions by group\n\nUser, group, other\n\nNumeric access (8 bit):\n\nread (4), write (2), execute (1)\nrw- = 6\nrwxr-xr-x = 755\n\nchmod 755 new_script.sh - detail permission for each group\nchmod +x new_script.sh - assign execute to all groups"
   },
   {
     "objectID": "lectures/03-scripting/03-scripting.html#execution",
     "href": "lectures/03-scripting/03-scripting.html#execution",
     "title": "Scripting: Permissions, Shells, and IDEs",
     "section": "Execution",
-    "text": "Execution"
+    "text": "Execution\n\n\n\n\nExecute in different shells\n\ncurrent vs sub shell\n\nRelevant for variable availability\nMethod 1: source or dot execution\n\nsource new_script.sh\n. new_script.sh is preferred\nExecutes script in current shell\nVariables available for future use\nIdeal for creating environments\nOverrides permissions (discouraged)"
   },
   {
-    "objectID": "lectures/03-scripting/03-scripting.html#shell-types",
-    "href": "lectures/03-scripting/03-scripting.html#shell-types",
+    "objectID": "lectures/03-scripting/03-scripting.html#execution-1",
+    "href": "lectures/03-scripting/03-scripting.html#execution-1",
     "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Shell types",
-    "text": "Shell types"
+    "section": "Execution",
+    "text": "Execution\n\n\n\n\nMethod 2: direct execution\n\n./new_script.sh\nExecutes script in sub-shell\nVariables only exist in sub-shell\nIdeal for executing independent scripts\n\nMethod 3: interpreter execution\n\nbash new_script.sh\nExecutes script in specified shell\nDiscouraged, specify interpreter in script"
   },
   {
     "objectID": "lectures/03-scripting/03-scripting.html#ides",
@@ -236,26 +236,5 @@
     "title": "Scripting: Permissions, Shells, and IDEs",
     "section": "Style guides",
     "text": "Style guides\nhttps://google.github.io/styleguide/shellguide.html"
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#string-slicing",
-    "href": "lectures/02-variables/02-practice.html#string-slicing",
-    "title": "Variables: practice",
-    "section": "",
-    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#building-variables",
-    "href": "lectures/02-variables/02-practice.html#building-variables",
-    "title": "Variables: practice",
-    "section": "Building Variables",
-    "text": "Building Variables\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg”. Send the syntax and screenshot to your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#building-strings",
-    "href": "lectures/02-variables/02-practice.html#building-strings",
-    "title": "Variables: practice",
-    "section": "Building Strings",
-    "text": "Building Strings\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.\nRepeat 1, with positional slicing methods.\nSend the syntax and screenshot to your instructor."
   }
 ]
