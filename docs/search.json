@@ -4,238 +4,21 @@
     "href": "materials.html",
     "title": "Course Slides, Code, and Practice Materials",
     "section": "",
-    "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice\n\n\n\n\nVariables\nSlides\nCode\nPractice\n\n\n\n\nScripting\nSlides\nCode\nPractice\n\n\n\n\nFor Loops\nSlides\nCode\nPractice"
+    "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice\n\n\n\n\nVariables\nSlides\nCode\nPractice\n\n\n\n\nScripting\nSlides\nCode\nPractice\n\n\n\n\nFor Loops\nSlides\nCode\nPractice\n\n\n\n\nConditionals\nSlides\nCode\nPractice"
   },
   {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
-    "href": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "What is a For Loop",
-    "text": "What is a For Loop\n\n\n\n\nPurpose of computing: get computers to do the work\nComputers are great at repeating work\n\nSame command for different variables\nSame workflow for different subjects\n\nBenefits: replicability, efficiency, reduce programmer typing\nFor loops: special syntax to repeat series of commands\nNate’s Adage: Be clever\n\nIf repeating work, get computer to do it\nNot lazy, efficient (without tendonitis)!\n\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Start of list] --&gt; B(Execute commands)\n  B --&gt; C{End of list?}\n  C --&gt; A\n  C --&gt; D[Exit]"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
-    "href": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Anatomy of For Loops",
-    "text": "Anatomy of For Loops\n\n\n\n\nFor loops have a specific structure:\n\nSpace separated ‘for variable in list’\nNew line do, series of commands\nReference variable with $\nNew line done\n\nFunctionally:\n\nIterate through all items of list\nDefine variable from list for each iteration\nExecute commands between do and done for each iteration\n\n\n\n\n\nfor var in {1..3}; do\n    echo $var\ndone\n\n1\n2\n3"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
-    "href": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Iterating through lists",
-    "text": "Iterating through lists\n\n\n\n\nPossible to store lists\n\nUse space between items\nAccount for bash returning space-separated output\n\nReference list in for loop syntax by variable\nBest practices:\n\nAdd do to for loop definition line\n\n“;” indicates End Of Line (EOL)\n\nIndent to show logic levels\ndone on separate line, original indentation\n\n\n\n\n\nmy_sent=\"i am great\"\nnum_list=$(echo {1..3})\n# file_list=$(ls .)\nfor var in $my_sent $num_list; do\n    echo $var\ndone\n\ni\nam\ngreat\n1\n2\n3"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
-    "href": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Nesting For Loops",
-    "text": "Nesting For Loops\n\n\n\n\nA child loop can exist within a parent loop\nEntire child loop executed for each parent loop iteration\n\n\n\n\nfor num in {1..3}; do\n    for alpha in {a..c}; do\n        echo ${num}$alpha\n    done\ndone\n\n1a\n1b\n1c\n2a\n2b\n2c\n3a\n3b\n3c"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
-    "href": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "More Best Practices",
-    "text": "More Best Practices\n\n\n\n\nFlatter is better\n\nLimit nesting (logic) depth to ~3 levels\nTry restructuring if deeper logic is needed\nBe more clever\n\nOrganize code into blocks\nHave meaningful variable names\n\nfor i in {a..c} ... vs\nfor alpha in {a..c} ...\n\n\n\n\n\nfor num in {1..2}; do\n    for alpha in {a..b}; do\n        echo ${num}$alpha\n    done\ndone\necho\nfor num_alpha in {1..2}{a..b}; do\n    echo $num_alpha\ndone\n\n1a\n1b\n2a\n2b\n\n1a\n1b\n2a\n2b"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-practice.html",
-    "href": "lectures/03-scripting/03-practice.html",
-    "title": "Scripting: practice",
+    "objectID": "lectures/04-for_loops/04-practice.html",
+    "href": "lectures/04-for_loops/04-practice.html",
+    "title": "For Loops: practice",
     "section": "",
-    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
   },
   {
-    "objectID": "lectures/03-scripting/03-practice.html#moving-to-scripts",
-    "href": "lectures/03-scripting/03-practice.html#moving-to-scripts",
-    "title": "Scripting: practice",
+    "objectID": "lectures/04-for_loops/04-practice.html#building-file-structures",
+    "href": "lectures/04-for_loops/04-practice.html#building-file-structures",
+    "title": "For Loops: practice",
     "section": "",
-    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html",
-    "href": "lectures/02-variables/02-practice.html",
-    "title": "Variables: practice",
-    "section": "",
-    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#string-slicing",
-    "href": "lectures/02-variables/02-practice.html#string-slicing",
-    "title": "Variables: practice",
-    "section": "",
-    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#building-strings",
-    "href": "lectures/02-variables/02-practice.html#building-strings",
-    "title": "Variables: practice",
-    "section": "Building Strings",
-    "text": "Building Strings\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.\nRepeat 1, with positional slicing methods.\nSend the syntax and screenshot to your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html",
-    "href": "lectures/01-the_terminal/01-practice.html",
-    "title": "The Terminal: practice",
-    "section": "",
-    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
-    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
-    "title": "The Terminal: practice",
-    "section": "",
-    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
-    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
-    "title": "The Terminal: practice",
-    "section": "Extra challenge",
-    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bash Essentials",
-    "section": "",
-    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Bash Essentials",
-    "section": "",
-    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
-  },
-  {
-    "objectID": "index.html#course-materials",
-    "href": "index.html#course-materials",
-    "title": "Bash Essentials",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nSlides, Code, and Practices"
-  },
-  {
-    "objectID": "index.html#course-modules",
-    "href": "index.html#course-modules",
-    "title": "Bash Essentials",
-    "section": "Course Modules",
-    "text": "Course Modules\n\nBash Essentials\nGit, GitHub\nCluster Computing\nProject Environments"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "What is a terminal",
-    "text": "What is a terminal\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Finding the terminal: Mac",
-    "text": "Finding the terminal: Mac\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Finding the terminal: Ubuntu",
-    "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Finding the terminal: Windows",
-    "text": "Finding the terminal: Windows\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Anatomy of commands",
-    "text": "Anatomy of commands\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Foundational commands",
-    "text": "Foundational commands\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Directory tree",
-    "text": "Directory tree\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Make directories",
-    "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#strings",
-    "href": "lectures/02-variables/02-variables.html#strings",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Strings",
-    "text": "Strings\n\n\n\n\nSeries of key strokes:\n\nabcd1234\nHello World\n\nGood to avoid spaces (command: argument + parameter)\n\nHello_World\n\nData type - integer, boolean, list, array\nStore in a variable\nAccess with $ prefix\n\nPrint value of variable with echo\n\n\n\n\n\nfoo=\"Hello World\"\necho foo\necho $foo\n\nbar=Goodbye Sky\necho $bar\n\nfoo\nHello World\nbash: line 4: Sky: command not found\n\n\n\n\nWhy does bar=Goodbye Sky break?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#paths",
-    "href": "lectures/02-variables/02-variables.html#paths",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Paths",
-    "text": "Paths\n\n\n\n\nFile paths can be stored in variable\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#brace-expansion",
-    "href": "lectures/02-variables/02-variables.html#brace-expansion",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Brace expansion",
-    "text": "Brace expansion\n\n\n\n\nCurly braces containing a list: ‘{1..4}’\nExpand sequential or comma-separated lists\nAppend to strings - easy file, directory generation\n\nE.g. ‘mkdir -p sub-{1..3}’\n\nCombine to generate permutations\n\nE.g. ‘for i in pref-{1..3}{a..c}; do ...’\n\nSupports nesting\nRun in subshell ‘$()’ to store in variable\n\n\n\n\necho {a..d}\necho sub-{1..3}\nperm=$(echo {1..3}{a..c})\nnest=$(echo pref-{foo,bar{1..3},baz})\necho $perm\necho $nest\n\na b c d\nsub-1 sub-2 sub-3\n1a 1b 1c 2a 2b 2c 3a 3b 3c\npref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#combining-variables",
-    "href": "lectures/02-variables/02-variables.html#combining-variables",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Combining variables",
-    "text": "Combining variables\n\n\n\n\nAccess variables with ‘$’\nCombine with curly braces to:\n\nAdd suff/prefix:\n\n‘var=foo; echo ${var}bar’\n\nCombine variables\n\n‘var1=foo; var2=bar; echo ${var1}$var2’\n\nNote: reuse of ‘{}’ - key-bindings are context dependent!\n\n\n\n\n\nvar1=foo; var2=bar\necho \"1 ${var1}baz\"\necho \"2 ${var1}$var2\"\necho \"3 $var1$var2\"\necho \"4 $var1baz\"\n\n1 foobaz\n2 foobar\n3 foobar\n4 \n\n\n\n\nWhy does ‘echo \"4 $var1baz\"’ break?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-forward-removal",
-    "href": "lectures/02-variables/02-variables.html#slice-forward-removal",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: forward removal",
-    "text": "Slice: forward removal\n\n\n\n\nOften desirable to slice strings\n\nE.g. extract “awesome” from “I_am_awesome”\n\nExtracting subject, session, or task from file name\n\nBIDS: sub-1_ses-A_task-memory\n\nCombine “#” and string with variable call to slice from string beginning\n\n“#” removes before first string match\nWildcard symbol “*” matches anything\n“##” removes before final string match\n\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name#*_}\necho ${bids_name##*_}\n\nsub-1_ses-A_task-memory\nses-A_task-memory\ntask-memory\n\n\n\n\nWhat would ‘echo ${bids_name#*-}’ say?\nHow about ‘echo ${bids_name#sub-1}’?\nHow about ‘echo ${bids_name##*-}’?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-backward-removal",
-    "href": "lectures/02-variables/02-variables.html#slice-backward-removal",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: backward removal",
-    "text": "Slice: backward removal\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract string middle\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-positional",
-    "href": "lectures/02-variables/02-variables.html#slice-positional",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: positional",
-    "text": "Slice: positional\n\n\n\n\nEach character in a string has a position\n\n0-indexed, abcd = 0123\n\nUse “:” to specify start and end of positions\n\n\n\n\nalpha=\"abcdefg\"\necho ${alpha:0:3}\necho ${alpha:3}\n\nabc\ndefg\n\n\n\n\nWhat would ‘echo ${alpha:1:4}’ say?\nWhat would ‘echo ${alpha:5}’ say?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-replace",
-    "href": "lectures/02-variables/02-variables.html#slice-replace",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: replace",
-    "text": "Slice: replace\n\n\n\n\nReplacing substring is possible with /\nMust match substring exactly\nCan also be used to remove string\n\n\n\n\nfoo=\"foobbb\"\necho $foo\necho \"${foo/bbb/ccc}\"\n\nfoobbb\nfooccc\n\n\n\n\nWhat would ‘echo \"${foo/bbb/}\"’ say?"
+    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "lectures/03-scripting/03-scripting.html#scripts",
@@ -294,17 +77,311 @@
     "text": "Style guides\n\n\nIndividual programming style - “Spaghetti Code”\n\nDifficult to read, maintain, optimize\nxkcd comic\n\nStrongly encourage using style guides\n\nGoogle Style\n\nReasons:\n\nIncreases professionalism\nAbility to collaborate\nAccess to plugins (autoformatter, linter, documentation)\nProgram faster\nReduce learning curve"
   },
   {
-    "objectID": "lectures/04-for_loops/04-practice.html",
-    "href": "lectures/04-for_loops/04-practice.html",
-    "title": "For Loops: practice",
-    "section": "",
-    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
+    "objectID": "lectures/02-variables/02-variables.html#strings",
+    "href": "lectures/02-variables/02-variables.html#strings",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Strings",
+    "text": "Strings\n\n\n\n\nSeries of key strokes:\n\nabcd1234\nHello World\n\nGood to avoid spaces (command: argument + parameter)\n\nHello_World\n\nData type - integer, boolean, list, array\nStore in a variable\nAccess with $ prefix\n\nPrint value of variable with echo\n\n\n\n\n\nfoo=\"Hello World\"\necho foo\necho $foo\n\nbar=Goodbye Sky\necho $bar\n\nfoo\nHello World\nbash: line 4: Sky: command not found\n\n\n\n\nWhy does bar=Goodbye Sky break?"
   },
   {
-    "objectID": "lectures/04-for_loops/04-practice.html#building-file-structures",
-    "href": "lectures/04-for_loops/04-practice.html#building-file-structures",
-    "title": "For Loops: practice",
+    "objectID": "lectures/02-variables/02-variables.html#paths",
+    "href": "lectures/02-variables/02-variables.html#paths",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Paths",
+    "text": "Paths\n\n\n\n\nFile paths can be stored in variable\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#brace-expansion",
+    "href": "lectures/02-variables/02-variables.html#brace-expansion",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Brace expansion",
+    "text": "Brace expansion\n\n\n\n\nCurly braces containing a list: ‘{1..4}’\nExpand sequential or comma-separated lists\nAppend to strings - easy file, directory generation\n\nE.g. ‘mkdir -p sub-{1..3}’\n\nCombine to generate permutations\n\nE.g. ‘for i in pref-{1..3}{a..c}; do ...’\n\nSupports nesting\nRun in subshell ‘$()’ to store in variable\n\n\n\n\necho {a..d}\necho sub-{1..3}\nperm=$(echo {1..3}{a..c})\nnest=$(echo pref-{foo,bar{1..3},baz})\necho $perm\necho $nest\n\na b c d\nsub-1 sub-2 sub-3\n1a 1b 1c 2a 2b 2c 3a 3b 3c\npref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#combining-variables",
+    "href": "lectures/02-variables/02-variables.html#combining-variables",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Combining variables",
+    "text": "Combining variables\n\n\n\n\nAccess variables with ‘$’\nCombine with curly braces to:\n\nAdd suff/prefix:\n\n‘var=foo; echo ${var}bar’\n\nCombine variables\n\n‘var1=foo; var2=bar; echo ${var1}$var2’\n\nNote: reuse of ‘{}’ - key-bindings are context dependent!\n\n\n\n\n\nvar1=foo; var2=bar\necho \"1 ${var1}baz\"\necho \"2 ${var1}$var2\"\necho \"3 $var1$var2\"\necho \"4 $var1baz\"\n\n1 foobaz\n2 foobar\n3 foobar\n4 \n\n\n\n\nWhy does ‘echo \"4 $var1baz\"’ break?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-forward-removal",
+    "href": "lectures/02-variables/02-variables.html#slice-forward-removal",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: forward removal",
+    "text": "Slice: forward removal\n\n\n\n\nOften desirable to slice strings\n\nE.g. extract “awesome” from “I_am_awesome”\n\nExtracting subject, session, or task from file name\n\nBIDS: sub-1_ses-A_task-memory\n\nCombine “#” and string with variable call to slice from string beginning\n\n“#” removes before first string match\nWildcard symbol “*” matches anything\n“##” removes before final string match\n\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name#*_}\necho ${bids_name##*_}\n\nsub-1_ses-A_task-memory\nses-A_task-memory\ntask-memory\n\n\n\n\nWhat would ‘echo ${bids_name#*-}’ say?\nHow about ‘echo ${bids_name#sub-1}’?\nHow about ‘echo ${bids_name##*-}’?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-backward-removal",
+    "href": "lectures/02-variables/02-variables.html#slice-backward-removal",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: backward removal",
+    "text": "Slice: backward removal\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract string middle\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-positional",
+    "href": "lectures/02-variables/02-variables.html#slice-positional",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: positional",
+    "text": "Slice: positional\n\n\n\n\nEach character in a string has a position\n\n0-indexed, abcd = 0123\n\nUse “:” to specify start and end of positions\n\n\n\n\nalpha=\"abcdefg\"\necho ${alpha:0:3}\necho ${alpha:3}\n\nabc\ndefg\n\n\n\n\nWhat would ‘echo ${alpha:1:4}’ say?\nWhat would ‘echo ${alpha:5}’ say?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-replace",
+    "href": "lectures/02-variables/02-variables.html#slice-replace",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: replace",
+    "text": "Slice: replace\n\n\n\n\nReplacing substring is possible with /\nMust match substring exactly\nCan also be used to remove string\n\n\n\n\nfoo=\"foobbb\"\necho $foo\necho \"${foo/bbb/ccc}\"\n\nfoobbb\nfooccc\n\n\n\n\nWhat would ‘echo \"${foo/bbb/}\"’ say?"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "What is a terminal",
+    "text": "What is a terminal\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Finding the terminal: Mac",
+    "text": "Finding the terminal: Mac\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Finding the terminal: Ubuntu",
+    "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Finding the terminal: Windows",
+    "text": "Finding the terminal: Windows\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Anatomy of commands",
+    "text": "Anatomy of commands\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Foundational commands",
+    "text": "Foundational commands\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Directory tree",
+    "text": "Directory tree\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Make directories",
+    "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bash Essentials",
     "section": "",
-    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
+    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Bash Essentials",
+    "section": "",
+    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
+  },
+  {
+    "objectID": "index.html#course-materials",
+    "href": "index.html#course-materials",
+    "title": "Bash Essentials",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nSlides, Code, and Practices"
+  },
+  {
+    "objectID": "index.html#course-modules",
+    "href": "index.html#course-modules",
+    "title": "Bash Essentials",
+    "section": "Course Modules",
+    "text": "Course Modules\n\nBash Essentials\nGit, GitHub\nCluster Computing\nProject Environments"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html",
+    "href": "lectures/01-the_terminal/01-practice.html",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "title": "The Terminal: practice",
+    "section": "Extra challenge",
+    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html",
+    "href": "lectures/02-variables/02-practice.html",
+    "title": "Variables: practice",
+    "section": "",
+    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html#string-slicing",
+    "href": "lectures/02-variables/02-practice.html#string-slicing",
+    "title": "Variables: practice",
+    "section": "",
+    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html#building-strings",
+    "href": "lectures/02-variables/02-practice.html#building-strings",
+    "title": "Variables: practice",
+    "section": "Building Strings",
+    "text": "Building Strings\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.\nRepeat 1, with positional slicing methods.\nSend the syntax and screenshot to your instructor."
+  },
+  {
+    "objectID": "lectures/03-scripting/03-practice.html",
+    "href": "lectures/03-scripting/03-practice.html",
+    "title": "Scripting: practice",
+    "section": "",
+    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+  },
+  {
+    "objectID": "lectures/03-scripting/03-practice.html#moving-to-scripts",
+    "href": "lectures/03-scripting/03-practice.html#moving-to-scripts",
+    "title": "Scripting: practice",
+    "section": "",
+    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
+    "href": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "What is a For Loop",
+    "text": "What is a For Loop\n\n\n\n\nPurpose of computing: get computers to do the work\nComputers are great at repeating work\n\nSame command for different variables\nSame workflow for different subjects\n\nBenefits: replicability, efficiency, reduce programmer typing\nFor loops: special syntax to repeat series of commands\nNate’s Adage: Be clever\n\nIf repeating work, get computer to do it\nNot lazy, efficient (without tendonitis)!\n\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Start of list] --&gt; B(Execute commands)\n  B --&gt; C{End of list?}\n  C --&gt; A\n  C --&gt; D[Exit]"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
+    "href": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Anatomy of For Loops",
+    "text": "Anatomy of For Loops\n\n\n\n\nFor loops have a specific structure:\n\nSpace separated ‘for variable in list’\nNew line do, series of commands\nReference variable with $\nNew line done\n\nFunctionally:\n\nIterate through all items of list\nDefine variable from list for each iteration\nExecute commands between do and done for each iteration\n\n\n\n\n\nfor var in {1..3}; do\n    echo $var\ndone\n\n1\n2\n3"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
+    "href": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Iterating through lists",
+    "text": "Iterating through lists\n\n\n\n\nPossible to store lists\n\nUse space between items\nAccount for bash returning space-separated output\n\nReference list in for loop syntax by variable\nBest practices:\n\nAdd do to for loop definition line\n\n“;” indicates End Of Line (EOL)\n\nIndent to show logic levels\ndone on separate line, original indentation\n\n\n\n\n\nmy_sent=\"i am great\"\nnum_list=$(echo {1..3})\n# file_list=$(ls .)\nfor var in $my_sent $num_list; do\n    echo $var\ndone\n\ni\nam\ngreat\n1\n2\n3"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
+    "href": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Nesting For Loops",
+    "text": "Nesting For Loops\n\n\n\n\nA child loop can exist within a parent loop\nEntire child loop executed for each parent loop iteration\n\n\n\n\nfor num in {1..3}; do\n    for alpha in {a..c}; do\n        echo ${num}$alpha\n    done\ndone\n\n1a\n1b\n1c\n2a\n2b\n2c\n3a\n3b\n3c"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
+    "href": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "More Best Practices",
+    "text": "More Best Practices\n\n\n\n\nFlatter is better\n\nLimit nesting (logic) depth to ~3 levels\nTry restructuring if deeper logic is needed\nBe more clever\n\nOrganize code into blocks\nHave meaningful variable names\n\nfor i in {a..c} ... vs\nfor alpha in {a..c} ...\n\n\n\n\n\nfor num in {1..2}; do\n    for alpha in {a..b}; do\n        echo ${num}$alpha\n    done\ndone\necho\nfor num_alpha in {1..2}{a..b}; do\n    echo $num_alpha\ndone\n\n1a\n1b\n2a\n2b\n\n1a\n1b\n2a\n2b"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#exit-status",
+    "href": "lectures/05-conditionals/05-conditionals.html#exit-status",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Exit Status",
+    "text": "Exit Status\n\n\n\n\nEvery command returns an exit status\nHeld on special variable $?\n0: command was successful\n&gt;0: command was unsuccessful\n\nEach number has specific meaning\n\n\n\n\n\necho hi\necho $?\nasdf\necho $?\n\nhi\n0\nbash: line 2: asdf: command not found\n127"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
+    "href": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Use Exit Status",
+    "text": "Use Exit Status\n\n\n\n\nSpecial commands && and || evaluate $?\n&& listens for exit status 0\n\nif 0 (success) then process continues\n\n|| listens for exit status &gt;0\n\nif &gt;0 (fail) the process continues\n\nCan be combined\nKeep these simple!\n\n\n\n\necho hi && echo pass || echo fail\nasdf && echo pass || echo fail\n\nhi\npass\nbash: line 1: asdf: command not found\nfail"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#square-braces",
+    "href": "lectures/05-conditionals/05-conditionals.html#square-braces",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Square Braces",
+    "text": "Square Braces\n\n\n\n\nSquare braces ‘[]’ evaluate an internal statement to set exit status\nInternal exit status 0: external exit status 0\nInternal exit status &gt;0: external exit status 1\nWhite space (spaces) is very important!\n\n\n\n\n[ 1 == 1 ] && echo true || echo false\n[ 1 == 2 ] && echo true || echo false\n[ a == a ] && echo pass $? || echo fail $?\n[ a == b ] && echo pass $? || echo fail $?\n\ntrue\nfalse\npass 0\nfail 1"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Conditionals: if",
+    "text": "Conditionals: if\n\n\n\n\nConditional syntax utilize square braces for workflow control\n\ni.e. execute commands only if a condition is met\n\nSyntax structure:\n\nif [ assertion ]\nNew line then\nCommands\nNew line fi to close conditional\n\nConditional work only executed if exit status = 0\n\n\n\n\nif [ 1 == 1 ]; then\n    echo Yay\nfi\nif [ 1 == 2 ]; then\n    echo Nay\nfi\n\nYay\n\n\n\n\nWhy is == used and not =?"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Conditionals: elif",
+    "text": "Conditionals: elif\n\n\n\n\nAbility to capture workflow if first conditional fails\nelif (else if) assessed only when if exit status = 1\nAn entire new conditional is written\nRead conditionals top -&gt; bottom\nMultiple elif statements allowed\n\n\n\n\nfoo=bat\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nfi\n\nfoobat\n\n\n\n\nHow many conditionals failed?\nWhat if foo=baz?"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Conditionals: else",
+    "text": "Conditionals: else\n\n\n\n\nelse catches all failed conditions\nSpecified last\nDoes not evaluate an assertion\n\n\n\n\nfoo=foo\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nelse\n    echo \"Unrecognized value of foo\"\nfi\n\nUnrecognized value of foo"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Conditionals: and",
+    "text": "Conditionals: and\n\n\n\n\nMultiple assertions can be combined with &&\nAs before, && only continues if exit status = 0\n\nSo, all conditionals would need to be true\n\n\n\n\n\nfoo=bar\nnum=1\nif [ $foo == bar ] && [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nWould [ $num == 1 ] be assessed if foo=baz?"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Conditionals: or",
+    "text": "Conditionals: or"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Conditionals: not",
+    "text": "Conditionals: not"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#special-conditionals",
+    "href": "lectures/05-conditionals/05-conditionals.html#special-conditionals",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Special conditionals",
+    "text": "Special conditionals"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#best-practices",
+    "href": "lectures/05-conditionals/05-conditionals.html#best-practices",
+    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "section": "Best practices",
+    "text": "Best practices\n\nKeep conditionals below 3 levels of logic:\n\nSimple\nFlat\nShort\n\nConsider breaking up long chains into multiple statements\nInverting logic often simplifies"
   }
 ]

@@ -1,0 +1,228 @@
+---
+title: "Conditionals: Square braces, boolean logic, special chekcs"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Bash Basics: conditionals"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Exit Status
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Every command returns an exit status
+- Held on special variable `$?`
+- `0`: command was successful
+- `>0`: command was unsuccessful
+    - Each number has specific meaning
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+echo hi
+echo $?
+asdf
+echo $?
+```
+:::::
+::::::::
+
+## Use Exit Status
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Special commands `&&` and `||` evaluate `$?`
+- `&&` listens for exit status `0`
+    - if `0` (success) then process continues
+- `||` listens for exit status `>0`
+    - if `>0` (fail) the process continues
+- Can be combined
+- Keep these simple!
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+echo hi && echo pass || echo fail
+asdf && echo pass || echo fail
+```
+:::::
+::::::::
+
+## Square Braces
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Square braces '`[]`' evaluate an internal statement to set exit status
+- Internal exit status `0`: external exit status `0`
+- Internal exit status `>0`:  external exit status `1`
+- White space (spaces) is very important!
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+[ 1 == 1 ] && echo true || echo false
+[ 1 == 2 ] && echo true || echo false
+[ a == a ] && echo pass $? || echo fail $?
+[ a == b ] && echo pass $? || echo fail $?
+```
+:::::
+::::::::
+
+## Conditionals: if
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Conditional syntax utilize square braces for workflow control
+    - i.e. execute commands only if a condition is met
+- Syntax structure:
+    - `if [ assertion ]`
+    - New line `then`
+    - Commands
+    - New line `fi` to close conditional
+- Conditional work only executed `if` exit status = `0`
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+if [ 1 == 1 ]; then
+    echo Yay
+fi
+if [ 1 == 2 ]; then
+    echo Nay
+fi
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- Why is `==` used and not `=`?
+:::
+::::
+:::::
+::::::::
+
+## Conditionals: elif
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Ability to capture workflow if first conditional fails
+- `elif` (else if) assessed only when `if` exit status = `1`
+- An entire new conditional is written
+- Read conditionals top -> bottom
+- Multiple `elif` statements allowed
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+foo=bat
+if [ $foo == bar ]; then
+    echo foobar
+elif [ $foo == baz ]; then
+    echo foobaz
+elif [ $foo == bat ]; then
+    echo foobat
+fi
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- How many conditionals failed?
+- What if `foo=baz`?
+:::
+::::
+:::::
+::::::::
+
+## Conditionals: else
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- `else` catches all failed conditions
+- Specified last
+- Does not evaluate an assertion
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+foo=foo
+if [ $foo == bar ]; then
+    echo foobar
+elif [ $foo == baz ]; then
+    echo foobaz
+elif [ $foo == bat ]; then
+    echo foobat
+else
+    echo "Unrecognized value of foo"
+fi
+```
+:::::
+::::::::
+
+## Conditionals: and
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Multiple assertions can be combined with `&&`
+- As before, `&&` only continues if exit status = `0`
+    - So, all conditionals would need to be true
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+foo=bar
+num=1
+if [ $foo == bar ] && [ $num == 1 ]; then
+    echo Success
+fi
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- Would `[ $num == 1 ]` be assessed if `foo=baz`?
+:::
+::::
+:::::
+::::::::
+
+## Conditionals: or
+
+## Conditionals: not
+
+## Special conditionals
+
+## Best practices
+
+- Keep conditionals below 3 levels of logic:
+    - Simple
+    - Flat
+    - Short
+- Consider breaking up long chains into multiple statements
+- Inverting logic often simplifies

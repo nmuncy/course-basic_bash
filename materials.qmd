@@ -13,7 +13,9 @@ execute:
 | The terminal | [Slides](lectures/01-the_terminal/01-the_terminal.qmd){target="_blank"} | [Code](code/01_the_terminal.sh) | [Practice](lectures/01-the_terminal/01-practice.qmd){target="_blank"} |
 | Variables | [Slides](lectures/02-variables/02-variables.qmd){target="_blank"} | [Code](code/02_variables.sh) | [Practice](lectures/02-variables/02-practice.qmd){target="_blank"} |
 | Scripting | [Slides](lectures/03-scripting/03-scripting.qmd){target="_blank"} | [Code](code/03_scripting.sh) | [Practice](lectures/03-scripting/03-practice.qmd){target="_blank"} |
-| For Loops | [Slides](lectures/04-for_loops/04-for_loops.qmd) | [Code](code/04_for_loops.sh) | [Practice](lectures/04-for_loops/04-practice.qmd){target="_blank"} |
+| For Loops | [Slides](lectures/04-for_loops/04-for_loops.qmd){target="_blank"} | [Code](code/04_for_loops.sh) | [Practice](lectures/04-for_loops/04-practice.qmd){target="_blank"} |
+| Conditionals | [Slides](lectures/05-conditionals/05-conditionals.qmd) | Code | Practice |
+
 
 </details>
 
