@@ -1,0 +1,16 @@
+---
+title: "Scripting: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Moving to scripts
+1. Write and execute a script that builds the directory tree from [Practice 1](../01-the_terminal/01-practice.qmd).
+    - Remember to make the script executable for all users.
+1. Write a script that completes [Practice 2](../02-variables/02-practice.qmd).
+1. Send these scripts to your instructor.

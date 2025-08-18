@@ -145,7 +145,7 @@ echo "4 $var1baz"
 :::::
 ::::::::
 
-## Slice: front
+## Slice: forward removal
 ::::::: columns
 ::::: {.column width="50%"}
 :::: {style="font-size: 65%;"}
@@ -184,7 +184,7 @@ echo ${bids_name##*_}
 :::::
 ::::::::
 
-## Slice: back
+## Slice: backward removal
 
 ::::::: columns
 ::::: {.column width="50%"}
@@ -240,6 +240,35 @@ echo ${alpha:3}
 ::: incremental
 - What would '`echo ${alpha:1:4}`' say?
 - What would '`echo ${alpha:5}`' say?
+:::
+::::
+:::::
+::::::::
+
+## Slice: replace
+
+::::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Replacing substring is possible with `/`
+- Must match substring exactly
+- Can also be used to remove string
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+#| message: false
+
+foo="foobbb"
+echo $foo
+echo "${foo/bbb/ccc}"
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- What would '`echo "${foo/bbb/}"`' say?
 :::
 ::::
 :::::

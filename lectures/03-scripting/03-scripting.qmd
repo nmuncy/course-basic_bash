@@ -188,14 +188,58 @@ echo ${int_var%_*}
 :::::
 
 ::::: {.column width="\"50%"}
+::: {.r-stack}
 
 ![](exec_2.png){.fragment}
 
+![](exec_3.png){.fragment}
+
+:::
 :::::
 ::::::
 
 ## IDEs
 
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Integrated Development Environments
+- Editor: syntax highlighting, formatting, error detection
+- Compiler or Interpreter: build and execute
+- Extra features:
+    - Testing
+    - Debugging
+    - Visualization
+    - Remote Development
+- Popular for Bash
+    - [Sublime](https://www.sublimetext.com/download): simple text editor, "free"
+    - [VS Code](https://code.visualstudio.com/download): IDE, plugins for languages, free for research and learning
+::::
+:::::
+
+::::: {.column width="\"50%"}
+::: {.r-stack}
+
+![](ide_1.png){.fragment}
+
+![](ide_2.png){.fragment}
+
+:::
+:::::
+::::::
+
 ## Style guides
 
-https://google.github.io/styleguide/shellguide.html
+:::: {style="font-size: 65%;"}
+- Individual programming style - "Spaghetti Code"
+    - Difficult to read, maintain, optimize
+    - [xkcd comic](https://xkcd.com/1513/)
+- **Strongly encourage** using style guides
+    - [Google Style](https://google.github.io/styleguide/shellguide.html)
+- Reasons:
+    - Increases professionalism
+    - Ability to collaborate
+    - Access to plugins (autoformatter, linter, documentation)
+    - Program faster
+    - Reduce learning curve
+::::

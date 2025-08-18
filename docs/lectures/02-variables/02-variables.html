@@ -358,8 +358,8 @@ pref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz</code></pre>
 </div>
 </div></div>
 </section>
-<section id="slice-front" class="slide level2">
-<h2>Slice: front</h2>
+<section id="slice-forward-removal" class="slide level2">
+<h2>Slice: forward removal</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
@@ -401,8 +401,8 @@ task-memory</code></pre>
 </div>
 </div></div>
 </section>
-<section id="slice-back" class="slide level2">
-<h2>Slice: back</h2>
+<section id="slice-backward-removal" class="slide level2">
+<h2>Slice: backward removal</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
@@ -459,6 +459,34 @@ defg</code></pre>
 <ul>
 <li class="fragment">What would ‘<code>echo ${alpha:1:4}</code>’ say?</li>
 <li class="fragment">What would ‘<code>echo ${alpha:5}</code>’ say?</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="slice-replace" class="slide level2">
+<h2>Slice: replace</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>Replacing substring is possible with <code>/</code></li>
+<li>Must match substring exactly</li>
+<li>Can also be used to remove string</li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="va">foo</span><span class="op">=</span><span class="st">"foobbb"</span></span>
+<span id="cb13-2"><a></a><span class="bu">echo</span> <span class="va">$foo</span></span>
+<span id="cb13-3"><a></a><span class="bu">echo</span> <span class="st">"</span><span class="va">${foo</span><span class="op">/</span><span class="ss">bbb</span><span class="op">/</span>ccc<span class="va">}</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>foobbb
+fooccc</code></pre>
+</div>
+</div>
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">What would ‘<code>echo "${foo/bbb/}"</code>’ say?</li>
 </ul>
 </div>
 </div></div>

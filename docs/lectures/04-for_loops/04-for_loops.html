@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nathan M. Muncy">
   <meta name="dcterms.date" content="2025-08-18">
-  <title>Bash Esssentials – Scripting: Permissions, Shells, and IDEs</title>
+  <title>Bash Esssentials – For Loops: Iterations and Nesting</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -188,13 +188,16 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Scripting: Permissions, Shells, and IDEs</h1>
+  <h1 class="title">For Loops: Iterations and Nesting</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -206,249 +209,200 @@ Nathan M. Muncy
 
   <p class="date">2025-08-18</p>
 </section>
-<section id="scripts" class="slide level2">
-<h2>Scripts</h2>
+<section id="what-is-a-for-loop" class="slide level2">
+<h2>What is a For Loop</h2>
+<div class="columns">
+<div style="font-size: 65%;">
+<div class="column" style="width:50%;">
+<ul>
+<li>Purpose of computing: get computers to do the work</li>
+<li>Computers are great at repeating work
+<ul>
+<li>Same command for different variables</li>
+<li>Same workflow for different subjects</li>
+</ul></li>
+<li>Benefits: replicability, efficiency, reduce programmer typing</li>
+<li>For loops: special syntax to repeat series of commands</li>
+<li>Nate’s Adage: Be clever
+<ul>
+<li>If repeating work, get computer to do it</li>
+<li>Not lazy, efficient (without tendonitis)!</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<!-- ::: {.fragment}
+![https://www.codingem.com/flowchart-loop/](for_1.png)
+::: -->
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+  A[Start of list] --&gt; B(Execute commands)
+  B --&gt; C{End of list?}
+  C --&gt; A
+  C --&gt; D[Exit]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="anatomy-of-for-loops" class="slide level2">
+<h2>Anatomy of For Loops</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li>Enter commands into terminal:
+<li>For loops have a specific structure:
 <ul>
-<li>Fine for few, short commands</li>
-<li>Many - tedious, error prone</li>
+<li>Space separated ‘<code>for</code> variable <code>in</code> list’</li>
+<li>New line <code>do</code>, series of commands</li>
+<li>Reference variable with <code>$</code></li>
+<li>New line <code>done</code></li>
 </ul></li>
-<li>Scripting:
+<li>Functionally:
 <ul>
-<li>Save commands into file (script)</li>
-<li>Execute file</li>
-</ul></li>
-<li>Utility:
-<ul>
-<li>Reusable scripts</li>
-<li>Error checking</li>
-<li>Decrease typing</li>
+<li>Iterate through all items of list</li>
+<li>Define variable from list for each iteration</li>
+<li>Execute commands between <code>do</code> and <code>done</code> for each iteration</li>
 </ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
-<div class="r-stack">
-<p><img data-src="script_1.png" class="fragment"></p>
-<p><img data-src="script_2.png" class="fragment"></p>
-</div>
-</div></div>
-</section>
-<section id="create-new-script" class="slide level2">
-<h2>Create New Script</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li><code>touch</code>: Create new file
-<ul>
-<li>Update write-time for existing files</li>
-</ul></li>
-<li><code>nano</code>: Create and open file with built-in editor
-<ul>
-<li>Other built-ins: vi, vim, emacs</li>
-<li>Exit sequence:
-<ul>
-<li><code>ctrl-x</code>: save and exit</li>
-<li><code>y</code>: overwrite</li>
-<li>specify name, return</li>
-</ul></li>
-</ul></li>
-<li>Specify interpreter via <code>#!</code>
-<ul>
-<li>Provides path to executable</li>
-</ul></li>
-</ul>
-</div>
-</div><div class="column" style="width:&quot;50%;">
-<div class="r-stack">
-<p><img data-src="touch.png" class="fragment"></p>
-<p><img data-src="nano_1.png" class="fragment"></p>
-<p><img data-src="nano_2.png" class="fragment"></p>
-<p><img data-src="nano_3.png" class="fragment"></p>
-<p><img data-src="nano_4.png" class="fragment"></p>
-</div>
-</div></div>
-</section>
-<section id="add-commands" class="slide level2">
-<h2>Add Commands</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li>Specify series of commands</li>
-<li>Helpful - spend time to determine logic</li>
-<li>Save work for future use</li>
-<li>Back up work in case of tragedy</li>
-</ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co">#!/bin/bash</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># Use positional slicing</span></span>
-<span id="cb1-4"><a></a><span class="va">alpha</span><span class="op">=</span><span class="st">"abcdefg"</span></span>
-<span id="cb1-5"><a></a><span class="va">let_e</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">4</span><span class="op">:</span><span class="dv">1</span><span class="va">}</span></span>
-<span id="cb1-6"><a></a><span class="va">let_g</span><span class="op">=</span><span class="va">${alpha</span><span class="op">:</span><span class="dv">6</span><span class="va">}</span></span>
-<span id="cb1-7"><a></a><span class="bu">echo</span> <span class="va">${let_e}${let_g}${let_g}</span></span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># Use character slicing</span></span>
-<span id="cb1-10"><a></a><span class="va">beta</span><span class="op">=</span><span class="st">"aaa-bbb_ccc"</span></span>
-<span id="cb1-11"><a></a><span class="va">int_var</span><span class="op">=</span><span class="va">${beta</span><span class="op">#</span><span class="pp">*</span>-<span class="va">}</span></span>
-<span id="cb1-12"><a></a><span class="bu">echo</span> <span class="va">${int_var</span><span class="op">%</span>_<span class="pp">*</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="cf">for</span> var <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb1-2"><a></a>    <span class="bu">echo</span> <span class="va">$var</span></span>
+<span id="cb1-3"><a></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>egg
-bbb</code></pre>
+<pre><code>1
+2
+3</code></pre>
 </div>
 </div>
 </div></div>
 </section>
-<section id="chmod" class="slide level2">
-<h2>CHMOD</h2>
+<section id="iterating-through-lists" class="slide level2">
+<h2>Iterating through lists</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li>CHange MODe of files</li>
-<li><code>ls -l</code> shows file permissions by group
+<li>Possible to store lists
 <ul>
-<li>User, group, other</li>
+<li>Use space between items</li>
+<li>Account for bash returning space-separated output</li>
 </ul></li>
-<li>Numeric access (8 bit):
+<li>Reference list in for loop syntax by variable</li>
+<li>Best practices:
 <ul>
-<li>read (4), write (2), execute (1)</li>
-<li><code>rw-</code> = 6</li>
-<li><code>rwxr-xr-x</code> = 755</li>
+<li>Add <code>do</code> to for loop definition line
+<ul>
+<li>“;” indicates End Of Line (EOL)</li>
 </ul></li>
-<li><code>chmod 755 new_script.sh</code> - detail permission for each group</li>
-<li><code>chmod +x new_script.sh</code> - assign execute to all groups</li>
+<li>Indent to show logic levels</li>
+<li><code>done</code> on separate line, original indentation</li>
+</ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="chmod_1.png"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="chmod_2.png" class="fragment"></p>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="va">my_sent</span><span class="op">=</span><span class="st">"i am great"</span></span>
+<span id="cb3-2"><a></a><span class="va">num_list</span><span class="op">=</span><span class="va">$(</span><span class="bu">echo</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span><span class="va">)</span></span>
+<span id="cb3-3"><a></a><span class="co"># file_list=$(ls .)</span></span>
+<span id="cb3-4"><a></a><span class="cf">for</span> var <span class="kw">in</span> <span class="va">$my_sent</span> <span class="va">$num_list</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb3-5"><a></a>    <span class="bu">echo</span> <span class="va">$var</span></span>
+<span id="cb3-6"><a></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>i
+am
+great
+1
+2
+3</code></pre>
 </div>
 </div>
 </div></div>
 </section>
-<section id="execution" class="slide level2">
-<h2>Execution</h2>
+<section id="nesting-for-loops" class="slide level2">
+<h2>Nesting For Loops</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li>Execute in different shells
-<ul>
-<li>current vs sub shell</li>
-</ul></li>
-<li>Relevant for variable availability</li>
-<li>Method 1: source or dot execution
-<ul>
-<li><code>source new_script.sh</code></li>
-<li><code>. new_script.sh</code> is preferred</li>
-<li>Executes script in current shell</li>
-<li>Variables available for future use</li>
-<li>Ideal for creating environments</li>
-<li>Overrides permissions (discouraged)</li>
-</ul></li>
+<li>A child loop can exist within a parent loop</li>
+<li><strong>Entire</strong> child loop executed for <strong>each</strong> parent loop iteration</li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
-<p><img data-src="exec_1.png" class="fragment"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="cf">for</span> num <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb5-2"><a></a>    <span class="cf">for</span> alpha <span class="kw">in</span> <span class="dt">{</span>a<span class="dt">..</span>c<span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb5-3"><a></a>        <span class="bu">echo</span> <span class="va">${num}$alpha</span></span>
+<span id="cb5-4"><a></a>    <span class="cf">done</span></span>
+<span id="cb5-5"><a></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1a
+1b
+1c
+2a
+2b
+2c
+3a
+3b
+3c</code></pre>
+</div>
+</div>
 </div></div>
 </section>
-<section id="execution-1" class="slide level2">
-<h2>Execution</h2>
+<section id="more-best-practices" class="slide level2">
+<h2>More Best Practices</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li>Method 2: direct execution
+<li>Flatter is better
 <ul>
-<li><code>./new_script.sh</code></li>
-<li>Executes script in sub-shell</li>
-<li>Variables only exist in sub-shell</li>
-<li>Ideal for executing independent scripts</li>
+<li>Limit nesting (logic) depth to ~3 levels</li>
+<li>Try restructuring if deeper logic is needed</li>
+<li>Be more clever</li>
 </ul></li>
-<li>Method 3: interpreter execution
+<li>Organize code into blocks</li>
+<li>Have meaningful variable names
 <ul>
-<li><code>bash new_script.sh</code></li>
-<li>Executes script in specified shell</li>
-<li>Discouraged, specify interpreter in script</li>
-</ul></li>
-</ul>
-</div>
-</div><div class="column" style="width:&quot;50%;">
-<div class="r-stack">
-<p><img data-src="exec_2.png" class="fragment"></p>
-<p><img data-src="exec_3.png" class="fragment"></p>
-</div>
-</div></div>
-</section>
-<section id="ides" class="slide level2">
-<h2>IDEs</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li>Integrated Development Environments</li>
-<li>Editor: syntax highlighting, formatting, error detection</li>
-<li>Compiler or Interpreter: build and execute</li>
-<li>Extra features:
-<ul>
-<li>Testing</li>
-<li>Debugging</li>
-<li>Visualization</li>
-<li>Remote Development</li>
-</ul></li>
-<li>Popular for Bash
-<ul>
-<li><a href="https://www.sublimetext.com/download">Sublime</a>: simple text editor, “free”</li>
-<li><a href="https://code.visualstudio.com/download">VS Code</a>: IDE, plugins for languages, free for research and learning</li>
+<li><code>for i in {a..c} ...</code> vs</li>
+<li><code>for alpha in {a..c} ...</code></li>
 </ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
-<div class="r-stack">
-<p><img data-src="ide_1.png" class="fragment"></p>
-<p><img data-src="ide_2.png" class="fragment"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="cf">for</span> num <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">2</span><span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb7-2"><a></a>    <span class="cf">for</span> alpha <span class="kw">in</span> <span class="dt">{</span>a<span class="dt">..</span>b<span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb7-3"><a></a>        <span class="bu">echo</span> <span class="va">${num}$alpha</span></span>
+<span id="cb7-4"><a></a>    <span class="cf">done</span></span>
+<span id="cb7-5"><a></a><span class="cf">done</span></span>
+<span id="cb7-6"><a></a><span class="bu">echo</span></span>
+<span id="cb7-7"><a></a><span class="cf">for</span> num_alpha <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">2</span><span class="dt">}{</span>a<span class="dt">..</span>b<span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb7-8"><a></a>    <span class="bu">echo</span> <span class="va">$num_alpha</span></span>
+<span id="cb7-9"><a></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1a
+1b
+2a
+2b
+
+1a
+1b
+2a
+2b</code></pre>
+</div>
 </div>
 </div></div>
-</section>
-<section id="style-guides" class="slide level2">
-<h2>Style guides</h2>
-<div style="font-size: 65%;">
-<ul>
-<li>Individual programming style - “Spaghetti Code”
-<ul>
-<li>Difficult to read, maintain, optimize</li>
-<li><a href="https://xkcd.com/1513/">xkcd comic</a></li>
-</ul></li>
-<li><strong>Strongly encourage</strong> using style guides
-<ul>
-<li><a href="https://google.github.io/styleguide/shellguide.html">Google Style</a></li>
-</ul></li>
-<li>Reasons:
-<ul>
-<li>Increases professionalism</li>
-<li>Ability to collaborate</li>
-<li>Access to plugins (autoformatter, linter, documentation)</li>
-<li>Program faster</li>
-<li>Reduce learning curve</li>
-</ul></li>
-</ul>
-</div>
 
 
 </section>
@@ -456,7 +410,7 @@ bbb</code></pre>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Bash Basics: scripting</p>
+<p>Bash Basics: for loops</p>
 </div>
 </div></div>
 
