@@ -14,22 +14,12 @@ execute:
 | Variables | [Slides](lectures/02-variables/02-variables.qmd){target="_blank"} | [Code](code/02_variables.sh) | [Practice](lectures/02-variables/02-practice.qmd){target="_blank"} |
 | Scripting | [Slides](lectures/03-scripting/03-scripting.qmd){target="_blank"} | [Code](code/03_scripting.sh) | [Practice](lectures/03-scripting/03-practice.qmd){target="_blank"} |
 | For Loops | [Slides](lectures/04-for_loops/04-for_loops.qmd){target="_blank"} | [Code](code/04_for_loops.sh) | [Practice](lectures/04-for_loops/04-practice.qmd){target="_blank"} |
-| Conditionals | [Slides](lectures/05-conditionals/05-conditionals.qmd) | Code | Practice |
+| Conditionals | [Slides](lectures/05-conditionals/05-conditionals.qmd) | [Code](code/05_conditionals.sh) | [Practice](lectures/05-conditionals/05-practice.qmd){target="_blank"} |
 
 
 </details>
 
 <!-- ## Lectures
-1. The terminal: linux tree, commands, making directories
-    - [Slides](01-the_terminal.qmd) | [Code](code/the_terminal.sh) | Practice
-1. Variables: strings, braces, slicing
-    - Slides | Code | Practice
-1. Scripts: permissions, execution, IDEs
-    - Slides | Code | Practice
-1. For loops: iteration, nesting
-    - Slides | Code | Practice
-1. Conditionals: exit status, boolean, specials
-    - Slides | Code | Practice
 1. For loops, cont'd: arrays, couters, dynamic control
     - Slides | Code | Practice
 1. Shell environment: shells, nano, globals, aliases

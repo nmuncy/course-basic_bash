@@ -14,6 +14,16 @@ format:
 engine: knitr
 ---
 
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**: Learn to save and execute work
+- **Skill**:
+    - Write scripts and manage permissions
+    - Execute in desired shell
+- **Why**: Beginner programming, increases efficiency and replicability of work
+::::
+
 ## Scripts
 
 :::::: columns
@@ -170,7 +180,7 @@ echo ${int_var%_*}
 :::::
 ::::::
 
-## Execution
+## Execution, cont'd
 
 :::::: columns
 ::::: {.column width="50%"}

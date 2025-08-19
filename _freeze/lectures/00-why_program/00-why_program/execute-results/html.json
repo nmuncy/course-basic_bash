@@ -1,0 +1,19 @@
+{
+  "hash": "2fab6a96f469d3bae61a1e4537238d73",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Why Program?\"\nauthor: Nathan M. Muncy\ndate: today\nexecute:\n    freeze: auto\n    # echo: true\nformat:\n  revealjs:\n    footer: \"Bash Basics: why\"\n    logo: ../../media/nd_logo.png\n    transition: slide\n    slide-number: true\nengine: knitr\n---\n\n## Neuroimaging is cool\n\n## Neuroimaging is popular\n:::::{style=\"font-size: 65%;\"}\n:::: {style=\"text-align:center;\"}\n\n![MRI citations by year](trend_mri.png){.absolute top=10 left=10 width=\"350\" height=\"300\"}\n\n![fMRI citations by year](trend_fmri.png){.absolute top=20 left=10 width=\"350\" height=\"300\"}\n\n![DWI citations by year](trend_dwi.png){.absolute top=20 right=10 width=\"350\" height=\"300\"}\n\n::::\n\nMRI paper trends (https://app.dimensions.ai)\n:::::\n\n## Data are large\n\n## Models are complex\n\n## Vast compute times\n\n## Lack of GUI\n\n## Goals for course\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

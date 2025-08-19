@@ -14,6 +14,14 @@ format:
 engine: knitr
 ---
 
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**: Learn foundational workflow concept
+- **Skill**: Build loops and nested loops
+- **Why**: Reduce code redundancies
+::::
+
 ## What is a For Loop
 
 :::::: columns

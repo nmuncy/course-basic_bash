@@ -13,6 +13,20 @@ format:
     slide-number: true
 ---
 
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**:
+    - Orient to command line interface (CLI)
+    - Anatomy of commands
+    - Directory structures
+- **Skill**: learn basic commands and build directory trees
+- **Why**:
+    - CLI is the most common interface with neuroimaging software
+    - Neuroimaging software requires certain directory structures
+    - Thinking in trees will help organize your data
+::::
+
 ## What is a terminal
 
 ::::::: columns

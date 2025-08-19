@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-08-18">
+  <meta name="dcterms.date" content="2025-08-19">
   <title>Bash Esssentials – Conditionals: Square braces, boolean logic, special chekcs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -204,7 +204,21 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-08-18</p>
+  <p class="date">2025-08-19</p>
+</section>
+<section id="purpose" class="slide level2">
+<h2>Purpose</h2>
+<div style="font-size: 65%;">
+<ul>
+<li><strong>Knowledge</strong>: Learn workflow control with dependencies</li>
+<li><strong>Skill</strong>:
+<ul>
+<li>Using exit status values</li>
+<li>Conditional statements</li>
+</ul></li>
+<li><strong>Why</strong>: Increase flexibility of workflows</li>
+</ul>
+</div>
 </section>
 <section id="exit-status" class="slide level2">
 <h2>Exit Status</h2>
@@ -280,7 +294,7 @@ fail</code></pre>
 <li>White space (spaces) is very important!</li>
 </ul>
 </div>
-</div><div class="column" style="width:&quot;50%;">
+</div><div class="column" style="font-size: 80%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="bu">[</span> 1 <span class="ot">==</span> 1 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> true <span class="kw">||</span> <span class="bu">echo</span> false</span>
 <span id="cb5-2"><a></a><span class="bu">[</span> 1 <span class="ot">==</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> true <span class="kw">||</span> <span class="bu">echo</span> false</span>
@@ -315,7 +329,7 @@ fail 1</code></pre>
 <li>Conditional work only executed <code>if</code> exit status = <code>0</code></li>
 </ul>
 </div>
-</div><div class="column" style="width:&quot;50%;">
+</div><div class="column" style="font-size: 80%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="cf">if</span> <span class="bu">[</span> 1 <span class="ot">==</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
 <span id="cb7-2"><a></a>    <span class="bu">echo</span> Yay</span>
@@ -347,7 +361,7 @@ fail 1</code></pre>
 <li>Multiple <code>elif</code> statements allowed</li>
 </ul>
 </div>
-</div><div class="column" style="width:&quot;50%;">
+</div><div class="column" style="font-size: 80%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="va">foo</span><span class="op">=</span>bat</span>
 <span id="cb9-2"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$foo</span> <span class="ot">==</span> bar <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
@@ -380,7 +394,7 @@ fail 1</code></pre>
 <li>Does not evaluate an assertion</li>
 </ul>
 </div>
-</div><div class="column" style="width:&quot;50%;">
+</div><div class="column" style="font-size: 80%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="va">foo</span><span class="op">=</span>foo</span>
 <span id="cb11-2"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$foo</span> <span class="ot">==</span> bar <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
@@ -411,7 +425,7 @@ fail 1</code></pre>
 </ul></li>
 </ul>
 </div>
-</div><div class="column" style="width:&quot;50%;">
+</div><div class="column" style="font-size: 80%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="va">foo</span><span class="op">=</span>bar</span>
 <span id="cb13-2"><a></a><span class="va">num</span><span class="op">=</span>1</span>
@@ -431,25 +445,201 @@ fail 1</code></pre>
 </section>
 <section id="conditionals-or" class="slide level2">
 <h2>Conditionals: or</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>Assertions can also be combined with <code>||</code></li>
+<li>As before, <code>||</code> only continues if exit status <code>&gt;0</code>
+<ul>
+<li>So, only one of the assertions needs to be true</li>
+</ul></li>
+<li>These can be combined with <code>&amp;&amp;</code></li>
+</ul>
+</div>
+</div><div class="column" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="va">alpha</span><span class="op">=</span>a</span>
+<span id="cb15-2"><a></a><span class="va">num</span><span class="op">=</span>1</span>
+<span id="cb15-3"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$alpha</span> <span class="ot">==</span> b <span class="bu">]</span> <span class="kw">||</span> <span class="bu">[</span> <span class="va">$num</span> <span class="ot">==</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb15-4"><a></a>    <span class="bu">echo</span> Success</span>
+<span id="cb15-5"><a></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Success</code></pre>
+</div>
+</div>
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">If the assertion was written <code>[ $alpha == a ]</code>, would <code>[ $num == 1 ]</code> have been assessed?</li>
+<li class="fragment">Which of the assertions triggers the conditional in:</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="bu">[</span> 1 <span class="ot">==</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">[</span> a <span class="ot">==</span> a <span class="bu">]</span> <span class="kw">||</span> <span class="bu">[</span> b <span class="ot">==</span> b <span class="bu">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="conditionals-not" class="slide level2">
 <h2>Conditionals: not</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>The character <code>!</code> inverts logic</li>
+<li><code>[ 1 != 0 ]</code>: true (<code>$?</code>=0)</li>
+<li><code>[ ! 1 == 0 ]</code>: true (<code>$?</code>=0)</li>
+<li>Note the white space in the second assertion</li>
+<li>Useful to name variables to help reader through logic</li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="bu">[</span> a <span class="ot">!=</span> b <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="va">$?</span></span>
+<span id="cb18-2"><a></a><span class="bu">[</span> <span class="ot">!</span> foo <span class="ot">==</span> bar <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="va">$?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+0</code></pre>
+</div>
+</div>
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">What is printed in:</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a></a><span class="bu">[</span> <span class="ot">!</span> foo <span class="ot">==</span> bar <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> alpha <span class="dt">\</span></span>
+<span id="cb20-2"><a></a>    <span class="kw">||</span> <span class="bu">echo</span> beta</span>
+<span id="cb20-3"><a></a><span class="bu">[</span> foo <span class="ot">==</span> bar <span class="bu">]</span> <span class="kw">||</span> <span class="bu">[</span> <span class="ot">!</span> 1 <span class="ot">==</span> 2 <span class="bu">]</span> <span class="dt">\</span></span>
+<span id="cb20-4"><a></a>    <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> delta <span class="kw">||</span> <span class="bu">echo</span> gamma</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="special-conditionals" class="slide level2">
-<h2>Special conditionals</h2>
+<section id="comparing-integers" class="slide level2">
+<h2>Comparing integers</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>A set of special comparators operators for integers
+<ul>
+<li><code>-gt</code>: greater than</li>
+<li><code>-lt</code>: less than</li>
+<li><code>-ge</code>: greater than or equal</li>
+<li><code>-le</code>: less than or equal</li>
+<li><code>-eq</code>: equal</li>
+<li><code>-ne</code>: not equal</li>
+</ul></li>
+<li>Note: double parentheses are used for mathematic expressions (&gt;, &lt;, &lt;=, etc)
+<ul>
+<li><code>(( 1 &lt;= 2 ))</code></li>
+</ul></li>
+<li>See more details <a href="http://mywiki.wooledge.org/BashFAQ/031">here</a></li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a></a><span class="bu">[</span> 1 <span class="ot">-lt</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> 1 <span class="va">$?</span></span>
+<span id="cb21-2"><a></a><span class="bu">[</span> <span class="ot">!</span> 1 <span class="ot">-gt</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> 2 <span class="va">$?</span></span>
+<span id="cb21-3"><a></a><span class="bu">[</span> 1 <span class="ot">-le</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> 3 <span class="va">$?</span></span>
+<span id="cb21-4"><a></a><span class="bu">[</span> <span class="ot">!</span> 1 <span class="ot">-ge</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> 4 <span class="va">$?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 0
+2 0
+3 0
+4 0</code></pre>
+</div>
+</div>
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">What is printed in:</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a></a><span class="bu">[</span> <span class="ot">!</span> 1 <span class="ot">-lt</span> 2 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">[</span> 1 <span class="ot">-eq</span> 1 <span class="bu">]</span> <span class="dt">\</span></span>
+<span id="cb23-2"><a></a>    <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> alpha <span class="kw">||</span> <span class="bu">echo</span> beta</span>
+<span id="cb23-3"><a></a><span class="bu">[</span> 1 <span class="ot">-gt</span> 2 <span class="bu">]</span> <span class="kw">||</span> <span class="bu">[</span> <span class="ot">!</span> 1 <span class="ot">-ge</span> 2 <span class="bu">]</span> <span class="dt">\</span></span>
+<span id="cb23-4"><a></a>    <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> delta <span class="kw">||</span> <span class="bu">echo</span> gamma</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="file-management" class="slide level2">
+<h2>File management</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<ul>
+<li>A set of special comparators operators for managing files
+<ul>
+<li><code>-e</code>: something exists</li>
+<li><code>-d</code>: a directory exists</li>
+<li><code>-f</code>: a file exists</li>
+<li><code>-s</code>: a file contains data</li>
+<li><code>-z</code>: a variable is empty</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a></a><span class="bu">[</span> <span class="ot">-f</span> foo.txt <span class="bu">]</span></span>
+<span id="cb24-2"><a></a><span class="bu">[</span> <span class="ot">-e</span> foobar <span class="bu">]</span></span>
+<span id="cb24-3"><a></a><span class="bu">[</span> <span class="ot">-d</span> my_dir <span class="bu">]</span></span>
+<span id="cb24-4"><a></a><span class="bu">[</span> <span class="ot">-z</span> <span class="va">$foo</span> <span class="bu">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="font-size: 65%;">
+<ul>
+<li class="fragment">What is printed in:</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a></a><span class="bu">echo</span> <span class="st">"foo"</span> <span class="op">&gt;</span> my_file.txt</span>
+<span id="cb25-2"><a></a><span class="bu">[</span> <span class="ot">!</span> <span class="ot">-s</span> my_file.txt <span class="bu">]</span> <span class="dt">\</span></span>
+<span id="cb25-3"><a></a>    <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> alpha <span class="kw">||</span> <span class="bu">echo</span> beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="best-practices" class="slide level2">
 <h2>Best practices</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 65%;">
 <ul>
 <li>Keep conditionals below 3 levels of logic:
 <ul>
-<li>Simple</li>
-<li>Flat</li>
-<li>Short</li>
+<li>Simple, flat, short</li>
 </ul></li>
 <li>Consider breaking up long chains into multiple statements</li>
 <li>Inverting logic often simplifies</li>
+<li>Name variables to help through logic
+<ul>
+<li><code>is_empty</code>: holds boolean of whether file is empty</li>
+<li><code>file_exists</code>: holds boolean of whether file exists</li>
+</ul></li>
 </ul>
+</div>
+</div><div class="fragment column" style="font-size: 65%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a></a><span class="co"># Flight control with variable</span></span>
+<span id="cb26-2"><a></a><span class="va">foo</span><span class="op">=</span><span class="st">""</span></span>
+<span id="cb26-3"><a></a><span class="va">foo_empty</span><span class="op">=</span><span class="va">$(</span><span class="bu">[</span> <span class="ot">-z</span> <span class="va">$foo</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="va">$?</span> <span class="kw">||</span> <span class="bu">echo</span> <span class="va">$?)</span></span>
+<span id="cb26-4"><a></a><span class="bu">[</span> <span class="va">$foo_empty</span> <span class="ot">==</span> 0 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> set_var <span class="kw">||</span> <span class="bu">echo</span> move_on</span>
+<span id="cb26-5"><a></a></span>
+<span id="cb26-6"><a></a><span class="co"># Flight control with file</span></span>
+<span id="cb26-7"><a></a><span class="fu">touch</span> foo.txt</span>
+<span id="cb26-8"><a></a><span class="va">foo_exists</span><span class="op">=</span><span class="va">$(</span><span class="bu">[</span> <span class="ot">-f</span> foo.txt <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="va">$?</span> <span class="kw">||</span> <span class="bu">echo</span> <span class="va">$?)</span></span>
+<span id="cb26-9"><a></a><span class="bu">[</span> <span class="va">$foo_exists</span> <span class="ot">==</span> 0 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> move_on <span class="kw">||</span> <span class="bu">echo</span> make_foo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">What would be printed in the examples above?</li>
+</ul>
+</div></div>
 
 
 </section>

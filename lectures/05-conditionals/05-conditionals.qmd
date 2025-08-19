@@ -14,6 +14,16 @@ format:
 engine: knitr
 ---
 
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**: Learn workflow control with dependencies
+- **Skill**:
+    - Using exit status values
+    - Conditional statements
+- **Why**: Increase flexibility of workflows
+::::
+
 ## Exit Status
 
 :::::: columns
@@ -74,7 +84,7 @@ asdf && echo pass || echo fail
 ::::
 :::::
 
-::::: {.column width="\"50%"}
+::::: {.column width="\"50%" style="font-size: 80%;"}
 ```{bash}
 #| echo: true
 [ 1 == 1 ] && echo true || echo false
@@ -101,7 +111,7 @@ asdf && echo pass || echo fail
 ::::
 :::::
 
-::::: {.column width="\"50%"}
+::::: {.column width="\"50%" style="font-size: 80%;"}
 ```{bash}
 #| echo: true
 if [ 1 == 1 ]; then
@@ -133,7 +143,7 @@ fi
 ::::
 :::::
 
-::::: {.column width="\"50%"}
+::::: {.column width="\"50%" style="font-size: 80%;"}
 ```{bash}
 #| echo: true
 foo=bat
@@ -166,7 +176,7 @@ fi
 ::::
 :::::
 
-::::: {.column width="\"50%"}
+::::: {.column width="\"50%" style="font-size: 80%;"}
 ```{bash}
 #| echo: true
 foo=foo
@@ -194,7 +204,7 @@ fi
 ::::
 :::::
 
-::::: {.column width="\"50%"}
+::::: {.column width="\"50%" style="font-size: 80%;"}
 ```{bash}
 #| echo: true
 foo=bar
@@ -214,15 +224,193 @@ fi
 
 ## Conditionals: or
 
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Assertions can also be combined with `||`
+- As before, `||` only continues if exit status `>0`
+    - So, only one of the assertions needs to be true
+- These can be combined with `&&`
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+alpha=a
+num=1
+if [ $alpha == b ] || [ $num == 1 ]; then
+    echo Success
+fi
+```
+
+::::{style="font-size: 65%;"}
+::: incremental
+- If the assertion was written `[ $alpha == a ]`, would `[ $num == 1 ]` have been assessed?
+- Which of the assertions triggers the conditional in:
+:::
+::::
+::::{.fragment}
+```{bash}
+#| echo: true
+[ 1 == 2 ] && [ a == a ] || [ b == b ]
+```
+::::
+:::::
+::::::::
+
 ## Conditionals: not
 
-## Special conditionals
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- The character `!` inverts logic
+- `[ 1 != 0 ]`: true (`$?`=0)
+- `[ ! 1 == 0 ]`: true (`$?`=0)
+- Note the white space in the second assertion
+- Useful to name variables to help reader through logic
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+[ a != b ] && echo $?
+[ ! foo == bar ] && echo $?
+```
+::::{style="font-size: 65%;"}
+::: incremental
+- What is printed in:
+:::
+::::
+::::{.fragment}
+```{bash}
+#| echo: true
+#| eval: false
+[ ! foo == bar ] && echo alpha \
+    || echo beta
+[ foo == bar ] || [ ! 1 == 2 ] \
+    && echo delta || echo gamma
+```
+::::
+:::::
+::::::::
+
+## Comparing integers
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- A set of special comparators operators for integers
+    - `-gt`: greater than
+    - `-lt`: less than
+    - `-ge`: greater than or equal
+    - `-le`: less than or equal
+    - `-eq`: equal
+    - `-ne`: not equal
+- Note: double parentheses are used for mathematic expressions (>, <, <=, etc)
+    - `(( 1 <= 2 ))`
+- See more details [here](http://mywiki.wooledge.org/BashFAQ/031)
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+[ 1 -lt 2 ] && echo 1 $?
+[ ! 1 -gt 2 ] && echo 2 $?
+[ 1 -le 2 ] && echo 3 $?
+[ ! 1 -ge 2 ] && echo 4 $?
+```
+::::{style="font-size: 65%;"}
+::: incremental
+- What is printed in:
+:::
+::::
+::::{.fragment}
+```{bash}
+#| echo: true
+#| eval: false
+[ ! 1 -lt 2 ] && [ 1 -eq 1 ] \
+    && echo alpha || echo beta
+[ 1 -gt 2 ] || [ ! 1 -ge 2 ] \
+    && echo delta || echo gamma
+```
+::::
+:::::
+::::::::
+
+## File management
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- A set of special comparators operators for managing files
+    - `-e`: something exists
+    - `-d`: a directory exists
+    - `-f`: a file exists
+    - `-s`: a file contains data
+    - `-z`: a variable is empty
+::::
+:::::
+
+::::: {.column width="\"50%"}
+```{bash}
+#| echo: true
+#| eval: false
+[ -f foo.txt ]
+[ -e foobar ]
+[ -d my_dir ]
+[ -z $foo ]
+```
+::::{style="font-size: 65%;"}
+::: incremental
+- What is printed in:
+:::
+::::
+::::{.fragment}
+```{bash}
+#| echo: true
+#| eval: false
+echo "foo" > my_file.txt
+[ ! -s my_file.txt ] \
+    && echo alpha || echo beta
+```
+::::
+:::::
+::::::::
 
 ## Best practices
 
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
 - Keep conditionals below 3 levels of logic:
-    - Simple
-    - Flat
-    - Short
+    - Simple, flat, short
 - Consider breaking up long chains into multiple statements
 - Inverting logic often simplifies
+- Name variables to help through logic
+    - `is_empty`: holds boolean of whether file is empty
+    - `file_exists`: holds boolean of whether file exists
+::::
+:::::
+
+::::: {.fragment .column width="\"50%" style="font-size: 65%;"}
+```{bash}
+#| echo: true
+#| eval: false
+# Flight control with variable
+foo=""
+foo_empty=$([ -z $foo ] && echo $? || echo $?)
+[ $foo_empty == 0 ] && echo set_var || echo move_on
+
+# Flight control with file
+touch foo.txt
+foo_exists=$([ -f foo.txt ] && echo $? || echo $?)
+[ $foo_exists == 0 ] && echo move_on || echo make_foo
+```
+::: incremental
+- What would be printed in the examples above?
+:::
+:::::
+::::::::

@@ -14,6 +14,19 @@ format:
 engine: knitr
 ---
 
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**:
+  - Learn how to store data for future use
+  - Manipulate return values
+- **Skill**:
+  - Strings and variables
+  - Brace expansion
+  - Manipulating variable information
+- **Why**: Increased efficiency in working with files and variables
+::::
+
 ## Strings
 ::::::: columns
 ::::: {.column width="50%"}

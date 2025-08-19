@@ -9,7 +9,7 @@
 <meta name="author" content="Nathan Muncy">
 <meta name="dcterms.date" content="2025-08-19">
 
-<title>Variables: practice – Bash Esssentials</title>
+<title>Conditionals: practice – Bash Esssentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,8 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#string-slicing" id="toc-string-slicing" class="nav-link active" data-scroll-target="#string-slicing">String Slicing</a></li>
-  <li><a href="#building-strings" id="toc-building-strings" class="nav-link" data-scroll-target="#building-strings">Building Strings</a></li>
+  <li><a href="#integrate-for-loops-and-conditionals" id="toc-integrate-for-loops-and-conditionals" class="nav-link active" data-scroll-target="#integrate-for-loops-and-conditionals">Integrate for loops and conditionals</a></li>
   </ul>
 </nav>
     </div>
@@ -132,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Variables: practice</h1>
+<h1 class="title">Conditionals: practice</h1>
 </div>
 
 
@@ -161,31 +160,77 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="string-slicing" class="level2">
-<h2 class="anchored" data-anchor-id="string-slicing">String Slicing</h2>
+<section id="integrate-for-loops-and-conditionals" class="level2">
+<h2 class="anchored" data-anchor-id="integrate-for-loops-and-conditionals">Integrate for loops and conditionals</h2>
+<!-- for num in {1..5}; do
+    for alpha in {a..d}; do
+        if [ $num -lt 3 ]; then
+            echo $num foo-$alpha
+        elif [ $num -eq 3 ]; then
+            echo $num foobar-$alpha
+        else
+            echo $num bar-$alpha
+        fi
+    done
+done -->
 <ol type="1">
-<li>Set a variable to hold the string “aaa-bbb_ccc”.</li>
-<li>Using string slicing syntax (“#” and/or “%”):
-<ol type="i">
-<li>Write a command that uses the variable to print “aaa”.</li>
-<li>Write a command that uses the variable to print “ccc”.</li>
-<li>Write a set of commands that uses the variable to print “bbb”.</li>
-</ol></li>
-<li>Repeat i-iii using positional slicing syntax (“:”).</li>
-<li>Share both a screenshot and your relevant <code>$ history</code> with your instructor.</li>
+<li>Write a script that uses nested for loops and conditional statements to produce the output in <a href="#fig-1" class="quarto-xref">Figure&nbsp;1</a>. <!-- for subj_num in {1..5}; do
+    for sess in ses-{a..c}; do
+        subj_sess=dir_tree/sub-${subj_num}/$sess
+        mkdir -p $subj_sess
+        for file in file-{1..4}; do
+            file_path=${subj_sess}/sub-${subj_num}_${sess}_${file}_bar.txt
+            touch $file_path
+            [ $subj_num -lt 4 ] && echo "foo bar" > $file_path
+        done
+    done
+done --></li>
+<li>Write a script that repeats the Lesson 4 <a href="../../lectures/04-for_loops/04-practice.html">practice</a> but only adds ‘foo bar’ to the text files of subjects 1-3 (see <a href="#fig-2" class="quarto-xref">Figure&nbsp;2</a>). <!-- work_dir=$(pwd)
+for subj in sub-{1..5}; do
+    for sess in ses-{a..c}; do
+        subj_sess=dir_tree/${subj}/$sess
+        cd $subj_sess
+        for file in sub*; do
+            [ -s $file ] && echo $file Full || echo $file Empty
+        done
+        cd $work_dir
+    done
+done --></li>
+<li>Write a script that loops through the directory structure made above to checks whether the text files have content. Print both the file name and whether the file is ‘Empty’ or ‘Full’ (see <a href="#fig-3" class="quarto-xref">Figure&nbsp;3</a>).</li>
+<li>Send these scripts to your instructor.</li>
 </ol>
-</section>
-<section id="building-strings" class="level2">
-<h2 class="anchored" data-anchor-id="building-strings">Building Strings</h2>
-<!-- alpha="abcdefg"
-int=${alpha#*d}
-e=${int%f*}
-echo ${e}${alpha#*f}${alpha#*f} -->
-<ol type="1">
-<li>Write a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.</li>
-<li>Repeat 1, with positional slicing methods.</li>
-<li>Send the syntax and screenshot to your instructor.</li>
-</ol>
+<div style="text-align:center;">
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="prac_1.png" id="fig-1" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="prac_2.png" id="fig-2" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="prac_3.png" id="fig-3" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
+</figcaption>
+</figure>
+</div>
+</div>
 
 
 </section>
