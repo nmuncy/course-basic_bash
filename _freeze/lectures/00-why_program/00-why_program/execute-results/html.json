@@ -1,8 +1,8 @@
 {
-  "hash": "2fab6a96f469d3bae61a1e4537238d73",
+  "hash": "0f23efcc0f4ea9acb666561c8408e2d4",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Why Program?\"\nauthor: Nathan M. Muncy\ndate: today\nexecute:\n    freeze: auto\n    # echo: true\nformat:\n  revealjs:\n    footer: \"Bash Basics: why\"\n    logo: ../../media/nd_logo.png\n    transition: slide\n    slide-number: true\nengine: knitr\n---\n\n## Neuroimaging is cool\n\n## Neuroimaging is popular\n:::::{style=\"font-size: 65%;\"}\n:::: {style=\"text-align:center;\"}\n\n![MRI citations by year](trend_mri.png){.absolute top=10 left=10 width=\"350\" height=\"300\"}\n\n![fMRI citations by year](trend_fmri.png){.absolute top=20 left=10 width=\"350\" height=\"300\"}\n\n![DWI citations by year](trend_dwi.png){.absolute top=20 right=10 width=\"350\" height=\"300\"}\n\n::::\n\nMRI paper trends (https://app.dimensions.ai)\n:::::\n\n## Data are large\n\n## Models are complex\n\n## Vast compute times\n\n## Lack of GUI\n\n## Goals for course\n",
+    "markdown": "---\ntitle: \"Why Program?\"\nauthor: Nathan M. Muncy\ndate: today\nexecute:\n    freeze: auto\n    # echo: true\nformat:\n  revealjs:\n    footer: \"Bash Basics: why\"\n    logo: ../../media/nd_logo.png\n    transition: slide\n    slide-number: true\nengine: knitr\n---\n\n## Neuroimaging is cool\n\n## Neuroimaging is popular\n:::::{style=\"font-size: 65%;\"}\n::: {.r-stack}\n![](trend_mri.png){.fragment}\n\n![](trend_fmri.png){.fragment}\n\n![](trend_dwi.png){.fragment}\n:::\nMRI, fMRI, and DWI paper trends (https://app.dimensions.ai)\n:::::\n\n## Data are large\n\n## Models are complex\n\n## Vast compute times\n\n## Lack of GUI\n\n## Goals for course\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

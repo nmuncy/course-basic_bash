@@ -21,7 +21,9 @@ engine: knitr
 - **Skill**:
     - Write scripts and manage permissions
     - Execute in desired shell
-- **Why**: Beginner programming, increases efficiency and replicability of work
+- **Why**:
+    - Workflow replicability, transparency
+    - Increase complexity of commands while decreasing researcher effort
 ::::
 
 ## Scripts
@@ -46,7 +48,7 @@ engine: knitr
 
 ::::: {.column width="\"50%"}
 :::: {.r-stack}
-![](script_1){.fragment}
+![](script_1.png){.fragment}
 
 ![](script_2.png){.fragment}
 ::::

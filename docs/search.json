@@ -4,96 +4,96 @@
     "href": "materials.html",
     "title": "Course Slides, Code, and Practice Materials",
     "section": "",
-    "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice\n\n\n\n\nVariables\nSlides\nCode\nPractice\n\n\n\n\nScripting\nSlides\nCode\nPractice\n\n\n\n\nFor Loops\nSlides\nCode\nPractice\n\n\n\n\nConditionals\nSlides\nCode\nPractice"
+    "text": "Module 1: Bash Essentials\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\nThe terminal\nSlides\nCode\nPractice\n\n\n\n\nVariables\nSlides\nCode\nPractice\n\n\n\n\nScripting\nSlides\nCode\nPractice\n\n\n\n\nFor Loops\nSlides\nCode\nPractice\n\n\n\n\nConditionals\nSlides\nCode\nPractice\n\n\n\n\nFor Loops, cont’d\nSlides\nCode\nPractice"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#purpose",
     "href": "lectures/05-conditionals/05-conditionals.html#purpose",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn workflow control with dependencies\nSkill:\n\nUsing exit status values\nConditional statements\n\nWhy: Increase flexibility of workflows"
+    "text": "Purpose\n\n\nKnowledge: Learn workflow control with dependencies\nSkill:\n\nUsing exit status values\nConditional statements\n\nWhy:\n\nAvoid rebuilding existing files: increases workflow speed, decreases CPU time\nControl/account for different situations (multiple tasks, data types)\nValidate output to avoid downstream errors"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#exit-status",
     "href": "lectures/05-conditionals/05-conditionals.html#exit-status",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Exit Status",
     "text": "Exit Status\n\n\n\n\nEvery command returns an exit status\nHeld on special variable $?\n0: command was successful\n&gt;0: command was unsuccessful\n\nEach number has specific meaning\n\n\n\n\n\necho hi\necho $?\nasdf\necho $?\n\nhi\n0\nbash: line 2: asdf: command not found\n127"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
     "href": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Use Exit Status",
     "text": "Use Exit Status\n\n\n\n\nSpecial commands && and || evaluate $?\n&& listens for exit status 0\n\nif 0 (success) then process continues\n\n|| listens for exit status &gt;0\n\nif &gt;0 (fail) the process continues\n\nCan be combined\nKeep these simple!\n\n\n\n\necho hi && echo pass || echo fail\nasdf && echo pass || echo fail\n\nhi\npass\nbash: line 1: asdf: command not found\nfail"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#square-braces",
     "href": "lectures/05-conditionals/05-conditionals.html#square-braces",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Square Braces",
     "text": "Square Braces\n\n\n\n\nSquare braces ‘[]’ evaluate an internal statement to set exit status\nInternal exit status 0: external exit status 0\nInternal exit status &gt;0: external exit status 1\nWhite space (spaces) is very important!\n\n\n\n\n[ 1 == 1 ] && echo true || echo false\n[ 1 == 2 ] && echo true || echo false\n[ a == a ] && echo pass $? || echo fail $?\n[ a == b ] && echo pass $? || echo fail $?\n\ntrue\nfalse\npass 0\nfail 1"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
     "href": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Conditionals: if",
     "text": "Conditionals: if\n\n\n\n\nConditional syntax utilize square braces for workflow control\n\ni.e. execute commands only if a condition is met\n\nSyntax structure:\n\nif [ assertion ]\nNew line then\nCommands\nNew line fi to close conditional\n\nConditional work only executed if exit status = 0\n\n\n\n\nif [ 1 == 1 ]; then\n    echo Yay\nfi\nif [ 1 == 2 ]; then\n    echo Nay\nfi\n\nYay\n\n\n\n\nWhy is == used and not =?"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
     "href": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Conditionals: elif",
     "text": "Conditionals: elif\n\n\n\n\nAbility to capture workflow if first conditional fails\nelif (else if) assessed only when if exit status = 1\nAn entire new conditional is written\nRead conditionals top -&gt; bottom\nMultiple elif statements allowed\n\n\n\n\nfoo=bat\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nfi\n\nfoobat\n\n\n\n\nHow many conditionals failed?\nWhat if foo=baz?"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
     "href": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Conditionals: else",
     "text": "Conditionals: else\n\n\n\n\nelse catches all failed conditions\nSpecified last\nDoes not evaluate an assertion\n\n\n\n\nfoo=foo\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nelse\n    echo \"Unrecognized value of foo\"\nfi\n\nUnrecognized value of foo"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
     "href": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Conditionals: and",
     "text": "Conditionals: and\n\n\n\n\nMultiple assertions can be combined with &&\nAs before, && only continues if exit status = 0\n\nSo, all conditionals would need to be true\n\n\n\n\n\nfoo=bar\nnum=1\nif [ $foo == bar ] && [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nWould [ $num == 1 ] be assessed if foo=baz?"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
     "href": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Conditionals: or",
     "text": "Conditionals: or\n\n\n\n\nAssertions can also be combined with ||\nAs before, || only continues if exit status &gt;0\n\nSo, only one of the assertions needs to be true\n\nThese can be combined with &&\n\n\n\n\nalpha=a\nnum=1\nif [ $alpha == b ] || [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nIf the assertion was written [ $alpha == a ], would [ $num == 1 ] have been assessed?\nWhich of the assertions triggers the conditional in:\n\n\n\n\n[ 1 == 2 ] && [ a == a ] || [ b == b ]"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
     "href": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Conditionals: not",
     "text": "Conditionals: not\n\n\n\n\nThe character ! inverts logic\n[ 1 != 0 ]: true ($?=0)\n[ ! 1 == 0 ]: true ($?=0)\nNote the white space in the second assertion\nUseful to name variables to help reader through logic\n\n\n\n\n[ a != b ] && echo $?\n[ ! foo == bar ] && echo $?\n\n0\n0\n\n\n\n\nWhat is printed in:\n\n\n\n\n[ ! foo == bar ] && echo alpha \\\n    || echo beta\n[ foo == bar ] || [ ! 1 == 2 ] \\\n    && echo delta || echo gamma"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#comparing-integers",
     "href": "lectures/05-conditionals/05-conditionals.html#comparing-integers",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Comparing integers",
     "text": "Comparing integers\n\n\n\n\nA set of special comparators operators for integers\n\n-gt: greater than\n-lt: less than\n-ge: greater than or equal\n-le: less than or equal\n-eq: equal\n-ne: not equal\n\nNote: double parentheses are used for mathematic expressions (&gt;, &lt;, &lt;=, etc)\n\n(( 1 &lt;= 2 ))\n\nSee more details here\n\n\n\n\n[ 1 -lt 2 ] && echo 1 $?\n[ ! 1 -gt 2 ] && echo 2 $?\n[ 1 -le 2 ] && echo 3 $?\n[ ! 1 -ge 2 ] && echo 4 $?\n\n1 0\n2 0\n3 0\n4 0\n\n\n\n\nWhat is printed in:\n\n\n\n\n[ ! 1 -lt 2 ] && [ 1 -eq 1 ] \\\n    && echo alpha || echo beta\n[ 1 -gt 2 ] || [ ! 1 -ge 2 ] \\\n    && echo delta || echo gamma"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#file-management",
     "href": "lectures/05-conditionals/05-conditionals.html#file-management",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "File management",
     "text": "File management\n\n\n\n\nA set of special comparators operators for managing files\n\n-e: something exists\n-d: a directory exists\n-f: a file exists\n-s: a file contains data\n-z: a variable is empty\n\n\n\n\n\n[ -f foo.txt ]\n[ -e foobar ]\n[ -d my_dir ]\n[ -z $foo ]\n\n\n\nWhat is printed in:\n\n\n\n\necho \"foo\" &gt; my_file.txt\n[ ! -s my_file.txt ] \\\n    && echo alpha || echo beta"
   },
   {
     "objectID": "lectures/05-conditionals/05-conditionals.html#best-practices",
     "href": "lectures/05-conditionals/05-conditionals.html#best-practices",
-    "title": "Conditionals: Square braces, boolean logic, special chekcs",
+    "title": "Conditionals: Exit status, square braces, special checks",
     "section": "Best practices",
     "text": "Best practices\n\n\n\n\nKeep conditionals below 3 levels of logic:\n\nSimple, flat, short\n\nConsider breaking up long chains into multiple statements\nInverting logic often simplifies\nName variables to help through logic\n\nis_empty: holds boolean of whether file is empty\nfile_exists: holds boolean of whether file exists\n\n\n\n\n\n# Flight control with variable\nfoo=\"\"\nfoo_empty=$([ -z $foo ] && echo $? || echo $?)\n[ $foo_empty == 0 ] && echo set_var || echo move_on\n\n# Flight control with file\ntouch foo.txt\nfoo_exists=$([ -f foo.txt ] && echo $? || echo $?)\n[ $foo_exists == 0 ] && echo move_on || echo make_foo\n\n\nWhat would be printed in the examples above?"
   },
@@ -102,7 +102,7 @@
     "href": "lectures/04-for_loops/04-for_loops.html#purpose",
     "title": "For Loops: Iterations and Nesting",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn foundational workflow concept\nSkill: Build loops and nested loops\nWhy: Reduce code redundancies"
+    "text": "Purpose\n\n\nKnowledge: Build loops and nested loops\nSkill:\n\nAnatomy of for loop\nThinking in iterations\nNesting logic\n\nWhy:\n\nApply same set of commands multiple times\ne.g. pipeline step for each subject"
   },
   {
     "objectID": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
@@ -231,6 +231,13 @@
     "text": "Neuroimaging is cool"
   },
   {
+    "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
+    "href": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
+    "title": "Why Program?",
+    "section": "Neuroimaging is popular",
+    "text": "Neuroimaging is popular\n\n\n\n\n\n\nMRI, fMRI, and DWI paper trends (https://app.dimensions.ai)"
+  },
+  {
     "objectID": "lectures/00-why_program/00-why_program.html#data-are-large",
     "href": "lectures/00-why_program/00-why_program.html#data-are-large",
     "title": "Why Program?",
@@ -333,7 +340,7 @@
     "href": "lectures/02-variables/02-variables.html#purpose",
     "title": "Variables: Strings, Braces, Slicing",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge:\n\nLearn how to store data for future use\nManipulate return values\n\nSkill:\n\nStrings and variables\nBrace expansion\nManipulating variable information\n\nWhy: Increased efficiency in working with files and variables"
+    "text": "Purpose\n\n\nKnowledge:\n\nLearn how to store data for future use\nManipulate return values\n\nSkill:\n\nStrings and variables\nBrace expansion\nManipulating variable information\n\nWhy:\n\nUseful for building organized directory trees, file names\nCommonly desirous to extract information from file name"
   },
   {
     "objectID": "lectures/02-variables/02-variables.html#strings",
@@ -396,7 +403,7 @@
     "href": "lectures/03-scripting/03-scripting.html#purpose",
     "title": "Scripting: Permissions, Shells, and IDEs",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn to save and execute work\nSkill:\n\nWrite scripts and manage permissions\nExecute in desired shell\n\nWhy: Beginner programming, increases efficiency and replicability of work"
+    "text": "Purpose\n\n\nKnowledge: Learn to save and execute work\nSkill:\n\nWrite scripts and manage permissions\nExecute in desired shell\n\nWhy:\n\nWorkflow replicability, transparency\nIncrease complexity of commands while decreasing researcher effort"
   },
   {
     "objectID": "lectures/03-scripting/03-scripting.html#scripts",
@@ -483,10 +490,87 @@
     "text": "Write a script that uses nested for loops and conditional statements to produce the output in Figure 1. \nWrite a script that repeats the Lesson 4 practice but only adds ‘foo bar’ to the text files of subjects 1-3 (see Figure 2). \nWrite a script that loops through the directory structure made above to checks whether the text files have content. Print both the file name and whether the file is ‘Empty’ or ‘Full’ (see Figure 3).\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
   },
   {
-    "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
-    "href": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
-    "title": "Why Program?",
-    "section": "Neuroimaging is popular",
-    "text": "Neuroimaging is popular\n\n\n\n\n\nMRI citations by year\n\n\n\n\n\nfMRI citations by year\n\n\n\n\n\nDWI citations by year\n\n\n\nMRI paper trends (https://app.dimensions.ai)"
+    "objectID": "lectures/06-for_loops/06-for_loops.html#purpose",
+    "href": "lectures/06-for_loops/06-for_loops.html#purpose",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn to align information across lists and build flexible for loops\nSkill:\n\nArrays and counters\nControl number of iterations\n\nWhy:\n\nLinking information (e.g. label-anatomy)\nDecrease workflow time and number of errors"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#c-style-for-loop",
+    "href": "lectures/06-for_loops/06-for_loops.html#c-style-for-loop",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "C-style for loop",
+    "text": "C-style for loop\n\n\n\n\nBash supports another for loop specification:\n\nSpecify start, final, and increment values\nUsing numerical assessment parentheses (double)\nSeparated by semicolon\n\nOnly works with integers\n\n\n\n\nfor ((i=1; i&lt;5; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#dynamic-iteration-control",
+    "href": "lectures/06-for_loops/06-for_loops.html#dynamic-iteration-control",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Dynamic iteration control",
+    "text": "Dynamic iteration control\n\n\n\n\nStart and final values do not have to be hardcoded\nC-style supports referencing a variable\nThese start and final variables could be set by another process\n\nnum_foo=$(ls foo*.txt | wc -l)\n\n\n\n\n\nstart=1\nend=5\nfor ((i=$start; i&lt;$end; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#while-loops-and-counters",
+    "href": "lectures/06-for_loops/06-for_loops.html#while-loops-and-counters",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "While loops and counters",
+    "text": "While loops and counters\n\n\n\n\nWhile loops can also be used to control iteration number\nSyntax based on an assertion being true\nSpecific structure:\n\nSpace separated while [ assertion ]\nNew line do\nSeries of commands\nTypically a variable is updated\nNew line done\n\n\n\n\n\ncnt=1\nwhile [ $cnt -lt 5 ]; do\n    echo $cnt\n    let cnt+=1\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Arrays",
+    "text": "Arrays\n\n\n\n\nArrays are a 0-indexed data type\nPositional structure:\n\nDefined within parentheses\nSpace separated\n\nData extracted by referencing position\n\n\n\n\narr_foo=({a..d})\narr_fruit=(apple orange banana)\necho ${arr_foo[0]}\necho ${arr_fruit[2]}\n\na\nbanana\n\n\n\n\nWhy was ${arr_fruit[2]} used and not ${arr_fruit[3]}?"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-length",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays-length",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Arrays: length",
+    "text": "Arrays: length\n\n\n\n\nSpecial syntax to extract array length\n\n${#arr[@]}\n# queries length\n\nUseful for extracting positions from multiple arrays\n\n\n\n\nhero=(batman superman aquaman)\ncolor=(black red green)\necho \"hero array length is ${#hero[@]}\"\n\n# Check arrays are same length\n[ ${#hero[@]} == ${#color[@]} ] \\\n    || echo \"Array length mismatch\"\n\nidx=0\nwhile [ $idx -lt ${#hero[@]} ]; do\n    echo \"The hero ${hero[$idx]} wears ${color[$idx]}\"\n    let idx+=1\ndone\n\nhero array length is 3\nThe hero batman wears black\nThe hero superman wears red\nThe hero aquaman wears green\n\n\n\n\nDo I need to consider 0-indexing in my while assertion?\nNote the extraction of array information with variable."
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-position",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays-position",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Arrays: position",
+    "text": "Arrays: position\n\n\n\n\nSpecial syntax to reference array indices\n\n${!arr[@]}\n! queries indices\n@ references all array values\n\nUseful for iterations through array positions\n\n\n\n\narr=({a..d})\necho \"Array positions are ${!arr[@]}\"\n\nfor pos in ${!arr[@]}; do\n    echo \"Array position $pos value is ${arr[$pos]}\"\ndone\n\nArray positions are 0 1 2 3\nArray position 0 value is a\nArray position 1 value is b\nArray position 2 value is c\nArray position 3 value is d"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-values",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays-values",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Arrays: values",
+    "text": "Arrays: values"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-looping",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays-looping",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Arrays: looping",
+    "text": "Arrays: looping"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#building-arrays-andn-variables",
+    "href": "lectures/06-for_loops/06-for_loops.html#building-arrays-andn-variables",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Building arrays andn variables",
+    "text": "Building arrays andn variables"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#while-loops",
+    "href": "lectures/06-for_loops/06-for_loops.html#while-loops",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "While loops",
+    "text": "While loops\n\n\n\n\nSimilarly,\n\n\n\n\nstart=1\nend=5\nfor ((i=$start; i&lt;$end; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#building-arrays-and-variables",
+    "href": "lectures/06-for_loops/06-for_loops.html#building-arrays-and-variables",
+    "title": "For Loops: Arrays, counters, dynamic control",
+    "section": "Building arrays and variables",
+    "text": "Building arrays and variables\n\n\n\n\nVariables and arrays can be built\nOperator += allows for concatentation\n\nIn addition to increasing integer values\n\nCommand unset clears variables\n\n\n\n\nunset var_foo\nunset arr_foo\n\n[ -z var_foo ] && echo empty\n\nfor i in {1..4}; do\n    var_foo+=\"$i\"\n    arr_foo+=($i)\ndone\n\n[ -z var_foo ] || echo full\n\necho $var_foo\necho ${var_foo[@]}\n\nfull\n1234\n1234"
   }
 ]

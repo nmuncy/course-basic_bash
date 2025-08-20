@@ -17,9 +17,14 @@ engine: knitr
 ## Purpose
 
 :::: {style="font-size: 65%;"}
-- **Knowledge**: Learn foundational workflow concept
-- **Skill**: Build loops and nested loops
-- **Why**: Reduce code redundancies
+- **Knowledge**: Build loops and nested loops
+- **Skill**:
+    - Anatomy of for loop
+    - Thinking in iterations
+    - Nesting logic
+- **Why**:
+    - Apply same set of commands multiple times
+    - e.g. pipeline step for each subject
 ::::
 
 ## What is a For Loop
@@ -38,9 +43,6 @@ engine: knitr
     - Not lazy, efficient (without tendonitis)!
 ::::
 :::: {.column width="\"50%"}
-<!-- ::: {.fragment}
-![https://www.codingem.com/flowchart-loop/](for_1.png)
-::: -->
 ```{mermaid}
 flowchart TB
   A[Start of list] --> B(Execute commands)

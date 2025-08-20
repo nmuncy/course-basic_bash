@@ -1,5 +1,5 @@
 ---
-title: "Conditionals: Square braces, boolean logic, special chekcs"
+title: "Conditionals: Exit status, square braces, special checks"
 author: Nathan M. Muncy
 date: today
 execute:
@@ -21,7 +21,10 @@ engine: knitr
 - **Skill**:
     - Using exit status values
     - Conditional statements
-- **Why**: Increase flexibility of workflows
+- **Why**:
+    - Avoid rebuilding existing files: increases workflow speed, decreases CPU time
+    - Control/account for different situations (multiple tasks, data types)
+    - Validate output to avoid downstream errors
 ::::
 
 ## Exit Status

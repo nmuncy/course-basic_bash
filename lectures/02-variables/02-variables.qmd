@@ -24,7 +24,10 @@ engine: knitr
   - Strings and variables
   - Brace expansion
   - Manipulating variable information
-- **Why**: Increased efficiency in working with files and variables
+- **Why**:
+  - Useful for building organized directory trees, file names
+  - Commonly desirous to extract information from file name
+
 ::::
 
 ## Strings
