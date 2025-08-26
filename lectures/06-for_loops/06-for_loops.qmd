@@ -1,5 +1,5 @@
 ---
-title: "For Loops: Arrays, counters, dynamic control"
+title: "For Loops, cont'd: Arrays, counters, dynamic control"
 author: Nathan M. Muncy
 date: today
 execute:
@@ -213,14 +213,14 @@ done
 unset var_foo
 unset arr_foo
 
-[ -z var_foo ] && echo empty
+[ -z $var_foo ] && echo empty
 
 for i in {1..4}; do
     var_foo+="$i"
     arr_foo+=($i)
 done
 
-[ -z var_foo ] || echo full
+[ -z $var_foo ] || echo full
 
 echo $var_foo
 echo ${var_foo[@]}

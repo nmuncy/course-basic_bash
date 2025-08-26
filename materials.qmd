@@ -6,32 +6,41 @@ execute:
 
 <details>
 
-<summary> Module 1: Bash Essentials </summary>
+<summary> Module 1: Bash Syntax </summary>
 
 | Topic | Slides | Code | Exercises |
 |---------------|--------|--------|---------|------|-----------|
-| The terminal | [Slides](lectures/01-the_terminal/01-the_terminal.qmd){target="_blank"} | [Code](code/01_the_terminal.sh) | [Practice](lectures/01-the_terminal/01-practice.qmd){target="_blank"} |
-| Variables | [Slides](lectures/02-variables/02-variables.qmd){target="_blank"} | [Code](code/02_variables.sh) | [Practice](lectures/02-variables/02-practice.qmd){target="_blank"} |
-| Scripting | [Slides](lectures/03-scripting/03-scripting.qmd){target="_blank"} | [Code](code/03_scripting.sh) | [Practice](lectures/03-scripting/03-practice.qmd){target="_blank"} |
-| For Loops | [Slides](lectures/04-for_loops/04-for_loops.qmd){target="_blank"} | [Code](code/04_for_loops.sh) | [Practice](lectures/04-for_loops/04-practice.qmd){target="_blank"} |
-| Conditionals | [Slides](lectures/05-conditionals/05-conditionals.qmd){target="_blank"} | [Code](code/05_conditionals.sh) | [Practice](lectures/05-conditionals/05-practice.qmd){target="_blank"} |
-| For Loops, cont'd | [Slides](lectures/06-for_loops/06-for_loops.qmd){target="_blank"} | Code | Practice |
-
+| 1. The terminal | [Slides](lectures/01-the_terminal/01-the_terminal.qmd){target="_blank"} | [Code](code/01_the_terminal.sh) | [Practice](lectures/01-the_terminal/01-practice.qmd){target="_blank"} |
+| 2. Variables | [Slides](lectures/02-variables/02-variables.qmd){target="_blank"} | [Code](code/02_variables.sh) | [Practice](lectures/02-variables/02-practice.qmd){target="_blank"} |
+| 3. Scripting | [Slides](lectures/03-scripting/03-scripting.qmd){target="_blank"} | [Code](code/03_scripting.sh) | [Practice](lectures/03-scripting/03-practice.qmd){target="_blank"} |
+| 4. For Loops | [Slides](lectures/04-for_loops/04-for_loops.qmd){target="_blank"} | [Code](code/04_for_loops.sh) | [Practice](lectures/04-for_loops/04-practice.qmd){target="_blank"} |
+| 5. Conditionals | [Slides](lectures/05-conditionals/05-conditionals.qmd){target="_blank"} | [Code](code/05_conditionals.sh) | [Practice](lectures/05-conditionals/05-practice.qmd){target="_blank"} |
+| 6. For Loops, cont'd | [Slides](lectures/06-for_loops/06-for_loops.qmd){target="_blank"} | [Code](code/06_for_loops_contd.sh) | [Practice](lectures/06-for_loops/06-practice.qmd){target="_blank"} |
 
 </details>
 
-<!-- ## Lectures
-1. Shell environment: shells, nano, globals, aliases
-    - Slides | Code | Practice
-1. Git and GitHub: tokens, tracking changes
-    - Slides | Code | Practice
-1. Git and GitHub, cont'd: branching, merges
-    - Slides | Code | Practice
-1. Cluster computing: moving data, output
+
+<details>
+
+<summary> Module 2: Productivity </summary>
+
+| Topic | Slides | Code | Exercises |
+|---------------|--------|--------|---------|------|-----------|
+| 7. Shells | [Slides](lectures/07-shells/07-shells.qmd){target="_blank"} | [Code](code/07_shells.sh) | [Practice](lectures/07-shells/07-practice.qmd){target="_blank"} |
+
+</details>
+
+<!--
+1. Cluster computing: login, moving data, output
     - Slides | Code | Practice
 1. Cluster computing, cont'd: passing args, scheduling
     - Slides | Code | Practice
 1. Conda: make, export, delete environments
     - Slides | Code | Practice
 1. Project environments: build files, triggers, sharing
-    - Slides | Code | Practice -->
+    - Slides | Code | Practice
+1. Git and GitHub: tokens, tracking changes
+    - Slides | Code | Practice
+1. Git and GitHub, cont'd: branching, merges
+    - Slides | Code | Practice
+-->

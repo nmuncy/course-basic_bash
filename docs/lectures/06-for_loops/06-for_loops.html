@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-08-20">
-  <title>Bash Esssentials – For Loops: Arrays, counters, dynamic control</title>
+  <meta name="dcterms.date" content="2025-08-26">
+  <title>Bash Esssentials – For Loops, cont’d: Arrays, counters, dynamic control</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -194,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">For Loops: Arrays, counters, dynamic control</h1>
+  <h1 class="title">For Loops, cont’d: Arrays, counters, dynamic control</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -204,7 +204,7 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-08-20</p>
+  <p class="date">2025-08-26</p>
 </section>
 <section id="purpose" class="slide level2">
 <h2>Purpose</h2>
@@ -446,19 +446,20 @@ The hero aquaman wears green</code></pre>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="bu">unset</span> <span class="va">var_foo</span></span>
 <span id="cb13-2"><a></a><span class="bu">unset</span> <span class="va">arr_foo</span></span>
 <span id="cb13-3"><a></a></span>
-<span id="cb13-4"><a></a><span class="bu">[</span> <span class="ot">-z</span> var_foo <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> empty</span>
+<span id="cb13-4"><a></a><span class="bu">[</span> <span class="ot">-z</span> <span class="va">$var_foo</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> empty</span>
 <span id="cb13-5"><a></a></span>
 <span id="cb13-6"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">4</span><span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span></span>
 <span id="cb13-7"><a></a>    <span class="va">var_foo</span><span class="op">+=</span><span class="st">"</span><span class="va">$i</span><span class="st">"</span></span>
 <span id="cb13-8"><a></a>    <span class="va">arr_foo</span><span class="op">+=</span><span class="va">($i)</span></span>
 <span id="cb13-9"><a></a><span class="cf">done</span></span>
 <span id="cb13-10"><a></a></span>
-<span id="cb13-11"><a></a><span class="bu">[</span> <span class="ot">-z</span> var_foo <span class="bu">]</span> <span class="kw">||</span> <span class="bu">echo</span> full</span>
+<span id="cb13-11"><a></a><span class="bu">[</span> <span class="ot">-z</span> <span class="va">$var_foo</span> <span class="bu">]</span> <span class="kw">||</span> <span class="bu">echo</span> full</span>
 <span id="cb13-12"><a></a></span>
 <span id="cb13-13"><a></a><span class="bu">echo</span> <span class="va">$var_foo</span></span>
 <span id="cb13-14"><a></a><span class="bu">echo</span> <span class="va">${var_foo</span><span class="op">[@]</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>full
+<pre><code>empty
+full
 1234
 1234</code></pre>
 </div>

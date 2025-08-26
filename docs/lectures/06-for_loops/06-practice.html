@@ -9,7 +9,7 @@
 <meta name="author" content="Nathan Muncy">
 <meta name="dcterms.date" content="2025-08-26">
 
-<title>Scripting: practice – Bash Esssentials</title>
+<title>For Loops, cont’d: practice – Bash Esssentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#moving-to-scripts" id="toc-moving-to-scripts" class="nav-link active" data-scroll-target="#moving-to-scripts">Moving to scripts</a></li>
+  <li><a href="#varying-iterations" id="toc-varying-iterations" class="nav-link active" data-scroll-target="#varying-iterations">Varying iterations</a></li>
   </ul>
 </nav>
     </div>
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Scripting: practice</h1>
+<h1 class="title">For Loops, cont’d: practice</h1>
 </div>
 
 
@@ -160,16 +160,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="moving-to-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="moving-to-scripts">Moving to scripts</h2>
+<section id="varying-iterations" class="level2">
+<h2 class="anchored" data-anchor-id="varying-iterations">Varying iterations</h2>
+<!-- arr=({a..d})
+for idx in ${!arr[@]}; do
+    for ((cnt=0; cnt<=$idx; cnt+=1)); do
+        echo ${arr[$idx]}
+    done
+    echo
+done -->
 <ol type="1">
-<li>Write and execute a script that builds the directory tree from <a href="../../lectures/01-the_terminal/01-practice.html">Practice 1</a>.
-<ul>
-<li>Remember to make the script executable for all users.</li>
-</ul></li>
-<li>Write a script that completes <a href="../../lectures/02-variables/02-practice.html">Practice 2</a>.</li>
+<li>Set an array to hold the letters a-d, then incorporate this array in a set of nested loops to generate the output in <a href="#fig-1" class="quarto-xref">Figure&nbsp;1</a>. <!-- arr=({a..d})
+for idx in ${!arr[@]}; do
+    unset alpha
+    for ((cnt=0; cnt<=$idx; cnt+=1)); do
+        alpha+="${arr[$idx]}"
+    done
+    echo $alpha
+done --></li>
+<li>Incorporate the above array in a set of nested loops to generate the output in <a href="#fig-2" class="quarto-xref">Figure&nbsp;2</a>.</li>
 <li>Send these scripts to your instructor.</li>
 </ol>
+<div style="text-align:center;">
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="prac_1.png" id="fig-1" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="prac_2.png" id="fig-2" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
 
 
 </section>

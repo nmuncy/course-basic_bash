@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nathan M. Muncy">
   <meta name="dcterms.date" content="2025-08-26">
-  <title>Bash Esssentials – Why Program?</title>
+  <title>Bash Esssentials – Shells: types, editing, and aliases</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -128,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Why Program?</h1>
+  <h1 class="title">Shells: types, editing, and aliases</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -140,34 +206,376 @@ Nathan M. Muncy
 
   <p class="date">2025-08-26</p>
 </section>
-<section id="neuroimaging-is-cool" class="slide level2">
-<h2>Neuroimaging is cool</h2>
-</section>
-<section id="neuroimaging-is-popular" class="slide level2">
-<h2>Neuroimaging is popular</h2>
+<section id="purpose" class="slide level2">
+<h2>Purpose</h2>
 <div style="font-size: 65%;">
-<div class="r-stack">
-<p><img data-src="trend_mri.png" class="fragment"></p>
-<p><img data-src="trend_fmri.png" class="fragment"></p>
-<p><img data-src="trend_dwi.png" class="fragment"></p>
+<ul>
+<li><strong>Knowledge</strong>: Learn about different shells and how to interact with them</li>
+<li><strong>Skill</strong>:
+<ul>
+<li>Types of shells</li>
+<li>Targeting shells</li>
+<li>Global variables</li>
+<li>Aliases</li>
+</ul></li>
+<li><strong>Why</strong>:
+<ul>
+<li>Control information in workflows</li>
+<li>Prepare for cluster computing</li>
+<li>Increase user comfort</li>
+</ul></li>
+</ul>
 </div>
-<p>MRI, fMRI, and DWI paper trends (https://app.dimensions.ai)</p>
+</section>
+<section id="environment-configuration" class="slide level2">
+<h2>Environment Configuration</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Three important build files in <code>$HOME</code>
+<ol type="1">
+<li><code>.profile</code> (OSx)</li>
+<li><code>.bash_profile</code></li>
+<li><code>.bashrc</code></li>
+</ol></li>
+<li>Purpose
+<ul>
+<li>Establish shell environments</li>
+<li>User customization</li>
+</ul></li>
+<li>Differ in relationship to shell types</li>
+</ul>
+</div></div>
+</section>
+<section id="shells-nonlogin" class="slide level2">
+<h2>Shells: non/login</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Login shell: Initiated when user logs into system
+<ul>
+<li>e.g.&nbsp;over SSH connection (cluster)</li>
+<li>Builds from <code>~/.bash_profile</code> or <code>~/.profile</code></li>
+</ul></li>
+<li>Non-login shell: Subsequent shells after login session
+<ul>
+<li>e.g.&nbsp;Terminal tabs, subshells</li>
+<li>Builds from <code>~/.bashrc</code></li>
+</ul></li>
+<li>Determine login shells status with <code>shopt -q login_shell</code></li>
+</ul>
+</div><div class="column" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="bu">shopt</span> <span class="at">-q</span> login_shell <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> login <span class="dt">\</span></span>
+<span id="cb1-2"><a></a>    <span class="kw">||</span> <span class="bu">echo</span> non-login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>non-login</code></pre>
 </div>
+</div>
+</div></div>
 </section>
-<section id="data-are-large" class="slide level2">
-<h2>Data are large</h2>
+<section id="shells-noninteractive" class="slide level2">
+<h2>Shells: non/interactive</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Interactive shell: Allows user to enter commands
+<ul>
+<li>Typical shell experience</li>
+<li>Builds from <code>~/.bashrc</code></li>
+</ul></li>
+<li>Non-interactive shell: Does not receive commands
+<ul>
+<li>e.g.&nbsp;Subshells, commands executed through SSH tunnel</li>
+<li>Subshells inherit environment</li>
+<li>Log-in, non-interactive build from <code>~/.bash_profile</code></li>
+</ul></li>
+<li>Determine interactive shells status with <code>$-</code>
+<ul>
+<li>Interactive shells contain “i”</li>
+</ul></li>
+</ul>
+</div><div class="column" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="bu">echo</span> <span class="va">$-</span></span>
+<span id="cb3-2"><a></a><span class="kw">[[</span> <span class="va">$-</span> <span class="ot">==</span> <span class="pp">*</span>i<span class="pp">*</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> interact <span class="dt">\</span></span>
+<span id="cb3-3"><a></a>    <span class="kw">||</span> <span class="bu">echo</span> non-interact</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>hBc
+non-interact</code></pre>
+</div>
+</div>
+</div></div>
 </section>
-<section id="models-are-complex" class="slide level2">
-<h2>Models are complex</h2>
+<section id="complexity-of-config-files" class="slide level2">
+<h2>Complexity of config files</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>.bash_profile</code>: keep simple due to login processes
+<ul>
+<li>common to execute <code>.bashrc</code> in current shell</li>
+<li><code>[ -f ~/.bashrc ] &amp;&amp; . ~/.bashrc</code></li>
+</ul></li>
+<li><code>.bashrc</code>: user customizations
+<ul>
+<li>Update PATH</li>
+<li>Set functions</li>
+<li>Add aliases</li>
+</ul></li>
+</ul>
+</div><div class="column" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">cat</span> ~/.bash_profile <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb5-2"><a></a><span class="fu">cat</span> ~/.bashrc <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1
+      48</code></pre>
+</div>
+</div>
+</div></div>
 </section>
-<section id="vast-compute-times" class="slide level2">
-<h2>Vast compute times</h2>
+<section id="executing-code-revisited" class="slide level2">
+<h2>Executing code, revisited</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>source</code> or <code>.</code> executes in current shell</li>
+<li><code>./</code> executes in non-login, non-interactive shell
+<ul>
+<li>AND copied environment from current shell</li>
+</ul></li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="co">#!/bin/bash</span></span>
+<span id="cb7-2"><a></a><span class="bu">shopt</span> <span class="at">-q</span> login_shell <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> login <span class="dt">\</span></span>
+<span id="cb7-3"><a></a>    <span class="kw">||</span> <span class="bu">echo</span> non-login</span>
+<span id="cb7-4"><a></a><span class="kw">[[</span> <span class="va">$-</span> <span class="ot">==</span> <span class="pp">*</span>i<span class="pp">*</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> interact <span class="dt">\</span></span>
+<span id="cb7-5"><a></a>    <span class="kw">||</span> <span class="bu">echo</span> non-interact</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="shells_1.png"></p>
+<figcaption>Execution in different shells</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="lack-of-gui" class="slide level2">
-<h2>Lack of GUI</h2>
+<section id="executing-code-more-options" class="slide level2">
+<h2>Executing code, more options</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>$(foo)</code> executes command <code>foo</code> in subshell</li>
+<li><code>bash foo.sh</code> or <code>sh foo.sh</code> to execute script in language-specific subshell</li>
+<li>Remote execution in login, non-interactive shell</li>
+<li><strong>Point</strong>: Relevant to remember <strong><em>how</em></strong> these shell environments build
+<ul>
+<li>(<code>.bashrc</code> vs <code>.bash_profile</code>)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="va">my_files</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> .<span class="va">)</span></span>
+<span id="cb8-2"><a></a><span class="fu">ssh</span> user@server.com <span class="st">"mkdir ~/test"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
 </section>
-<section id="goals-for-course" class="slide level2">
-<h2>Goals for course</h2>
+<section id="global-variables" class="slide level2">
+<h2>Global variables</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Variables only exist in definition shell</li>
+<li>Global variables: variables for current and subshells</li>
+<li>Defined with <code>export</code> and uses SCREAM_SNAKE_CASE
+<ul>
+<li><code>export FOO_BAR=some_value</code></li>
+</ul></li>
+<li>Useful for building environments</li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="co">#!/bin/bash</span></span>
+<span id="cb9-2"><a></a><span class="bu">echo</span> <span class="va">$foo</span></span>
+<span id="cb9-3"><a></a><span class="bu">echo</span> <span class="va">$FOO</span></span>
+<span id="cb9-4"><a></a><span class="bu">export</span> <span class="va">BAR</span><span class="op">=</span>my_bar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="vars_1.png"></p>
+<figcaption>FOO available in subshell, BAR not available in parent shell</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="global-variables-building-environments" class="slide level2">
+<h2>Global variables: Building environments</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Important paths for workflows
+<ul>
+<li>Software</li>
+<li>Templates</li>
+<li>Singularity</li>
+<li>Reference files</li>
+</ul></li>
+<li>Should be added to <code>.bashrc</code>
+<ul>
+<li>(e.g.&nbsp;<code>nano ~/.bashrc</code>)</li>
+</ul></li>
+<li>Rebuild shell to reflect changes
+<ul>
+<li>New, or ‘<code>. ~/.bashrc</code>’</li>
+</ul></li>
+<li><code>env</code>: Print all globals</li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="bu">export</span> <span class="va">FSLDIR</span><span class="op">=</span>/path/to/fsl/install</span>
+<span id="cb10-2"><a></a><span class="bu">export</span> <span class="va">TEMPLATEFLOW</span><span class="op">=</span>/path/to/templateflow</span>
+<span id="cb10-3"><a></a><span class="bu">export</span> <span class="va">SING_FREESURFER</span><span class="op">=</span>/path/to/freesurfer.simg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="global-variables-path" class="slide level2">
+<h2>Global variables: PATH</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>PATH</code>: search locations for matching command to executable</li>
+<li>New software: update to PATH needed
+<ul>
+<li><code>.bashrc</code> is common location, <code>.bash_profile</code> is <em>OK</em></li>
+</ul></li>
+<li>Use <code>:</code> to separate locations
+<ul>
+<li>Better to append (beware trailing whitespace)</li>
+<li>Avoid prepending (despite enthusiastic install tutorials)</li>
+</ul></li>
+<li>Command based on <strong><em>first</em></strong> match in PATH</li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="va">PATH</span><span class="op">=</span><span class="va">${PATH}</span>:<span class="dt">\</span></span>
+<span id="cb11-2"><a></a>/path/to/soft/a:<span class="dt">\</span></span>
+<span id="cb11-3"><a></a>/path/to/soft/b:<span class="dt">\</span></span>
+<span id="cb11-4"><a></a>/path/to/soft/c</span>
+<span id="cb11-5"><a></a></span>
+<span id="cb11-6"><a></a><span class="bu">export</span> <span class="va">PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="global-variables-ps1" class="slide level2">
+<h2>Global variables: PS1</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Define, customize the command prompt</li>
+<li>Controls text and color, useful for tracking machines
+<ul>
+<li><code>\u</code> for user</li>
+<li><code>\W</code> for current working directory</li>
+<li><code>PS1='[\u-machine: \W]$'</code></li>
+</ul></li>
+<li>See <a href="https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-bash-ps1-prompt">here</a> for some color codes
+<ul>
+<li>Open color with <code>\e[color-code-m</code></li>
+<li>Close color with <code>\e[m</code></li>
+<li><code>PS1='\e[color-codem[\u-machine: \W]$\e[m'</code></li>
+</ul></li>
+<li><code>.bashrc</code> is proper location</li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="PS1_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="PS1_2.png"></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="aliases" class="slide level2">
+<h2>Aliases</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Avoid repeated typing by setting alias</li>
+<li>Anatomy:
+<ol type="1">
+<li><code>alias</code></li>
+<li>alias name</li>
+<li>command(s) in single quotes</li>
+</ol>
+<ul>
+<li><code>alias cdd='cd ~/Desktop; ls'</code></li>
+</ul></li>
+<li>Should be added to <code>.bashrc</code>
+<ul>
+<li>Also common to make <code>~/.bash_aliases</code></li>
+<li>Remember to source file in <code>.bashrc</code></li>
+</ul></li>
+<li>Avoid:
+<ul>
+<li>Using globals for aliases</li>
+<li>Replacing existing commands (e.g.&nbsp;<code>cd</code>)</li>
+</ul></li>
+<li><code>alias</code>: Print all aliases</li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="bu">alias</span> nb=<span class="st">'nano ~/.bashrc'</span></span>
+<span id="cb12-2"><a></a><span class="bu">alias</span> sb=<span class="st">'. ~/.bashrc'</span></span>
+<span id="cb12-3"><a></a><span class="bu">alias</span> cl=<span class="st">'clear; ls'</span></span>
+<span id="cb12-4"><a></a><span class="bu">alias</span> my_proj=<span class="st">'cd /to/my/project/dir; ls'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="style-files-osx" class="slide level2">
+<h2>Style files (OSx)</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Ubuntu comes with file colors (check <code>.bashrc</code>)
+<ul>
+<li>Differentiate directories, executables, files</li>
+</ul></li>
+<li>Not the case in OSx</li>
+<li>Controlled with globals:
+<ul>
+<li><code>CLICOLOR</code>: turn on/off colors</li>
+<li><code>LSCOLORS</code>: set colors for <code>ls</code> output</li>
+</ul></li>
+<li>Specify in <code>.bashrc</code></li>
+</ul>
+</div><div class="column fragment" style="font-size: 80%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="bu">export</span> <span class="va">CLICOLOR</span><span class="op">=</span>1</span>
+<span id="cb13-2"><a></a><span class="bu">export</span> <span class="va">LSCOLORS</span><span class="op">=</span>GxFxCxDxBxegedabagaced</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
 
 
 </section>
@@ -175,7 +583,7 @@ Nathan M. Muncy
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Bash Basics: why</p>
+<p>Productivity: shells</p>
 </div>
 </div></div>
 

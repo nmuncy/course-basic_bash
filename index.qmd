@@ -1,5 +1,5 @@
 ---
-title: "Bash Essentials"
+title: "Computing Essentials"
 author:
   name: "Nathan Muncy"
   email: "nmuncy@nd.edu"
@@ -16,7 +16,5 @@ These lesson topics and practices are designed to teach foundational computing s
 
 
 ## Course Modules
-1. Bash Essentials
-1. Git, GitHub
-1. Cluster Computing
-1. Project Environments
+1. Bash Syntax
+1. Productivity
