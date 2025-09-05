@@ -1,0 +1,132 @@
+---
+title: "Cluster Computing: what is it, login, move data"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Productivity: cluster computing"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**: Learn how to access Notre Dame's compute cluster
+- **Skill**:
+    - Undestand how clusters differ
+    - Make an account
+    - Access account
+    - Move data
+- **Why**:
+    - Process large datasets
+::::
+
+## Why learn to use a cluster
+
+::: {style="font-size: 65%;"}
+- Modern MRI: large data initiatives
+    - Human Connectome Project (HCP)
+    - Adolescent Brain Cognitive Development (ABCD)
+    - Data repositories (OpenNeuro, NIMH, FITBIR)
+- Need for larger sample sizes
+- Complicated analytic pipelines
+:::
+
+## Description of cluster
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- The [Center for Research Computing](https://crc.nd.edu/) (CRC) provides cluster computing resources
+    - Network of compute nodes (~8K CPUs) and RAM
+- Their [Wiki](https://docs.crc.nd.edu/index.html) contains valuable resources for accessing, using cluster
+- Main components
+    1. Login point: manage data, submit requests
+    1. Scheduler: index resources, manage request queue
+    1. Cluster: CPUs and RAM
+    1. Storage: file system
+:::
+
+:::: {.column width="\"50%"}
+```{mermaid}
+%%| fig-align: center
+flowchart TB
+  A[Work Machine] -- Internet --> B[Login Node]
+  B -- Scheduler --> C[Cluster]
+  B --> D[File Structure]
+  C --> D
+```
+::: {.fragment style="font-size: 65%;"}
+- Resist running processes on login node! They will be killed.
+:::
+::::
+:::::
+
+## Make an account
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- Submit an account request [here](https://docs.crc.nd.edu/new_user/obtain_account.html)
+    - Account approval may take a day
+    - The instructor or your lab PI can endorse your account
+
+::::
+
+:::: {.column width="\"50%"}
+
+::::
+:::::
+
+## Access account: terminal
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- For off-campus access:
+    - Install [Cisco AnyConnect](https://nd.service-now.com/nd_portal?id=kb_article_view&sys_kb_id=9f04e6b747fa2e5474aad08c346d437e)
+    - Connect to Notre Dame's [VPN](https://nd.service-now.com/nd_portal?id=product_page&sys_id=9d5919c7db22a34099dcf25bbf9619e2&table=cmdb_ci_business_app%2F): `vpnaccess.nd.edu`
+- Use terminal to login, with help from the [CRC Connection Resources](https://docs.crc.nd.edu/new_user/connecting_to_crc.html):
+    - `ssh user@crcfe01.crc.nd.edu`
+    - Use ND user ID and password
+::::
+
+:::: {.column width="\"50%"}
+::: {layout-nrow="3"}
+![](vpn_1.png){.fragment} ![](login_1.png){.fragment} ![](login_2.png){.fragment}
+:::
+::::
+:::::
+
+## Access account: web browser
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- From a web browser go to `https://crcfe01.crc.nd.edu`
+- Supply ND user ID and password
+- Start a Graphical session
+::::
+
+:::: {.column width="\"50%"}
+::: {.r-stack}
+![](web_login1.png){.fragment}
+
+![](web_login2.png){.fragment}
+
+![](web_login3.png){.fragment}
+
+![](web_login4.png){.fragment}
+:::
+::::
+:::::
+
+
+## Types of nodes
+
+## Data locations
+
+## Moving data: scp
+
+## Moving data: rsync
+
+## Moving data: cyberduck

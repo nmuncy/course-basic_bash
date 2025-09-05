@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nathan M. Muncy">
   <meta name="dcterms.date" content="2025-09-05">
-  <title>Bash Esssentials – Why Program?</title>
+  <title>Bash Esssentials – Cluster Computing: what is it, login, move data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -122,13 +122,16 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Why Program?</h1>
+  <h1 class="title">Cluster Computing: what is it, login, move data</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -140,34 +143,155 @@ Nathan M. Muncy
 
   <p class="date">2025-09-05</p>
 </section>
-<section id="neuroimaging-is-cool" class="slide level2">
-<h2>Neuroimaging is cool</h2>
-</section>
-<section id="neuroimaging-is-popular" class="slide level2">
-<h2>Neuroimaging is popular</h2>
+<section id="purpose" class="slide level2">
+<h2>Purpose</h2>
 <div style="font-size: 65%;">
+<ul>
+<li><strong>Knowledge</strong>: Learn how to access Notre Dame’s compute cluster</li>
+<li><strong>Skill</strong>:
+<ul>
+<li>Undestand how clusters differ</li>
+<li>Make an account</li>
+<li>Access account</li>
+<li>Move data</li>
+</ul></li>
+<li><strong>Why</strong>:
+<ul>
+<li>Process large datasets</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="why-learn-to-use-a-cluster" class="slide level2">
+<h2>Why learn to use a cluster</h2>
+<div style="font-size: 65%;">
+<ul>
+<li>Modern MRI: large data initiatives
+<ul>
+<li>Human Connectome Project (HCP)</li>
+<li>Adolescent Brain Cognitive Development (ABCD)</li>
+<li>Data repositories (OpenNeuro, NIMH, FITBIR)</li>
+</ul></li>
+<li>Need for larger sample sizes</li>
+<li>Complicated analytic pipelines</li>
+</ul>
+</div>
+</section>
+<section id="description-of-cluster" class="slide level2">
+<h2>Description of cluster</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>The <a href="https://crc.nd.edu/">Center for Research Computing</a> (CRC) provides cluster computing resources
+<ul>
+<li>Network of compute nodes (~8K CPUs) and RAM</li>
+</ul></li>
+<li>Their <a href="https://docs.crc.nd.edu/index.html">Wiki</a> contains valuable resources for accessing, using cluster</li>
+<li>Main components
+<ol type="1">
+<li>Login point: manage data, submit requests</li>
+<li>Scheduler: index resources, manage request queue</li>
+<li>Cluster: CPUs and RAM</li>
+<li>Storage: file system</li>
+</ol></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+  A[Work Machine] -- Internet --&gt; B[Login Node]
+  B -- Scheduler --&gt; C[Cluster]
+  B --&gt; D[File Structure]
+  C --&gt; D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="fragment" style="font-size: 65%;">
+<ul>
+<li>Resist running processes on login node! They will be killed.</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="make-an-account" class="slide level2">
+<h2>Make an account</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Submit an account request <a href="https://docs.crc.nd.edu/new_user/obtain_account.html">here</a>
+<ul>
+<li>Account approval may take a day</li>
+<li>The instructor or your lab PI can endorse your account</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+
+</div></div>
+</section>
+<section id="access-account-terminal" class="slide level2">
+<h2>Access account: terminal</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>For off-campus access:
+<ul>
+<li>Install <a href="https://nd.service-now.com/nd_portal?id=kb_article_view&amp;sys_kb_id=9f04e6b747fa2e5474aad08c346d437e">Cisco AnyConnect</a></li>
+<li>Connect to Notre Dame’s <a href="https://nd.service-now.com/nd_portal?id=product_page&amp;sys_id=9d5919c7db22a34099dcf25bbf9619e2&amp;table=cmdb_ci_business_app%2F">VPN</a>: <code>vpnaccess.nd.edu</code></li>
+</ul></li>
+<li>Use terminal to login, with help from the <a href="https://docs.crc.nd.edu/new_user/connecting_to_crc.html">CRC Connection Resources</a>:
+<ul>
+<li><code>ssh user@crcfe01.crc.nd.edu</code></li>
+<li>Use ND user ID and password</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><img data-src="vpn_1.png" class="fragment"> <img data-src="login_1.png" class="fragment"> <img data-src="login_2.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="access-account-web-browser" class="slide level2">
+<h2>Access account: web browser</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>From a web browser go to <code>https://crcfe01.crc.nd.edu</code></li>
+<li>Supply ND user ID and password</li>
+<li>Start a Graphical session</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
 <div class="r-stack">
-<p><img data-src="trend_mri.png" class="fragment"></p>
-<p><img data-src="trend_fmri.png" class="fragment"></p>
-<p><img data-src="trend_dwi.png" class="fragment"></p>
+<p><img data-src="web_login1.png" class="fragment"></p>
+<p><img data-src="web_login2.png" class="fragment"></p>
+<p><img data-src="web_login3.png" class="fragment"></p>
+<p><img data-src="web_login4.png" class="fragment"></p>
 </div>
-<p>MRI, fMRI, and DWI paper trends (https://app.dimensions.ai)</p>
-</div>
+</div></div>
 </section>
-<section id="data-are-large" class="slide level2">
-<h2>Data are large</h2>
+<section id="types-of-nodes" class="slide level2">
+<h2>Types of nodes</h2>
 </section>
-<section id="models-are-complex" class="slide level2">
-<h2>Models are complex</h2>
+<section id="data-locations" class="slide level2">
+<h2>Data locations</h2>
 </section>
-<section id="vast-compute-times" class="slide level2">
-<h2>Vast compute times</h2>
+<section id="moving-data-scp" class="slide level2">
+<h2>Moving data: scp</h2>
 </section>
-<section id="lack-of-gui" class="slide level2">
-<h2>Lack of GUI</h2>
+<section id="moving-data-rsync" class="slide level2">
+<h2>Moving data: rsync</h2>
 </section>
-<section id="goals-for-course" class="slide level2">
-<h2>Goals for course</h2>
+<section id="moving-data-cyberduck" class="slide level2">
+<h2>Moving data: cyberduck</h2>
 
 
 </section>
@@ -175,7 +299,7 @@ Nathan M. Muncy
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Bash Basics: why</p>
+<p>Productivity: cluster computing</p>
 </div>
 </div></div>
 

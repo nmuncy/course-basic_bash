@@ -4,7 +4,98 @@
     "href": "materials.html",
     "title": "Course Slides, Code, and Practice Materials",
     "section": "",
-    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n7. Shells\nSlides\nCode\nPractice"
+    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n7. Shells\nSlides\nCode\nPractice\n\n\n\n\n8. Cluster Computing\nSlides\nCode\nPractice"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#purpose",
+    "href": "lectures/07-shells/07-shells.html#purpose",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn about different shells and how to interact with them\nSkill:\n\nTypes of shells\nTargeting shells\nGlobal variables\nAliases\n\nWhy:\n\nControl information in workflows\nPrepare for cluster computing\nIncrease user comfort"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#environment-configuration",
+    "href": "lectures/07-shells/07-shells.html#environment-configuration",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Environment Configuration",
+    "text": "Environment Configuration\n\n\n\nThree important build files in $HOME\n\n.profile (OSx)\n.bash_profile\n.bashrc\n\nPurpose\n\nEstablish shell environments\nUser customization\n\nDiffer in relationship to shell types"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#shells-nonlogin",
+    "href": "lectures/07-shells/07-shells.html#shells-nonlogin",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Shells: non/login",
+    "text": "Shells: non/login\n\n\n\nLogin shell: Initiated when user logs into system\n\ne.g. over SSH connection (cluster)\nBuilds from ~/.bash_profile or ~/.profile\n\nNon-login shell: Subsequent shells after login session\n\ne.g. Terminal tabs, subshells\nBuilds from ~/.bashrc\n\nDetermine login shells status with shopt -q login_shell\n\n\n\nshopt -q login_shell && echo login \\\n    || echo non-login\n\nnon-login"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#shells-noninteractive",
+    "href": "lectures/07-shells/07-shells.html#shells-noninteractive",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Shells: non/interactive",
+    "text": "Shells: non/interactive\n\n\n\nInteractive shell: Allows user to enter commands\n\nTypical shell experience\nBuilds from ~/.bashrc\n\nNon-interactive shell: Does not receive commands\n\ne.g. Subshells, commands executed through SSH tunnel\nSubshells inherit environment\nLog-in, non-interactive build from ~/.bash_profile\n\nDetermine interactive shells status with $-\n\nInteractive shells contain “i”\n\n\n\n\necho $-\n[[ $- == *i* ]] && echo interact \\\n    || echo non-interact\n\nhBc\nnon-interact"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#complexity-of-config-files",
+    "href": "lectures/07-shells/07-shells.html#complexity-of-config-files",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Complexity of config files",
+    "text": "Complexity of config files\n\n\n\n.bash_profile: keep simple due to login processes\n\ncommon to execute .bashrc in current shell\n[ -f ~/.bashrc ] && . ~/.bashrc\n\n.bashrc: user customizations\n\nUpdate PATH\nSet functions\nAdd aliases\n\n\n\n\ncat ~/.bash_profile | wc -l\ncat ~/.bashrc | wc -l\n\n       1\n      48"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#executing-code-revisited",
+    "href": "lectures/07-shells/07-shells.html#executing-code-revisited",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Executing code, revisited",
+    "text": "Executing code, revisited\n\n\n\nsource or . executes in current shell\n./ executes in non-login, non-interactive shell\n\nAND copied environment from current shell\n\n\n\n#!/bin/bash\nshopt -q login_shell && echo login \\\n    || echo non-login\n[[ $- == *i* ]] && echo interact \\\n    || echo non-interact\n\n\n\n\n\n\n\n\n\nExecution in different shells"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#executing-code-more-options",
+    "href": "lectures/07-shells/07-shells.html#executing-code-more-options",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Executing code, more options",
+    "text": "Executing code, more options\n\n\n\n$(foo) executes command foo in subshell\nbash foo.sh or sh foo.sh to execute script in language-specific subshell\nRemote execution in login, non-interactive shell\nPoint: Relevant to remember how these shell environments build\n\n(.bashrc vs .bash_profile)\n\n\n\n\nmy_files=$(ls .)\nssh user@server.com \"mkdir ~/test\""
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#global-variables",
+    "href": "lectures/07-shells/07-shells.html#global-variables",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Global variables",
+    "text": "Global variables\n\n\n\nVariables only exist in definition shell\nGlobal variables: variables for current and subshells\nDefined with export and uses SCREAM_SNAKE_CASE\n\nexport FOO_BAR=some_value\n\nUseful for building environments\n\n\n#!/bin/bash\necho $foo\necho $FOO\nexport BAR=my_bar\n\n\n\n\n\n\n\n\n\nFOO available in subshell, BAR not available in parent shell"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#global-variables-building-environments",
+    "href": "lectures/07-shells/07-shells.html#global-variables-building-environments",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Global variables: Building environments",
+    "text": "Global variables: Building environments\n\n\n\nImportant paths for workflows\n\nSoftware\nTemplates\nSingularity\nReference files\n\nShould be added to .bashrc\n\n(e.g. nano ~/.bashrc)\n\nRebuild shell to reflect changes\n\nNew, or ‘. ~/.bashrc’\n\nenv: Print all globals\n\n\n\nexport FSLDIR=/path/to/fsl/install\nexport TEMPLATEFLOW=/path/to/templateflow\nexport SING_FREESURFER=/path/to/freesurfer.simg"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#global-variables-path",
+    "href": "lectures/07-shells/07-shells.html#global-variables-path",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Global variables: PATH",
+    "text": "Global variables: PATH\n\n\n\nPATH: search locations for matching command to executable\nNew software: update to PATH needed\n\n.bashrc is common location, .bash_profile is OK\n\nUse : to separate locations\n\nBetter to append (beware trailing whitespace)\nAvoid prepending (despite enthusiastic install tutorials)\n\nCommand based on first match in PATH\n\n\n\nPATH=${PATH}:\\\n/path/to/soft/a:\\\n/path/to/soft/b:\\\n/path/to/soft/c\n\nexport PATH"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#global-variables-ps1",
+    "href": "lectures/07-shells/07-shells.html#global-variables-ps1",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Global variables: PS1",
+    "text": "Global variables: PS1\n\n\n\nDefine, customize the command prompt\nControls text and color, useful for tracking machines\n\n\\u for user\n\\W for current working directory\nPS1='[\\u-machine: \\W]$'\n\nSee here for some color codes\n\nOpen color with \\e[color-code-m\nClose color with \\e[m\nPS1='\\e[color-codem[\\u-machine: \\W]$\\e[m'\n\n.bashrc is proper location"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#aliases",
+    "href": "lectures/07-shells/07-shells.html#aliases",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Aliases",
+    "text": "Aliases\n\n\n\nAvoid repeated typing by setting alias\nAnatomy:\n\nalias\nalias name\ncommand(s) in single quotes\n\n\nalias cdd='cd ~/Desktop; ls'\n\nShould be added to .bashrc\n\nAlso common to make ~/.bash_aliases\nRemember to source file in .bashrc\n\nAvoid:\n\nUsing globals for aliases\nReplacing existing commands (e.g. cd)\n\nalias: Print all aliases\n\n\n\nalias nb='nano ~/.bashrc'\nalias sb='. ~/.bashrc'\nalias cl='clear; ls'\nalias my_proj='cd /to/my/project/dir; ls'"
+  },
+  {
+    "objectID": "lectures/07-shells/07-shells.html#style-files-osx",
+    "href": "lectures/07-shells/07-shells.html#style-files-osx",
+    "title": "Shells: types, editing, and aliases",
+    "section": "Style files (OSx)",
+    "text": "Style files (OSx)\n\n\n\nUbuntu comes with file colors (check .bashrc)\n\nDifferentiate directories, executables, files\n\nNot the case in OSx\nControlled with globals:\n\nCLICOLOR: turn on/off colors\nLSCOLORS: set colors for ls output\n\nSpecify in .bashrc\n\n\n\nexport CLICOLOR=1\nexport LSCOLORS=GxFxCxDxBxegedabagaced"
   },
   {
     "objectID": "lectures/06-for_loops/06-practice.html",
@@ -560,104 +651,6 @@
     "text": "Building arrays and variables\n\n\n\n\nVariables and arrays can be built\nOperator += allows for concatentation\n\nIn addition to increasing integer values\n\nCommand unset clears variables\n\n\n\n\nunset var_foo\nunset arr_foo\n\n[ -z $var_foo ] && echo empty\n\nfor i in {1..4}; do\n    var_foo+=\"$i\"\n    arr_foo+=($i)\ndone\n\n[ -z $var_foo ] || echo full\n\necho $var_foo\necho ${var_foo[@]}\n\nempty\nfull\n1234\n1234"
   },
   {
-    "objectID": "lectures/07-shells/07-shells.html#purpose",
-    "href": "lectures/07-shells/07-shells.html#purpose",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn about different shells and how to interact with them\nSkill:\n\nTypes of shells\nTargeting shells\nGlobal variables\nAliases\n\nWhy:\n\nControl information in workflows\nPrepare for cluster computing\nIncrease user comfort"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#environment-configuration",
-    "href": "lectures/07-shells/07-shells.html#environment-configuration",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Environment Configuration",
-    "text": "Environment Configuration\n\n\n\nThree important build files in $HOME\n\n.profile (OSx)\n.bash_profile\n.bashrc\n\nPurpose\n\nEstablish shell environments\nUser customization\n\nDiffer in relationship to shell types"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#shells-nonlogin",
-    "href": "lectures/07-shells/07-shells.html#shells-nonlogin",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Shells: non/login",
-    "text": "Shells: non/login\n\n\n\nLogin shell: Initiated when user logs into system\n\ne.g. over SSH connection (cluster)\nBuilds from ~/.bash_profile or ~/.profile\n\nNon-login shell: Subsequent shells after login session\n\ne.g. Terminal tabs, subshells\nBuilds from ~/.bashrc\n\nDetermine login shells status with shopt -q login_shell\n\n\n\nshopt -q login_shell && echo login \\\n    || echo non-login\n\nnon-login"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#shells-noninteractive",
-    "href": "lectures/07-shells/07-shells.html#shells-noninteractive",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Shells: non/interactive",
-    "text": "Shells: non/interactive\n\n\n\nInteractive shell: Allows user to enter commands\n\nTypical shell experience\nBuilds from ~/.bashrc\n\nNon-interactive shell: Does not receive commands\n\ne.g. Subshells, commands executed through SSH tunnel\nSubshells inherit environment\nLog-in, non-interactive build from ~/.bash_profile\n\nDetermine interactive shells status with $-\n\nInteractive shells contain “i”\n\n\n\n\necho $-\n[[ $- == *i* ]] && echo interact \\\n    || echo non-interact\n\nhBc\nnon-interact"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#complexity-of-config-files",
-    "href": "lectures/07-shells/07-shells.html#complexity-of-config-files",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Complexity of config files",
-    "text": "Complexity of config files\n\n\n\n.bash_profile: keep simple due to login processes\n\ncommon to execute .bashrc in current shell\n[ -f ~/.bashrc ] && . ~/.bashrc\n\n.bashrc: user customizations\n\nUpdate PATH\nSet functions\nAdd aliases\n\n\n\n\ncat ~/.bash_profile | wc -l\ncat ~/.bashrc | wc -l\n\n       1\n      48"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#executing-code-revisited",
-    "href": "lectures/07-shells/07-shells.html#executing-code-revisited",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Executing code, revisited",
-    "text": "Executing code, revisited\n\n\n\nsource or . executes in current shell\n./ executes in non-login, non-interactive shell\n\nAND copied environment from current shell\n\n\n\n#!/bin/bash\nshopt -q login_shell && echo login \\\n    || echo non-login\n[[ $- == *i* ]] && echo interact \\\n    || echo non-interact\n\n\n\n\n\n\n\n\n\nExecution in different shells"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#global-variables",
-    "href": "lectures/07-shells/07-shells.html#global-variables",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Global variables",
-    "text": "Global variables\n\n\n\nVariables only exist in definition shell\nGlobal variables: variables for current and subshells\nDefined with export and uses SCREAM_SNAKE_CASE\n\nexport FOO_BAR=some_value\n\nUseful for building environments\n\n\n#!/bin/bash\necho $foo\necho $FOO\nexport BAR=my_bar\n\n\n\n\n\n\n\n\n\nFOO available in subshell, BAR not available in parent shell"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#global-variables-building-environments",
-    "href": "lectures/07-shells/07-shells.html#global-variables-building-environments",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Global variables: Building environments",
-    "text": "Global variables: Building environments\n\n\n\nImportant paths for workflows\n\nSoftware\nTemplates\nSingularity\nReference files\n\nShould be added to .bashrc\n\n(e.g. nano ~/.bashrc)\n\nRebuild shell to reflect changes\n\nNew, or ‘. ~/.bashrc’\n\nenv: Print all globals\n\n\n\nexport FSLDIR=/path/to/fsl/install\nexport TEMPLATEFLOW=/path/to/templateflow\nexport SING_FREESURFER=/path/to/freesurfer.simg"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#global-variables-path",
-    "href": "lectures/07-shells/07-shells.html#global-variables-path",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Global variables: PATH",
-    "text": "Global variables: PATH\n\n\n\nPATH: search locations for matching command to executable\nNew software: update to PATH needed\n\n.bashrc is common location, .bash_profile is OK\n\nUse : to separate locations\n\nBetter to append (beware trailing whitespace)\nAvoid prepending (despite enthusiastic install tutorials)\n\nCommand based on first match in PATH\n\n\n\nPATH=${PATH}:\\\n/path/to/soft/a:\\\n/path/to/soft/b:\\\n/path/to/soft/c\n\nexport PATH"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#global-variables-ps1",
-    "href": "lectures/07-shells/07-shells.html#global-variables-ps1",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Global variables: PS1",
-    "text": "Global variables: PS1\n\n\n\nDefine, customize the command prompt\nControls text and color, useful for tracking machines\n\n\\u for user\n\\W for current working directory\nPS1='[\\u-machine: \\W]$'\n\nSee here for some color codes\n\nOpen color with \\e[color-code-m\nClose color with \\e[m\nPS1='\\e[color-codem[\\u-machine: \\W]$\\e[m'\n\n.bashrc is proper location"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#aliases",
-    "href": "lectures/07-shells/07-shells.html#aliases",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Aliases",
-    "text": "Aliases\n\n\n\nAvoid repeated typing by setting alias\nAnatomy:\n\nalias\nalias name\ncommand(s) in single quotes\n\n\nalias cdd='cd ~/Desktop; ls'\n\nShould be added to .bashrc\n\nAlso common to make ~/.bash_aliases\nRemember to source file in .bashrc\n\nAvoid:\n\nUsing globals for aliases\nReplacing existing commands (e.g. cd)\n\nalias: Print all aliases\n\n\n\nalias nb='nano ~/.bashrc'\nalias sb='. ~/.bashrc'\nalias cl='clear; ls'\nalias my_proj='cd /to/my/project/dir; ls'"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#executing-code-more-options",
-    "href": "lectures/07-shells/07-shells.html#executing-code-more-options",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Executing code, more options",
-    "text": "Executing code, more options\n\n\n\n$(foo) executes command foo in subshell\nbash foo.sh or sh foo.sh to execute script in language-specific subshell\nRemote execution in login, non-interactive shell\nPoint: Relevant to remember how these shell environments build\n\n(.bashrc vs .bash_profile)\n\n\n\n\nmy_files=$(ls .)\nssh user@server.com \"mkdir ~/test\""
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#style-directories-osx",
-    "href": "lectures/07-shells/07-shells.html#style-directories-osx",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Style directories (OSx)",
-    "text": "Style directories (OSx)\n\n\n\nUbuntu comes with file colors\nDifferentiate directories, executables, files\nNot the case in OSx\nControlled with globals:\n\nCLICOLOR: turn on/off colors\nLSCOLORS: set colors for ls output\n\nSpecify in .bashrc\n\n\n\nexport CLICOLOR=1\nexport LSCOLORS=GxFxCxDxBxegedabagaced"
-  },
-  {
-    "objectID": "lectures/07-shells/07-shells.html#style-files-osx",
-    "href": "lectures/07-shells/07-shells.html#style-files-osx",
-    "title": "Shells: types, editing, and aliases",
-    "section": "Style files (OSx)",
-    "text": "Style files (OSx)\n\n\n\nUbuntu comes with file colors (check .bashrc)\n\nDifferentiate directories, executables, files\n\nNot the case in OSx\nControlled with globals:\n\nCLICOLOR: turn on/off colors\nLSCOLORS: set colors for ls output\n\nSpecify in .bashrc\n\n\n\nexport CLICOLOR=1\nexport LSCOLORS=GxFxCxDxBxegedabagaced"
-  },
-  {
     "objectID": "lectures/07-shells/07-practice.html",
     "href": "lectures/07-shells/07-practice.html",
     "title": "For Loops, cont’d: practice",
@@ -677,5 +670,89 @@
     "title": "For Loops, cont’d: practice",
     "section": "Style Prompt",
     "text": "Style Prompt\n\nAdd you computer’s name to, and change the color of, the prompt.\n(OSx) Turn on CLI colors and set color schemes for ls.\nSend a screenshot of your prompt and ls output to your instructor."
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#purpose",
+    "href": "lectures/08-cluster/08-cluster.html#purpose",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn how to access Notre Dame’s compute cluster\nSkill:\n\nUndestand how clusters differ\nMake an account\nAccess account\nMove data\n\nWhy:\n\nProcess large datasets"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#why-learn-to-use-a-cluster",
+    "href": "lectures/08-cluster/08-cluster.html#why-learn-to-use-a-cluster",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Why learn to use a cluster",
+    "text": "Why learn to use a cluster\n\n\nModern MRI: large data initiatives\n\nHuman Connectome Project (HCP)\nAdolescent Brain Cognitive Development (ABCD)\nData repositories (OpenNeuro, NIMH, FITBIR)\n\nNeed for larger sample sizes\nComplicated analytic pipelines"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#description-of-cluster",
+    "href": "lectures/08-cluster/08-cluster.html#description-of-cluster",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Description of cluster",
+    "text": "Description of cluster\n\n\n\nThe Center for Research Computing (CRC) provides cluster computing resources\n\nNetwork of compute nodes (~8K CPUs) and RAM\n\nTheir Wiki contains valuable resources for accessing, using cluster\nMain components\n\nLogin point: manage data, submit requests\nScheduler: index resources, manage request queue\nCluster: CPUs and RAM\nStorage: file system\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Work Machine] -- Internet --&gt; B[Login Node]\n  B -- Scheduler --&gt; C[Cluster]\n  B --&gt; D[File Structure]\n  C --&gt; D\n\n\n\n\n\n\n\n\nResist running processes on login node! They will be killed."
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#make-an-account",
+    "href": "lectures/08-cluster/08-cluster.html#make-an-account",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Make an account",
+    "text": "Make an account\n\n\n\nSubmit an account request here\n\nAccount approval may take a day\nThe instructor or your lab PI can endorse your account"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#access-account-terminal",
+    "href": "lectures/08-cluster/08-cluster.html#access-account-terminal",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Access account: terminal",
+    "text": "Access account: terminal\n\n\n\nFor off-campus access:\n\nInstall Cisco AnyConnect\nConnect to Notre Dame’s VPN: vpnaccess.nd.edu\n\nUse terminal to login, with help from the CRC Connection Resources:\n\nssh user@crcfe01.crc.nd.edu\nUse ND user ID and password"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#access-account-web-browser",
+    "href": "lectures/08-cluster/08-cluster.html#access-account-web-browser",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Access account: web browser",
+    "text": "Access account: web browser\n\n\n\nFrom a web browser go to https://crcfe01.crc.nd.edu\nSupply ND user ID and password\nStart a Graphical session"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes",
+    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Types of nodes",
+    "text": "Types of nodes"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#stdout-and-stderr",
+    "href": "lectures/08-cluster/08-cluster.html#stdout-and-stderr",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "STDOUT and STDERR",
+    "text": "STDOUT and STDERR"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-scp",
+    "href": "lectures/08-cluster/08-cluster.html#moving-data-scp",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Moving data: scp",
+    "text": "Moving data: scp"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
+    "href": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Moving data: rsync",
+    "text": "Moving data: rsync"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-cyberduck",
+    "href": "lectures/08-cluster/08-cluster.html#moving-data-cyberduck",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Moving data: cyberduck",
+    "text": "Moving data: cyberduck"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#data-locations",
+    "href": "lectures/08-cluster/08-cluster.html#data-locations",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Data locations",
+    "text": "Data locations"
   }
 ]
