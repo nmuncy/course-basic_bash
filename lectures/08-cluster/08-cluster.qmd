@@ -75,10 +75,6 @@ flowchart TB
     - The instructor or your lab PI can endorse your account
 
 ::::
-
-:::: {.column width="\"50%"}
-
-::::
 :::::
 
 ## Access account: terminal
@@ -102,7 +98,7 @@ flowchart TB
 ## Access account: web browser
 ::::: columns
 :::: {.column width="50%" style="font-size: 65%;"}
-- From a web browser go to `https://crcfe01.crc.nd.edu`
+- From a web browser go to [https://crcfe01.crc.nd.edu](https://crcfe01.crc.nd.edu)
 - Supply ND user ID and password
 - Start a Graphical session
 ::::
@@ -120,7 +116,7 @@ flowchart TB
 ::::
 :::::
 
-## Types of nodes - Front End
+## Types of nodes: Front End
 ::::: columns
 :::: {.column width="50%" style="font-size: 65%;"}
 - Interactive, login nodes
@@ -142,7 +138,7 @@ flowchart TB
 ::::
 :::::
 
-## Types of nodes - Back End
+## Types of nodes: Back End
 ::::: columns
 :::: {.column width="50%" style="font-size: 65%;"}
 - Non-interactive, work nodes
@@ -169,7 +165,7 @@ flowchart TB
 ::::
 :::::
 
-## File systems - AFS
+## File systems: AFS
 ::::: columns
 :::: {.column width="50%" style="font-size: 65%;"}
 - `home` managed by [AFS](https://en.wikipedia.org/wiki/Andrew_File_System)
@@ -187,10 +183,10 @@ flowchart TB
 ::::
 :::::
 
-## File systems - PANASAS
+## File systems: PANASAS
 ::::: columns
 :::: {.column width="50%" style="font-size: 65%;"}
-- `scratch` managed by [PANASAS](https://en.wikipedia.org/wiki/VDURA)
+- `scratch` managed by [Panasas](https://en.wikipedia.org/wiki/VDURA)
 - Request access
     - Users allocated 250GB
     - Access at `/scratch365/userid`
@@ -207,7 +203,38 @@ flowchart TB
 :::::
 
 ## Moving data: scp
+:::: {style="font-size: 65%;"}
+- `scp`: Copy files over an SSH connection
+    - Copies entire file or directory
+- Anatomy of command:
+    - `scp` [OPTS] source destination
+    - Separate computer from path with '`:`'
+- Can be used to both push and pull data:
+    - `scp file.txt user@crcfe01.crc.nd.edu:~`
+        - Send `file.txt` from local to CRC `home`
+    - `scp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop`
+        - Pull `~/project` directory from CRC to the local desktop
+- See [here](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/) for more details
+:::::
 
 ## Moving data: rsync
+:::: {style="font-size: 65%;"}
+- Do not often desire to send entire directory
+    - e.g. files exist at `src` and `dst`, new files made at `dst`
+- `rsync`: Index both `src` and `dst`
+    - Move only difference
+- Anatomy of command:
+    - `rsync` [OPTS] source destination
+- Similar to `scp`, can both push and pull data
+    - `rsync -rauv ~/project user@crcfe01.crc.nd.edu:~`
+    - Compares local `project` to remote, sends any difference
+- See [here](https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/) for more details
+:::::
 
-## Moving data: cyberduck
+## Moving data: Graphic User Interface
+:::: {style="font-size: 65%;"}
+- GUI-based options available
+    - [Cyberduck](https://cyberduck.io/download/) (OSx)
+    - [MobaXterm](https://mobaxterm.mobatek.net/) (Windows)
+- The CRC has documentation [here](https://docs.crc.nd.edu/new_user/quick_start.html#file-transfers)
+:::::

@@ -230,8 +230,6 @@ Nathan M. Muncy
 <li>The instructor or your lab PI can endorse your account</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:&quot;50%;">
-
 </div></div>
 </section>
 <section id="access-account-terminal" class="slide level2">
@@ -265,7 +263,7 @@ Nathan M. Muncy
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li>From a web browser go to <code>https://crcfe01.crc.nd.edu</code></li>
+<li>From a web browser go to <a href="https://crcfe01.crc.nd.edu">https://crcfe01.crc.nd.edu</a></li>
 <li>Supply ND user ID and password</li>
 <li>Start a Graphical session</li>
 </ul>
@@ -278,8 +276,8 @@ Nathan M. Muncy
 </div>
 </div></div>
 </section>
-<section id="types-of-nodes---front-end" class="slide level2">
-<h2>Types of nodes - Front End</h2>
+<section id="types-of-nodes-front-end" class="slide level2">
+<h2>Types of nodes: Front End</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
@@ -308,8 +306,8 @@ Nathan M. Muncy
 </div>
 </div></div>
 </section>
-<section id="types-of-nodes---back-end" class="slide level2">
-<h2>Types of nodes - Back End</h2>
+<section id="types-of-nodes-back-end" class="slide level2">
+<h2>Types of nodes: Back End</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
@@ -339,8 +337,8 @@ Nathan M. Muncy
 </div>
 </div></div>
 </section>
-<section id="file-systems---afs" class="slide level2">
-<h2>File systems - AFS</h2>
+<section id="file-systems-afs" class="slide level2">
+<h2>File systems: AFS</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
@@ -359,12 +357,12 @@ Nathan M. Muncy
 <p><img data-src="file_sys1.png"></p>
 </div></div>
 </section>
-<section id="file-systems---panasas" class="slide level2">
-<h2>File systems - PANASAS</h2>
+<section id="file-systems-panasas" class="slide level2">
+<h2>File systems: PANASAS</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li><code>scratch</code> managed by <a href="https://en.wikipedia.org/wiki/VDURA">PANASAS</a></li>
+<li><code>scratch</code> managed by <a href="https://en.wikipedia.org/wiki/VDURA">Panasas</a></li>
 <li>Request access
 <ul>
 <li>Users allocated 250GB</li>
@@ -384,12 +382,69 @@ Nathan M. Muncy
 </section>
 <section id="moving-data-scp" class="slide level2">
 <h2>Moving data: scp</h2>
+<div style="font-size: 65%;">
+<ul>
+<li><code>scp</code>: Copy files over an SSH connection
+<ul>
+<li>Copies entire file or directory</li>
+</ul></li>
+<li>Anatomy of command:
+<ul>
+<li><code>scp</code> [OPTS] source destination</li>
+<li>Separate computer from path with ‘<code>:</code>’</li>
+</ul></li>
+<li>Can be used to both push and pull data:
+<ul>
+<li><code>scp file.txt user@crcfe01.crc.nd.edu:~</code>
+<ul>
+<li>Send <code>file.txt</code> from local to CRC <code>home</code></li>
+</ul></li>
+<li><code>scp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop</code>
+<ul>
+<li>Pull <code>~/project</code> directory from CRC to the local desktop</li>
+</ul></li>
+</ul></li>
+<li>See <a href="https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/">here</a> for more details</li>
+</ul>
+</div>
 </section>
 <section id="moving-data-rsync" class="slide level2">
 <h2>Moving data: rsync</h2>
+<div style="font-size: 65%;">
+<ul>
+<li>Do not often desire to send entire directory
+<ul>
+<li>e.g.&nbsp;files exist at <code>src</code> and <code>dst</code>, new files made at <code>dst</code></li>
+</ul></li>
+<li><code>rsync</code>: Index both <code>src</code> and <code>dst</code>
+<ul>
+<li>Move only difference</li>
+</ul></li>
+<li>Anatomy of command:
+<ul>
+<li><code>rsync</code> [OPTS] source destination</li>
+</ul></li>
+<li>Similar to <code>scp</code>, can both push and pull data
+<ul>
+<li><code>rsync -rauv ~/project user@crcfe01.crc.nd.edu:~</code></li>
+<li>Compares local <code>project</code> to remote, sends any difference</li>
+</ul></li>
+<li>See <a href="https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/">here</a> for more details</li>
+</ul>
+</div>
 </section>
-<section id="moving-data-cyberduck" class="slide level2">
-<h2>Moving data: cyberduck</h2>
+<section id="moving-data-graphic-user-interface" class="slide level2">
+<h2>Moving data: Graphic User Interface</h2>
+<div style="font-size: 65%;">
+<ul>
+<li>GUI-based options available
+<ul>
+<li><a href="https://cyberduck.io/download/">Cyberduck</a> (OSx)</li>
+<li><a href="https://mobaxterm.mobatek.net/">MobaXterm</a> (Windows)</li>
+</ul></li>
+<li>The CRC has documentation <a href="https://docs.crc.nd.edu/new_user/quick_start.html#file-transfers">here</a></li>
+</ul>
+</div>
 
 
 </section>
