@@ -27,7 +27,7 @@ execute:
 | Topic | Slides | Code | Exercises |
 |---------------|--------|--------|---------|------|-----------|
 | 7. Shells | [Slides](lectures/07-shells/07-shells.qmd){target="_blank"} | [Code](code/07_shells.sh) | [Practice](lectures/07-shells/07-practice.qmd){target="_blank"} |
-| 8. Cluster Computing | Slides | Code | Practice |
+| 8. Cluster Computing | [Slides](lectures/08-cluster/08-cluster.qmd){target="_blank"} | Code | Practice |
 
 </details>
 

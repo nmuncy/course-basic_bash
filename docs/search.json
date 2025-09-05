@@ -718,14 +718,14 @@
     "href": "lectures/08-cluster/08-cluster.html#types-of-nodes",
     "title": "Cluster Computing: what is it, login, move data",
     "section": "Types of nodes",
-    "text": "Types of nodes"
+    "text": "Types of nodes\n\n\n\nFront End (interactive login node)\n\ndetails\ncrcfe01 and crcfe02\n32 Cores, 256 GB RAM\nShared by all users\n\nUsage:\n\nLogin\nManage data\nDevelopment\n\nDo not lose your account!"
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#stdout-and-stderr",
-    "href": "lectures/08-cluster/08-cluster.html#stdout-and-stderr",
+    "objectID": "lectures/08-cluster/08-cluster.html#data-locations",
+    "href": "lectures/08-cluster/08-cluster.html#data-locations",
     "title": "Cluster Computing: what is it, login, move data",
-    "section": "STDOUT and STDERR",
-    "text": "STDOUT and STDERR"
+    "section": "Data locations",
+    "text": "Data locations"
   },
   {
     "objectID": "lectures/08-cluster/08-cluster.html#moving-data-scp",
@@ -749,10 +749,38 @@
     "text": "Moving data: cyberduck"
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#data-locations",
-    "href": "lectures/08-cluster/08-cluster.html#data-locations",
+    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes---front-end",
+    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes---front-end",
     "title": "Cluster Computing: what is it, login, move data",
-    "section": "Data locations",
-    "text": "Data locations"
+    "section": "Types of nodes - Front End",
+    "text": "Types of nodes - Front End\n\n\n\nInteractive, login nodes\n\ndetails\ncrcfe01 and crcfe02\n32 Cores, 256 GB RAM\nShared by all users\n\nUsage:\n\nLogin\nManage data\nDevelopment\n\nDo not lose your account!"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes---back-end",
+    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes---back-end",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Types of nodes - Back End",
+    "text": "Types of nodes - Back End\n\n\n\nNon-interactive, work nodes\n\ndetails\n8200+ Cores\nControlled by scheduler\n\nUsage:\n\nSend work via QSUB scheduler\nSpecify:\n\nType of processes (serial, parallel)\nQueue type (long, gpu)\nJob name\nWork for scheduled nodes"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#file-systems",
+    "href": "lectures/08-cluster/08-cluster.html#file-systems",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "File systems",
+    "text": "File systems"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#file-systems---afs",
+    "href": "lectures/08-cluster/08-cluster.html#file-systems---afs",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "File systems - AFS",
+    "text": "File systems - AFS\n\n\n\nhome managed by AFS\nUsers allocated 100GB for files\nquota: check total usage\nPurpose:\n\nSmall data\nCode\nEnvironments\n\nMore info here and here"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#file-systems---panasas",
+    "href": "lectures/08-cluster/08-cluster.html#file-systems---panasas",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "File systems - PANASAS",
+    "text": "File systems - PANASAS\n\n\n\nscratch managed by PANASAS\nRequest access\n\nUsers allocated 250GB\nAccess at /scratch365/userid\n\nPurged yearly\npan_df: check total usage\nPurpose:\n\nComputing, intermediates\n\nMore info here and here"
   }
 ]

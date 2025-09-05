@@ -120,10 +120,91 @@ flowchart TB
 ::::
 :::::
 
+## Types of nodes - Front End
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- Interactive, login nodes
+    - [details](https://docs.crc.nd.edu/infrastructure/available_hardware.html#available-hardware)
+    - `crcfe01` and `crcfe02`
+    - 32 Cores, 256 GB RAM
+    - Shared by ***all*** users
+- Usage:
+    - Login
+    - Manage data
+    - Development
+- Do not lose your account!
+::::
 
-## Types of nodes
+:::: {.column width="\"50%"}
+::: {layout-nrow="3"}
+![](login_node1.png){.fragment} ![](login_node2.png){.fragment} ![](login_node3.png){.fragment}
+:::
+::::
+:::::
 
-## Data locations
+## Types of nodes - Back End
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- Non-interactive, work nodes
+    - [details](https://docs.crc.nd.edu/infrastructure/available_hardware.html#available-hardware)
+    - 8200+ Cores
+    - Controlled by [scheduler](https://docs.crc.nd.edu/new_user/quick_start.html#job-scripts)
+- Usage:
+    - Send work via [QSUB](https://docs.adaptivecomputing.com/torque/4-0-2/Content/topics/commands/qsub.htm) scheduler
+    - Specify:
+        - Type of processes (serial, parallel)
+        - Queue type (long, gpu)
+        - Job name
+        - Work for scheduled nodes
+::::
+
+:::: {.column width="\"50%"}
+![](work_node1.png){.fragment}
+
+::: {.r-stack}
+![](work_node2.png){.fragment}
+
+![](work_node3.png){.fragment}
+:::
+::::
+:::::
+
+## File systems - AFS
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- `home` managed by [AFS](https://en.wikipedia.org/wiki/Andrew_File_System)
+- Users allocated 100GB for files
+- `quota`: check total usage
+- Purpose:
+    - Small data
+    - Code
+    - Environments
+- More info [here](https://docs.crc.nd.edu/new_user/quick_start.html#file-transfers) and [here](https://crcresearch.github.io/ndcmsT3/resources/ndcms/#storage)
+::::
+
+:::: {.column width="\"50%"}
+![](file_sys1.png)
+::::
+:::::
+
+## File systems - PANASAS
+::::: columns
+:::: {.column width="50%" style="font-size: 65%;"}
+- `scratch` managed by [PANASAS](https://en.wikipedia.org/wiki/VDURA)
+- Request access
+    - Users allocated 250GB
+    - Access at `/scratch365/userid`
+- Purged yearly
+- `pan_df`: check total usage
+- Purpose:
+    - Computing, intermediates
+- More info [here](https://docs.crc.nd.edu/new_user/quick_start.html#file-transfers) and [here](https://crcresearch.github.io/ndcmsT3/resources/ndcms/#storage)
+::::
+
+:::: {.column width="\"50%"}
+![](file_sys2.png)
+::::
+:::::
 
 ## Moving data: scp
 

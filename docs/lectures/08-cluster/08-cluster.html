@@ -278,11 +278,109 @@ Nathan M. Muncy
 </div>
 </div></div>
 </section>
-<section id="types-of-nodes" class="slide level2">
-<h2>Types of nodes</h2>
+<section id="types-of-nodes---front-end" class="slide level2">
+<h2>Types of nodes - Front End</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Interactive, login nodes
+<ul>
+<li><a href="https://docs.crc.nd.edu/infrastructure/available_hardware.html#available-hardware">details</a></li>
+<li><code>crcfe01</code> and <code>crcfe02</code></li>
+<li>32 Cores, 256 GB RAM</li>
+<li>Shared by <strong><em>all</em></strong> users</li>
+</ul></li>
+<li>Usage:
+<ul>
+<li>Login</li>
+<li>Manage data</li>
+<li>Development</li>
+</ul></li>
+<li>Do not lose your account!</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><img data-src="login_node1.png" class="fragment"> <img data-src="login_node2.png" class="fragment"> <img data-src="login_node3.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="data-locations" class="slide level2">
-<h2>Data locations</h2>
+<section id="types-of-nodes---back-end" class="slide level2">
+<h2>Types of nodes - Back End</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Non-interactive, work nodes
+<ul>
+<li><a href="https://docs.crc.nd.edu/infrastructure/available_hardware.html#available-hardware">details</a></li>
+<li>8200+ Cores</li>
+<li>Controlled by <a href="https://docs.crc.nd.edu/new_user/quick_start.html#job-scripts">scheduler</a></li>
+</ul></li>
+<li>Usage:
+<ul>
+<li>Send work via <a href="https://docs.adaptivecomputing.com/torque/4-0-2/Content/topics/commands/qsub.htm">QSUB</a> scheduler</li>
+<li>Specify:
+<ul>
+<li>Type of processes (serial, parallel)</li>
+<li>Queue type (long, gpu)</li>
+<li>Job name</li>
+<li>Work for scheduled nodes</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="work_node1.png" class="fragment"></p>
+<div class="r-stack">
+<p><img data-src="work_node2.png" class="fragment"></p>
+<p><img data-src="work_node3.png" class="fragment"></p>
+</div>
+</div></div>
+</section>
+<section id="file-systems---afs" class="slide level2">
+<h2>File systems - AFS</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>home</code> managed by <a href="https://en.wikipedia.org/wiki/Andrew_File_System">AFS</a></li>
+<li>Users allocated 100GB for files</li>
+<li><code>quota</code>: check total usage</li>
+<li>Purpose:
+<ul>
+<li>Small data</li>
+<li>Code</li>
+<li>Environments</li>
+</ul></li>
+<li>More info <a href="https://docs.crc.nd.edu/new_user/quick_start.html#file-transfers">here</a> and <a href="https://crcresearch.github.io/ndcmsT3/resources/ndcms/#storage">here</a></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="file_sys1.png"></p>
+</div></div>
+</section>
+<section id="file-systems---panasas" class="slide level2">
+<h2>File systems - PANASAS</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>scratch</code> managed by <a href="https://en.wikipedia.org/wiki/VDURA">PANASAS</a></li>
+<li>Request access
+<ul>
+<li>Users allocated 250GB</li>
+<li>Access at <code>/scratch365/userid</code></li>
+</ul></li>
+<li>Purged yearly</li>
+<li><code>pan_df</code>: check total usage</li>
+<li>Purpose:
+<ul>
+<li>Computing, intermediates</li>
+</ul></li>
+<li>More info <a href="https://docs.crc.nd.edu/new_user/quick_start.html#file-transfers">here</a> and <a href="https://crcresearch.github.io/ndcmsT3/resources/ndcms/#storage">here</a></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="file_sys2.png"></p>
+</div></div>
 </section>
 <section id="moving-data-scp" class="slide level2">
 <h2>Moving data: scp</h2>
