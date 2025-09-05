@@ -4,7 +4,7 @@
 ssh user@crcfe01.crc.nd.edu
 
 # QSUB syntax for checking nodes
-#$ -pe smb 2
+#$ -pe smp 2
 #$ -q long
 shopt -q login_shell && echo login || echo non-login
 [[ $- == *i* ]] && echo interactive || echo non-interactive
