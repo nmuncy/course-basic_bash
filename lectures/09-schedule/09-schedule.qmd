@@ -65,7 +65,7 @@ engine: knitr
 
 ::::: columns
 ::: {.column width="50%" style="font-size: 65%;"}
-- `STDOUT`: printed output of succesful jobs (exit status 0)
+- `STDOUT`: output of succesful jobs (exit status 0)
 - Designated via `&1`
 - Normally `&1` is the terminal window
 - Can be redirected to a file with `>`
@@ -83,7 +83,7 @@ engine: knitr
 
 ::::: columns
 ::: {.column width="50%" style="font-size: 65%;"}
-- `STDERR`: printed output of failed jobs (exit status >0)
+- `STDERR`: output of failed jobs (exit status >0)
 - Designated via `2>`
 - Normally `2>` is the terminal window
 - Can be redirected to a file with `2>`
@@ -94,6 +94,12 @@ engine: knitr
 
 :::: {.column width="\"50%"}
 ![](stderr_1.png)
+
+::: {.incremental style="font-size: 65%;"}
+- Notice:
+    - Line 7 printed to `err.log`
+    - Line 8 printed to terminal
+:::
 ::::
 :::::
 
@@ -101,14 +107,32 @@ engine: knitr
 
 ::::: columns
 ::: {.column width="50%" style="font-size: 65%;"}
-- Compute environments involved schedule jobs
+- Compute environments involve scheduled jobs
     - e.g. execute workflow A for subjects 1, 2, and 3
-- Inadvisable to edit job scripts for each subject
-- Better - pass subject number to workflow script
-- Job script:
+- OK: edit job scripts for each subject
+- Better: pass subject number to job script
+- Job script purpose:
     - Request resources
     - Receive arguments
     - Execute workflow
+:::
+
+:::: {.column width="\"50%"}
+![](submit_1.png)
+::::
+:::::
+
+## Modules
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- CRC supplies software packages as modules
+    - `module avail`: See available modules
+    - `module load foo`: Load module 'foo'
+- Common: Load modules in job script
+    - After resource request
+- Preferred: Load in project environment
+    - (Lecture 11 [TBD])
 :::
 
 :::: {.column width="\"50%"}
@@ -120,12 +144,12 @@ engine: knitr
 
 :::::: columns
 ::: {.column width="50%" style="font-size: 65%;"}
-- Wrapper script:
+- Wrapper script purpose:
     - Submits job script by envoking `qsub` command
     - Passes arguments to the job script
 - Used as the researcher-editable file
     - No need to edit job script
-- Could also pass args to wrapper script
+- Research could pass args to wrapper script
     - (more advanced)
 :::
 
@@ -156,6 +180,7 @@ engine: knitr
 - Good habit to organize STDOUT/ERR in logging directory
     - Named for job
     - Time stamp helps trouble shoot
+    - See [here](https://www.cyberciti.biz/faq/unix-linux-bash-get-time/) for information on `date`
 :::
 
 :::: {.column width="\"50%"}
@@ -171,6 +196,87 @@ engine: knitr
 ::::
 :::::
 
-## Qstat, Qdel
+## Check status: qstat
 
-## Available resources
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Check status of submitted jobs with `qstat`
+    - `qstat -u username`: status for all user jobs
+    - `qstat -j jobid`: status for specific jobs
+- Number of statuses possible:
+    - `r`: job is running
+    - `qw`: job is queued, waiting for resources
+    - `Eqw`: invalid job
+- See more options [here](https://docs.adaptivecomputing.com/torque/4-1-3/Content/topics/commands/qstat.htm)
+:::
+
+:::: {.column width="\"50%" style="font-size: 65%;"}
+
+![](qstat_1.png)
+
+::: {.incremental}
+- Set an alias for things your type often!
+:::
+::::
+:::::
+
+## Delete jobs: qdel
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Sometimes necessary to kill jobs
+    - Incorrect specification
+    - Syntax error (e.g. no increment in while loops)
+- Determine job ID with `qstat`
+- `qdel jobid`: Terminates specified job
+- See more options [here](https://docs.adaptivecomputing.com/torque/3-0-5/commands/qdel.php)
+:::
+
+:::: {.column width="\"50%" style="font-size: 65%;"}
+![](qdel_1.png)
+::::
+:::::
+
+## Long queue times
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Sometimes jobs queue (status `qw`) for a ***long*** time
+    - Beginning of semster (students learning)
+    - End of semester (students running final projects)
+    - Teams conducting large analyses
+    - ***Your request is large***
+- Tips:
+    - Optimize resource usage
+    - Consider parent and child jobs
+    - Consider job [arrays](https://docs.crc.nd.edu/new_user/quick_start.html#job-arrays)
+    - Lower cluster use at night, on weekends
+- `qstat`: (without options) check entire queue
+:::
+
+:::: {.column width="\"50%" style="font-size: 65%;"}
+
+![](qstat_2.png)
+
+::: {.incremental}
+- See [here](https://bash.cyberciti.biz/guide/Pipes) for using `|` (pipes)
+:::
+::::
+:::::
+
+## Check available resources
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- `free_nodes.sh -G`: Check usage of CPUs and nodes
+- `qstat -u user -g t`: Check utilized nodes
+:::
+
+:::: {.column width="\"50%" }
+::: {.r-stack}
+![](nodes_1.png)
+
+![](nodes_2.png){.fragment}
+:::
+::::
+:::::

@@ -4,7 +4,7 @@
     "href": "materials.html",
     "title": "Course Slides, Code, and Practice Materials",
     "section": "",
-    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n7. Shells\nSlides\nCode\nPractice\n\n\n\n\n8. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n9. Scheduling Jobs\nSlides\nCode\nPractice"
+    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. Shells\nSlides\nCode\nPractice\n\n\n\n\n2. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n3. Scheduling Jobs\nSlides\nCode\nPractice\n\n\n\n\n4. Conda\nSlides\nCode\nPractice\n\n\n\n\n4. Project environments\nSlides\nCode\nPractice\n\n\n\n\n4. Git and GitHub\nSlides\nCode\nPractice\n\n\n\n\n4. Branches and pull requests\nSlides\nCode\nPractice"
   },
   {
     "objectID": "lectures/08-cluster/08-practice.html",
@@ -403,14 +403,14 @@
     "href": "index.html",
     "title": "Computing Essentials",
     "section": "",
-    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
+    "text": "Neuroimaging is a fascinating and exciting technique that allows researchers to “look under the hood” and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.\nThe modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.\nThe topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. They will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.\nWe start with understanding and writing simple blocks of code, then will advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code."
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
     "title": "Computing Essentials",
     "section": "",
-    "text": "These lesson topics and practices are designed to teach foundational computing skills that are needed for conducting MRI research in a collaborative environment."
+    "text": "Neuroimaging is a fascinating and exciting technique that allows researchers to “look under the hood” and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.\nThe modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.\nThe topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. They will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.\nWe start with understanding and writing simple blocks of code, then will advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code."
   },
   {
     "objectID": "index.html#course-materials",
@@ -809,48 +809,111 @@
     "href": "lectures/09-schedule/09-schedule.html#redirect-output-stdout",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Redirect output: STDOUT",
-    "text": "Redirect output: STDOUT\n\n\n\nSTDOUT: printed output of succesful jobs (exit status 0)\nDesignated via &1\nNormally &1 is the terminal window\nCan be redirected to a file with &gt;\n\n&gt;: overwrites\n&gt;&gt;: appends"
+    "text": "Redirect output: STDOUT\n\n\n\nSTDOUT: output of succesful jobs (exit status 0)\nDesignated via &1\nNormally &1 is the terminal window\nCan be redirected to a file with &gt;\n\n&gt;: overwrites\n&gt;&gt;: appends"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#redirect-output-stderr",
     "href": "lectures/09-schedule/09-schedule.html#redirect-output-stderr",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Redirect output: STDERR",
-    "text": "Redirect output: STDERR\n\n\n\nSTDERR: printed output of failed jobs (exit status &gt;0)\nDesignated via 2&gt;\nNormally 2&gt; is the terminal window\nCan be redirected to a file with 2&gt;\n\n2&gt; err.log: send STDERR to err.log\n2&gt;&1: send STDERR to same location as STDOUT\ncmd &gt; out.log 2&gt;&1: Send STDOUT and STDERR to out.log"
+    "text": "Redirect output: STDERR\n\n\n\nSTDERR: output of failed jobs (exit status &gt;0)\nDesignated via 2&gt;\nNormally 2&gt; is the terminal window\nCan be redirected to a file with 2&gt;\n\n2&gt; err.log: send STDERR to err.log\n2&gt;&1: send STDERR to same location as STDOUT\ncmd &gt; out.log 2&gt;&1: Send STDOUT and STDERR to out.log\n\n\n\n\n\n\nNotice:\n\nLine 7 printed to err.log\nLine 8 printed to terminal"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#job-scripts",
     "href": "lectures/09-schedule/09-schedule.html#job-scripts",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Job Scripts",
-    "text": "Job Scripts\n\n\n\nCompute environments involved schedule jobs\n\ne.g. execute workflow A for subjects 1, 2, and 3\n\nInadvisable to edit job scripts for each subject\nBetter - pass subject number to workflow script\nJob script:\n\nRequest resources\nReceive arguments\nExecute workflow"
+    "text": "Job Scripts\n\n\n\nCompute environments involve scheduled jobs\n\ne.g. execute workflow A for subjects 1, 2, and 3\n\nOK: edit job scripts for each subject\nBetter: pass subject number to job script\nJob script purpose:\n\nRequest resources\nReceive arguments\nExecute workflow"
+  },
+  {
+    "objectID": "lectures/09-schedule/09-schedule.html#modules",
+    "href": "lectures/09-schedule/09-schedule.html#modules",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Modules",
+    "text": "Modules\n\n\n\nCRC supplies software packages as modules\n\nmodule avail: See available modules\nmodule load foo: Load module ‘foo’\n\nCommon: Load modules in job script\n\nAfter resource request\n\nPreferred: Load in project environment\n\n(Lecture 11 [TBD])"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
     "href": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Wrapper Scripts",
-    "text": "Wrapper Scripts\n\n\n\nWrapper script:\n\nSubmits job script by envoking qsub command\nPasses arguments to the job script\n\nUsed as the researcher-editable file\n\nNo need to edit job script\n\nCould also pass args to wrapper script\n\n(more advanced)"
+    "text": "Wrapper Scripts\n\n\n\nWrapper script purpose:\n\nSubmits job script by envoking qsub command\nPasses arguments to the job script\n\nUsed as the researcher-editable file\n\nNo need to edit job script\n\nResearch could pass args to wrapper script\n\n(more advanced)"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#make-log-directory",
     "href": "lectures/09-schedule/09-schedule.html#make-log-directory",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Make log directory",
-    "text": "Make log directory\n\n\n\nScheduled job runs on non-interactive node\n\nSTDOUT and STDERR are sent to [job_name].o[job_id]\n\nRedirect STDOUT and STDERR with -o and -e options\n\nCRC qsub configuration directs 2&gt;&1\n\nGood habit to organize STDOUT/ERR in logging directory\n\nNamed for job\nTime stamp helps trouble shoot"
+    "text": "Make log directory\n\n\n\nScheduled job runs on non-interactive node\n\nSTDOUT and STDERR are sent to [job_name].o[job_id]\n\nRedirect STDOUT and STDERR with -o and -e options\n\nCRC qsub configuration directs 2&gt;&1\n\nGood habit to organize STDOUT/ERR in logging directory\n\nNamed for job\nTime stamp helps trouble shoot\nSee here for information on date"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#qstat-qdel",
-    "href": "lectures/09-schedule/09-schedule.html#qstat-qdel",
+    "objectID": "lectures/09-schedule/09-schedule.html#check-status-qstat",
+    "href": "lectures/09-schedule/09-schedule.html#check-status-qstat",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Qstat, Qdel",
-    "text": "Qstat, Qdel"
+    "section": "Check status: qstat",
+    "text": "Check status: qstat\n\n\n\nCheck status of submitted jobs with qstat\n\nqstat -u username: status for all user jobs\nqstat -j jobid: status for specific jobs\n\nNumber of statuses possible:\n\nr: job is running\nqw: job is queued, waiting for resources\nEqw: invalid job\n\nSee more options here\n\n\n\n\nSet an alias for things your type often!"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#available-resources",
-    "href": "lectures/09-schedule/09-schedule.html#available-resources",
+    "objectID": "lectures/09-schedule/09-schedule.html#delete-jobs-qdel",
+    "href": "lectures/09-schedule/09-schedule.html#delete-jobs-qdel",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Available resources",
-    "text": "Available resources"
+    "section": "Delete jobs: qdel",
+    "text": "Delete jobs: qdel\n\n\n\nSometimes necessary to kill jobs\n\nIncorrect specification\nSyntax error (e.g. no increment in while loops)\n\nDetermine job ID with qstat\nqdel jobid: Terminates specified job\nSee more options here"
+  },
+  {
+    "objectID": "lectures/09-schedule/09-schedule.html#long-queue-times",
+    "href": "lectures/09-schedule/09-schedule.html#long-queue-times",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Long queue times",
+    "text": "Long queue times\n\n\n\nSometimes jobs queue (status qw) for a long time\n\nBeginning of semster (students learning)\nEnd of semester (students running final projects)\nTeams conducting large analyses\nYour request is large\n\nTips:\n\nOptimize resource usage\nConsider parent and child jobs\nConsider job arrays\nLower cluster use at night, on weekends\n\nqstat: (without options) check entire queue\n\n\n\n\nSee here for using | (pipes)"
+  },
+  {
+    "objectID": "lectures/09-schedule/09-schedule.html#check-available-resources",
+    "href": "lectures/09-schedule/09-schedule.html#check-available-resources",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Check available resources",
+    "text": "Check available resources\n\n\n\nfree_nodes.sh -G: Check usage of CPUs and nodes\nqstat -u user -g t: Check utilized nodes"
+  },
+  {
+    "objectID": "lectures/09-schedule/09-practice.html",
+    "href": "lectures/09-schedule/09-practice.html",
+    "title": "Scheduling: practice",
+    "section": "",
+    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
+  },
+  {
+    "objectID": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
+    "href": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
+    "title": "Scheduling: practice",
+    "section": "",
+    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
+  },
+  {
+    "objectID": "index.html#lecture-schedule",
+    "href": "index.html#lecture-schedule",
+    "title": "Computing Essentials",
+    "section": "Lecture Schedule",
+    "text": "Lecture Schedule\n\nModule 1.1, 1.2\nModule 1.3, 1.4\nModule 1.5\nModule 1.6\nModule 2.1\nModule 2.2\nModule 2.3"
+  },
+  {
+    "objectID": "index.html#lesson-schedule",
+    "href": "index.html#lesson-schedule",
+    "title": "Computing Essentials",
+    "section": "Lesson Schedule",
+    "text": "Lesson Schedule\n\n\n\nLesson\nDate\nMaterial\n\n\n\n\n1. Terminal and variables\nTBD\nModule 1.1, 1.2\n\n\n2. Scripting and for loops\nTBD\nModule 1.3, 1.4\n\n\n3. Conditional statements\nTBD\nModule 1.5\n\n\n4. Advanced looping\nTBD\nModule 1.6\n\n\n5. Shells\nTBD\nModule 2.1\n\n\n6. Cluster computing\nTBD\nModule 2.2\n\n\n7. Scheduling jobs\nTBD\nModule 2.3\n\n\n8. Conda and project environments\nTBD\nModule 2.4, 2.5\n\n\n9. Git and GitHub\nTBD\nModule 2.6\n\n\n10. Collaborative programming\nTBD\nModule 2.8"
+  },
+  {
+    "objectID": "index.html#course-modules-1",
+    "href": "index.html#course-modules-1",
+    "title": "Computing Essentials",
+    "section": "Course Modules",
+    "text": "Course Modules\n\nBash Syntax\nProductivity"
+  },
+  {
+    "objectID": "index.html#tentative-lesson-schedule",
+    "href": "index.html#tentative-lesson-schedule",
+    "title": "Computing Essentials",
+    "section": "(Tentative) Lesson Schedule",
+    "text": "(Tentative) Lesson Schedule\n\n\n\nLesson\nDate\nMaterial\n\n\n\n\n1. Terminal and variables\nTBD\nModule 1.1, 1.2\n\n\n2. Scripting and for loops\nTBD\nModule 1.3, 1.4\n\n\n3. Conditional statements\nTBD\nModule 1.5\n\n\n4. Advanced looping\nTBD\nModule 1.6\n\n\n5. Shells\nTBD\nModule 2.1\n\n\n6. Cluster computing\nTBD\nModule 2.2\n\n\n7. Scheduling jobs\nTBD\nModule 2.3\n\n\n8. Conda and project environments\nTBD\nModule 2.4, 2.5\n\n\n9. Git and GitHub\nTBD\nModule 2.6\n\n\n10. Collaborative programming\nTBD\nModule 2.8"
   }
 ]
