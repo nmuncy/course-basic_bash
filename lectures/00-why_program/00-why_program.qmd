@@ -1,0 +1,39 @@
+---
+title: "Why Program?"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Bash Basics: why"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Neuroimaging is cool
+
+## Neuroimaging is popular
+:::::{style="font-size: 65%;"}
+::: {.r-stack}
+![](trend_mri.png){.fragment}
+
+![](trend_fmri.png){.fragment}
+
+![](trend_dwi.png){.fragment}
+:::
+MRI, fMRI, and DWI paper trends (https://app.dimensions.ai)
+:::::
+
+## Data are large
+
+## Models are complex
+
+## Vast compute times
+
+## Lack of GUI
+
+## Goals for course

@@ -1,0 +1,28 @@
+---
+title: "Variables: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## String Slicing
+1. Set a variable to hold the string "aaa-bbb_ccc".
+1. Using string slicing syntax ("#" and/or "%"):
+    i. Write a command that uses the variable to print "aaa".
+    i. Write a command that uses the variable to print "ccc".
+    i. Write a set of commands that uses the variable to print "bbb".
+1. Repeat i-iii using positional slicing syntax (":").
+1. Share both a screenshot and your relevant `$ history` with your instructor.
+
+## Building Strings
+<!-- alpha="abcdefg"
+int=${alpha#*d}
+e=${int%f*}
+echo ${e}${alpha#*f}${alpha#*f} -->
+1. Write a series of commands that use the string "abcdefg" to print "egg" using "#" and "%" slicing methods.
+1. Repeat 1, with positional slicing methods.
+1. Send the syntax and screenshot to your instructor.

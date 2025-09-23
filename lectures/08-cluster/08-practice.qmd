@@ -1,0 +1,20 @@
+---
+title: "Cluster Computing: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Practice with SCP
+1. Create the file `foo.txt` on your local machine, use `scp` to copy it to your CRC `home`.
+1. Create the file `bar.txt` at CRC `home`, use `scp` to copy it to your local machine.
+1. Create a nested directory structure locally, use `scp` to copy it to your CRC `home`.
+1. Share these commands with your instructor.
+
+## Practice with RSYNC
+1. Repeat above, using `rsync`.
+1. Share these commands with your instructor.

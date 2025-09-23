@@ -1,0 +1,229 @@
+---
+title: "For Loops, cont'd: Arrays, counters, dynamic control"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Bash Basics: for loops, cont'd"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Purpose
+
+:::: {style="font-size: 65%;"}
+- **Knowledge**: Learn to align information across lists and build flexible for loops
+- **Skill**:
+    - Arrays and counters
+    - Control number of iterations
+- **Why**:
+    - Linking information (e.g. label-anatomy)
+    - Decrease workflow time and number of errors
+::::
+
+## C-style for loop
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Bash supports another for loop specification:
+    - Specify start, final, and increment values
+    - Using numerical assessment parentheses (double)
+    - Separated by semicolon
+- Only works with integers
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+for ((i=1; i<5; i++)); do
+    echo $i
+done
+```
+:::::
+::::::::
+
+## Dynamic iteration control
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Start and final values do not have to be hardcoded
+- C-style supports referencing a variable
+- These start and final variables could be set by another process
+    - `num_foo=$(ls foo*.txt | wc -l)`
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+start=1
+end=5
+for ((i=$start; i<$end; i++)); do
+    echo $i
+done
+```
+:::::
+::::::::
+
+## While loops and counters
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- While loops can also be used to control iteration number
+- Syntax based on an assertion being true
+- Specific structure:
+    - Space separated `while [ assertion ]`
+    - New line `do`
+    - Series of commands
+    - Typically a variable is updated
+    - New line `done`
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+cnt=1
+while [ $cnt -lt 5 ]; do
+    echo $cnt
+    let cnt+=1
+done
+```
+:::::
+::::::::
+
+## Arrays
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Arrays are a 0-indexed data type
+- Positional structure:
+    - Defined within parentheses
+    - Space separated
+- Data extracted by referencing position
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+arr_foo=({a..d})
+arr_fruit=(apple orange banana)
+echo ${arr_foo[0]}
+echo ${arr_fruit[2]}
+```
+::::{style="font-size: 65%;"}
+::: incremental
+- Why was `${arr_fruit[2]}` used and not `${arr_fruit[3]}`?
+:::
+::::
+:::::
+::::::::
+
+
+## Arrays: position
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Special syntax to reference array indices
+    - `${!arr[@]}`
+    - `!` queries indices
+    - `@` references all array values
+- Useful for iterations through array positions
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+arr=({a..d})
+echo "Array positions are ${!arr[@]}"
+
+for pos in ${!arr[@]}; do
+    echo "Array position $pos value is ${arr[$pos]}"
+done
+```
+:::::
+::::::::
+
+## Arrays: length
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Special syntax to extract array length
+    - `${#arr[@]}`
+    - `#` queries length
+- Useful for extracting positions from multiple arrays
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+hero=(batman superman aquaman)
+color=(black red green)
+echo "hero array length is ${#hero[@]}"
+
+# Check arrays are same length
+[ ${#hero[@]} == ${#color[@]} ] \
+    || echo "Array length mismatch"
+
+idx=0
+while [ $idx -lt ${#hero[@]} ]; do
+    echo "The hero ${hero[$idx]} wears ${color[$idx]}"
+    let idx+=1
+done
+```
+::::{style="font-size: 65%;"}
+::: incremental
+- Do I need to consider 0-indexing in my while assertion?
+- Note the extraction of array information with variable.
+:::
+::::
+:::::
+::::::::
+
+## Building arrays and variables
+
+:::::: columns
+::::: {.column width="50%"}
+:::: {style="font-size: 65%;"}
+- Variables and arrays can be built
+- Operator `+=` allows for concatentation
+    - In addition to increasing integer values
+- Command `unset` clears variables
+::::
+:::::
+
+::::: {.column width="\"50%" style="font-size: 80%;"}
+```{bash}
+#| echo: true
+unset var_foo
+unset arr_foo
+
+[ -z $var_foo ] && echo empty
+
+for i in {1..4}; do
+    var_foo+="$i"
+    arr_foo+=($i)
+done
+
+[ -z $var_foo ] || echo full
+
+echo $var_foo
+echo ${var_foo[@]}
+```
+:::::
+::::::::

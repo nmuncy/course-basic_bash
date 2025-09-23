@@ -1,0 +1,282 @@
+---
+title: "Cluster Computing: pass arguments, schedule and check jobs"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Productivity: schedule jobs"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Purpose
+:::: {style="font-size: 65%;"}
+- **Knowledge**: Learn to schedule flexible jobs
+- **Skill**:
+    - Pass and capture arguments
+    - Redirect output and error messages
+    - Build wrapper and job scripts
+    - Submit and check jobs
+- **Why**:
+    - Deploy a common workflow for all subjects
+    - Protect important scripts from requiring edits
+::::
+
+## Capture positional arguments
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Recall anatomy of shell command:
+    - `$ CMD OPT PARAM`
+    - `$ mkdir -p foo/bar`
+- Commands have 0-indexed positions
+    - `0`: `mkdir`
+    - `1`: `-p`
+    - `2`: `foo/bar`
+- Positional arguments can be accessed in scripts
+    - Held in special variable `$[index]`
+    - e.g. `$0`, `$1`, `$2` ...
+:::
+
+:::: {.column width="\"50%"}
+![](pos_args1.png){.fragment}
+::::
+:::::
+
+## Use positional arguments
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Assign positional argument to variable
+- Use variable in script workflow
+:::
+
+:::: {.column width="\"50%"}
+![](pos_args2.png)
+::::
+:::::
+
+## Redirect output: STDOUT
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- `STDOUT`: output of succesful jobs (exit status 0)
+- Designated via `&1`
+- Normally `&1` is the terminal window
+- Can be redirected to a file with `>`
+    - `>`: overwrites
+    - `>>`: appends
+:::
+
+:::: {.column width="\"50%"}
+![](stdout_1.png)
+::::
+:::::
+
+
+## Redirect output: STDERR
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- `STDERR`: output of failed jobs (exit status >0)
+- Designated via `2>`
+- Normally `2>` is the terminal window
+- Can be redirected to a file with `2>`
+    - `2> err.log`: send STDERR to err.log
+    - `2>&1`: send STDERR to same location as STDOUT
+    - `cmd > out.log 2>&1`: Send STDOUT and STDERR to out.log
+:::
+
+:::: {.column width="\"50%"}
+![](stderr_1.png)
+
+::: {.incremental style="font-size: 65%;"}
+- Notice:
+    - Line 7 printed to `err.log`
+    - Line 8 printed to terminal
+:::
+::::
+:::::
+
+## Job Scripts
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Compute environments involve scheduled jobs
+    - e.g. execute workflow A for subjects 1, 2, and 3
+- OK: edit job scripts for each subject
+- Better: pass subject number to job script
+- Job script purpose:
+    - Request resources
+    - Receive arguments
+    - Execute workflow
+:::
+
+:::: {.column width="\"50%"}
+![](submit_1.png)
+::::
+:::::
+
+## Modules
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- CRC supplies software packages as modules
+    - `module avail`: See available modules
+    - `module load foo`: Load module 'foo'
+- Common: Load modules in job script
+    - After resource request
+- Preferred: Load in project environment
+    - (Lecture 11 [TBD])
+:::
+
+:::: {.column width="\"50%"}
+![](submit_1.png)
+::::
+:::::
+
+## Wrapper Scripts
+
+:::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Wrapper script purpose:
+    - Submits job script by envoking `qsub` command
+    - Passes arguments to the job script
+- Used as the researcher-editable file
+    - No need to edit job script
+- Research could pass args to wrapper script
+    - (more advanced)
+:::
+
+::::: {.column width="\"50%"}
+:::: {layout-nrow="3"}
+
+![](submit_2.png)
+
+::: {.r-stack}
+
+![](submit_3.png){.fragment}
+
+![](submit_4.png){.fragment}
+
+:::
+::::
+:::::
+::::::
+
+## Make log directory
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Scheduled job runs on non-interactive node
+    - STDOUT and STDERR are sent to `[job_name].o[job_id]`
+- Redirect STDOUT and STDERR with `-o` and `-e` options
+    - CRC `qsub` configuration directs `2>&1`
+- Good habit to organize STDOUT/ERR in logging directory
+    - Named for job
+    - Time stamp helps trouble shoot
+    - See [here](https://www.cyberciti.biz/faq/unix-linux-bash-get-time/) for information on `date`
+:::
+
+:::: {.column width="\"50%"}
+::: {.r-stack}
+![](log_dir1.png)
+
+![](log_dir2.png){.fragment}
+
+![](log_dir3.png){.fragment}
+
+![](log_dir4.png){.fragment}
+:::
+::::
+:::::
+
+## Check status: qstat
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Check status of submitted jobs with `qstat`
+    - `qstat -u username`: status for all user jobs
+    - `qstat -j jobid`: status for specific jobs
+- Number of statuses possible:
+    - `r`: job is running
+    - `qw`: job is queued, waiting for resources
+    - `Eqw`: invalid job
+- See more options [here](https://docs.adaptivecomputing.com/torque/4-1-3/Content/topics/commands/qstat.htm)
+:::
+
+:::: {.column width="\"50%" style="font-size: 65%;"}
+
+![](qstat_1.png)
+
+::: {.incremental}
+- Set an alias for things your type often!
+:::
+::::
+:::::
+
+## Delete jobs: qdel
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Sometimes necessary to kill jobs
+    - Incorrect specification
+    - Syntax error (e.g. no increment in while loops)
+- Determine job ID with `qstat`
+- `qdel jobid`: Terminates specified job
+- See more options [here](https://docs.adaptivecomputing.com/torque/3-0-5/commands/qdel.php)
+:::
+
+:::: {.column width="\"50%" style="font-size: 65%;"}
+![](qdel_1.png)
+::::
+:::::
+
+## Long queue times
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Sometimes jobs queue (status `qw`) for a ***long*** time
+    - Beginning of semster (students learning)
+    - End of semester (students running final projects)
+    - Teams conducting large analyses
+    - ***Your request is large***
+- Tips:
+    - Optimize resource usage
+    - Consider parent and child jobs
+    - Consider job [arrays](https://docs.crc.nd.edu/new_user/quick_start.html#job-arrays)
+    - Lower cluster use at night, on weekends
+- `qstat`: (without options) check entire queue
+:::
+
+:::: {.column width="\"50%" style="font-size: 65%;"}
+
+![](qstat_2.png)
+
+::: {.incremental}
+- See [here](https://bash.cyberciti.biz/guide/Pipes) for using `|` (pipes)
+:::
+::::
+:::::
+
+## Check available resources
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- `free_nodes.sh -G`: Check usage of CPUs and nodes
+- `qstat -u user -g t`: Check utilized nodes
+:::
+
+:::: {.column width="\"50%" }
+::: {.r-stack}
+![](nodes_1.png)
+
+![](nodes_2.png){.fragment}
+:::
+::::
+:::::

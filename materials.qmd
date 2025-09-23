@@ -1,0 +1,37 @@
+---
+title: "Course Slides, Code, and Practice Materials"
+execute:
+  freeze: auto
+---
+
+<details>
+
+<summary> Module 1: Bash Syntax </summary>
+
+| Topic | Slides | Code | Exercises |
+|---------------|--------|--------|---------|------|-----------|
+| 1. The terminal | [Slides](lectures/01-the_terminal/01-the_terminal.qmd){target="_blank"} | [Code](code/01_the_terminal.sh) | [Practice](lectures/01-the_terminal/01-practice.qmd){target="_blank"} |
+| 2. Variables | [Slides](lectures/02-variables/02-variables.qmd){target="_blank"} | [Code](code/02_variables.sh) | [Practice](lectures/02-variables/02-practice.qmd){target="_blank"} |
+| 3. Scripting | [Slides](lectures/03-scripting/03-scripting.qmd){target="_blank"} | [Code](code/03_scripting.sh) | [Practice](lectures/03-scripting/03-practice.qmd){target="_blank"} |
+| 4. For Loops | [Slides](lectures/04-for_loops/04-for_loops.qmd){target="_blank"} | [Code](code/04_for_loops.sh) | [Practice](lectures/04-for_loops/04-practice.qmd){target="_blank"} |
+| 5. Conditionals | [Slides](lectures/05-conditionals/05-conditionals.qmd){target="_blank"} | [Code](code/05_conditionals.sh) | [Practice](lectures/05-conditionals/05-practice.qmd){target="_blank"} |
+| 6. For Loops, cont'd | [Slides](lectures/06-for_loops/06-for_loops.qmd){target="_blank"} | [Code](code/06_for_loops_contd.sh) | [Practice](lectures/06-for_loops/06-practice.qmd){target="_blank"} |
+
+</details>
+
+
+<details>
+
+<summary> Module 2: Productivity </summary>
+
+| Topic | Slides | Code | Exercises |
+|---------------|--------|--------|---------|------|-----------|
+| 1. Shells | [Slides](lectures/07-shells/07-shells.qmd){target="_blank"} | [Code](code/07_shells.sh) | [Practice](lectures/07-shells/07-practice.qmd){target="_blank"} |
+| 2. Cluster Computing | [Slides](lectures/08-cluster/08-cluster.qmd){target="_blank"} | [Code](code/08_cluster.sh) | [Practice](lectures/08-cluster/08-practice.qmd){target="_blank"} |
+| 3. Scheduling Jobs | [Slides](lectures/09-schedule/09-schedule.qmd){target="_blank"} | [Code](code/09_schedule.sh) | [Practice](lectures/09-schedule/09-practice.qmd){target="_blank"} |
+| 4. Conda | Slides | Code | Practice |
+| 5. Project environments | Slides | Code | Practice |
+| 6. Git and GitHub | Slides | Code | Practice |
+| 7. Branches and pull requests | Slides | Code | Practice |
+
+</details>

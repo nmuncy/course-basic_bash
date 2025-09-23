@@ -1,0 +1,21 @@
+---
+title: "For Loops, cont'd: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Shells and variables
+1. Use the CLI and a script to demonstrate that global variables can be set in the parent shell.
+1. Also show that globals set in subshell are not accessible in the parent shell.
+1. Demonstrate that variables are shell-specific.
+1. Send these example to your instructor.
+
+## Style Prompt
+1. Add you computer's name to, and change the color of, the prompt.
+1. (OSx) Turn on CLI colors and set color schemes for `ls`.
+1. Send a screenshot of your prompt and `ls` output to your instructor.
