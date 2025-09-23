@@ -14,9 +14,9 @@ Neuroimaging is a fascinating and exciting technique that allows researchers to 
 
 The modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.
 
-The topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. They will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.
+The topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.
 
-We start with understanding and writing simple blocks of code, then will advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code.
+We start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code.
 
 
 ## Course Materials
@@ -36,4 +36,4 @@ We start with understanding and writing simple blocks of code, then will advance
 | 7. Scheduling jobs | TBD | Module 2.3 |
 | 8. Conda and project environments | TBD | Module 2.4, 2.5 |
 | 9. Git and GitHub | TBD | Module 2.6 |
-| 10. Collaborative programming | TBD | Module 2.8 |
+| 10. Collaborative programming | TBD | Module 2.7 |

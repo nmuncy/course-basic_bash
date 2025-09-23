@@ -30,8 +30,8 @@ execute:
 | 2. Cluster Computing | [Slides](lectures/08-cluster/08-cluster.qmd){target="_blank"} | [Code](code/08_cluster.sh) | [Practice](lectures/08-cluster/08-practice.qmd){target="_blank"} |
 | 3. Scheduling Jobs | [Slides](lectures/09-schedule/09-schedule.qmd){target="_blank"} | [Code](code/09_schedule.sh) | [Practice](lectures/09-schedule/09-practice.qmd){target="_blank"} |
 | 4. Conda | Slides | Code | Practice |
-| 4. Project environments | Slides | Code | Practice |
-| 4. Git and GitHub | Slides | Code | Practice |
-| 4. Branches and pull requests | Slides | Code | Practice |
+| 5. Project environments | Slides | Code | Practice |
+| 6. Git and GitHub | Slides | Code | Practice |
+| 7. Branches and pull requests | Slides | Code | Practice |
 
 </details>
