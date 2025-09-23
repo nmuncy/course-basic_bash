@@ -1,0 +1,21 @@
+---
+title: "Conda: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Build an environment
+1. Activate conda in your CRC account
+1. Build an environment named 'test_python' which contains the following packages:
+    - Python version 3.10
+    - Black
+    - Flake8
+    - Numpy
+    - Scipy
+    - Pandas
+1. Share a YAML export of the environment with your instructor.

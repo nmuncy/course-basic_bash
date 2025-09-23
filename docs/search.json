@@ -7,6 +7,69 @@
     "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. Shells\nSlides\nCode\nPractice\n\n\n\n\n2. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n3. Scheduling Jobs\nSlides\nCode\nPractice\n\n\n\n\n4. Conda\nSlides\nCode\nPractice\n\n\n\n\n5. Project environments\nSlides\nCode\nPractice\n\n\n\n\n6. Git and GitHub\nSlides\nCode\nPractice\n\n\n\n\n7. Branches and pull requests\nSlides\nCode\nPractice"
   },
   {
+    "objectID": "lectures/10-conda/10-conda.html#purpose",
+    "href": "lectures/10-conda/10-conda.html#purpose",
+    "title": "Conda: environments and software",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn to build and manage environments\nSkill:\n\nActivate conda\nBuild and manage environments\nSave and remove environments\n\nWhy:\n\nManage software version dependencies\nWork within a consistent environment"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#need-for-conda",
+    "href": "lectures/10-conda/10-conda.html#need-for-conda",
+    "title": "Conda: environments and software",
+    "section": "Need for conda",
+    "text": "Need for conda\n\n\nResearch involves specific software\n\nAs software develops, new versions function differently\nSoftware suites often call on other suites\nSoftware version can have specific hardware requirements\nTogether, a chance for dependency hell\n\nProjects take years:\n\nNeed to hold versions constant for on-going projects\nNeed to use newer versions for new projects\n\nReplication dependent on specific software versions\nConda is a package and environment manager\n\nBuild environments with specific software versions"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#conda-on-the-crc",
+    "href": "lectures/10-conda/10-conda.html#conda-on-the-crc",
+    "title": "Conda: environments and software",
+    "section": "Conda on the CRC",
+    "text": "Conda on the CRC\n\n\n\nConda is provided as a module on the CRC\n\nSee here for their documentation\nFind module via module avail | grep conda\n\nActivate conda via:\n\nmodule load conda\nconda init\nsource ~/.bashrc\n\nWhy use source instead of ./?\n\nmodule unload conda\n\nVerify via conda info"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#named-environments",
+    "href": "lectures/10-conda/10-conda.html#named-environments",
+    "title": "Conda: environments and software",
+    "section": "Named environments",
+    "text": "Named environments\n\n\n\nEnvironments can be named\n\nPurposes (e.g. python3.8, r4.1)\nProjects (e.g. rest_fmri, proj_name)\n\nUse conda by envoking command conda and supply arguments\nconda create -n test_name: build named environment test_name\n\nNote the build location in ~/.conda\n\nconda env list: see available environments\nconda activate test_name: activate test_name enironment\nconda deactivate: exits environment"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#prefix-path-environments",
+    "href": "lectures/10-conda/10-conda.html#prefix-path-environments",
+    "title": "Conda: environments and software",
+    "section": "Prefix (path) environments",
+    "text": "Prefix (path) environments\n\n\n\nAll named envs have paths\nPossible to make only prefixed (path) envs\n\nSave env to specific location\nMake env available to other users (e.g. RAs)\n\nconda create -p ~/test_path\nNote:\n\nthe build location\nAbsence of a name\n\nActivate by path\nTip: add env_prompt: '({name})' to .condarc to only see the name of env (and not full path)"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#installing-packages",
+    "href": "lectures/10-conda/10-conda.html#installing-packages",
+    "title": "Conda: environments and software",
+    "section": "Installing packages",
+    "text": "Installing packages\n\n\n\nconda list: show packages installed in current env\nconda install: install specific package name\n\nDefault is to search for package at conda-forge\n\nconda install -c conda-forge python=3.10: install python version 3.10 from conda-forge repository into current env\nNote: strength of conda - also installs dependencies!\n\nAnd manages versions if conflicts arise\nOnly when installed through conda, not other package managers (e.g. pip)"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#multiple-environments",
+    "href": "lectures/10-conda/10-conda.html#multiple-environments",
+    "title": "Conda: environments and software",
+    "section": "Multiple environments",
+    "text": "Multiple environments\n\n\n\nEnvironments do not conflict with each other\nSeparate environments allow for separate software versions\nApplicable to Python, R, Java, C, C++, and others\nUseful for differing projects!\nRecommendation: one environment per project\n\nAllows to lock in versions\nEnables newer versions for newer projects"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#exporting-environments",
+    "href": "lectures/10-conda/10-conda.html#exporting-environments",
+    "title": "Conda: environments and software",
+    "section": "Exporting environments",
+    "text": "Exporting environments\n\n\n\nSaving environment:\n\nBackup\nShare with collaborators\nAdd to code repository\n\nconda env export &gt; env_name.yml: save environment as YAML file\n\nPreferred method\n\nconda list --explicit &gt; env_name.txt: save environment sources as text file\n\nNot as robust\n\nEnvironments can be built from files using the -f option (see here)"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#deleting-environments",
+    "href": "lectures/10-conda/10-conda.html#deleting-environments",
+    "title": "Conda: environments and software",
+    "section": "Deleting environments",
+    "text": "Deleting environments\n\n\n\nClean unused environments\n\nCan always rebuild from backup file\n(Assuming versions work on hardware or OS version)\n\nRemoval is similar to creation\n\nconda env remove -n test_name: remove named env test_name\nconda env remove -p ~/test_path: remove previx env test_path"
+  },
+  {
     "objectID": "lectures/09-schedule/09-practice.html",
     "href": "lectures/09-schedule/09-practice.html",
     "title": "Scheduling: practice",
@@ -887,5 +950,19 @@
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Check available resources",
     "text": "Check available resources\n\n\n\nfree_nodes.sh -G: Check usage of CPUs and nodes\nqstat -u user -g t: Check utilized nodes"
+  },
+  {
+    "objectID": "lectures/10-conda/10-practice.html",
+    "href": "lectures/10-conda/10-practice.html",
+    "title": "Conda: practice",
+    "section": "",
+    "text": "Activate conda in your CRC account\nBuild an environment named ‘test_python’ which contains the following packages:\n\nPython version 3.10\nBlack\nFlake8\nNumpy\nScipy\nPandas\n\nShare a YAML export of the environment with your instructor."
+  },
+  {
+    "objectID": "lectures/10-conda/10-practice.html#build-an-environment",
+    "href": "lectures/10-conda/10-practice.html#build-an-environment",
+    "title": "Conda: practice",
+    "section": "",
+    "text": "Activate conda in your CRC account\nBuild an environment named ‘test_python’ which contains the following packages:\n\nPython version 3.10\nBlack\nFlake8\nNumpy\nScipy\nPandas\n\nShare a YAML export of the environment with your instructor."
   }
 ]
