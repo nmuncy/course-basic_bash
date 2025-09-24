@@ -9,7 +9,7 @@
 <meta name="author" content="Nathan Muncy">
 <meta name="dcterms.date" content="2025-09-24">
 
-<title>Scheduling: practice – Bash Esssentials</title>
+<title>Project Environments: practice – Bash Esssentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#schedule-a-batch-of-jobs" id="toc-schedule-a-batch-of-jobs" class="nav-link active" data-scroll-target="#schedule-a-batch-of-jobs">Schedule a batch of jobs</a></li>
+  <li><a href="#build-an-environment" id="toc-build-an-environment" class="nav-link active" data-scroll-target="#build-an-environment">Build an environment</a></li>
   </ul>
 </nav>
     </div>
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Scheduling: practice</h1>
+<h1 class="title">Project Environments: practice</h1>
 </div>
 
 
@@ -160,16 +160,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="schedule-a-batch-of-jobs" class="level2">
-<h2 class="anchored" data-anchor-id="schedule-a-batch-of-jobs">Schedule a batch of jobs</h2>
+<section id="build-an-environment" class="level2">
+<h2 class="anchored" data-anchor-id="build-an-environment">Build an environment</h2>
 <ol type="1">
-<li>Construct a ‘job’ script that contains a resource request and receives three arguments.</li>
-<li>Have the job script print the first two arguments to STDOUT and the third argument to STDERR.</li>
-<li>Construct a ‘wrapper’ script that will write logs to <code>/scratch365/user/prac_submit</code>.</li>
-<li>In the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.</li>
-<li>Iterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.</li>
-<li>Validate the logging directory strucutre, file name, and content.</li>
-<li>Send the script and evidence of its efficacy to your instructor.</li>
+<li>Create a project environment shell script that:
+<ul>
+<li>Prints the name of the project to STDOUT</li>
+<li>Loads, activates, and configures the FreeSurfer module</li>
+<li>Adds a project directory to your path</li>
+<li>Sets global variables</li>
+<li>Activates the conda environment from the previous <a href="../../lectures/10-conda/10-practice.html">lesson</a></li>
+</ul></li>
+<li>Share evidence of the environment script working with your instructor</li>
 </ol>
 
 

@@ -1,0 +1,19 @@
+---
+title: "Project Environments: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Build an environment
+1. Create a project environment shell script that:
+    - Prints the name of the project to STDOUT
+    - Loads, activates, and configures the FreeSurfer module
+    - Adds a project directory to your path
+    - Sets global variables
+    - Activates the conda environment from the previous [lesson](../10-conda/10-practice.qmd)
+1. Share evidence of the environment script working with your instructor

@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nathan M. Muncy">
   <meta name="dcterms.date" content="2025-09-24">
-  <title>Bash Esssentials – Cluster Computing: pass arguments, schedule and check jobs</title>
+  <title>Bash Esssentials – Project Environments: centralize workflows</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -128,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Cluster Computing: pass arguments, schedule and check jobs</h1>
+  <h1 class="title">Project Environments: centralize workflows</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -144,299 +210,122 @@ Nathan M. Muncy
 <h2>Purpose</h2>
 <div style="font-size: 65%;">
 <ul>
-<li><strong>Knowledge</strong>: Learn to schedule flexible jobs</li>
+<li><strong>Knowledge</strong>: Build project environments</li>
 <li><strong>Skill</strong>:
 <ul>
-<li>Pass and capture arguments</li>
-<li>Redirect output and error messages</li>
-<li>Build wrapper and job scripts</li>
-<li>Submit and check jobs</li>
+<li>Construct environment build file</li>
+<li>Centralize conda envs</li>
 </ul></li>
 <li><strong>Why</strong>:
 <ul>
-<li>Deploy a common workflow for all subjects</li>
-<li>Protect important scripts from requiring edits</li>
+<li>The ability to manage conda envs and global variables across projects</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="capture-positional-arguments" class="slide level2">
-<h2>Capture positional arguments</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li>Recall anatomy of shell command:
-<ul>
-<li><code>$ CMD OPT PARAM</code></li>
-<li><code>$ mkdir -p foo/bar</code></li>
-</ul></li>
-<li>Commands have 0-indexed positions
-<ul>
-<li><code>0</code>: <code>mkdir</code></li>
-<li><code>1</code>: <code>-p</code></li>
-<li><code>2</code>: <code>foo/bar</code></li>
-</ul></li>
-<li>Positional arguments can be accessed in scripts
-<ul>
-<li>Held in special variable <code>$[index]</code></li>
-<li>e.g.&nbsp;<code>$0</code>, <code>$1</code>, <code>$2</code> …</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="pos_args1.png" class="fragment"></p>
-</div></div>
-</section>
-<section id="use-positional-arguments" class="slide level2">
-<h2>Use positional arguments</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li>Assign positional argument to variable</li>
-<li>Use variable in script workflow</li>
-</ul>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="pos_args2.png"></p>
-</div></div>
-</section>
-<section id="redirect-output-stdout" class="slide level2">
-<h2>Redirect output: STDOUT</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li><code>STDOUT</code>: output of succesful jobs (exit status 0)</li>
-<li>Designated via <code>&amp;1</code></li>
-<li>Normally <code>&amp;1</code> is the terminal window</li>
-<li>Can be redirected to a file with <code>&gt;</code>
-<ul>
-<li><code>&gt;</code>: overwrites</li>
-<li><code>&gt;&gt;</code>: appends</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="stdout_1.png"></p>
-</div></div>
-</section>
-<section id="redirect-output-stderr" class="slide level2">
-<h2>Redirect output: STDERR</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li><code>STDERR</code>: output of failed jobs (exit status &gt;0)</li>
-<li>Designated via <code>2&gt;</code></li>
-<li>Normally <code>2&gt;</code> is the terminal window</li>
-<li>Can be redirected to a file with <code>2&gt;</code>
-<ul>
-<li><code>2&gt; err.log</code>: send STDERR to err.log</li>
-<li><code>2&gt;&amp;1</code>: send STDERR to same location as STDOUT</li>
-<li><code>cmd &gt; out.log 2&gt;&amp;1</code>: Send STDOUT and STDERR to out.log</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="stderr_1.png"></p>
+<section id="need-for-project-environments" class="slide level2">
+<h2>Need for project environments</h2>
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Notice:
+<li>MRI software often requires:
 <ul>
-<li class="fragment">Line 7 printed to <code>err.log</code></li>
-<li class="fragment">Line 8 printed to terminal</li>
+<li>Global variables
+<ul>
+<li>FreeSurfer: <code>SUBJECTS_DIR</code>, <code>FREESURFER_HOME</code>, <code>FS_LICENSE</code></li>
+<li>FSL: <code>FSLDIR</code></li>
+<li>fMRIPrep: <code>TEMPLATEFLOW_HOME</code></li>
 </ul></li>
+<li>Binary access in PATH
+<ul>
+<li>AFNI, FSL, c3d, ANTs</li>
+</ul></li>
+</ul></li>
+<li>Conflicts arise between on-going and new projects
+<ul>
+<li><em>OK</em> solution: change .bashrc when switching projects</li>
+<li><strong><em>Better</em></strong> solution: build project environment from script</li>
+</ul></li>
+<li>Utility: project environment build script can be shared and versioned</li>
 </ul>
 </div>
-</div></div>
 </section>
-<section id="job-scripts" class="slide level2">
-<h2>Job Scripts</h2>
+<section id="contents-of-project-environments" class="slide level2">
+<h2>Contents of project environments</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li>Compute environments involve scheduled jobs
-<ul>
-<li>e.g.&nbsp;execute workflow A for subjects 1, 2, and 3</li>
-</ul></li>
-<li>OK: edit job scripts for each subject</li>
-<li>Better: pass subject number to job script</li>
-<li>Job script purpose:
-<ul>
-<li>Request resources</li>
-<li>Receive arguments</li>
-<li>Execute workflow</li>
-</ul></li>
+<li>Load modules</li>
+<li>Software versions</li>
+<li>Software configuration</li>
+<li>PATH updates</li>
+<li>Conda activation</li>
+<li>Project globals</li>
+<li>User messages</li>
 </ul>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="submit_1.png"></p>
+</div><div class="column" style="font-size: 65%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="co"># Load, configure FreeSurfer</span></span>
+<span id="cb1-4"><a></a><span class="ex">module</span> load freesurfer/8.0</span>
+<span id="cb1-5"><a></a><span class="bu">export</span> <span class="va">SUBJECTS_DIR</span><span class="op">=</span>/users/<span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>/projects</span>
+<span id="cb1-6"><a></a><span class="bu">export</span> <span class="va">FS_LICENSE</span><span class="op">=</span>/users/<span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>/research_bin/license.txt</span>
+<span id="cb1-7"><a></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$SUBJECTS_DIR</span></span>
+<span id="cb1-8"><a></a><span class="bu">source</span> <span class="va">$FREESURFER_HOME</span>/SetUpFreeSurfer.sh</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># Update path</span></span>
+<span id="cb1-11"><a></a><span class="va">PATH</span><span class="op">=</span><span class="va">${PATH}</span>:<span class="dt">\</span></span>
+<span id="cb1-12"><a></a>/users/<span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>/research_bin</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a><span class="bu">export</span> <span class="va">PATH</span></span>
+<span id="cb1-15"><a></a></span>
+<span id="cb1-16"><a></a><span class="co"># User globals</span></span>
+<span id="cb1-17"><a></a><span class="va">SQL_PASS</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> ~/.ssh/pass_sql<span class="va">)</span></span>
+<span id="cb1-18"><a></a><span class="va">RSA_WS</span><span class="op">=</span>~/.ssh/id_rsa_ws</span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a><span class="co"># Load project conda env</span></span>
+<span id="cb1-21"><a></a><span class="ex">conda</span> activate proj_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Following this example will require a FreeSurfer <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/License">License</a> stored at the appropriate location.</li>
+</ul>
 </div></div>
 </section>
-<section id="modules" class="slide level2">
-<h2>Modules</h2>
+<section id="access-environments" class="slide level2">
+<h2>Access environments</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li>CRC supplies software packages as modules
+<li>Activate via <code>source</code>
 <ul>
-<li><code>module avail</code>: See available modules</li>
-<li><code>module load foo</code>: Load module ‘foo’</li>
+<li>Proj environment configuration is available to all subshells</li>
+<li>E.g. scheduled jobs - no longer need to manage module across multiple job files!</li>
 </ul></li>
-<li>Common: Load modules in job script
-<ul>
-<li>After resource request</li>
-</ul></li>
-<li>Preferred: Load in project environment
-<ul>
-<li>(Lecture 11 [TBD])</li>
-</ul></li>
+<li>Personal preference: set an <code>alias</code> to activate environments</li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
-<p><img data-src="submit_1.png"></p>
-</div></div>
-</section>
-<section id="wrapper-scripts" class="slide level2">
-<h2>Wrapper Scripts</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li>Wrapper script purpose:
-<ul>
-<li>Submits job script by envoking <code>qsub</code> command</li>
-<li>Passes arguments to the job script</li>
-</ul></li>
-<li>Used as the researcher-editable file
-<ul>
-<li>No need to edit job script</li>
-</ul></li>
-<li>Research could pass args to wrapper script
-<ul>
-<li>(more advanced)</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:&quot;50%;">
-<div class="quarto-layout-panel" data-layout-nrow="3">
+<div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="submit_2.png"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="r-stack quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="submit_3.png" class="fragment"></p>
-<p><img data-src="submit_4.png" class="fragment"></p>
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><img data-src="activate_1.png" class="fragment"> <img data-src="activate_2.png" class="fragment"></p>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="make-log-directory" class="slide level2">
-<h2>Make log directory</h2>
+<section id="save-and-share" class="slide level2">
+<h2>Save and share</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li>Scheduled job runs on non-interactive node
+<li>Save environment script somewhere useful
 <ul>
-<li>STDOUT and STDERR are sent to <code>[job_name].o[job_id]</code></li>
-</ul></li>
-<li>Redirect STDOUT and STDERR with <code>-o</code> and <code>-e</code> options
-<ul>
-<li>CRC <code>qsub</code> configuration directs <code>2&gt;&amp;1</code></li>
-</ul></li>
-<li>Good habit to organize STDOUT/ERR in logging directory
-<ul>
-<li>Named for job</li>
-<li>Time stamp helps trouble shoot</li>
-<li>See <a href="https://www.cyberciti.biz/faq/unix-linux-bash-get-time/">here</a> for information on <code>date</code></li>
+<li>Preferably in ‘env’ directory of code base</li>
+<li>Versioning helps reproducibility and replicability</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
-<div class="r-stack">
-<p><img data-src="log_dir1.png"></p>
-<p><img data-src="log_dir2.png" class="fragment"></p>
-<p><img data-src="log_dir3.png" class="fragment"></p>
-<p><img data-src="log_dir4.png" class="fragment"></p>
-</div>
-</div></div>
-</section>
-<section id="check-status-qstat" class="slide level2">
-<h2>Check status: qstat</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li>Check status of submitted jobs with <code>qstat</code>
-<ul>
-<li><code>qstat -u username</code>: status for all user jobs</li>
-<li><code>qstat -j jobid</code>: status for specific jobs</li>
-</ul></li>
-<li>Number of statuses possible:
-<ul>
-<li><code>r</code>: job is running</li>
-<li><code>qw</code>: job is queued, waiting for resources</li>
-<li><code>Eqw</code>: invalid job</li>
-</ul></li>
-<li>See more options <a href="https://docs.adaptivecomputing.com/torque/4-1-3/Content/topics/commands/qstat.htm">here</a></li>
-</ul>
-</div><div class="column" style="font-size: 65%;">
-<p><img data-src="qstat_1.png"></p>
-<ul>
-<li class="fragment">Set an alias for things your type often!</li>
-</ul>
-</div></div>
-</section>
-<section id="delete-jobs-qdel" class="slide level2">
-<h2>Delete jobs: qdel</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li>Sometimes necessary to kill jobs
-<ul>
-<li>Incorrect specification</li>
-<li>Syntax error (e.g.&nbsp;no increment in while loops)</li>
-</ul></li>
-<li>Determine job ID with <code>qstat</code></li>
-<li><code>qdel jobid</code>: Terminates specified job</li>
-<li>See more options <a href="https://docs.adaptivecomputing.com/torque/3-0-5/commands/qdel.php">here</a></li>
-</ul>
-</div><div class="column" style="font-size: 65%;">
-<p><img data-src="qdel_1.png"></p>
-</div></div>
-</section>
-<section id="long-queue-times" class="slide level2">
-<h2>Long queue times</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li>Sometimes jobs queue (status <code>qw</code>) for a <strong><em>long</em></strong> time
-<ul>
-<li>Beginning of semster (students learning)</li>
-<li>End of semester (students running final projects)</li>
-<li>Teams conducting large analyses</li>
-<li><strong><em>Your request is large</em></strong></li>
-</ul></li>
-<li>Tips:
-<ul>
-<li>Optimize resource usage</li>
-<li>Consider parent and child jobs</li>
-<li>Consider job <a href="https://docs.crc.nd.edu/new_user/quick_start.html#job-arrays">arrays</a></li>
-<li>Lower cluster use at night, on weekends</li>
-</ul></li>
-<li><code>qstat</code>: (without options) check entire queue</li>
-</ul>
-</div><div class="column" style="font-size: 65%;">
-<p><img data-src="qstat_2.png"></p>
-<ul>
-<li class="fragment">See <a href="https://bash.cyberciti.biz/guide/Pipes">here</a> for using <code>|</code> (pipes)</li>
-</ul>
-</div></div>
-</section>
-<section id="check-available-resources" class="slide level2">
-<h2>Check available resources</h2>
-<div class="columns">
-<div class="column" style="font-size: 65%;">
-<ul>
-<li><code>free_nodes.sh -G</code>: Check usage of CPUs and nodes</li>
-<li><code>qstat -u user -g t</code>: Check utilized nodes</li>
-</ul>
-</div><div class="column" style="width:&quot;50%;">
-<div class="r-stack">
-<p><img data-src="nodes_1.png"></p>
-<p><img data-src="nodes_2.png" class="fragment"></p>
-</div>
+<p><img data-src="save_1.png"></p>
 </div></div>
 
 
@@ -445,7 +334,7 @@ Nathan M. Muncy
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Productivity: schedule jobs</p>
+<p>Productivity: project environments</p>
 </div>
 </div></div>
 
