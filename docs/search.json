@@ -4,7 +4,42 @@
     "href": "materials.html",
     "title": "Course Slides, Code, and Practice Materials",
     "section": "",
-    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. Shells\nSlides\nCode\nPractice\n\n\n\n\n2. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n3. Scheduling Jobs\nSlides\nCode\nPractice\n\n\n\n\n4. Conda\nSlides\nCode\nPractice\n\n\n\n\n5. Project environments\nSlides\nCode\nPractice\n\n\n\n\n6. Git and GitHub\nSlides\nCode\nPractice\n\n\n\n\n7. Branches and pull requests\nSlides\nCode\nPractice"
+    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. Shells\nSlides\nCode\nPractice\n\n\n\n\n2. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n3. Scheduling Jobs\nSlides\nCode\nPractice\n\n\n\n\n4. Conda\nSlides\nCode\nPractice\n\n\n\n\n5. Project environments\nSlides\nCode\nPractice\n\n\n\n\n6. Tracking changes\nSlides\nCode\nPractice\n\n\n\n\n7. Team development\nSlides\nCode\nPractice"
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#purpose",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#purpose",
+    "title": "Project Environments: centralize workflows",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Build project environments\nSkill:\n\nConstruct environment build file\nCentralize conda envs\n\nWhy:\n\nThe ability to manage conda envs and global variables across projects"
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#need-for-project-environments",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#need-for-project-environments",
+    "title": "Project Environments: centralize workflows",
+    "section": "Need for project environments",
+    "text": "Need for project environments\n\n\nMRI software often requires:\n\nGlobal variables\n\nFreeSurfer: SUBJECTS_DIR, FREESURFER_HOME, FS_LICENSE\nFSL: FSLDIR\nfMRIPrep: TEMPLATEFLOW_HOME\n\nBinary access in PATH\n\nAFNI, FSL, c3d, ANTs\n\n\nConflicts arise between on-going and new projects\n\nOK solution: change .bashrc when switching projects\nBetter solution: build project environment from script\n\nUtility: project environment build script can be shared and versioned"
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#contents-of-project-environments",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#contents-of-project-environments",
+    "title": "Project Environments: centralize workflows",
+    "section": "Contents of project environments",
+    "text": "Contents of project environments\n\n\n\nLoad modules\nSoftware versions\nSoftware configuration\nPATH updates\nConda activation\nProject globals\nUser messages\n\n\n\n#!/bin/bash\n\n# Load, configure FreeSurfer\nmodule load freesurfer/8.0\nexport SUBJECTS_DIR=/users/$(whoami)/projects\nexport FS_LICENSE=/users/$(whoami)/research_bin/license.txt\nmkdir -p $SUBJECTS_DIR\nsource $FREESURFER_HOME/SetUpFreeSurfer.sh\n\n# Update path\nPATH=${PATH}:\\\n/users/$(whoami)/research_bin\n\nexport PATH\n\n# User globals\nSQL_PASS=$(cat ~/.ssh/pass_sql)\nRSA_WS=~/.ssh/id_rsa_ws\n\n# Load project conda env\nconda activate proj_env\n\n\nFollowing this example will require a FreeSurfer License stored at the appropriate location."
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#access-environments",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#access-environments",
+    "title": "Project Environments: centralize workflows",
+    "section": "Access environments",
+    "text": "Access environments\n\n\n\nActivate via source\n\nProj environment configuration is available to all subshells\nE.g. scheduled jobs - no longer need to manage module across multiple job files!\n\nPersonal preference: set an alias to activate environments"
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#save-and-share",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#save-and-share",
+    "title": "Project Environments: centralize workflows",
+    "section": "Save and share",
+    "text": "Save and share\n\n\n\nSave environment script somewhere useful\n\nPreferably in ‘env’ directory of code base\nVersioning helps reproducibility and replicability"
   },
   {
     "objectID": "lectures/10-conda/10-practice.html",
@@ -529,7 +564,7 @@
     "href": "index.html#tentative-lesson-schedule",
     "title": "Computing Essentials",
     "section": "(Tentative) Lesson Schedule",
-    "text": "(Tentative) Lesson Schedule\n\n\n\nLesson\nDate\nMaterial\n\n\n\n\n1. Terminal and variables\nTBD\nModule 1.1, 1.2\n\n\n2. Scripting and for loops\nTBD\nModule 1.3, 1.4\n\n\n3. Conditional statements\nTBD\nModule 1.5\n\n\n4. Advanced looping\nTBD\nModule 1.6\n\n\n5. Shells\nTBD\nModule 2.1\n\n\n6. Cluster computing\nTBD\nModule 2.2\n\n\n7. Scheduling jobs\nTBD\nModule 2.3\n\n\n8. Conda and project environments\nTBD\nModule 2.4, 2.5\n\n\n9. Git and GitHub\nTBD\nModule 2.6\n\n\n10. Collaborative programming\nTBD\nModule 2.7"
+    "text": "(Tentative) Lesson Schedule\n\n\n\nLesson\nDate\nMaterial\n\n\n\n\n1. Terminal and variables\nTBD\nModule 1.1, 1.2\n\n\n2. Scripting and for loops\nTBD\nModule 1.3, 1.4\n\n\n3. Conditional statements\nTBD\nModule 1.5\n\n\n4. Advanced looping\nTBD\nModule 1.6\n\n\n5. Shells\nTBD\nModule 2.1\n\n\n6. Cluster computing\nTBD\nModule 2.2\n\n\n7. Scheduling jobs\nTBD\nModule 2.3\n\n\n8. Conda and project environments\nTBD\nModule 2.4, 2.5\n\n\n9. Tracking changes\nTBD\nModule 2.6\n\n\n10. Team development\nTBD\nModule 2.7"
   },
   {
     "objectID": "lectures/01-the_terminal/01-practice.html",
@@ -966,41 +1001,6 @@
     "text": "Deleting environments\n\n\n\nClean unused environments\n\nCan always rebuild from backup file\n(Assuming versions work on hardware or OS version)\n\nRemoval is similar to creation\n\nconda env remove -n test_name: remove named env test_name\nconda env remove -p ~/test_path: remove previx env test_path"
   },
   {
-    "objectID": "lectures/11-proj_envs/11-proj_envs.html#purpose",
-    "href": "lectures/11-proj_envs/11-proj_envs.html#purpose",
-    "title": "Project Environments: centralize workflows",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Build project environments\nSkill:\n\nConstruct environment build file\nCentralize conda envs\n\nWhy:\n\nThe ability to manage conda envs and global variables across projects"
-  },
-  {
-    "objectID": "lectures/11-proj_envs/11-proj_envs.html#need-for-project-environments",
-    "href": "lectures/11-proj_envs/11-proj_envs.html#need-for-project-environments",
-    "title": "Project Environments: centralize workflows",
-    "section": "Need for project environments",
-    "text": "Need for project environments\n\n\nMRI software often requires:\n\nGlobal variables\n\nFreeSurfer: SUBJECTS_DIR, FREESURFER_HOME, FS_LICENSE\nFSL: FSLDIR\nfMRIPrep: TEMPLATEFLOW_HOME\n\nBinary access in PATH\n\nAFNI, FSL, c3d, ANTs\n\n\nConflicts arise between on-going and new projects\n\nOK solution: change .bashrc when switching projects\nBetter solution: build project environment from script\n\nUtility: project environment build script can be shared and versioned"
-  },
-  {
-    "objectID": "lectures/11-proj_envs/11-proj_envs.html#contents-of-project-environments",
-    "href": "lectures/11-proj_envs/11-proj_envs.html#contents-of-project-environments",
-    "title": "Project Environments: centralize workflows",
-    "section": "Contents of project environments",
-    "text": "Contents of project environments\n\n\n\nLoad modules\nSoftware versions\nSoftware configuration\nPATH updates\nConda activation\nProject globals\nUser messages\n\n\n\n#!/bin/bash\n\n# Load, configure FreeSurfer\nmodule load freesurfer/8.0\nexport SUBJECTS_DIR=/users/$(whoami)/projects\nexport FS_LICENSE=/users/$(whoami)/research_bin/license.txt\nmkdir -p $SUBJECTS_DIR\nsource $FREESURFER_HOME/SetUpFreeSurfer.sh\n\n# Update path\nPATH=${PATH}:\\\n/users/$(whoami)/research_bin\n\nexport PATH\n\n# User globals\nSQL_PASS=$(cat ~/.ssh/pass_sql)\nRSA_WS=~/.ssh/id_rsa_ws\n\n# Load project conda env\nconda activate proj_env\n\n\nFollowing this example will require a FreeSurfer License stored at the appropriate location."
-  },
-  {
-    "objectID": "lectures/11-proj_envs/11-proj_envs.html#access-environments",
-    "href": "lectures/11-proj_envs/11-proj_envs.html#access-environments",
-    "title": "Project Environments: centralize workflows",
-    "section": "Access environments",
-    "text": "Access environments\n\n\n\nActivate via source\n\nProj environment configuration is available to all subshells\nE.g. scheduled jobs - no longer need to manage module across multiple job files!\n\nPersonal preference: set an alias to activate environments"
-  },
-  {
-    "objectID": "lectures/11-proj_envs/11-proj_envs.html#save-and-share",
-    "href": "lectures/11-proj_envs/11-proj_envs.html#save-and-share",
-    "title": "Project Environments: centralize workflows",
-    "section": "Save and share",
-    "text": "Save and share\n\n\n\nSave environment script somewhere useful\n\nPreferably in ‘env’ directory of code base\nVersioning helps reproducibility and replicability"
-  },
-  {
     "objectID": "lectures/11-proj_envs/11-practice.html",
     "href": "lectures/11-proj_envs/11-practice.html",
     "title": "Project Environments: practice",
@@ -1013,5 +1013,152 @@
     "title": "Project Environments: practice",
     "section": "",
     "text": "Create a project environment shell script that:\n\nPrints the name of the project to STDOUT\nLoads, activates, and configures the FreeSurfer module\nAdds a project directory to your path\nSets global variables\nActivates the conda environment from the previous lesson\n\nShare evidence of the environment script working with your instructor"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#purpose",
+    "href": "lectures/12-git_basic/12-git_basic.html#purpose",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Include Git and GitHub in your development workflow\nSkill:\n\nConnect local Git to GitHub\nTrack changes\n\nWhy:\n\nFoundational skillset for research and industry\nProtect your code, facilitate maintenance and simultaneous development"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#git",
+    "href": "lectures/12-git_basic/12-git_basic.html#git",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Git",
+    "text": "Git\n\n\n\nGit is software designed to track changes\n\n“Who did what and when”\nResolved version control problems on collaborative projects\n\nMonitors requested directories and files\n\nCreates a log of what changed and how\n\nControl Git with a series of simple commands\nNative in Linux distributions\n\nNeed to install in Windows, Mac\n\n\n\n\n\n\nhttps://git-scm.com"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#github",
+    "href": "lectures/12-git_basic/12-git_basic.html#github",
+    "title": "Git and GitHub: tracking changes",
+    "section": "GitHub",
+    "text": "GitHub\n\n\n\nGitHub is a centralized platform\nAllows developers to create, store, manage, share their code\nGreat for research:\n\nRedundancy\nTransparency\nCollaboration\nInternal reliability\nExternal replicability\n\nCreate an account\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/GitHub"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-crc",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-crc",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: CRC",
+    "text": "Setup: CRC\n\n\n\nGit provided with default login shell\nNeed to:\n\nConfigure git for your user\nConnect git to your GitHub account"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-tokens",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-tokens",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: tokens",
+    "text": "Setup: tokens"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-config-files",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-config-files",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: config files",
+    "text": "Setup: config files\n\n\n\nCreate config file: ~/.gitconfig\nCopy provided code to ~/.gitconfig\n\nWhitespace (tabs) included\nProvide your name (will be added to git logs)\nProvide email address (will be added to git logs)\n\nMany config options available, we will keep it simple here\n\n\n\n[credential]\n    helper = store\n[user]\n    name = &lt;your name&gt;\n    email = &lt;your github email&gt;"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#track",
+    "href": "lectures/12-git_basic/12-git_basic.html#track",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Track",
+    "text": "Track"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#stage",
+    "href": "lectures/12-git_basic/12-git_basic.html#stage",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Stage",
+    "text": "Stage"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#commit",
+    "href": "lectures/12-git_basic/12-git_basic.html#commit",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Commit",
+    "text": "Commit"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#push",
+    "href": "lectures/12-git_basic/12-git_basic.html#push",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Push",
+    "text": "Push"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential",
+    "text": "Setup: credential\n\n\n\nCreate credential file: ~/.git-credentials"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#create-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#create-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Create repository",
+    "text": "Create repository"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#pull-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#pull-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Pull repository",
+    "text": "Pull repository"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#add-files",
+    "href": "lectures/12-git_basic/12-git_basic.html#add-files",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Add files",
+    "text": "Add files"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-1",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-1",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 1",
+    "text": "Setup: credential 1\n\n\n\nGoal:\n\nCreate GitHub Personal Access Token (PAT)\nAdd PAT to CRC\n\n\nMore info here\n\nLogin to GitHub\nNavigate to user Settings"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-2",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-2",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 2",
+    "text": "Setup: credential 2\n\n\n\nNavigate on the left to “Developer settings”\n\n(Bottom of list)"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-3",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-3",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 3",
+    "text": "Setup: credential 3\n\n\n\nUnder “Personal access tokens” select “classic”"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-4",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-4",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 4",
+    "text": "Setup: credential 4\n\n\n\nTip 1: Name tokens after instutitions or machines for easy management\nTip 2: Do not follow my bad example on expiration dates"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-5",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-5",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 5",
+    "text": "Setup: credential 5\n\n\n\nGenerate new token\n\nGive a useful Note (or name)\nSet expiration date\nOnly “repo” Scope needed"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-6",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-6",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 6",
+    "text": "Setup: credential 6\n\n\n\nGenerate token\nNext screen contains token string\n\nNote: this is only available while this tab is open!\nOnce this page is refreshed, the token will be unavailable\n\nThe PAT is used instead of an account password\n\nANY machine or person with the PAT can make edits\nIs it secret, is it safe?"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-7",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-7",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 7",
+    "text": "Setup: credential 7\n\n\n\nLog into your CRC cluster account\nCreate credential file: ~/.git-credentials\nAdd your user and credential in format:\n\nhttps://&lt;user&gt;:&lt;PAT&gt;@github.com"
   }
 ]

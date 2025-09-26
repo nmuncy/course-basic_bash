@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nathan M. Muncy">
   <meta name="dcterms.date" content="2025-09-26">
-  <title>Bash Esssentials – Variables: Strings, Braces, Slicing</title>
+  <title>Bash Esssentials – Git and GitHub: tracking changes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -194,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Variables: Strings, Braces, Slicing</h1>
+  <h1 class="title">Git and GitHub: tracking changes</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -210,309 +210,244 @@ Nathan M. Muncy
 <h2>Purpose</h2>
 <div style="font-size: 65%;">
 <ul>
-<li><strong>Knowledge</strong>:
-<ul>
-<li>Learn how to store data for future use</li>
-<li>Manipulate return values</li>
-</ul></li>
+<li><strong>Knowledge</strong>: Include Git and GitHub in your development workflow</li>
 <li><strong>Skill</strong>:
 <ul>
-<li>Strings and variables</li>
-<li>Brace expansion</li>
-<li>Manipulating variable information</li>
+<li>Connect local Git to GitHub</li>
+<li>Track changes</li>
 </ul></li>
 <li><strong>Why</strong>:
 <ul>
-<li>Useful for building organized directory trees, file names</li>
-<li>Commonly desirous to extract information from file name</li>
+<li>Foundational skillset for research and industry</li>
+<li>Protect your code, facilitate maintenance and simultaneous development</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="strings" class="slide level2">
-<h2>Strings</h2>
+<section id="git" class="slide level2">
+<h2>Git</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
+<div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">Series of key strokes:
+<li><a href="https://git-scm.com/">Git</a> is software designed to track changes
 <ul>
-<li class="fragment">abcd1234</li>
-<li class="fragment">Hello World</li>
+<li>“Who did what and when”</li>
+<li>Resolved version control problems on collaborative projects</li>
 </ul></li>
-<li class="fragment">Good to avoid spaces (command: argument + parameter)
+<li>Monitors requested directories and files
 <ul>
-<li class="fragment">Hello_World</li>
+<li>Creates a log of what changed and how</li>
 </ul></li>
-<li class="fragment">Data type - integer, boolean, list, array</li>
-<li class="fragment">Store in a variable</li>
-<li class="fragment">Access with <code>$</code> prefix
+<li>Control Git with a series of simple commands</li>
+<li>Native in Linux distributions
 <ul>
-<li class="fragment">Print value of variable with <code>echo</code></li>
+<li>Need to install in <a href="https://git-scm.com/downloads">Windows, Mac</a></li>
 </ul></li>
 </ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="va">foo</span><span class="op">=</span><span class="st">"Hello World"</span></span>
-<span id="cb1-2"><a></a><span class="bu">echo</span> foo</span>
-<span id="cb1-3"><a></a><span class="bu">echo</span> <span class="va">$foo</span></span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="va">bar</span><span class="op">=</span>Goodbye <span class="ex">Sky</span></span>
-<span id="cb1-6"><a></a><span class="bu">echo</span> <span class="va">$bar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>foo
-Hello World
-bash: line 4: Sky: command not found</code></pre>
-</div>
-</div>
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Why does <code>bar=Goodbye Sky</code> break?</li>
-</ul>
+</div><div class="column" style="font-size: 50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="git_1.png"></p>
+<figcaption>https://git-scm.com</figcaption>
+</figure>
 </div>
 </div></div>
 </section>
-<section id="paths" class="slide level2">
-<h2>Paths</h2>
+<section id="github" class="slide level2">
+<h2>GitHub</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
+<div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">File paths can be stored in variable</li>
-<li class="fragment">Two types:
+<li><a href="https://github.com/">GitHub</a> is a centralized platform</li>
+<li>Allows developers to create, store, manage, share their code</li>
+<li>Great for research:
 <ul>
-<li class="fragment">Relative - start current location</li>
-<li class="fragment">Absolute - start at root</li>
+<li>Redundancy</li>
+<li>Transparency</li>
+<li>Collaboration</li>
+<li>Internal reliability</li>
+<li>External replicability</li>
 </ul></li>
-<li class="fragment">Special path: PATH
+<li>Create an <a href="https://github.com/signup">account</a></li>
+</ul>
+</div><div class="column" style="font-size: 50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="github_1.png"></p>
+<figcaption>https://en.wikipedia.org/wiki/GitHub</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="setup-crc" class="slide level2">
+<h2>Setup: CRC</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">Search path of executables</li>
-<li class="fragment">Reveal command path with <code>which</code></li>
+<li>Git provided with default login shell</li>
+<li>Need to:
+<ul>
+<li>Configure git for your user</li>
+<li>Connect git to your GitHub account</li>
 </ul></li>
 </ul>
+</div><div class="column" style="font-size: 50%;">
+<p><img data-src="crc_git1.png"></p>
+</div></div>
+</section>
+<section id="setup-config-files" class="slide level2">
+<h2>Setup: config files</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Create config file: <code>~/.gitconfig</code></li>
+<li>Copy provided code to <code>~/.gitconfig</code>
+<ul>
+<li>Whitespace (tabs) included</li>
+<li>Provide your name (will be added to git logs)</li>
+<li>Provide email address (will be added to git logs)</li>
+</ul></li>
+<li>Many config options <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">available</a>, we will keep it simple here</li>
+</ul>
+</div><div class="column" style="font-size: 65%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">[credential]</span></span>
+<span id="cb1-2"><a></a>    <span class="ex">helper</span> = store</span>
+<span id="cb1-3"><a></a><span class="ex">[user]</span></span>
+<span id="cb1-4"><a></a>    <span class="ex">name</span> = <span class="op">&lt;</span>your name<span class="op">&gt;</span></span>
+<span id="cb1-5"><a></a>    <span class="ex">email</span> = <span class="op">&lt;</span>your github email<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div></div>
+</section>
+<section id="setup-credential-1" class="slide level2">
+<h2>Setup: credential 1</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Goal:
+<ol type="1">
+<li>Create GitHub Personal Access Token (<a href="https://en.wikipedia.org/wiki/Personal_access_token">PAT</a>)</li>
+<li>Add PAT to CRC</li>
+</ol>
+<ul>
+<li>More info <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">here</a></li>
+</ul></li>
+<li>Login to GitHub</li>
+<li>Navigate to user Settings</li>
+</ul>
 </div><div class="column" style="width:&quot;50%;">
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img data-src="abs_rel_path.png" class="fragment"> <img data-src="bash_path.png" class="fragment"></p>
-</div>
-</div>
-</div>
+<p><img data-src="token_1.png"></p>
 </div></div>
 </section>
-<section id="brace-expansion" class="slide level2">
-<h2>Brace expansion</h2>
+<section id="setup-credential-2" class="slide level2">
+<h2>Setup: credential 2</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
+<div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">Curly braces containing a list: ‘<code>{1..4}</code>’</li>
-<li class="fragment">Expand sequential or comma-separated lists</li>
-<li class="fragment">Append to strings - easy file, directory generation
+<li>Navigate on the left to “Developer settings”
 <ul>
-<li class="fragment">E.g. ‘<code>mkdir -p sub-{1..3}</code>’</li>
-</ul></li>
-<li class="fragment">Combine to generate permutations
-<ul>
-<li class="fragment">E.g. ‘<code>for i in pref-{1..3}{a..c}; do ...</code>’</li>
-</ul></li>
-<li class="fragment">Supports nesting</li>
-<li class="fragment">Run in subshell ‘<code>$()</code>’ to store in variable</li>
-</ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="bu">echo</span> <span class="dt">{</span>a<span class="dt">..</span>d<span class="dt">}</span></span>
-<span id="cb3-2"><a></a><span class="bu">echo</span> sub-<span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span></span>
-<span id="cb3-3"><a></a><span class="va">perm</span><span class="op">=</span><span class="va">$(</span><span class="bu">echo</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}{</span>a<span class="dt">..</span>c<span class="dt">}</span><span class="va">)</span></span>
-<span id="cb3-4"><a></a><span class="va">nest</span><span class="op">=</span><span class="va">$(</span><span class="bu">echo</span> pref-<span class="dt">{foo</span><span class="op">,</span><span class="dt">bar{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span><span class="op">,</span><span class="dt">baz}</span><span class="va">)</span></span>
-<span id="cb3-5"><a></a><span class="bu">echo</span> <span class="va">$perm</span></span>
-<span id="cb3-6"><a></a><span class="bu">echo</span> <span class="va">$nest</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a b c d
-sub-1 sub-2 sub-3
-1a 1b 1c 2a 2b 2c 3a 3b 3c
-pref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz</code></pre>
-</div>
-</div>
-</div></div>
-</section>
-<section id="combining-variables" class="slide level2">
-<h2>Combining variables</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Access variables with ‘<code>$</code>’</li>
-<li class="fragment">Combine with curly braces to:
-<ul>
-<li class="fragment">Add suff/prefix:
-<ul>
-<li class="fragment">‘<code>var=foo; echo ${var}bar</code>’</li>
-</ul></li>
-<li class="fragment">Combine variables
-<ul>
-<li class="fragment">‘<code>var1=foo; var2=bar; echo ${var1}$var2</code>’</li>
-</ul></li>
-<li class="fragment">Note: reuse of ‘{}’ - key-bindings are context dependent!</li>
+<li>(Bottom of list)</li>
 </ul></li>
 </ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="va">var1</span><span class="op">=</span>foo<span class="kw">;</span> <span class="va">var2</span><span class="op">=</span>bar</span>
-<span id="cb5-2"><a></a><span class="bu">echo</span> <span class="st">"1 </span><span class="va">${var1}</span><span class="st">baz"</span></span>
-<span id="cb5-3"><a></a><span class="bu">echo</span> <span class="st">"2 </span><span class="va">${var1}$var2</span><span class="st">"</span></span>
-<span id="cb5-4"><a></a><span class="bu">echo</span> <span class="st">"3 </span><span class="va">$var1$var2</span><span class="st">"</span></span>
-<span id="cb5-5"><a></a><span class="bu">echo</span> <span class="st">"4 </span><span class="va">$var1baz</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1 foobaz
-2 foobar
-3 foobar
-4 </code></pre>
-</div>
-</div>
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Why does ‘<code>echo "4 $var1baz"</code>’ break?</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="slice-forward-removal" class="slide level2">
-<h2>Slice: forward removal</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Often desirable to slice strings
-<ul>
-<li class="fragment">E.g. extract “awesome” from “I_am_awesome”</li>
-</ul></li>
-<li class="fragment">Extracting subject, session, or task from file name
-<ul>
-<li class="fragment">BIDS: sub-1_ses-A_task-memory</li>
-</ul></li>
-<li class="fragment">Combine “#” and string with variable call to slice from string beginning
-<ul>
-<li class="fragment">“#” removes before first string match</li>
-<li class="fragment">Wildcard symbol “*” matches anything</li>
-<li class="fragment">“##” removes before final string match</li>
-</ul></li>
-</ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="va">bids_name</span><span class="op">=</span>sub-1_ses-A_task-memory</span>
-<span id="cb7-2"><a></a><span class="bu">echo</span> <span class="va">$bids_name</span></span>
-<span id="cb7-3"><a></a><span class="bu">echo</span> <span class="va">${bids_name</span><span class="op">#</span><span class="pp">*</span>_<span class="va">}</span></span>
-<span id="cb7-4"><a></a><span class="bu">echo</span> <span class="va">${bids_name</span><span class="op">##</span><span class="pp">*</span>_<span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>sub-1_ses-A_task-memory
-ses-A_task-memory
-task-memory</code></pre>
-</div>
-</div>
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">What would ‘<code>echo ${bids_name#*-}</code>’ say?</li>
-<li class="fragment">How about ‘<code>echo ${bids_name#sub-1}</code>’?</li>
-<li class="fragment">How about ‘<code>echo ${bids_name##*-}</code>’?</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="slice-backward-removal" class="slide level2">
-<h2>Slice: backward removal</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">The “%” is used to slice from the back
-<ul>
-<li class="fragment">“%” removes after last string match</li>
-<li class="fragment">“%%” removes after first string match</li>
-</ul></li>
-<li class="fragment">An intermediate variable can be used to extract string middle</li>
-</ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="va">bids_name</span><span class="op">=</span>sub-1_ses-A_task-memory</span>
-<span id="cb9-2"><a></a><span class="bu">echo</span> <span class="va">$bids_name</span></span>
-<span id="cb9-3"><a></a><span class="bu">echo</span> <span class="va">${bids_name</span><span class="op">%</span>_<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb9-4"><a></a><span class="bu">echo</span> <span class="va">${bids_name</span><span class="op">%%</span>_<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb9-5"><a></a><span class="va">int</span><span class="op">=</span><span class="va">${bids_name</span><span class="op">#</span><span class="pp">*</span>_<span class="va">}</span></span>
-<span id="cb9-6"><a></a><span class="bu">echo</span> <span class="va">${int</span><span class="op">%</span>_<span class="pp">*</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>sub-1_ses-A_task-memory
-sub-1_ses-A
-sub-1
-ses-A</code></pre>
-</div>
-</div>
-</div></div>
-</section>
-<section id="slice-positional" class="slide level2">
-<h2>Slice: positional</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">Each character in a string has a position
-<ul>
-<li class="fragment">0-indexed, abcd = 0123</li>
-</ul></li>
-<li class="fragment">Use “:” to specify start and end of positions</li>
-</ul>
-</div>
-</div><div class="fragment column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="va">alpha</span><span class="op">=</span><span class="st">"abcdefg"</span></span>
-<span id="cb11-2"><a></a><span class="bu">echo</span> <span class="va">${alpha</span><span class="op">:</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span><span class="va">}</span></span>
-<span id="cb11-3"><a></a><span class="bu">echo</span> <span class="va">${alpha</span><span class="op">:</span><span class="dv">3</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>abc
-defg</code></pre>
-</div>
-</div>
-<div style="font-size: 65%;">
-<ul>
-<li class="fragment">What would ‘<code>echo ${alpha:1:4}</code>’ say?</li>
-<li class="fragment">What would ‘<code>echo ${alpha:5}</code>’ say?</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="slice-replace" class="slide level2">
-<h2>Slice: replace</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
-<ul>
-<li>Replacing substring is possible with <code>/</code></li>
-<li>Must match substring exactly</li>
-<li>Can also be used to remove string</li>
-</ul>
-</div>
 </div><div class="column" style="width:&quot;50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="va">foo</span><span class="op">=</span><span class="st">"foobbb"</span></span>
-<span id="cb13-2"><a></a><span class="bu">echo</span> <span class="va">$foo</span></span>
-<span id="cb13-3"><a></a><span class="bu">echo</span> <span class="st">"</span><span class="va">${foo</span><span class="op">/</span><span class="ss">bbb</span><span class="op">/</span>ccc<span class="va">}</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>foobbb
-fooccc</code></pre>
-</div>
-</div>
-<div style="font-size: 65%;">
+<p><img data-src="token_2.png"></p>
+</div></div>
+</section>
+<section id="setup-credential-3" class="slide level2">
+<h2>Setup: credential 3</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">What would ‘<code>echo "${foo/bbb/}"</code>’ say?</li>
+<li>Under “Personal access tokens” select “classic”</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="token_3.png"></p>
+</div></div>
+</section>
+<section id="setup-credential-4" class="slide level2">
+<h2>Setup: credential 4</h2>
+
+<img data-src="token_4.png" class="r-stretch"><div style="font-size: 65%;">
+<ul>
+<li><strong><em>Tip 1</em></strong>: Name tokens after instutitions or machines for easy management</li>
+<li><strong><em>Tip 2</em></strong>: Do not follow my bad example on expiration dates</li>
 </ul>
 </div>
+</section>
+<section id="setup-credential-5" class="slide level2">
+<h2>Setup: credential 5</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Generate new token
+<ul>
+<li>Give a useful Note (or name)</li>
+<li>Set expiration date</li>
+<li>Only “repo” Scope needed</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="token_5.png"></p>
 </div></div>
+</section>
+<section id="setup-credential-6" class="slide level2">
+<h2>Setup: credential 6</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Generate token</li>
+<li>Next screen contains token string
+<ul>
+<li><strong><em>Note</em></strong>: this is only available while this tab is open!</li>
+<li>Once this page is refreshed, the token will be unavailable</li>
+</ul></li>
+<li>The PAT is used instead of an account password
+<ul>
+<li><strong>ANY</strong> machine or person with the PAT can make edits</li>
+<li>Is it secret, is it safe?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="token_6.png"></p>
+<p><img data-src="token_7.png"></p>
+</div></div>
+</section>
+<section id="setup-credential-7" class="slide level2">
+<h2>Setup: credential 7</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Log into your CRC cluster account</li>
+<li>Create credential file: <code>~/.git-credentials</code></li>
+<li>Add your user and credential in format:
+<ul>
+<li><code>https://&lt;user&gt;:&lt;PAT&gt;@github.com</code></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="token_8.png"></p>
+</div></div>
+</section>
+<section id="create-repository" class="slide level2">
+<h2>Create repository</h2>
+</section>
+<section id="pull-repository" class="slide level2">
+<h2>Pull repository</h2>
+</section>
+<section id="add-files" class="slide level2">
+<h2>Add files</h2>
+</section>
+<section id="track" class="slide level2">
+<h2>Track</h2>
+</section>
+<section id="stage" class="slide level2">
+<h2>Stage</h2>
+</section>
+<section id="commit" class="slide level2">
+<h2>Commit</h2>
+</section>
+<section id="push" class="slide level2">
+<h2>Push</h2>
 
 
 </section>
@@ -520,7 +455,7 @@ fooccc</code></pre>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../media/nd_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Bash Basics: variables</p>
+<p>Productivity: track changes</p>
 </div>
 </div></div>
 

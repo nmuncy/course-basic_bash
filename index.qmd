@@ -35,5 +35,5 @@ We start with understanding and writing simple blocks of code, then advance to r
 | 6. Cluster computing | TBD | Module 2.2 |
 | 7. Scheduling jobs | TBD | Module 2.3 |
 | 8. Conda and project environments | TBD | Module 2.4, 2.5 |
-| 9. Git and GitHub | TBD | Module 2.6 |
-| 10. Collaborative programming | TBD | Module 2.7 |
+| 9. Tracking changes | TBD | Module 2.6 |
+| 10. Team development | TBD | Module 2.7 |
