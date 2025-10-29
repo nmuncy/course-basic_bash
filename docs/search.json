@@ -438,21 +438,21 @@
     "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "What is a terminal",
-    "text": "What is a terminal\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
+    "text": "What is a terminal\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software\n\n\n\nFinding the terminal: Mac\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”\n\n\n\n\n\n \n\n\n\n\n\nFinding the terminal: Ubuntu\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
   },
   {
     "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
     "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Mac",
-    "text": "Finding the terminal: Mac\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
+    "text": "Finding the terminal: Mac\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
   },
   {
     "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
     "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
     "title": "The Terminal: Linux Tree, Commands, Making directories",
     "section": "Finding the terminal: Ubuntu",
-    "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
+    "text": "Finding the terminal: Ubuntu\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
   },
   {
     "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
@@ -816,21 +816,21 @@
     "href": "lectures/07-shells/07-practice.html",
     "title": "For Loops, cont’d: practice",
     "section": "",
-    "text": "Use the CLI and a script to demonstrate that global variables can be set in the parent shell.\nAlso show that globals set in subshell are not accessible in the parent shell.\nDemonstrate that variables are shell-specific.\nSend these example to your instructor."
+    "text": "Use (a) the CLI and (b) a script to demonstrate that global variables can be set in the parent shell.\nShow that global variables set in a subshell are not accessible in the parent shell.\nDemonstrate that non-global variables are shell-specific.\nSend these examples to your instructor."
   },
   {
     "objectID": "lectures/07-shells/07-practice.html#shells-and-variables",
     "href": "lectures/07-shells/07-practice.html#shells-and-variables",
     "title": "For Loops, cont’d: practice",
     "section": "",
-    "text": "Use the CLI and a script to demonstrate that global variables can be set in the parent shell.\nAlso show that globals set in subshell are not accessible in the parent shell.\nDemonstrate that variables are shell-specific.\nSend these example to your instructor."
+    "text": "Use (a) the CLI and (b) a script to demonstrate that global variables can be set in the parent shell.\nShow that global variables set in a subshell are not accessible in the parent shell.\nDemonstrate that non-global variables are shell-specific.\nSend these examples to your instructor."
   },
   {
     "objectID": "lectures/07-shells/07-practice.html#style-prompt",
     "href": "lectures/07-shells/07-practice.html#style-prompt",
     "title": "For Loops, cont’d: practice",
     "section": "Style Prompt",
-    "text": "Style Prompt\n\nAdd you computer’s name to, and change the color of, the prompt.\n(OSx) Turn on CLI colors and set color schemes for ls.\nSend a screenshot of your prompt and ls output to your instructor."
+    "text": "Style Prompt\n\nAdd you computer’s name to, and change the color of, the command prompt.\n(OSx) Turn on CLI colors and set color schemes for ls.\nSend a screenshot of your prompt and ls output to your instructor."
   },
   {
     "objectID": "lectures/08-cluster/08-cluster.html#purpose",
@@ -1043,74 +1043,11 @@
     "text": "Setup: CRC\n\n\n\nGit provided with default login shell\nNeed to:\n\nConfigure git for your user\nConnect git to your GitHub account"
   },
   {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-tokens",
-    "href": "lectures/12-git_basic/12-git_basic.html#setup-tokens",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Setup: tokens",
-    "text": "Setup: tokens"
-  },
-  {
     "objectID": "lectures/12-git_basic/12-git_basic.html#setup-config-files",
     "href": "lectures/12-git_basic/12-git_basic.html#setup-config-files",
     "title": "Git and GitHub: tracking changes",
     "section": "Setup: config files",
     "text": "Setup: config files\n\n\n\nCreate config file: ~/.gitconfig\nCopy provided code to ~/.gitconfig\n\nWhitespace (tabs) included\nProvide your name (will be added to git logs)\nProvide email address (will be added to git logs)\n\nMany config options available, we will keep it simple here\n\n\n\n[credential]\n    helper = store\n[user]\n    name = &lt;your name&gt;\n    email = &lt;your github email&gt;"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#track",
-    "href": "lectures/12-git_basic/12-git_basic.html#track",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Track",
-    "text": "Track"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#stage",
-    "href": "lectures/12-git_basic/12-git_basic.html#stage",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Stage",
-    "text": "Stage"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#commit",
-    "href": "lectures/12-git_basic/12-git_basic.html#commit",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Commit",
-    "text": "Commit"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#push",
-    "href": "lectures/12-git_basic/12-git_basic.html#push",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Push",
-    "text": "Push"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential",
-    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Setup: credential",
-    "text": "Setup: credential\n\n\n\nCreate credential file: ~/.git-credentials"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#create-repository",
-    "href": "lectures/12-git_basic/12-git_basic.html#create-repository",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Create repository",
-    "text": "Create repository"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#pull-repository",
-    "href": "lectures/12-git_basic/12-git_basic.html#pull-repository",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Pull repository",
-    "text": "Pull repository"
-  },
-  {
-    "objectID": "lectures/12-git_basic/12-git_basic.html#add-files",
-    "href": "lectures/12-git_basic/12-git_basic.html#add-files",
-    "title": "Git and GitHub: tracking changes",
-    "section": "Add files",
-    "text": "Add files"
   },
   {
     "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-1",
@@ -1159,6 +1096,69 @@
     "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-7",
     "title": "Git and GitHub: tracking changes",
     "section": "Setup: credential 7",
-    "text": "Setup: credential 7\n\n\n\nLog into your CRC cluster account\nCreate credential file: ~/.git-credentials\nAdd your user and credential in format:\n\nhttps://&lt;user&gt;:&lt;PAT&gt;@github.com"
+    "text": "Setup: credential 7\n\n\n\nLog into your CRC cluster account\nCreate credential file: ~/.git-credentials\nAdd your user and credential in format:\n\nhttps://&lt;user&gt;:&lt;PAT&gt;@github.com\n\nYou’re done!"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#create-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#create-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Create repository",
+    "text": "Create repository\n\n\n\nRepository: directory of files with git tracking logs\nPossible: create locally with git init\nEasier: make on GitHub\n\nBring locally via git pull"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#configure-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#configure-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Configure repository",
+    "text": "Configure repository\n\n\n\nSelect an informative name\nSupply a description\nSelect private vs public repo\nAdd a README so the repo has a file"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#view-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#view-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "View repository",
+    "text": "View repository\n\n\n\nFirst items to note:\n\nTask bar for managing project (code, pull requests, etc)\nIdentification of branches\nGreen code: download or clone help\nList of files (only README here)"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#pull-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#pull-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Pull repository",
+    "text": "Pull repository"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#add-files",
+    "href": "lectures/12-git_basic/12-git_basic.html#add-files",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Add files",
+    "text": "Add files"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#track",
+    "href": "lectures/12-git_basic/12-git_basic.html#track",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Track",
+    "text": "Track"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#stage",
+    "href": "lectures/12-git_basic/12-git_basic.html#stage",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Stage",
+    "text": "Stage"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#commit",
+    "href": "lectures/12-git_basic/12-git_basic.html#commit",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Commit",
+    "text": "Commit"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#push",
+    "href": "lectures/12-git_basic/12-git_basic.html#push",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Push",
+    "text": "Push"
   }
 ]

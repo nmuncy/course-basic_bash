@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-09-26">
+  <meta name="dcterms.date" content="2025-10-29">
   <title>Bash Esssentials – The Terminal: Linux Tree, Commands, Making directories</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -138,7 +138,7 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-09-26</p>
+  <p class="date">2025-10-29</p>
 </section>
 <section id="purpose" class="slide level2">
 <h2>Purpose</h2>
@@ -165,32 +165,26 @@ Nathan M. Muncy
 <div class="columns">
 <div class="column" style="width:&quot;50%;">
 <p><img data-src="terminal.png"></p>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 65%;">
+</div><div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">Application - provides access to the command shell</li>
-<li class="fragment">Default language - Bourne Again Shell (Bash)</li>
-<li class="fragment">Provide instruction to computer</li>
-<li class="fragment">Useful for:
+<li>Application - provides access to the command shell</li>
+<li>Default language - Bourne Again Shell (Bash)</li>
+<li>Provide instruction to computer</li>
+<li>Useful for:
 <ul>
-<li class="fragment">Automation</li>
-<li class="fragment">Triggering software</li>
+<li>Automation</li>
+<li>Triggering software</li>
 </ul></li>
 </ul>
-</div>
-</div></div>
-</section>
-<section id="finding-the-terminal-mac" class="slide level2">
+</div><section id="finding-the-terminal-mac" class="slide level2">
 <h2>Finding the terminal: Mac</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
+<div class="column" style="font-size: 65%;">
 <ul>
-<li class="fragment">Easy, built-in</li>
-<li class="fragment">Applications -&gt; Other -&gt; Terminal</li>
-<li class="fragment">Cmd + Space -&gt; Search “terminal”</li>
+<li>Easy, built-in</li>
+<li>Applications -&gt; Other -&gt; Terminal</li>
+<li>Cmd + Space -&gt; Search “terminal”</li>
 </ul>
-</div>
 </div><div class="column" style="width:&quot;50%;">
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row">
@@ -200,22 +194,21 @@ Nathan M. Muncy
 </div>
 </div>
 </div></div>
-</section>
-<section id="finding-the-terminal-ubuntu" class="slide level2">
+</section><section id="finding-the-terminal-ubuntu" class="slide level2">
 <h2>Finding the terminal: Ubuntu</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 65%;">
+<div class="column" style="font-size: 65%;">
 <ul>
 <li>Easy, built-in</li>
 </ul>
 <ul>
 <li class="fragment">Applications -&gt; Search “terminal”</li>
 </ul>
-</div>
-</div><div class="column" style="width:&quot;50%;">
-<p><img data-src="find_term3.png" class="fragment"></p>
 </div></div>
+<div class="column" style="width:&quot;50%;">
+<p><img data-src="find_term3.png" class="fragment"></p>
+</div></section>
+</div>
 </section>
 <section id="finding-the-terminal-windows" class="slide level2">
 <h2>Finding the terminal: Windows</h2>
@@ -223,13 +216,13 @@ Nathan M. Muncy
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Semi-difficult</li>
-<li class="fragment">Activate Windows Subsytem Linux
+<li>Semi-difficult</li>
+<li>Activate Windows Subsytem Linux
 <ul>
-<li class="fragment">See <a href="https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2">here</a></li>
+<li>See <a href="https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2">here</a></li>
 </ul></li>
-<li class="fragment">Install Ubuntu</li>
-<li class="fragment">Start -&gt; Search “Ubuntu”</li>
+<li>Install Ubuntu</li>
+<li>Start -&gt; Search “Ubuntu”</li>
 </ul>
 </div>
 </div><div class="column" style="width:&quot;50%;">
@@ -242,16 +235,16 @@ Nathan M. Muncy
 <div class="column" style="width:50%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Command: instruction to machine
+<li>Command: instruction to machine
 <ul>
-<li class="fragment">Matches executable in PATH</li>
-<li class="fragment">Composed of arguments</li>
-<li class="fragment">Separated by spaces</li>
+<li>Matches executable in PATH</li>
+<li>Composed of arguments</li>
+<li>Separated by spaces</li>
 </ul></li>
-<li class="fragment">Types of Arguments:
+<li>Types of Arguments:
 <ol type="1">
-<li class="fragment">Option: modify command, specified with flag “-”</li>
-<li class="fragment">Parameter: provides information to command or option</li>
+<li>Option: modify command, specified with flag “-”</li>
+<li>Parameter: provides information to command or option</li>
 </ol></li>
 </ul>
 </div>
@@ -265,18 +258,18 @@ Nathan M. Muncy
 <div class="column" style="width:40%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment"><code>pwd</code>: print working directory</li>
-<li class="fragment"><code>ls</code>: list directory contents
+<li><code>pwd</code>: print working directory</li>
+<li><code>ls</code>: list directory contents
 <ul>
-<li class="fragment"><code>ls -l</code>: list with extra info</li>
-<li class="fragment"><code>ls -a</code>: list all files</li>
-<li class="fragment"><code>ls -la</code>: combine arguments</li>
+<li><code>ls -l</code>: list with extra info</li>
+<li><code>ls -a</code>: list all files</li>
+<li><code>ls -la</code>: combine arguments</li>
 </ul></li>
-<li class="fragment"><code>cd</code>: change directories
+<li><code>cd</code>: change directories
 <ul>
-<li class="fragment"><code>cd foo</code>: go down into foo</li>
-<li class="fragment"><code>cd ..</code>: go up one level</li>
-<li class="fragment"><code>cd</code>: go HOME</li>
+<li><code>cd foo</code>: go down into foo</li>
+<li><code>cd ..</code>: go up one level</li>
+<li><code>cd</code>: go HOME</li>
 </ul></li>
 </ul>
 </div>
@@ -290,11 +283,11 @@ Nathan M. Muncy
 <div class="column" style="width:40%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment">Every file has a path</li>
-<li class="fragment">Separate steps of path with “/”</li>
-<li class="fragment">Top of path: “root”, OS essentials</li>
-<li class="fragment">Center: “~”, HOME, default</li>
-<li class="fragment">Below HOME: user files</li>
+<li>Every file has a path</li>
+<li>Separate steps of path with “/”</li>
+<li>Top of path: “root”, OS essentials</li>
+<li>Center: “~”, HOME, default</li>
+<li>Below HOME: user files</li>
 </ul>
 </div>
 </div><div class="column" style="width:60%;">
@@ -307,22 +300,22 @@ Nathan M. Muncy
 <div class="column" style="width:40%;">
 <div style="font-size: 65%;">
 <ul>
-<li class="fragment"><code>mkdir</code>: creates directory, requires parameter
+<li><code>mkdir</code>: creates directory, requires parameter
 <ul>
-<li class="fragment"><code>mkdir foo</code>: create directory “foo”</li>
+<li><code>mkdir foo</code>: create directory “foo”</li>
 </ul></li>
-<li class="fragment">Many available options:
+<li>Many available options:
 <ul>
-<li class="fragment"><code>mkdir -p foo/bar</code>: create directory “bar” within “foo” (and “foo” if it does not exist)</li>
-<li class="fragment">See more options with <code>man mkdir</code>
+<li><code>mkdir -p foo/bar</code>: create directory “bar” within “foo” (and “foo” if it does not exist)</li>
+<li>See more options with <code>man mkdir</code>
 <ul>
-<li class="fragment">use down arrow to scroll</li>
-<li class="fragment">use “q” to exit manual</li>
+<li>use down arrow to scroll</li>
+<li>use “q” to exit manual</li>
 </ul></li>
 </ul></li>
-<li class="fragment"><code>tree</code>: see directory tree structure
+<li><code>tree</code>: see directory tree structure
 <ul>
-<li class="fragment">Mac users: install with <code>brew install tree</code></li>
+<li>Mac users: install with <code>brew install tree</code></li>
 </ul></li>
 </ul>
 </div>

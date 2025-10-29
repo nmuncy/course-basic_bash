@@ -210,14 +210,69 @@ engine: knitr
 - Create credential file: `~/.git-credentials`
 - Add your user and credential in format:
     - `https://<user>:<PAT>@github.com`
+- You're done!
 :::
 
 ::: {.column width="\"50%"}
 ![](token_8.png)
+
+![](token_9.png)
 :::
 ::::
 
 ## Create repository
+
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- [Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories): directory of files with git tracking logs
+- Possible: create locally with `git init`
+- Easier: make on GitHub
+    - Bring locally via `git pull`
+
+:::
+
+::: {.column width="\"50%"}
+
+![](create_1.png)
+
+:::
+::::
+
+## Configure repository
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Select an informative name
+- Supply a description
+- Select private vs public repo
+- Add a README so the repo has a file
+
+:::
+
+::: {.column width="\"50%"}
+
+![](create_2.png)
+
+:::
+:::::
+
+## View repository
+
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- First items to note:
+    - Task bar for managing project (code, pull requests, etc)
+    - Identification of branches
+    - Green code: download or clone help
+    - List of files (only README here)
+:::
+
+::: {.column width="\"50%"}
+
+![](create_3.png)
+
+:::
+::::
 
 ## Pull repository
 
