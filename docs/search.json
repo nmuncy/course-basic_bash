@@ -4,686 +4,168 @@
     "href": "materials.html",
     "title": "Course Slides, Code, and Practice Materials",
     "section": "",
-    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. Shells\nSlides\nCode\nPractice\n\n\n\n\n2. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n3. Scheduling Jobs\nSlides\nCode\nPractice\n\n\n\n\n4. Conda\nSlides\nCode\nPractice\n\n\n\n\n5. Project environments\nSlides\nCode\nPractice\n\n\n\n\n6. Git and GitHub\nSlides\nCode\nPractice\n\n\n\n\n7. Branches and pull requests\nSlides\nCode\nPractice"
+    "text": "Module 1: Bash Syntax\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. The terminal\nSlides\nCode\nPractice\n\n\n\n\n2. Variables\nSlides\nCode\nPractice\n\n\n\n\n3. Scripting\nSlides\nCode\nPractice\n\n\n\n\n4. For Loops\nSlides\nCode\nPractice\n\n\n\n\n5. Conditionals\nSlides\nCode\nPractice\n\n\n\n\n6. For Loops, cont’d\nSlides\nCode\nPractice\n\n\n\n\n\n\n\n\nModule 2: Productivity\n\n\n\n\nTopic\nSlides\nCode\nExercises\n\n\n\n\n\n\n1. Shells\nSlides\nCode\nPractice\n\n\n\n\n2. Cluster Computing\nSlides\nCode\nPractice\n\n\n\n\n3. Scheduling Jobs\nSlides\nCode\nPractice\n\n\n\n\n4. Conda\nSlides\nCode\nPractice\n\n\n\n\n5. Project environments\nSlides\nCode\nPractice\n\n\n\n\n6. Tracking changes\nSlides\nCode\nPractice\n\n\n\n\n7. Team development\nSlides\nCode\nPractice"
   },
   {
-    "objectID": "lectures/09-schedule/09-practice.html",
-    "href": "lectures/09-schedule/09-practice.html",
-    "title": "Scheduling: practice",
-    "section": "",
-    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
-  },
-  {
-    "objectID": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
-    "href": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
-    "title": "Scheduling: practice",
-    "section": "",
-    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#purpose",
-    "href": "lectures/08-cluster/08-cluster.html#purpose",
-    "title": "Cluster Computing: what is it, login, move data",
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#purpose",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#purpose",
+    "title": "Project Environments: centralize workflows",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn how to access Notre Dame’s compute cluster\nSkill:\n\nUndestand how clusters differ\nMake an account\nAccess account\nMove data\n\nWhy:\n\nProcess large datasets"
+    "text": "Purpose\n\n\nKnowledge: Build project environments\nSkill:\n\nConstruct environment build file\nCentralize conda envs\n\nWhy:\n\nThe ability to manage conda envs and global variables across projects"
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#why-learn-to-use-a-cluster",
-    "href": "lectures/08-cluster/08-cluster.html#why-learn-to-use-a-cluster",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Why learn to use a cluster",
-    "text": "Why learn to use a cluster\n\n\nModern MRI: large data initiatives\n\nHuman Connectome Project (HCP)\nAdolescent Brain Cognitive Development (ABCD)\nData repositories (OpenNeuro, NIMH, FITBIR)\n\nNeed for larger sample sizes\nComplicated analytic pipelines"
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#need-for-project-environments",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#need-for-project-environments",
+    "title": "Project Environments: centralize workflows",
+    "section": "Need for project environments",
+    "text": "Need for project environments\n\n\nMRI software often requires:\n\nGlobal variables\n\nFreeSurfer: SUBJECTS_DIR, FREESURFER_HOME, FS_LICENSE\nFSL: FSLDIR\nfMRIPrep: TEMPLATEFLOW_HOME\n\nBinary access in PATH\n\nAFNI, FSL, c3d, ANTs\n\n\nConflicts arise between on-going and new projects\n\nOK solution: change .bashrc when switching projects\nBetter solution: build project environment from script\n\nUtility: project environment build script can be shared and versioned"
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#description-of-cluster",
-    "href": "lectures/08-cluster/08-cluster.html#description-of-cluster",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Description of cluster",
-    "text": "Description of cluster\n\n\n\nThe Center for Research Computing (CRC) provides cluster computing resources\n\nNetwork of compute nodes (~8K CPUs) and RAM\n\nTheir Wiki contains valuable resources for accessing, using cluster\nMain components\n\nLogin point: manage data, submit requests\nScheduler: index resources, manage request queue\nCluster: CPUs and RAM\nStorage: file system\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Work Machine] -- Internet --&gt; B[Login Node]\n  B -- Scheduler --&gt; C[Cluster]\n  B --&gt; D[File Structure]\n  C --&gt; D\n\n\n\n\n\n\n\n\nResist running processes on login node! They will be killed."
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#contents-of-project-environments",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#contents-of-project-environments",
+    "title": "Project Environments: centralize workflows",
+    "section": "Contents of project environments",
+    "text": "Contents of project environments\n\n\n\nLoad modules\nSoftware versions\nSoftware configuration\nPATH updates\nConda activation\nProject globals\nUser messages\n\n\n\n#!/bin/bash\n\n# Load, configure FreeSurfer\nmodule load freesurfer/8.0\nexport SUBJECTS_DIR=/users/$(whoami)/projects\nexport FS_LICENSE=/users/$(whoami)/research_bin/license.txt\nmkdir -p $SUBJECTS_DIR\nsource $FREESURFER_HOME/SetUpFreeSurfer.sh\n\n# Update path\nPATH=${PATH}:\\\n/users/$(whoami)/research_bin\n\nexport PATH\n\n# User globals\nSQL_PASS=$(cat ~/.ssh/pass_sql)\nRSA_WS=~/.ssh/id_rsa_ws\n\n# Load project conda env\nconda activate proj_env\n\n\nFollowing this example will require a FreeSurfer License stored at the appropriate location."
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#make-an-account",
-    "href": "lectures/08-cluster/08-cluster.html#make-an-account",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Make an account",
-    "text": "Make an account\n\n\n\nSubmit an account request here\n\nAccount approval may take a day\nThe instructor or your lab PI can endorse your account"
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#access-environments",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#access-environments",
+    "title": "Project Environments: centralize workflows",
+    "section": "Access environments",
+    "text": "Access environments\n\n\n\nActivate via source\n\nProj environment configuration is available to all subshells\nE.g. scheduled jobs - no longer need to manage module across multiple job files!\n\nPersonal preference: set an alias to activate environments"
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#access-account-terminal",
-    "href": "lectures/08-cluster/08-cluster.html#access-account-terminal",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Access account: terminal",
-    "text": "Access account: terminal\n\n\n\nFor off-campus access:\n\nInstall Cisco AnyConnect\nConnect to Notre Dame’s VPN: vpnaccess.nd.edu\n\nUse terminal to login, with help from the CRC Connection Resources:\n\nssh user@crcfe01.crc.nd.edu\nUse ND user ID and password"
+    "objectID": "lectures/11-proj_envs/11-proj_envs.html#save-and-share",
+    "href": "lectures/11-proj_envs/11-proj_envs.html#save-and-share",
+    "title": "Project Environments: centralize workflows",
+    "section": "Save and share",
+    "text": "Save and share\n\n\n\nSave environment script somewhere useful\n\nPreferably in ‘env’ directory of code base\nVersioning helps reproducibility and replicability"
   },
   {
-    "objectID": "lectures/08-cluster/08-cluster.html#access-account-web-browser",
-    "href": "lectures/08-cluster/08-cluster.html#access-account-web-browser",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Access account: web browser",
-    "text": "Access account: web browser\n\n\n\nFrom a web browser go to https://crcfe01.crc.nd.edu\nSupply ND user ID and password\nStart a Graphical session"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes-front-end",
-    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes-front-end",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Types of nodes: Front End",
-    "text": "Types of nodes: Front End\n\n\n\nInteractive, login nodes\n\ndetails\ncrcfe01 and crcfe02\n32 Cores, 256 GB RAM\nShared by all users\n\nUsage:\n\nLogin\nManage data\nDevelopment\n\nDo not lose your account!"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes-back-end",
-    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes-back-end",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Types of nodes: Back End",
-    "text": "Types of nodes: Back End\n\n\n\nNon-interactive, work nodes\n\ndetails\n8200+ Cores\nControlled by scheduler\n\nUsage:\n\nSend work via QSUB scheduler\nSpecify:\n\nType of processes (serial, parallel)\nQueue type (long, gpu)\nJob name\nWork for scheduled nodes"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#file-systems-afs",
-    "href": "lectures/08-cluster/08-cluster.html#file-systems-afs",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "File systems: AFS",
-    "text": "File systems: AFS\n\n\n\nhome managed by AFS\nUsers allocated 100GB for files\nquota: check total usage\nPurpose:\n\nSmall data\nCode\nEnvironments\n\nMore info here and here"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#file-systems-panasas",
-    "href": "lectures/08-cluster/08-cluster.html#file-systems-panasas",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "File systems: PANASAS",
-    "text": "File systems: PANASAS\n\n\n\nscratch managed by Panasas\nRequest access\n\nUsers allocated 250GB\nAccess at /scratch365/userid\n\nPurged yearly\npan_df: check total usage\nPurpose:\n\nComputing, intermediates\n\nMore info here and here"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-scp",
-    "href": "lectures/08-cluster/08-cluster.html#moving-data-scp",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Moving data: scp",
-    "text": "Moving data: scp\n\n\nscp: Copy files over an SSH connection\n\nCopies entire file or directory\n\nAnatomy of command:\n\nscp [OPTS] source destination\nSeparate computer from path with ‘:’\n\nCan be used to both push and pull data:\n\nscp file.txt user@crcfe01.crc.nd.edu:~\n\nSend file.txt from local to CRC home\n\nscp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop\n\nPull ~/project directory from CRC to the local desktop\n\n\nSee here for more details"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
-    "href": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Moving data: rsync",
-    "text": "Moving data: rsync\n\n\nDo not often desire to send entire directory\n\ne.g. files exist at src and dst, new files made at dst\n\nrsync: Index both src and dst\n\nMove only difference\n\nAnatomy of command:\n\nrsync [OPTS] source destination\n\nSimilar to scp, can both push and pull data\n\nrsync -rauv ~/project user@crcfe01.crc.nd.edu:~\nCompares local project to remote, sends any difference\n\nSee here for more details"
-  },
-  {
-    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-graphic-user-interface",
-    "href": "lectures/08-cluster/08-cluster.html#moving-data-graphic-user-interface",
-    "title": "Cluster Computing: what is it, login, move data",
-    "section": "Moving data: Graphic User Interface",
-    "text": "Moving data: Graphic User Interface\n\n\nGUI-based options available\n\nCyberduck (OSx)\nMobaXterm (Windows)\n\nThe CRC has documentation here"
-  },
-  {
-    "objectID": "lectures/07-shells/07-practice.html",
-    "href": "lectures/07-shells/07-practice.html",
-    "title": "For Loops, cont’d: practice",
+    "objectID": "lectures/10-conda/10-practice.html",
+    "href": "lectures/10-conda/10-practice.html",
+    "title": "Conda: practice",
     "section": "",
-    "text": "Use the CLI and a script to demonstrate that global variables can be set in the parent shell.\nAlso show that globals set in subshell are not accessible in the parent shell.\nDemonstrate that variables are shell-specific.\nSend these example to your instructor."
+    "text": "Activate conda in your CRC account\nBuild an environment named ‘test_python’ which contains the following packages:\n\nPython version 3.10\nBlack\nFlake8\nNumpy\nScipy\nPandas\n\nShare a YAML export of the environment with your instructor."
   },
   {
-    "objectID": "lectures/07-shells/07-practice.html#shells-and-variables",
-    "href": "lectures/07-shells/07-practice.html#shells-and-variables",
-    "title": "For Loops, cont’d: practice",
+    "objectID": "lectures/10-conda/10-practice.html#build-an-environment",
+    "href": "lectures/10-conda/10-practice.html#build-an-environment",
+    "title": "Conda: practice",
     "section": "",
-    "text": "Use the CLI and a script to demonstrate that global variables can be set in the parent shell.\nAlso show that globals set in subshell are not accessible in the parent shell.\nDemonstrate that variables are shell-specific.\nSend these example to your instructor."
+    "text": "Activate conda in your CRC account\nBuild an environment named ‘test_python’ which contains the following packages:\n\nPython version 3.10\nBlack\nFlake8\nNumpy\nScipy\nPandas\n\nShare a YAML export of the environment with your instructor."
   },
   {
-    "objectID": "lectures/07-shells/07-practice.html#style-prompt",
-    "href": "lectures/07-shells/07-practice.html#style-prompt",
-    "title": "For Loops, cont’d: practice",
-    "section": "Style Prompt",
-    "text": "Style Prompt\n\nAdd you computer’s name to, and change the color of, the prompt.\n(OSx) Turn on CLI colors and set color schemes for ls.\nSend a screenshot of your prompt and ls output to your instructor."
-  },
-  {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#purpose",
-    "href": "lectures/06-for_loops/06-for_loops.html#purpose",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "objectID": "lectures/09-schedule/09-schedule.html#purpose",
+    "href": "lectures/09-schedule/09-schedule.html#purpose",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn to align information across lists and build flexible for loops\nSkill:\n\nArrays and counters\nControl number of iterations\n\nWhy:\n\nLinking information (e.g. label-anatomy)\nDecrease workflow time and number of errors"
+    "text": "Purpose\n\n\nKnowledge: Learn to schedule flexible jobs\nSkill:\n\nPass and capture arguments\nRedirect output and error messages\nBuild wrapper and job scripts\nSubmit and check jobs\n\nWhy:\n\nDeploy a common workflow for all subjects\nProtect important scripts from requiring edits"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#c-style-for-loop",
-    "href": "lectures/06-for_loops/06-for_loops.html#c-style-for-loop",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "C-style for loop",
-    "text": "C-style for loop\n\n\n\n\nBash supports another for loop specification:\n\nSpecify start, final, and increment values\nUsing numerical assessment parentheses (double)\nSeparated by semicolon\n\nOnly works with integers\n\n\n\n\nfor ((i=1; i&lt;5; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+    "objectID": "lectures/09-schedule/09-schedule.html#capture-positional-arguments",
+    "href": "lectures/09-schedule/09-schedule.html#capture-positional-arguments",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Capture positional arguments",
+    "text": "Capture positional arguments\n\n\n\nRecall anatomy of shell command:\n\n$ CMD OPT PARAM\n$ mkdir -p foo/bar\n\nCommands have 0-indexed positions\n\n0: mkdir\n1: -p\n2: foo/bar\n\nPositional arguments can be accessed in scripts\n\nHeld in special variable $[index]\ne.g. $0, $1, $2 …"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#dynamic-iteration-control",
-    "href": "lectures/06-for_loops/06-for_loops.html#dynamic-iteration-control",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "Dynamic iteration control",
-    "text": "Dynamic iteration control\n\n\n\n\nStart and final values do not have to be hardcoded\nC-style supports referencing a variable\nThese start and final variables could be set by another process\n\nnum_foo=$(ls foo*.txt | wc -l)\n\n\n\n\n\nstart=1\nend=5\nfor ((i=$start; i&lt;$end; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+    "objectID": "lectures/09-schedule/09-schedule.html#use-positional-arguments",
+    "href": "lectures/09-schedule/09-schedule.html#use-positional-arguments",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Use positional arguments",
+    "text": "Use positional arguments\n\n\n\nAssign positional argument to variable\nUse variable in script workflow"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#while-loops-and-counters",
-    "href": "lectures/06-for_loops/06-for_loops.html#while-loops-and-counters",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "While loops and counters",
-    "text": "While loops and counters\n\n\n\n\nWhile loops can also be used to control iteration number\nSyntax based on an assertion being true\nSpecific structure:\n\nSpace separated while [ assertion ]\nNew line do\nSeries of commands\nTypically a variable is updated\nNew line done\n\n\n\n\n\ncnt=1\nwhile [ $cnt -lt 5 ]; do\n    echo $cnt\n    let cnt+=1\ndone\n\n1\n2\n3\n4"
+    "objectID": "lectures/09-schedule/09-schedule.html#redirect-output-stdout",
+    "href": "lectures/09-schedule/09-schedule.html#redirect-output-stdout",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Redirect output: STDOUT",
+    "text": "Redirect output: STDOUT\n\n\n\nSTDOUT: output of succesful jobs (exit status 0)\nDesignated via &1\nNormally &1 is the terminal window\nCan be redirected to a file with &gt;\n\n&gt;: overwrites\n&gt;&gt;: appends"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays",
-    "href": "lectures/06-for_loops/06-for_loops.html#arrays",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "Arrays",
-    "text": "Arrays\n\n\n\n\nArrays are a 0-indexed data type\nPositional structure:\n\nDefined within parentheses\nSpace separated\n\nData extracted by referencing position\n\n\n\n\narr_foo=({a..d})\narr_fruit=(apple orange banana)\necho ${arr_foo[0]}\necho ${arr_fruit[2]}\n\na\nbanana\n\n\n\n\nWhy was ${arr_fruit[2]} used and not ${arr_fruit[3]}?"
+    "objectID": "lectures/09-schedule/09-schedule.html#redirect-output-stderr",
+    "href": "lectures/09-schedule/09-schedule.html#redirect-output-stderr",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Redirect output: STDERR",
+    "text": "Redirect output: STDERR\n\n\n\nSTDERR: output of failed jobs (exit status &gt;0)\nDesignated via 2&gt;\nNormally 2&gt; is the terminal window\nCan be redirected to a file with 2&gt;\n\n2&gt; err.log: send STDERR to err.log\n2&gt;&1: send STDERR to same location as STDOUT\ncmd &gt; out.log 2&gt;&1: Send STDOUT and STDERR to out.log\n\n\n\n\n\n\nNotice:\n\nLine 7 printed to err.log\nLine 8 printed to terminal"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-position",
-    "href": "lectures/06-for_loops/06-for_loops.html#arrays-position",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "Arrays: position",
-    "text": "Arrays: position\n\n\n\n\nSpecial syntax to reference array indices\n\n${!arr[@]}\n! queries indices\n@ references all array values\n\nUseful for iterations through array positions\n\n\n\n\narr=({a..d})\necho \"Array positions are ${!arr[@]}\"\n\nfor pos in ${!arr[@]}; do\n    echo \"Array position $pos value is ${arr[$pos]}\"\ndone\n\nArray positions are 0 1 2 3\nArray position 0 value is a\nArray position 1 value is b\nArray position 2 value is c\nArray position 3 value is d"
+    "objectID": "lectures/09-schedule/09-schedule.html#job-scripts",
+    "href": "lectures/09-schedule/09-schedule.html#job-scripts",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Job Scripts",
+    "text": "Job Scripts\n\n\n\nCompute environments involve scheduled jobs\n\ne.g. execute workflow A for subjects 1, 2, and 3\n\nOK: edit job scripts for each subject\nBetter: pass subject number to job script\nJob script purpose:\n\nRequest resources\nReceive arguments\nExecute workflow"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-length",
-    "href": "lectures/06-for_loops/06-for_loops.html#arrays-length",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "Arrays: length",
-    "text": "Arrays: length\n\n\n\n\nSpecial syntax to extract array length\n\n${#arr[@]}\n# queries length\n\nUseful for extracting positions from multiple arrays\n\n\n\n\nhero=(batman superman aquaman)\ncolor=(black red green)\necho \"hero array length is ${#hero[@]}\"\n\n# Check arrays are same length\n[ ${#hero[@]} == ${#color[@]} ] \\\n    || echo \"Array length mismatch\"\n\nidx=0\nwhile [ $idx -lt ${#hero[@]} ]; do\n    echo \"The hero ${hero[$idx]} wears ${color[$idx]}\"\n    let idx+=1\ndone\n\nhero array length is 3\nThe hero batman wears black\nThe hero superman wears red\nThe hero aquaman wears green\n\n\n\n\nDo I need to consider 0-indexing in my while assertion?\nNote the extraction of array information with variable."
+    "objectID": "lectures/09-schedule/09-schedule.html#modules",
+    "href": "lectures/09-schedule/09-schedule.html#modules",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Modules",
+    "text": "Modules\n\n\n\nCRC supplies software packages as modules\n\nmodule avail: See available modules\nmodule load foo: Load module ‘foo’\n\nCommon: Load modules in job script\n\nAfter resource request\n\nPreferred: Load in project environment\n\n(Lecture 11 [TBD])"
   },
   {
-    "objectID": "lectures/06-for_loops/06-for_loops.html#building-arrays-and-variables",
-    "href": "lectures/06-for_loops/06-for_loops.html#building-arrays-and-variables",
-    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
-    "section": "Building arrays and variables",
-    "text": "Building arrays and variables\n\n\n\n\nVariables and arrays can be built\nOperator += allows for concatentation\n\nIn addition to increasing integer values\n\nCommand unset clears variables\n\n\n\n\nunset var_foo\nunset arr_foo\n\n[ -z $var_foo ] && echo empty\n\nfor i in {1..4}; do\n    var_foo+=\"$i\"\n    arr_foo+=($i)\ndone\n\n[ -z $var_foo ] || echo full\n\necho $var_foo\necho ${var_foo[@]}\n\nempty\nfull\n1234\n1234"
+    "objectID": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
+    "href": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Wrapper Scripts",
+    "text": "Wrapper Scripts\n\n\n\nWrapper script purpose:\n\nSubmits job script by envoking qsub command\nPasses arguments to the job script\n\nUsed as the researcher-editable file\n\nNo need to edit job script\n\nResearch could pass args to wrapper script\n\n(more advanced)"
   },
   {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#purpose",
-    "href": "lectures/05-conditionals/05-conditionals.html#purpose",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn workflow control with dependencies\nSkill:\n\nUsing exit status values\nConditional statements\n\nWhy:\n\nAvoid rebuilding existing files: increases workflow speed, decreases CPU time\nControl/account for different situations (multiple tasks, data types)\nValidate output to avoid downstream errors"
+    "objectID": "lectures/09-schedule/09-schedule.html#make-log-directory",
+    "href": "lectures/09-schedule/09-schedule.html#make-log-directory",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Make log directory",
+    "text": "Make log directory\n\n\n\nScheduled job runs on non-interactive node\n\nSTDOUT and STDERR are sent to [job_name].o[job_id]\n\nRedirect STDOUT and STDERR with -o and -e options\n\nCRC qsub configuration directs 2&gt;&1\n\nGood habit to organize STDOUT/ERR in logging directory\n\nNamed for job\nTime stamp helps trouble shoot\nSee here for information on date"
   },
   {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#exit-status",
-    "href": "lectures/05-conditionals/05-conditionals.html#exit-status",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Exit Status",
-    "text": "Exit Status\n\n\n\n\nEvery command returns an exit status\nHeld on special variable $?\n0: command was successful\n&gt;0: command was unsuccessful\n\nEach number has specific meaning\n\n\n\n\n\necho hi\necho $?\nasdf\necho $?\n\nhi\n0\nbash: line 2: asdf: command not found\n127"
+    "objectID": "lectures/09-schedule/09-schedule.html#check-status-qstat",
+    "href": "lectures/09-schedule/09-schedule.html#check-status-qstat",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Check status: qstat",
+    "text": "Check status: qstat\n\n\n\nCheck status of submitted jobs with qstat\n\nqstat -u username: status for all user jobs\nqstat -j jobid: status for specific jobs\n\nNumber of statuses possible:\n\nr: job is running\nqw: job is queued, waiting for resources\nEqw: invalid job\n\nSee more options here\n\n\n\n\nSet an alias for things your type often!"
   },
   {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
-    "href": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Use Exit Status",
-    "text": "Use Exit Status\n\n\n\n\nSpecial commands && and || evaluate $?\n&& listens for exit status 0\n\nif 0 (success) then process continues\n\n|| listens for exit status &gt;0\n\nif &gt;0 (fail) the process continues\n\nCan be combined\nKeep these simple!\n\n\n\n\necho hi && echo pass || echo fail\nasdf && echo pass || echo fail\n\nhi\npass\nbash: line 1: asdf: command not found\nfail"
+    "objectID": "lectures/09-schedule/09-schedule.html#delete-jobs-qdel",
+    "href": "lectures/09-schedule/09-schedule.html#delete-jobs-qdel",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Delete jobs: qdel",
+    "text": "Delete jobs: qdel\n\n\n\nSometimes necessary to kill jobs\n\nIncorrect specification\nSyntax error (e.g. no increment in while loops)\n\nDetermine job ID with qstat\nqdel jobid: Terminates specified job\nSee more options here"
   },
   {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#square-braces",
-    "href": "lectures/05-conditionals/05-conditionals.html#square-braces",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Square Braces",
-    "text": "Square Braces\n\n\n\n\nSquare braces ‘[]’ evaluate an internal statement to set exit status\nInternal exit status 0: external exit status 0\nInternal exit status &gt;0: external exit status 1\nWhite space (spaces) is very important!\n\n\n\n\n[ 1 == 1 ] && echo true || echo false\n[ 1 == 2 ] && echo true || echo false\n[ a == a ] && echo pass $? || echo fail $?\n[ a == b ] && echo pass $? || echo fail $?\n\ntrue\nfalse\npass 0\nfail 1"
+    "objectID": "lectures/09-schedule/09-schedule.html#long-queue-times",
+    "href": "lectures/09-schedule/09-schedule.html#long-queue-times",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Long queue times",
+    "text": "Long queue times\n\n\n\nSometimes jobs queue (status qw) for a long time\n\nBeginning of semster (students learning)\nEnd of semester (students running final projects)\nTeams conducting large analyses\nYour request is large\n\nTips:\n\nOptimize resource usage\nConsider parent and child jobs\nConsider job arrays\nLower cluster use at night, on weekends\n\nqstat: (without options) check entire queue\n\n\n\n\nSee here for using | (pipes)"
   },
   {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
-    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Conditionals: if",
-    "text": "Conditionals: if\n\n\n\n\nConditional syntax utilize square braces for workflow control\n\ni.e. execute commands only if a condition is met\n\nSyntax structure:\n\nif [ assertion ]\nNew line then\nCommands\nNew line fi to close conditional\n\nConditional work only executed if exit status = 0\n\n\n\n\nif [ 1 == 1 ]; then\n    echo Yay\nfi\nif [ 1 == 2 ]; then\n    echo Nay\nfi\n\nYay\n\n\n\n\nWhy is == used and not =?"
+    "objectID": "lectures/09-schedule/09-schedule.html#check-available-resources",
+    "href": "lectures/09-schedule/09-schedule.html#check-available-resources",
+    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "section": "Check available resources",
+    "text": "Check available resources\n\n\n\nfree_nodes.sh -G: Check usage of CPUs and nodes\nqstat -u user -g t: Check utilized nodes"
   },
   {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
-    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Conditionals: elif",
-    "text": "Conditionals: elif\n\n\n\n\nAbility to capture workflow if first conditional fails\nelif (else if) assessed only when if exit status = 1\nAn entire new conditional is written\nRead conditionals top -&gt; bottom\nMultiple elif statements allowed\n\n\n\n\nfoo=bat\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nfi\n\nfoobat\n\n\n\n\nHow many conditionals failed?\nWhat if foo=baz?"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
-    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Conditionals: else",
-    "text": "Conditionals: else\n\n\n\n\nelse catches all failed conditions\nSpecified last\nDoes not evaluate an assertion\n\n\n\n\nfoo=foo\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nelse\n    echo \"Unrecognized value of foo\"\nfi\n\nUnrecognized value of foo"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
-    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Conditionals: and",
-    "text": "Conditionals: and\n\n\n\n\nMultiple assertions can be combined with &&\nAs before, && only continues if exit status = 0\n\nSo, all conditionals would need to be true\n\n\n\n\n\nfoo=bar\nnum=1\nif [ $foo == bar ] && [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nWould [ $num == 1 ] be assessed if foo=baz?"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
-    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Conditionals: or",
-    "text": "Conditionals: or\n\n\n\n\nAssertions can also be combined with ||\nAs before, || only continues if exit status &gt;0\n\nSo, only one of the assertions needs to be true\n\nThese can be combined with &&\n\n\n\n\nalpha=a\nnum=1\nif [ $alpha == b ] || [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nIf the assertion was written [ $alpha == a ], would [ $num == 1 ] have been assessed?\nWhich of the assertions triggers the conditional in:\n\n\n\n\n[ 1 == 2 ] && [ a == a ] || [ b == b ]"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
-    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Conditionals: not",
-    "text": "Conditionals: not\n\n\n\n\nThe character ! inverts logic\n[ 1 != 0 ]: true ($?=0)\n[ ! 1 == 0 ]: true ($?=0)\nNote the white space in the second assertion\nUseful to name variables to help reader through logic\n\n\n\n\n[ a != b ] && echo $?\n[ ! foo == bar ] && echo $?\n\n0\n0\n\n\n\n\nWhat is printed in:\n\n\n\n\n[ ! foo == bar ] && echo alpha \\\n    || echo beta\n[ foo == bar ] || [ ! 1 == 2 ] \\\n    && echo delta || echo gamma"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#comparing-integers",
-    "href": "lectures/05-conditionals/05-conditionals.html#comparing-integers",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Comparing integers",
-    "text": "Comparing integers\n\n\n\n\nA set of special comparators operators for integers\n\n-gt: greater than\n-lt: less than\n-ge: greater than or equal\n-le: less than or equal\n-eq: equal\n-ne: not equal\n\nNote: double parentheses are used for mathematic expressions (&gt;, &lt;, &lt;=, etc)\n\n(( 1 &lt;= 2 ))\n\nSee more details here\n\n\n\n\n[ 1 -lt 2 ] && echo 1 $?\n[ ! 1 -gt 2 ] && echo 2 $?\n[ 1 -le 2 ] && echo 3 $?\n[ ! 1 -ge 2 ] && echo 4 $?\n\n1 0\n2 0\n3 0\n4 0\n\n\n\n\nWhat is printed in:\n\n\n\n\n[ ! 1 -lt 2 ] && [ 1 -eq 1 ] \\\n    && echo alpha || echo beta\n[ 1 -gt 2 ] || [ ! 1 -ge 2 ] \\\n    && echo delta || echo gamma"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#file-management",
-    "href": "lectures/05-conditionals/05-conditionals.html#file-management",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "File management",
-    "text": "File management\n\n\n\n\nA set of special comparators operators for managing files\n\n-e: something exists\n-d: a directory exists\n-f: a file exists\n-s: a file contains data\n-z: a variable is empty\n\n\n\n\n\n[ -f foo.txt ]\n[ -e foobar ]\n[ -d my_dir ]\n[ -z $foo ]\n\n\n\nWhat is printed in:\n\n\n\n\necho \"foo\" &gt; my_file.txt\n[ ! -s my_file.txt ] \\\n    && echo alpha || echo beta"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-conditionals.html#best-practices",
-    "href": "lectures/05-conditionals/05-conditionals.html#best-practices",
-    "title": "Conditionals: Exit status, square braces, special checks",
-    "section": "Best practices",
-    "text": "Best practices\n\n\n\n\nKeep conditionals below 3 levels of logic:\n\nSimple, flat, short\n\nConsider breaking up long chains into multiple statements\nInverting logic often simplifies\nName variables to help through logic\n\nis_empty: holds boolean of whether file is empty\nfile_exists: holds boolean of whether file exists\n\n\n\n\n\n# Flight control with variable\nfoo=\"\"\nfoo_empty=$([ -z $foo ] && echo $? || echo $?)\n[ $foo_empty == 0 ] && echo set_var || echo move_on\n\n# Flight control with file\ntouch foo.txt\nfoo_exists=$([ -f foo.txt ] && echo $? || echo $?)\n[ $foo_exists == 0 ] && echo move_on || echo make_foo\n\n\nWhat would be printed in the examples above?"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#purpose",
-    "href": "lectures/04-for_loops/04-for_loops.html#purpose",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Build loops and nested loops\nSkill:\n\nAnatomy of for loop\nThinking in iterations\nNesting logic\n\nWhy:\n\nApply same set of commands multiple times\ne.g. pipeline step for each subject"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
-    "href": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "What is a For Loop",
-    "text": "What is a For Loop\n\n\n\n\nPurpose of computing: get computers to do the work\nComputers are great at repeating work\n\nSame command for different variables\nSame workflow for different subjects\n\nBenefits: replicability, efficiency, reduce programmer typing\nFor loops: special syntax to repeat series of commands\nNate’s Adage: Be clever\n\nIf repeating work, get computer to do it\nNot lazy, efficient (without tendonitis)!\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Start of list] --&gt; B(Execute commands)\n  B --&gt; C{End of list?}\n  C --&gt; A\n  C --&gt; D[Exit]"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
-    "href": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Anatomy of For Loops",
-    "text": "Anatomy of For Loops\n\n\n\n\nFor loops have a specific structure:\n\nSpace separated ‘for variable in list’\nNew line do, series of commands\nReference variable with $\nNew line done\n\nFunctionally:\n\nIterate through all items of list\nDefine variable from list for each iteration\nExecute commands between do and done for each iteration\n\n\n\n\n\nfor var in {1..3}; do\n    echo $var\ndone\n\n1\n2\n3"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
-    "href": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Iterating through lists",
-    "text": "Iterating through lists\n\n\n\n\nPossible to store lists\n\nUse space between items\nAccount for bash returning space-separated output\n\nReference list in for loop syntax by variable\nBest practices:\n\nAdd do to for loop definition line\n\n“;” indicates End Of Line (EOL)\n\nIndent to show logic levels\ndone on separate line, original indentation\n\n\n\n\n\nmy_sent=\"i am great\"\nnum_list=$(echo {1..3})\n# file_list=$(ls .)\nfor var in $my_sent $num_list; do\n    echo $var\ndone\n\ni\nam\ngreat\n1\n2\n3"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
-    "href": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "Nesting For Loops",
-    "text": "Nesting For Loops\n\n\n\n\nA child loop can exist within a parent loop\nEntire child loop executed for each parent loop iteration\n\n\n\n\nfor num in {1..3}; do\n    for alpha in {a..c}; do\n        echo ${num}$alpha\n    done\ndone\n\n1a\n1b\n1c\n2a\n2b\n2c\n3a\n3b\n3c"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
-    "href": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
-    "title": "For Loops: Iterations and Nesting",
-    "section": "More Best Practices",
-    "text": "More Best Practices\n\n\n\n\nFlatter is better\n\nLimit nesting (logic) depth to ~3 levels\nTry restructuring if deeper logic is needed\nBe more clever\n\nOrganize code into blocks\nHave meaningful variable names\n\nfor i in {a..c} ... vs\nfor alpha in {a..c} ...\n\n\n\n\n\nfor num in {1..2}; do\n    for alpha in {a..b}; do\n        echo ${num}$alpha\n    done\ndone\necho\nfor num_alpha in {1..2}{a..b}; do\n    echo $num_alpha\ndone\n\n1a\n1b\n2a\n2b\n\n1a\n1b\n2a\n2b"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-practice.html",
-    "href": "lectures/03-scripting/03-practice.html",
-    "title": "Scripting: practice",
+    "objectID": "lectures/08-cluster/08-practice.html",
+    "href": "lectures/08-cluster/08-practice.html",
+    "title": "Cluster Computing: practice",
     "section": "",
-    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+    "text": "Create the file foo.txt on your local machine, use scp to copy it to your CRC home.\nCreate the file bar.txt at CRC home, use scp to copy it to your local machine.\nCreate a nested directory structure locally, use scp to copy it to your CRC home.\nShare these commands with your instructor."
   },
   {
-    "objectID": "lectures/03-scripting/03-practice.html#moving-to-scripts",
-    "href": "lectures/03-scripting/03-practice.html#moving-to-scripts",
-    "title": "Scripting: practice",
+    "objectID": "lectures/08-cluster/08-practice.html#practice-with-scp",
+    "href": "lectures/08-cluster/08-practice.html#practice-with-scp",
+    "title": "Cluster Computing: practice",
     "section": "",
-    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+    "text": "Create the file foo.txt on your local machine, use scp to copy it to your CRC home.\nCreate the file bar.txt at CRC home, use scp to copy it to your local machine.\nCreate a nested directory structure locally, use scp to copy it to your CRC home.\nShare these commands with your instructor."
   },
   {
-    "objectID": "lectures/02-variables/02-practice.html",
-    "href": "lectures/02-variables/02-practice.html",
-    "title": "Variables: practice",
-    "section": "",
-    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#string-slicing",
-    "href": "lectures/02-variables/02-practice.html#string-slicing",
-    "title": "Variables: practice",
-    "section": "",
-    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
-  },
-  {
-    "objectID": "lectures/02-variables/02-practice.html#building-strings",
-    "href": "lectures/02-variables/02-practice.html#building-strings",
-    "title": "Variables: practice",
-    "section": "Building Strings",
-    "text": "Building Strings\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.\nRepeat 1, with positional slicing methods.\nSend the syntax and screenshot to your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html",
-    "href": "lectures/01-the_terminal/01-practice.html",
-    "title": "The Terminal: practice",
-    "section": "",
-    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
-    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
-    "title": "The Terminal: practice",
-    "section": "",
-    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
-    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
-    "title": "The Terminal: practice",
-    "section": "Extra challenge",
-    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Computing Essentials",
-    "section": "",
-    "text": "Neuroimaging is a fascinating and exciting technique that allows researchers to “look under the hood” and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.\nThe modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.\nThe topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.\nWe start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code."
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Computing Essentials",
-    "section": "",
-    "text": "Neuroimaging is a fascinating and exciting technique that allows researchers to “look under the hood” and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.\nThe modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.\nThe topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.\nWe start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code."
-  },
-  {
-    "objectID": "index.html#course-materials",
-    "href": "index.html#course-materials",
-    "title": "Computing Essentials",
-    "section": "Course Materials",
-    "text": "Course Materials\n\nSlides, Code, and Practices"
-  },
-  {
-    "objectID": "index.html#tentative-lesson-schedule",
-    "href": "index.html#tentative-lesson-schedule",
-    "title": "Computing Essentials",
-    "section": "(Tentative) Lesson Schedule",
-    "text": "(Tentative) Lesson Schedule\n\n\n\nLesson\nDate\nMaterial\n\n\n\n\n1. Terminal and variables\nTBD\nModule 1.1, 1.2\n\n\n2. Scripting and for loops\nTBD\nModule 1.3, 1.4\n\n\n3. Conditional statements\nTBD\nModule 1.5\n\n\n4. Advanced looping\nTBD\nModule 1.6\n\n\n5. Shells\nTBD\nModule 2.1\n\n\n6. Cluster computing\nTBD\nModule 2.2\n\n\n7. Scheduling jobs\nTBD\nModule 2.3\n\n\n8. Conda and project environments\nTBD\nModule 2.4, 2.5\n\n\n9. Git and GitHub\nTBD\nModule 2.6\n\n\n10. Collaborative programming\nTBD\nModule 2.7"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-cool",
-    "href": "lectures/00-why_program/00-why_program.html#neuroimaging-is-cool",
-    "title": "Why Program?",
-    "section": "Neuroimaging is cool",
-    "text": "Neuroimaging is cool"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
-    "href": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
-    "title": "Why Program?",
-    "section": "Neuroimaging is popular",
-    "text": "Neuroimaging is popular\n\n\n\n\n\n\nMRI, fMRI, and DWI paper trends (https://app.dimensions.ai)"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#data-are-large",
-    "href": "lectures/00-why_program/00-why_program.html#data-are-large",
-    "title": "Why Program?",
-    "section": "Data are large",
-    "text": "Data are large"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#models-are-complex",
-    "href": "lectures/00-why_program/00-why_program.html#models-are-complex",
-    "title": "Why Program?",
-    "section": "Models are complex",
-    "text": "Models are complex"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#vast-compute-times",
-    "href": "lectures/00-why_program/00-why_program.html#vast-compute-times",
-    "title": "Why Program?",
-    "section": "Vast compute times",
-    "text": "Vast compute times"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#lack-of-gui",
-    "href": "lectures/00-why_program/00-why_program.html#lack-of-gui",
-    "title": "Why Program?",
-    "section": "Lack of GUI",
-    "text": "Lack of GUI"
-  },
-  {
-    "objectID": "lectures/00-why_program/00-why_program.html#goals-for-course",
-    "href": "lectures/00-why_program/00-why_program.html#goals-for-course",
-    "title": "Why Program?",
-    "section": "Goals for course",
-    "text": "Goals for course"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#purpose",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#purpose",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge:\n\nOrient to command line interface (CLI)\nAnatomy of commands\nDirectory structures\n\nSkill: learn basic commands and build directory trees\nWhy:\n\nCLI is the most common interface with neuroimaging software\nNeuroimaging software requires certain directory structures\nThinking in trees will help organize your data"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "What is a terminal",
-    "text": "What is a terminal\n\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Finding the terminal: Mac",
-    "text": "Finding the terminal: Mac\n\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Finding the terminal: Ubuntu",
-    "text": "Finding the terminal: Ubuntu\n\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Finding the terminal: Windows",
-    "text": "Finding the terminal: Windows\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Anatomy of commands",
-    "text": "Anatomy of commands\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Foundational commands",
-    "text": "Foundational commands\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Directory tree",
-    "text": "Directory tree\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
-  },
-  {
-    "objectID": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
-    "href": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
-    "title": "The Terminal: Linux Tree, Commands, Making directories",
-    "section": "Make directories",
-    "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#purpose",
-    "href": "lectures/02-variables/02-variables.html#purpose",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge:\n\nLearn how to store data for future use\nManipulate return values\n\nSkill:\n\nStrings and variables\nBrace expansion\nManipulating variable information\n\nWhy:\n\nUseful for building organized directory trees, file names\nCommonly desirous to extract information from file name"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#strings",
-    "href": "lectures/02-variables/02-variables.html#strings",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Strings",
-    "text": "Strings\n\n\n\n\nSeries of key strokes:\n\nabcd1234\nHello World\n\nGood to avoid spaces (command: argument + parameter)\n\nHello_World\n\nData type - integer, boolean, list, array\nStore in a variable\nAccess with $ prefix\n\nPrint value of variable with echo\n\n\n\n\n\nfoo=\"Hello World\"\necho foo\necho $foo\n\nbar=Goodbye Sky\necho $bar\n\nfoo\nHello World\nbash: line 4: Sky: command not found\n\n\n\n\nWhy does bar=Goodbye Sky break?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#paths",
-    "href": "lectures/02-variables/02-variables.html#paths",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Paths",
-    "text": "Paths\n\n\n\n\nFile paths can be stored in variable\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#brace-expansion",
-    "href": "lectures/02-variables/02-variables.html#brace-expansion",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Brace expansion",
-    "text": "Brace expansion\n\n\n\n\nCurly braces containing a list: ‘{1..4}’\nExpand sequential or comma-separated lists\nAppend to strings - easy file, directory generation\n\nE.g. ‘mkdir -p sub-{1..3}’\n\nCombine to generate permutations\n\nE.g. ‘for i in pref-{1..3}{a..c}; do ...’\n\nSupports nesting\nRun in subshell ‘$()’ to store in variable\n\n\n\n\necho {a..d}\necho sub-{1..3}\nperm=$(echo {1..3}{a..c})\nnest=$(echo pref-{foo,bar{1..3},baz})\necho $perm\necho $nest\n\na b c d\nsub-1 sub-2 sub-3\n1a 1b 1c 2a 2b 2c 3a 3b 3c\npref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#combining-variables",
-    "href": "lectures/02-variables/02-variables.html#combining-variables",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Combining variables",
-    "text": "Combining variables\n\n\n\n\nAccess variables with ‘$’\nCombine with curly braces to:\n\nAdd suff/prefix:\n\n‘var=foo; echo ${var}bar’\n\nCombine variables\n\n‘var1=foo; var2=bar; echo ${var1}$var2’\n\nNote: reuse of ‘{}’ - key-bindings are context dependent!\n\n\n\n\n\nvar1=foo; var2=bar\necho \"1 ${var1}baz\"\necho \"2 ${var1}$var2\"\necho \"3 $var1$var2\"\necho \"4 $var1baz\"\n\n1 foobaz\n2 foobar\n3 foobar\n4 \n\n\n\n\nWhy does ‘echo \"4 $var1baz\"’ break?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-forward-removal",
-    "href": "lectures/02-variables/02-variables.html#slice-forward-removal",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: forward removal",
-    "text": "Slice: forward removal\n\n\n\n\nOften desirable to slice strings\n\nE.g. extract “awesome” from “I_am_awesome”\n\nExtracting subject, session, or task from file name\n\nBIDS: sub-1_ses-A_task-memory\n\nCombine “#” and string with variable call to slice from string beginning\n\n“#” removes before first string match\nWildcard symbol “*” matches anything\n“##” removes before final string match\n\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name#*_}\necho ${bids_name##*_}\n\nsub-1_ses-A_task-memory\nses-A_task-memory\ntask-memory\n\n\n\n\nWhat would ‘echo ${bids_name#*-}’ say?\nHow about ‘echo ${bids_name#sub-1}’?\nHow about ‘echo ${bids_name##*-}’?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-backward-removal",
-    "href": "lectures/02-variables/02-variables.html#slice-backward-removal",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: backward removal",
-    "text": "Slice: backward removal\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract string middle\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-positional",
-    "href": "lectures/02-variables/02-variables.html#slice-positional",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: positional",
-    "text": "Slice: positional\n\n\n\n\nEach character in a string has a position\n\n0-indexed, abcd = 0123\n\nUse “:” to specify start and end of positions\n\n\n\n\nalpha=\"abcdefg\"\necho ${alpha:0:3}\necho ${alpha:3}\n\nabc\ndefg\n\n\n\n\nWhat would ‘echo ${alpha:1:4}’ say?\nWhat would ‘echo ${alpha:5}’ say?"
-  },
-  {
-    "objectID": "lectures/02-variables/02-variables.html#slice-replace",
-    "href": "lectures/02-variables/02-variables.html#slice-replace",
-    "title": "Variables: Strings, Braces, Slicing",
-    "section": "Slice: replace",
-    "text": "Slice: replace\n\n\n\n\nReplacing substring is possible with /\nMust match substring exactly\nCan also be used to remove string\n\n\n\n\nfoo=\"foobbb\"\necho $foo\necho \"${foo/bbb/ccc}\"\n\nfoobbb\nfooccc\n\n\n\n\nWhat would ‘echo \"${foo/bbb/}\"’ say?"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#purpose",
-    "href": "lectures/03-scripting/03-scripting.html#purpose",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn to save and execute work\nSkill:\n\nWrite scripts and manage permissions\nExecute in desired shell\n\nWhy:\n\nWorkflow replicability, transparency\nIncrease complexity of commands while decreasing researcher effort"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#scripts",
-    "href": "lectures/03-scripting/03-scripting.html#scripts",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Scripts",
-    "text": "Scripts\n\n\n\n\nEnter commands into terminal:\n\nFine for few, short commands\nMany - tedious, error prone\n\nScripting:\n\nSave commands into file (script)\nExecute file\n\nUtility:\n\nReusable scripts\nError checking\nDecrease typing"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#create-new-script",
-    "href": "lectures/03-scripting/03-scripting.html#create-new-script",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Create New Script",
-    "text": "Create New Script\n\n\n\n\ntouch: Create new file\n\nUpdate write-time for existing files\n\nnano: Create and open file with built-in editor\n\nOther built-ins: vi, vim, emacs\nExit sequence:\n\nctrl-x: save and exit\ny: overwrite\nspecify name, return\n\n\nSpecify interpreter via #!\n\nProvides path to executable"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#add-commands",
-    "href": "lectures/03-scripting/03-scripting.html#add-commands",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Add Commands",
-    "text": "Add Commands\n\n\n\n\nSpecify series of commands\nHelpful - spend time to determine logic\nSave work for future use\nBack up work in case of tragedy\n\n\n\n\n#!/bin/bash\n\n# Use positional slicing\nalpha=\"abcdefg\"\nlet_e=${alpha:4:1}\nlet_g=${alpha:6}\necho ${let_e}${let_g}${let_g}\n\n# Use character slicing\nbeta=\"aaa-bbb_ccc\"\nint_var=${beta#*-}\necho ${int_var%_*}\n\negg\nbbb"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#chmod",
-    "href": "lectures/03-scripting/03-scripting.html#chmod",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "CHMOD",
-    "text": "CHMOD\n\n\n\n\nCHange MODe of files\nls -l shows file permissions by group\n\nUser, group, other\n\nNumeric access (8 bit):\n\nread (4), write (2), execute (1)\nrw- = 6\nrwxr-xr-x = 755\n\nchmod 755 new_script.sh - detail permission for each group\nchmod +x new_script.sh - assign execute to all groups"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#execution",
-    "href": "lectures/03-scripting/03-scripting.html#execution",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Execution",
-    "text": "Execution\n\n\n\n\nExecute in different shells\n\ncurrent vs sub shell\n\nRelevant for variable availability\nMethod 1: source or dot execution\n\nsource new_script.sh\n. new_script.sh is preferred\nExecutes script in current shell\nVariables available for future use\nIdeal for creating environments\nOverrides permissions (discouraged)"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#execution-contd",
-    "href": "lectures/03-scripting/03-scripting.html#execution-contd",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Execution, cont’d",
-    "text": "Execution, cont’d\n\n\n\n\nMethod 2: direct execution\n\n./new_script.sh\nExecutes script in sub-shell\nVariables only exist in sub-shell\nIdeal for executing independent scripts\n\nMethod 3: interpreter execution\n\nbash new_script.sh\nExecutes script in specified shell\nDiscouraged, specify interpreter in script"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#ides",
-    "href": "lectures/03-scripting/03-scripting.html#ides",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "IDEs",
-    "text": "IDEs\n\n\n\n\nIntegrated Development Environments\nEditor: syntax highlighting, formatting, error detection\nCompiler or Interpreter: build and execute\nExtra features:\n\nTesting\nDebugging\nVisualization\nRemote Development\n\nPopular for Bash\n\nSublime: simple text editor, “free”\nVS Code: IDE, plugins for languages, free for research and learning"
-  },
-  {
-    "objectID": "lectures/03-scripting/03-scripting.html#style-guides",
-    "href": "lectures/03-scripting/03-scripting.html#style-guides",
-    "title": "Scripting: Permissions, Shells, and IDEs",
-    "section": "Style guides",
-    "text": "Style guides\n\n\nIndividual programming style - “Spaghetti Code”\n\nDifficult to read, maintain, optimize\nxkcd comic\n\nStrongly encourage using style guides\n\nGoogle Style\n\nReasons:\n\nIncreases professionalism\nAbility to collaborate\nAccess to plugins (autoformatter, linter, documentation)\nProgram faster\nReduce learning curve"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-practice.html",
-    "href": "lectures/04-for_loops/04-practice.html",
-    "title": "For Loops: practice",
-    "section": "",
-    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
-  },
-  {
-    "objectID": "lectures/04-for_loops/04-practice.html#building-file-structures",
-    "href": "lectures/04-for_loops/04-practice.html#building-file-structures",
-    "title": "For Loops: practice",
-    "section": "",
-    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-practice.html",
-    "href": "lectures/05-conditionals/05-practice.html",
-    "title": "Conditionals: practice",
-    "section": "",
-    "text": "Write a script that uses nested for loops and conditional statements to produce the output in Figure 1. \nWrite a script that repeats the Lesson 4 practice but only adds ‘foo bar’ to the text files of subjects 1-3 (see Figure 2). \nWrite a script that loops through the directory structure made above to checks whether the text files have content. Print both the file name and whether the file is ‘Empty’ or ‘Full’ (see Figure 3).\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
-  },
-  {
-    "objectID": "lectures/05-conditionals/05-practice.html#integrate-for-loops-and-conditionals",
-    "href": "lectures/05-conditionals/05-practice.html#integrate-for-loops-and-conditionals",
-    "title": "Conditionals: practice",
-    "section": "",
-    "text": "Write a script that uses nested for loops and conditional statements to produce the output in Figure 1. \nWrite a script that repeats the Lesson 4 practice but only adds ‘foo bar’ to the text files of subjects 1-3 (see Figure 2). \nWrite a script that loops through the directory structure made above to checks whether the text files have content. Print both the file name and whether the file is ‘Empty’ or ‘Full’ (see Figure 3).\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
-  },
-  {
-    "objectID": "lectures/06-for_loops/06-practice.html",
-    "href": "lectures/06-for_loops/06-practice.html",
-    "title": "For Loops, cont’d: practice",
-    "section": "",
-    "text": "Set an array to hold the letters a-d, then incorporate this array in a set of nested loops to generate the output in Figure 1. \nIncorporate the above array in a set of nested loops to generate the output in Figure 2.\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2"
-  },
-  {
-    "objectID": "lectures/06-for_loops/06-practice.html#varying-iterations",
-    "href": "lectures/06-for_loops/06-practice.html#varying-iterations",
-    "title": "For Loops, cont’d: practice",
-    "section": "",
-    "text": "Set an array to hold the letters a-d, then incorporate this array in a set of nested loops to generate the output in Figure 1. \nIncorporate the above array in a set of nested loops to generate the output in Figure 2.\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2"
+    "objectID": "lectures/08-cluster/08-practice.html#practice-with-rsync",
+    "href": "lectures/08-cluster/08-practice.html#practice-with-rsync",
+    "title": "Cluster Computing: practice",
+    "section": "Practice with RSYNC",
+    "text": "Practice with RSYNC\n\nRepeat above, using rsync.\nShare these commands with your instructor."
   },
   {
     "objectID": "lectures/07-shells/07-shells.html#purpose",
@@ -777,115 +259,906 @@
     "text": "Style files (OSx)\n\n\n\nUbuntu comes with file colors (check .bashrc)\n\nDifferentiate directories, executables, files\n\nNot the case in OSx\nControlled with globals:\n\nCLICOLOR: turn on/off colors\nLSCOLORS: set colors for ls output\n\nSpecify in .bashrc\n\n\n\nexport CLICOLOR=1\nexport LSCOLORS=GxFxCxDxBxegedabagaced"
   },
   {
-    "objectID": "lectures/08-cluster/08-practice.html",
-    "href": "lectures/08-cluster/08-practice.html",
-    "title": "Cluster Computing: practice",
+    "objectID": "lectures/06-for_loops/06-practice.html",
+    "href": "lectures/06-for_loops/06-practice.html",
+    "title": "For Loops, cont’d: practice",
     "section": "",
-    "text": "Create the file foo.txt on your local machine, use scp to copy it to your CRC home.\nCreate the file bar.txt at CRC home, use scp to copy it to your local machine.\nCreate a nested directory structure locally, use scp to copy it to your CRC home.\nShare these commands with your instructor."
+    "text": "Set an array to hold the letters a-d, then incorporate this array in a set of nested loops to generate the output in Figure 1. \nIncorporate the above array in a set of nested loops to generate the output in Figure 2.\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2"
   },
   {
-    "objectID": "lectures/08-cluster/08-practice.html#practice-with-scp",
-    "href": "lectures/08-cluster/08-practice.html#practice-with-scp",
-    "title": "Cluster Computing: practice",
+    "objectID": "lectures/06-for_loops/06-practice.html#varying-iterations",
+    "href": "lectures/06-for_loops/06-practice.html#varying-iterations",
+    "title": "For Loops, cont’d: practice",
     "section": "",
-    "text": "Create the file foo.txt on your local machine, use scp to copy it to your CRC home.\nCreate the file bar.txt at CRC home, use scp to copy it to your local machine.\nCreate a nested directory structure locally, use scp to copy it to your CRC home.\nShare these commands with your instructor."
+    "text": "Set an array to hold the letters a-d, then incorporate this array in a set of nested loops to generate the output in Figure 1. \nIncorporate the above array in a set of nested loops to generate the output in Figure 2.\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2"
   },
   {
-    "objectID": "lectures/08-cluster/08-practice.html#practice-with-rsync",
-    "href": "lectures/08-cluster/08-practice.html#practice-with-rsync",
-    "title": "Cluster Computing: practice",
-    "section": "Practice with RSYNC",
-    "text": "Practice with RSYNC\n\nRepeat above, using rsync.\nShare these commands with your instructor."
+    "objectID": "lectures/05-conditionals/05-practice.html",
+    "href": "lectures/05-conditionals/05-practice.html",
+    "title": "Conditionals: practice",
+    "section": "",
+    "text": "Write a script that uses nested for loops and conditional statements to produce the output in Figure 1. \nWrite a script that repeats the Lesson 4 practice but only adds ‘foo bar’ to the text files of subjects 1-3 (see Figure 2). \nWrite a script that loops through the directory structure made above to checks whether the text files have content. Print both the file name and whether the file is ‘Empty’ or ‘Full’ (see Figure 3).\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#purpose",
-    "href": "lectures/09-schedule/09-schedule.html#purpose",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
+    "objectID": "lectures/05-conditionals/05-practice.html#integrate-for-loops-and-conditionals",
+    "href": "lectures/05-conditionals/05-practice.html#integrate-for-loops-and-conditionals",
+    "title": "Conditionals: practice",
+    "section": "",
+    "text": "Write a script that uses nested for loops and conditional statements to produce the output in Figure 1. \nWrite a script that repeats the Lesson 4 practice but only adds ‘foo bar’ to the text files of subjects 1-3 (see Figure 2). \nWrite a script that loops through the directory structure made above to checks whether the text files have content. Print both the file name and whether the file is ‘Empty’ or ‘Full’ (see Figure 3).\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-practice.html",
+    "href": "lectures/04-for_loops/04-practice.html",
+    "title": "For Loops: practice",
+    "section": "",
+    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-practice.html#building-file-structures",
+    "href": "lectures/04-for_loops/04-practice.html#building-file-structures",
+    "title": "For Loops: practice",
+    "section": "",
+    "text": "Write a script that uses nested for loops to create a directory structure with the following specifications:\n\nFive subject directories named ‘sub-1’, ‘sub-2’ … are at the top level\nEach subject directory has three session directories (ses-a, ses-b, ses-c)\nEach session directory has four files:\n\nFiles are named by subject, session, and file number\nFile suffix is ‘foo.txt’\nUnderscores separate identifier fields\n\nSee Figure 1 \n\nWrite another script that:\n\nReplaces the ‘foo’ suffix to ‘bar’ (remember slice: replace from lecture 2)\n\nSearch “bash use mv to rename file”\n\nAdds the string “foo bar” into the file\n\nSearch ‘redirecting echo in bash’\n\nSee Figure 2 and Figure 3\n\nSend these scripts to your instructor.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nFigure 3"
+  },
+  {
+    "objectID": "lectures/03-scripting/03-scripting.html#purpose",
+    "href": "lectures/03-scripting/03-scripting.html#purpose",
+    "title": "Scripting: Permissions, Shells, and IDEs",
     "section": "Purpose",
-    "text": "Purpose\n\n\nKnowledge: Learn to schedule flexible jobs\nSkill:\n\nPass and capture arguments\nRedirect output and error messages\nBuild wrapper and job scripts\nSubmit and check jobs\n\nWhy:\n\nDeploy a common workflow for all subjects\nProtect important scripts from requiring edits"
+    "text": "Purpose\n\n\nKnowledge: Learn to save and execute work\nSkill:\n\nWrite scripts and manage permissions\nExecute in desired shell\n\nWhy:\n\nWorkflow replicability, transparency\nIncrease complexity of commands while decreasing researcher effort"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#capture-positional-arguments",
-    "href": "lectures/09-schedule/09-schedule.html#capture-positional-arguments",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Capture positional arguments",
-    "text": "Capture positional arguments\n\n\n\nRecall anatomy of shell command:\n\n$ CMD OPT PARAM\n$ mkdir -p foo/bar\n\nCommands have 0-indexed positions\n\n0: mkdir\n1: -p\n2: foo/bar\n\nPositional arguments can be accessed in scripts\n\nHeld in special variable $[index]\ne.g. $0, $1, $2 …"
+    "objectID": "lectures/03-scripting/03-scripting.html#scripts",
+    "href": "lectures/03-scripting/03-scripting.html#scripts",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "Scripts",
+    "text": "Scripts\n\n\n\n\nEnter commands into terminal:\n\nFine for few, short commands\nMany - tedious, error prone\n\nScripting:\n\nSave commands into file (script)\nExecute file\n\nUtility:\n\nReusable scripts\nError checking\nDecrease typing"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#use-positional-arguments",
-    "href": "lectures/09-schedule/09-schedule.html#use-positional-arguments",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Use positional arguments",
-    "text": "Use positional arguments\n\n\n\nAssign positional argument to variable\nUse variable in script workflow"
+    "objectID": "lectures/03-scripting/03-scripting.html#create-new-script",
+    "href": "lectures/03-scripting/03-scripting.html#create-new-script",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "Create New Script",
+    "text": "Create New Script\n\n\n\n\ntouch: Create new file\n\nUpdate write-time for existing files\n\nnano: Create and open file with built-in editor\n\nOther built-ins: vi, vim, emacs\nExit sequence:\n\nctrl-x: save and exit\ny: overwrite\nspecify name, return\n\n\nSpecify interpreter via #!\n\nProvides path to executable"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#redirect-output-stdout",
-    "href": "lectures/09-schedule/09-schedule.html#redirect-output-stdout",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Redirect output: STDOUT",
-    "text": "Redirect output: STDOUT\n\n\n\nSTDOUT: output of succesful jobs (exit status 0)\nDesignated via &1\nNormally &1 is the terminal window\nCan be redirected to a file with &gt;\n\n&gt;: overwrites\n&gt;&gt;: appends"
+    "objectID": "lectures/03-scripting/03-scripting.html#add-commands",
+    "href": "lectures/03-scripting/03-scripting.html#add-commands",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "Add Commands",
+    "text": "Add Commands\n\n\n\n\nSpecify series of commands\nHelpful - spend time to determine logic\nSave work for future use\nBack up work in case of tragedy\n\n\n\n\n#!/bin/bash\n\n# Use positional slicing\nalpha=\"abcdefg\"\nlet_e=${alpha:4:1}\nlet_g=${alpha:6}\necho ${let_e}${let_g}${let_g}\n\n# Use character slicing\nbeta=\"aaa-bbb_ccc\"\nint_var=${beta#*-}\necho ${int_var%_*}\n\negg\nbbb"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#redirect-output-stderr",
-    "href": "lectures/09-schedule/09-schedule.html#redirect-output-stderr",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Redirect output: STDERR",
-    "text": "Redirect output: STDERR\n\n\n\nSTDERR: output of failed jobs (exit status &gt;0)\nDesignated via 2&gt;\nNormally 2&gt; is the terminal window\nCan be redirected to a file with 2&gt;\n\n2&gt; err.log: send STDERR to err.log\n2&gt;&1: send STDERR to same location as STDOUT\ncmd &gt; out.log 2&gt;&1: Send STDOUT and STDERR to out.log\n\n\n\n\n\n\nNotice:\n\nLine 7 printed to err.log\nLine 8 printed to terminal"
+    "objectID": "lectures/03-scripting/03-scripting.html#chmod",
+    "href": "lectures/03-scripting/03-scripting.html#chmod",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "CHMOD",
+    "text": "CHMOD\n\n\n\n\nCHange MODe of files\nls -l shows file permissions by group\n\nUser, group, other\n\nNumeric access (8 bit):\n\nread (4), write (2), execute (1)\nrw- = 6\nrwxr-xr-x = 755\n\nchmod 755 new_script.sh - detail permission for each group\nchmod +x new_script.sh - assign execute to all groups"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#job-scripts",
-    "href": "lectures/09-schedule/09-schedule.html#job-scripts",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Job Scripts",
-    "text": "Job Scripts\n\n\n\nCompute environments involve scheduled jobs\n\ne.g. execute workflow A for subjects 1, 2, and 3\n\nOK: edit job scripts for each subject\nBetter: pass subject number to job script\nJob script purpose:\n\nRequest resources\nReceive arguments\nExecute workflow"
+    "objectID": "lectures/03-scripting/03-scripting.html#execution",
+    "href": "lectures/03-scripting/03-scripting.html#execution",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "Execution",
+    "text": "Execution\n\n\n\n\nExecute in different shells\n\ncurrent vs sub shell\n\nRelevant for variable availability\nMethod 1: source or dot execution\n\nsource new_script.sh\n. new_script.sh is preferred\nExecutes script in current shell\nVariables available for future use\nIdeal for creating environments\nOverrides permissions (discouraged)"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#modules",
-    "href": "lectures/09-schedule/09-schedule.html#modules",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Modules",
-    "text": "Modules\n\n\n\nCRC supplies software packages as modules\n\nmodule avail: See available modules\nmodule load foo: Load module ‘foo’\n\nCommon: Load modules in job script\n\nAfter resource request\n\nPreferred: Load in project environment\n\n(Lecture 11 [TBD])"
+    "objectID": "lectures/03-scripting/03-scripting.html#execution-contd",
+    "href": "lectures/03-scripting/03-scripting.html#execution-contd",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "Execution, cont’d",
+    "text": "Execution, cont’d\n\n\n\n\nMethod 2: direct execution\n\n./new_script.sh\nExecutes script in sub-shell\nVariables only exist in sub-shell\nIdeal for executing independent scripts\n\nMethod 3: interpreter execution\n\nbash new_script.sh\nExecutes script in specified shell\nDiscouraged, specify interpreter in script"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
-    "href": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Wrapper Scripts",
-    "text": "Wrapper Scripts\n\n\n\nWrapper script purpose:\n\nSubmits job script by envoking qsub command\nPasses arguments to the job script\n\nUsed as the researcher-editable file\n\nNo need to edit job script\n\nResearch could pass args to wrapper script\n\n(more advanced)"
+    "objectID": "lectures/03-scripting/03-scripting.html#ides",
+    "href": "lectures/03-scripting/03-scripting.html#ides",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "IDEs",
+    "text": "IDEs\n\n\n\n\nIntegrated Development Environments\nEditor: syntax highlighting, formatting, error detection\nCompiler or Interpreter: build and execute\nExtra features:\n\nTesting\nDebugging\nVisualization\nRemote Development\n\nPopular for Bash\n\nSublime: simple text editor, “free”\nVS Code: IDE, plugins for languages, free for research and learning"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#make-log-directory",
-    "href": "lectures/09-schedule/09-schedule.html#make-log-directory",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Make log directory",
-    "text": "Make log directory\n\n\n\nScheduled job runs on non-interactive node\n\nSTDOUT and STDERR are sent to [job_name].o[job_id]\n\nRedirect STDOUT and STDERR with -o and -e options\n\nCRC qsub configuration directs 2&gt;&1\n\nGood habit to organize STDOUT/ERR in logging directory\n\nNamed for job\nTime stamp helps trouble shoot\nSee here for information on date"
+    "objectID": "lectures/03-scripting/03-scripting.html#style-guides",
+    "href": "lectures/03-scripting/03-scripting.html#style-guides",
+    "title": "Scripting: Permissions, Shells, and IDEs",
+    "section": "Style guides",
+    "text": "Style guides\n\n\nIndividual programming style - “Spaghetti Code”\n\nDifficult to read, maintain, optimize\nxkcd comic\n\nStrongly encourage using style guides\n\nGoogle Style\n\nReasons:\n\nIncreases professionalism\nAbility to collaborate\nAccess to plugins (autoformatter, linter, documentation)\nProgram faster\nReduce learning curve"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#check-status-qstat",
-    "href": "lectures/09-schedule/09-schedule.html#check-status-qstat",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Check status: qstat",
-    "text": "Check status: qstat\n\n\n\nCheck status of submitted jobs with qstat\n\nqstat -u username: status for all user jobs\nqstat -j jobid: status for specific jobs\n\nNumber of statuses possible:\n\nr: job is running\nqw: job is queued, waiting for resources\nEqw: invalid job\n\nSee more options here\n\n\n\n\nSet an alias for things your type often!"
+    "objectID": "lectures/02-variables/02-variables.html#purpose",
+    "href": "lectures/02-variables/02-variables.html#purpose",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge:\n\nLearn how to store data for future use\nManipulate return values\n\nSkill:\n\nStrings and variables\nBrace expansion\nManipulating variable information\n\nWhy:\n\nUseful for building organized directory trees, file names\nCommonly desirous to extract information from file name"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#delete-jobs-qdel",
-    "href": "lectures/09-schedule/09-schedule.html#delete-jobs-qdel",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Delete jobs: qdel",
-    "text": "Delete jobs: qdel\n\n\n\nSometimes necessary to kill jobs\n\nIncorrect specification\nSyntax error (e.g. no increment in while loops)\n\nDetermine job ID with qstat\nqdel jobid: Terminates specified job\nSee more options here"
+    "objectID": "lectures/02-variables/02-variables.html#strings",
+    "href": "lectures/02-variables/02-variables.html#strings",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Strings",
+    "text": "Strings\n\n\n\n\nSeries of key strokes:\n\nabcd1234\nHello World\n\nGood to avoid spaces (command: argument + parameter)\n\nHello_World\n\nData type - integer, boolean, list, array\nStore in a variable\nAccess with $ prefix\n\nPrint value of variable with echo\n\n\n\n\n\nfoo=\"Hello World\"\necho foo\necho $foo\n\nbar=Goodbye Sky\necho $bar\n\nfoo\nHello World\nbash: line 4: Sky: command not found\n\n\n\n\nWhy does bar=Goodbye Sky break?"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#long-queue-times",
-    "href": "lectures/09-schedule/09-schedule.html#long-queue-times",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Long queue times",
-    "text": "Long queue times\n\n\n\nSometimes jobs queue (status qw) for a long time\n\nBeginning of semster (students learning)\nEnd of semester (students running final projects)\nTeams conducting large analyses\nYour request is large\n\nTips:\n\nOptimize resource usage\nConsider parent and child jobs\nConsider job arrays\nLower cluster use at night, on weekends\n\nqstat: (without options) check entire queue\n\n\n\n\nSee here for using | (pipes)"
+    "objectID": "lectures/02-variables/02-variables.html#paths",
+    "href": "lectures/02-variables/02-variables.html#paths",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Paths",
+    "text": "Paths\n\n\n\n\nFile paths can be stored in variable\nTwo types:\n\nRelative - start current location\nAbsolute - start at root\n\nSpecial path: PATH\n\nSearch path of executables\nReveal command path with which"
   },
   {
-    "objectID": "lectures/09-schedule/09-schedule.html#check-available-resources",
-    "href": "lectures/09-schedule/09-schedule.html#check-available-resources",
-    "title": "Cluster Computing: pass arguments, schedule and check jobs",
-    "section": "Check available resources",
-    "text": "Check available resources\n\n\n\nfree_nodes.sh -G: Check usage of CPUs and nodes\nqstat -u user -g t: Check utilized nodes"
+    "objectID": "lectures/02-variables/02-variables.html#brace-expansion",
+    "href": "lectures/02-variables/02-variables.html#brace-expansion",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Brace expansion",
+    "text": "Brace expansion\n\n\n\n\nCurly braces containing a list: ‘{1..4}’\nExpand sequential or comma-separated lists\nAppend to strings - easy file, directory generation\n\nE.g. ‘mkdir -p sub-{1..3}’\n\nCombine to generate permutations\n\nE.g. ‘for i in pref-{1..3}{a..c}; do ...’\n\nSupports nesting\nRun in subshell ‘$()’ to store in variable\n\n\n\n\necho {a..d}\necho sub-{1..3}\nperm=$(echo {1..3}{a..c})\nnest=$(echo pref-{foo,bar{1..3},baz})\necho $perm\necho $nest\n\na b c d\nsub-1 sub-2 sub-3\n1a 1b 1c 2a 2b 2c 3a 3b 3c\npref-foo pref-bar1 pref-bar2 pref-bar3 pref-baz"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#combining-variables",
+    "href": "lectures/02-variables/02-variables.html#combining-variables",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Combining variables",
+    "text": "Combining variables\n\n\n\n\nAccess variables with ‘$’\nCombine with curly braces to:\n\nAdd suff/prefix:\n\n‘var=foo; echo ${var}bar’\n\nCombine variables\n\n‘var1=foo; var2=bar; echo ${var1}$var2’\n\nNote: reuse of ‘{}’ - key-bindings are context dependent!\n\n\n\n\n\nvar1=foo; var2=bar\necho \"1 ${var1}baz\"\necho \"2 ${var1}$var2\"\necho \"3 $var1$var2\"\necho \"4 $var1baz\"\n\n1 foobaz\n2 foobar\n3 foobar\n4 \n\n\n\n\nWhy does ‘echo \"4 $var1baz\"’ break?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-forward-removal",
+    "href": "lectures/02-variables/02-variables.html#slice-forward-removal",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: forward removal",
+    "text": "Slice: forward removal\n\n\n\n\nOften desirable to slice strings\n\nE.g. extract “awesome” from “I_am_awesome”\n\nExtracting subject, session, or task from file name\n\nBIDS: sub-1_ses-A_task-memory\n\nCombine “#” and string with variable call to slice from string beginning\n\n“#” removes before first string match\nWildcard symbol “*” matches anything\n“##” removes before final string match\n\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name#*_}\necho ${bids_name##*_}\n\nsub-1_ses-A_task-memory\nses-A_task-memory\ntask-memory\n\n\n\n\nWhat would ‘echo ${bids_name#*-}’ say?\nHow about ‘echo ${bids_name#sub-1}’?\nHow about ‘echo ${bids_name##*-}’?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-backward-removal",
+    "href": "lectures/02-variables/02-variables.html#slice-backward-removal",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: backward removal",
+    "text": "Slice: backward removal\n\n\n\n\nThe “%” is used to slice from the back\n\n“%” removes after last string match\n“%%” removes after first string match\n\nAn intermediate variable can be used to extract string middle\n\n\n\n\nbids_name=sub-1_ses-A_task-memory\necho $bids_name\necho ${bids_name%_*}\necho ${bids_name%%_*}\nint=${bids_name#*_}\necho ${int%_*}\n\nsub-1_ses-A_task-memory\nsub-1_ses-A\nsub-1\nses-A"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-positional",
+    "href": "lectures/02-variables/02-variables.html#slice-positional",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: positional",
+    "text": "Slice: positional\n\n\n\n\nEach character in a string has a position\n\n0-indexed, abcd = 0123\n\nUse “:” to specify start and end of positions\n\n\n\n\nalpha=\"abcdefg\"\necho ${alpha:0:3}\necho ${alpha:3}\n\nabc\ndefg\n\n\n\n\nWhat would ‘echo ${alpha:1:4}’ say?\nWhat would ‘echo ${alpha:5}’ say?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-variables.html#slice-replace",
+    "href": "lectures/02-variables/02-variables.html#slice-replace",
+    "title": "Variables: Strings, Braces, Slicing",
+    "section": "Slice: replace",
+    "text": "Slice: replace\n\n\n\n\nReplacing substring is possible with /\nMust match substring exactly\nCan also be used to remove string\n\n\n\n\nfoo=\"foobbb\"\necho $foo\necho \"${foo/bbb/ccc}\"\n\nfoobbb\nfooccc\n\n\n\n\nWhat would ‘echo \"${foo/bbb/}\"’ say?"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#purpose",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#purpose",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge:\n\nOrient to command line interface (CLI)\nAnatomy of commands\nDirectory structures\n\nSkill: learn basic commands and build directory trees\nWhy:\n\nCLI is the most common interface with neuroimaging software\nNeuroimaging software requires certain directory structures\nThinking in trees will help organize your data"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#what-is-a-terminal",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "What is a terminal",
+    "text": "What is a terminal\n\n\n\n\n\nApplication - provides access to the command shell\nDefault language - Bourne Again Shell (Bash)\nProvide instruction to computer\nUseful for:\n\nAutomation\nTriggering software\n\n\n\nFinding the terminal: Mac\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”\n\n\n\n\n\n \n\n\n\n\n\nFinding the terminal: Ubuntu\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-mac",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Finding the terminal: Mac",
+    "text": "Finding the terminal: Mac\n\n\n\nEasy, built-in\nApplications -&gt; Other -&gt; Terminal\nCmd + Space -&gt; Search “terminal”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-ubuntu",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Finding the terminal: Ubuntu",
+    "text": "Finding the terminal: Ubuntu\n\n\n\nEasy, built-in\n\n\nApplications -&gt; Search “terminal”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#finding-the-terminal-windows",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Finding the terminal: Windows",
+    "text": "Finding the terminal: Windows\n\n\n\n\nSemi-difficult\nActivate Windows Subsytem Linux\n\nSee here\n\nInstall Ubuntu\nStart -&gt; Search “Ubuntu”"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#anatomy-of-commands",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Anatomy of commands",
+    "text": "Anatomy of commands\n\n\n\n\nCommand: instruction to machine\n\nMatches executable in PATH\nComposed of arguments\nSeparated by spaces\n\nTypes of Arguments:\n\nOption: modify command, specified with flag “-”\nParameter: provides information to command or option"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#foundational-commands",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Foundational commands",
+    "text": "Foundational commands\n\n\n\n\npwd: print working directory\nls: list directory contents\n\nls -l: list with extra info\nls -a: list all files\nls -la: combine arguments\n\ncd: change directories\n\ncd foo: go down into foo\ncd ..: go up one level\ncd: go HOME"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#directory-tree",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Directory tree",
+    "text": "Directory tree\n\n\n\n\nEvery file has a path\nSeparate steps of path with “/”\nTop of path: “root”, OS essentials\nCenter: “~”, HOME, default\nBelow HOME: user files"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
+    "href": "lectures/01-the_terminal/01-the_terminal.html#make-directories",
+    "title": "The Terminal: Linux Tree, Commands, Making directories",
+    "section": "Make directories",
+    "text": "Make directories\n\n\n\n\nmkdir: creates directory, requires parameter\n\nmkdir foo: create directory “foo”\n\nMany available options:\n\nmkdir -p foo/bar: create directory “bar” within “foo” (and “foo” if it does not exist)\nSee more options with man mkdir\n\nuse down arrow to scroll\nuse “q” to exit manual\n\n\ntree: see directory tree structure\n\nMac users: install with brew install tree"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-cool",
+    "href": "lectures/00-why_program/00-why_program.html#neuroimaging-is-cool",
+    "title": "Why Program?",
+    "section": "Neuroimaging is cool",
+    "text": "Neuroimaging is cool"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
+    "href": "lectures/00-why_program/00-why_program.html#neuroimaging-is-popular",
+    "title": "Why Program?",
+    "section": "Neuroimaging is popular",
+    "text": "Neuroimaging is popular\n\n\n\n\n\n\nMRI, fMRI, and DWI paper trends (https://app.dimensions.ai)"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#data-are-large",
+    "href": "lectures/00-why_program/00-why_program.html#data-are-large",
+    "title": "Why Program?",
+    "section": "Data are large",
+    "text": "Data are large"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#models-are-complex",
+    "href": "lectures/00-why_program/00-why_program.html#models-are-complex",
+    "title": "Why Program?",
+    "section": "Models are complex",
+    "text": "Models are complex"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#vast-compute-times",
+    "href": "lectures/00-why_program/00-why_program.html#vast-compute-times",
+    "title": "Why Program?",
+    "section": "Vast compute times",
+    "text": "Vast compute times"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#lack-of-gui",
+    "href": "lectures/00-why_program/00-why_program.html#lack-of-gui",
+    "title": "Why Program?",
+    "section": "Lack of GUI",
+    "text": "Lack of GUI"
+  },
+  {
+    "objectID": "lectures/00-why_program/00-why_program.html#goals-for-course",
+    "href": "lectures/00-why_program/00-why_program.html#goals-for-course",
+    "title": "Why Program?",
+    "section": "Goals for course",
+    "text": "Goals for course"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Computing Essentials",
+    "section": "",
+    "text": "Neuroimaging is a fascinating and exciting technique that allows researchers to “look under the hood” and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.\nThe modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.\nThe topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.\nWe start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Computing Essentials",
+    "section": "",
+    "text": "Neuroimaging is a fascinating and exciting technique that allows researchers to “look under the hood” and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.\nThe modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.\nThe topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.\nWe start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code."
+  },
+  {
+    "objectID": "index.html#course-materials",
+    "href": "index.html#course-materials",
+    "title": "Computing Essentials",
+    "section": "Course Materials",
+    "text": "Course Materials\n\nSlides, Code, and Practices"
+  },
+  {
+    "objectID": "index.html#tentative-lesson-schedule",
+    "href": "index.html#tentative-lesson-schedule",
+    "title": "Computing Essentials",
+    "section": "(Tentative) Lesson Schedule",
+    "text": "(Tentative) Lesson Schedule\n\n\n\nLesson\nDate\nMaterial\n\n\n\n\n1. Terminal and variables\nTBD\nModule 1.1, 1.2\n\n\n2. Scripting and for loops\nTBD\nModule 1.3, 1.4\n\n\n3. Conditional statements\nTBD\nModule 1.5\n\n\n4. Advanced looping\nTBD\nModule 1.6\n\n\n5. Shells\nTBD\nModule 2.1\n\n\n6. Cluster computing\nTBD\nModule 2.2\n\n\n7. Scheduling jobs\nTBD\nModule 2.3\n\n\n8. Conda and project environments\nTBD\nModule 2.4, 2.5\n\n\n9. Tracking changes\nTBD\nModule 2.6\n\n\n10. Team development\nTBD\nModule 2.7"
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html",
+    "href": "lectures/01-the_terminal/01-practice.html",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "href": "lectures/01-the_terminal/01-practice.html#building-directory-trees",
+    "title": "The Terminal: practice",
+    "section": "",
+    "text": "Use terminal commands to create the directory tree foo (below) on your Desktop.\nUse $ history to find your recent bash commands.\nShare both a screenshots of the foo tree and bash commands with your instructor."
+  },
+  {
+    "objectID": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "href": "lectures/01-the_terminal/01-practice.html#extra-challenge",
+    "title": "The Terminal: practice",
+    "section": "Extra challenge",
+    "text": "Extra challenge\n\nCan you figure out a 1-line command to do this?"
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html",
+    "href": "lectures/02-variables/02-practice.html",
+    "title": "Variables: practice",
+    "section": "",
+    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html#string-slicing",
+    "href": "lectures/02-variables/02-practice.html#string-slicing",
+    "title": "Variables: practice",
+    "section": "",
+    "text": "Set a variable to hold the string “aaa-bbb_ccc”.\nUsing string slicing syntax (“#” and/or “%”):\n\nWrite a command that uses the variable to print “aaa”.\nWrite a command that uses the variable to print “ccc”.\nWrite a set of commands that uses the variable to print “bbb”.\n\nRepeat i-iii using positional slicing syntax (“:”).\nShare both a screenshot and your relevant $ history with your instructor."
+  },
+  {
+    "objectID": "lectures/02-variables/02-practice.html#building-strings",
+    "href": "lectures/02-variables/02-practice.html#building-strings",
+    "title": "Variables: practice",
+    "section": "Building Strings",
+    "text": "Building Strings\n\n\nWrite a series of commands that use the string “abcdefg” to print “egg” using “#” and “%” slicing methods.\nRepeat 1, with positional slicing methods.\nSend the syntax and screenshot to your instructor."
+  },
+  {
+    "objectID": "lectures/03-scripting/03-practice.html",
+    "href": "lectures/03-scripting/03-practice.html",
+    "title": "Scripting: practice",
+    "section": "",
+    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+  },
+  {
+    "objectID": "lectures/03-scripting/03-practice.html#moving-to-scripts",
+    "href": "lectures/03-scripting/03-practice.html#moving-to-scripts",
+    "title": "Scripting: practice",
+    "section": "",
+    "text": "Write and execute a script that builds the directory tree from Practice 1.\n\nRemember to make the script executable for all users.\n\nWrite a script that completes Practice 2.\nSend these scripts to your instructor."
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#purpose",
+    "href": "lectures/04-for_loops/04-for_loops.html#purpose",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Build loops and nested loops\nSkill:\n\nAnatomy of for loop\nThinking in iterations\nNesting logic\n\nWhy:\n\nApply same set of commands multiple times\ne.g. pipeline step for each subject"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
+    "href": "lectures/04-for_loops/04-for_loops.html#what-is-a-for-loop",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "What is a For Loop",
+    "text": "What is a For Loop\n\n\n\n\nPurpose of computing: get computers to do the work\nComputers are great at repeating work\n\nSame command for different variables\nSame workflow for different subjects\n\nBenefits: replicability, efficiency, reduce programmer typing\nFor loops: special syntax to repeat series of commands\nNate’s Adage: Be clever\n\nIf repeating work, get computer to do it\nNot lazy, efficient (without tendonitis)!\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Start of list] --&gt; B(Execute commands)\n  B --&gt; C{End of list?}\n  C --&gt; A\n  C --&gt; D[Exit]"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
+    "href": "lectures/04-for_loops/04-for_loops.html#anatomy-of-for-loops",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Anatomy of For Loops",
+    "text": "Anatomy of For Loops\n\n\n\n\nFor loops have a specific structure:\n\nSpace separated ‘for variable in list’\nNew line do, series of commands\nReference variable with $\nNew line done\n\nFunctionally:\n\nIterate through all items of list\nDefine variable from list for each iteration\nExecute commands between do and done for each iteration\n\n\n\n\n\nfor var in {1..3}; do\n    echo $var\ndone\n\n1\n2\n3"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
+    "href": "lectures/04-for_loops/04-for_loops.html#iterating-through-lists",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Iterating through lists",
+    "text": "Iterating through lists\n\n\n\n\nPossible to store lists\n\nUse space between items\nAccount for bash returning space-separated output\n\nReference list in for loop syntax by variable\nBest practices:\n\nAdd do to for loop definition line\n\n“;” indicates End Of Line (EOL)\n\nIndent to show logic levels\ndone on separate line, original indentation\n\n\n\n\n\nmy_sent=\"i am great\"\nnum_list=$(echo {1..3})\n# file_list=$(ls .)\nfor var in $my_sent $num_list; do\n    echo $var\ndone\n\ni\nam\ngreat\n1\n2\n3"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
+    "href": "lectures/04-for_loops/04-for_loops.html#nesting-for-loops",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "Nesting For Loops",
+    "text": "Nesting For Loops\n\n\n\n\nA child loop can exist within a parent loop\nEntire child loop executed for each parent loop iteration\n\n\n\n\nfor num in {1..3}; do\n    for alpha in {a..c}; do\n        echo ${num}$alpha\n    done\ndone\n\n1a\n1b\n1c\n2a\n2b\n2c\n3a\n3b\n3c"
+  },
+  {
+    "objectID": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
+    "href": "lectures/04-for_loops/04-for_loops.html#more-best-practices",
+    "title": "For Loops: Iterations and Nesting",
+    "section": "More Best Practices",
+    "text": "More Best Practices\n\n\n\n\nFlatter is better\n\nLimit nesting (logic) depth to ~3 levels\nTry restructuring if deeper logic is needed\nBe more clever\n\nOrganize code into blocks\nHave meaningful variable names\n\nfor i in {a..c} ... vs\nfor alpha in {a..c} ...\n\n\n\n\n\nfor num in {1..2}; do\n    for alpha in {a..b}; do\n        echo ${num}$alpha\n    done\ndone\necho\nfor num_alpha in {1..2}{a..b}; do\n    echo $num_alpha\ndone\n\n1a\n1b\n2a\n2b\n\n1a\n1b\n2a\n2b"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#purpose",
+    "href": "lectures/05-conditionals/05-conditionals.html#purpose",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn workflow control with dependencies\nSkill:\n\nUsing exit status values\nConditional statements\n\nWhy:\n\nAvoid rebuilding existing files: increases workflow speed, decreases CPU time\nControl/account for different situations (multiple tasks, data types)\nValidate output to avoid downstream errors"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#exit-status",
+    "href": "lectures/05-conditionals/05-conditionals.html#exit-status",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Exit Status",
+    "text": "Exit Status\n\n\n\n\nEvery command returns an exit status\nHeld on special variable $?\n0: command was successful\n&gt;0: command was unsuccessful\n\nEach number has specific meaning\n\n\n\n\n\necho hi\necho $?\nasdf\necho $?\n\nhi\n0\nbash: line 2: asdf: command not found\n127"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
+    "href": "lectures/05-conditionals/05-conditionals.html#use-exit-status",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Use Exit Status",
+    "text": "Use Exit Status\n\n\n\n\nSpecial commands && and || evaluate $?\n&& listens for exit status 0\n\nif 0 (success) then process continues\n\n|| listens for exit status &gt;0\n\nif &gt;0 (fail) the process continues\n\nCan be combined\nKeep these simple!\n\n\n\n\necho hi && echo pass || echo fail\nasdf && echo pass || echo fail\n\nhi\npass\nbash: line 1: asdf: command not found\nfail"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#square-braces",
+    "href": "lectures/05-conditionals/05-conditionals.html#square-braces",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Square Braces",
+    "text": "Square Braces\n\n\n\n\nSquare braces ‘[]’ evaluate an internal statement to set exit status\nInternal exit status 0: external exit status 0\nInternal exit status &gt;0: external exit status 1\nWhite space (spaces) is very important!\n\n\n\n\n[ 1 == 1 ] && echo true || echo false\n[ 1 == 2 ] && echo true || echo false\n[ a == a ] && echo pass $? || echo fail $?\n[ a == b ] && echo pass $? || echo fail $?\n\ntrue\nfalse\npass 0\nfail 1"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-if",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Conditionals: if",
+    "text": "Conditionals: if\n\n\n\n\nConditional syntax utilize square braces for workflow control\n\ni.e. execute commands only if a condition is met\n\nSyntax structure:\n\nif [ assertion ]\nNew line then\nCommands\nNew line fi to close conditional\n\nConditional work only executed if exit status = 0\n\n\n\n\nif [ 1 == 1 ]; then\n    echo Yay\nfi\nif [ 1 == 2 ]; then\n    echo Nay\nfi\n\nYay\n\n\n\n\nWhy is == used and not =?"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-elif",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Conditionals: elif",
+    "text": "Conditionals: elif\n\n\n\n\nAbility to capture workflow if first conditional fails\nelif (else if) assessed only when if exit status = 1\nAn entire new conditional is written\nRead conditionals top -&gt; bottom\nMultiple elif statements allowed\n\n\n\n\nfoo=bat\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nfi\n\nfoobat\n\n\n\n\nHow many conditionals failed?\nWhat if foo=baz?"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-else",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Conditionals: else",
+    "text": "Conditionals: else\n\n\n\n\nelse catches all failed conditions\nSpecified last\nDoes not evaluate an assertion\n\n\n\n\nfoo=foo\nif [ $foo == bar ]; then\n    echo foobar\nelif [ $foo == baz ]; then\n    echo foobaz\nelif [ $foo == bat ]; then\n    echo foobat\nelse\n    echo \"Unrecognized value of foo\"\nfi\n\nUnrecognized value of foo"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-and",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Conditionals: and",
+    "text": "Conditionals: and\n\n\n\n\nMultiple assertions can be combined with &&\nAs before, && only continues if exit status = 0\n\nSo, all conditionals would need to be true\n\n\n\n\n\nfoo=bar\nnum=1\nif [ $foo == bar ] && [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nWould [ $num == 1 ] be assessed if foo=baz?"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-or",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Conditionals: or",
+    "text": "Conditionals: or\n\n\n\n\nAssertions can also be combined with ||\nAs before, || only continues if exit status &gt;0\n\nSo, only one of the assertions needs to be true\n\nThese can be combined with &&\n\n\n\n\nalpha=a\nnum=1\nif [ $alpha == b ] || [ $num == 1 ]; then\n    echo Success\nfi\n\nSuccess\n\n\n\n\nIf the assertion was written [ $alpha == a ], would [ $num == 1 ] have been assessed?\nWhich of the assertions triggers the conditional in:\n\n\n\n\n[ 1 == 2 ] && [ a == a ] || [ b == b ]"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
+    "href": "lectures/05-conditionals/05-conditionals.html#conditionals-not",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Conditionals: not",
+    "text": "Conditionals: not\n\n\n\n\nThe character ! inverts logic\n[ 1 != 0 ]: true ($?=0)\n[ ! 1 == 0 ]: true ($?=0)\nNote the white space in the second assertion\nUseful to name variables to help reader through logic\n\n\n\n\n[ a != b ] && echo $?\n[ ! foo == bar ] && echo $?\n\n0\n0\n\n\n\n\nWhat is printed in:\n\n\n\n\n[ ! foo == bar ] && echo alpha \\\n    || echo beta\n[ foo == bar ] || [ ! 1 == 2 ] \\\n    && echo delta || echo gamma"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#comparing-integers",
+    "href": "lectures/05-conditionals/05-conditionals.html#comparing-integers",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Comparing integers",
+    "text": "Comparing integers\n\n\n\n\nA set of special comparators operators for integers\n\n-gt: greater than\n-lt: less than\n-ge: greater than or equal\n-le: less than or equal\n-eq: equal\n-ne: not equal\n\nNote: double parentheses are used for mathematic expressions (&gt;, &lt;, &lt;=, etc)\n\n(( 1 &lt;= 2 ))\n\nSee more details here\n\n\n\n\n[ 1 -lt 2 ] && echo 1 $?\n[ ! 1 -gt 2 ] && echo 2 $?\n[ 1 -le 2 ] && echo 3 $?\n[ ! 1 -ge 2 ] && echo 4 $?\n\n1 0\n2 0\n3 0\n4 0\n\n\n\n\nWhat is printed in:\n\n\n\n\n[ ! 1 -lt 2 ] && [ 1 -eq 1 ] \\\n    && echo alpha || echo beta\n[ 1 -gt 2 ] || [ ! 1 -ge 2 ] \\\n    && echo delta || echo gamma"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#file-management",
+    "href": "lectures/05-conditionals/05-conditionals.html#file-management",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "File management",
+    "text": "File management\n\n\n\n\nA set of special comparators operators for managing files\n\n-e: something exists\n-d: a directory exists\n-f: a file exists\n-s: a file contains data\n-z: a variable is empty\n\n\n\n\n\n[ -f foo.txt ]\n[ -e foobar ]\n[ -d my_dir ]\n[ -z $foo ]\n\n\n\nWhat is printed in:\n\n\n\n\necho \"foo\" &gt; my_file.txt\n[ ! -s my_file.txt ] \\\n    && echo alpha || echo beta"
+  },
+  {
+    "objectID": "lectures/05-conditionals/05-conditionals.html#best-practices",
+    "href": "lectures/05-conditionals/05-conditionals.html#best-practices",
+    "title": "Conditionals: Exit status, square braces, special checks",
+    "section": "Best practices",
+    "text": "Best practices\n\n\n\n\nKeep conditionals below 3 levels of logic:\n\nSimple, flat, short\n\nConsider breaking up long chains into multiple statements\nInverting logic often simplifies\nName variables to help through logic\n\nis_empty: holds boolean of whether file is empty\nfile_exists: holds boolean of whether file exists\n\n\n\n\n\n# Flight control with variable\nfoo=\"\"\nfoo_empty=$([ -z $foo ] && echo $? || echo $?)\n[ $foo_empty == 0 ] && echo set_var || echo move_on\n\n# Flight control with file\ntouch foo.txt\nfoo_exists=$([ -f foo.txt ] && echo $? || echo $?)\n[ $foo_exists == 0 ] && echo move_on || echo make_foo\n\n\nWhat would be printed in the examples above?"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#purpose",
+    "href": "lectures/06-for_loops/06-for_loops.html#purpose",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn to align information across lists and build flexible for loops\nSkill:\n\nArrays and counters\nControl number of iterations\n\nWhy:\n\nLinking information (e.g. label-anatomy)\nDecrease workflow time and number of errors"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#c-style-for-loop",
+    "href": "lectures/06-for_loops/06-for_loops.html#c-style-for-loop",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "C-style for loop",
+    "text": "C-style for loop\n\n\n\n\nBash supports another for loop specification:\n\nSpecify start, final, and increment values\nUsing numerical assessment parentheses (double)\nSeparated by semicolon\n\nOnly works with integers\n\n\n\n\nfor ((i=1; i&lt;5; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#dynamic-iteration-control",
+    "href": "lectures/06-for_loops/06-for_loops.html#dynamic-iteration-control",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "Dynamic iteration control",
+    "text": "Dynamic iteration control\n\n\n\n\nStart and final values do not have to be hardcoded\nC-style supports referencing a variable\nThese start and final variables could be set by another process\n\nnum_foo=$(ls foo*.txt | wc -l)\n\n\n\n\n\nstart=1\nend=5\nfor ((i=$start; i&lt;$end; i++)); do\n    echo $i\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#while-loops-and-counters",
+    "href": "lectures/06-for_loops/06-for_loops.html#while-loops-and-counters",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "While loops and counters",
+    "text": "While loops and counters\n\n\n\n\nWhile loops can also be used to control iteration number\nSyntax based on an assertion being true\nSpecific structure:\n\nSpace separated while [ assertion ]\nNew line do\nSeries of commands\nTypically a variable is updated\nNew line done\n\n\n\n\n\ncnt=1\nwhile [ $cnt -lt 5 ]; do\n    echo $cnt\n    let cnt+=1\ndone\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "Arrays",
+    "text": "Arrays\n\n\n\n\nArrays are a 0-indexed data type\nPositional structure:\n\nDefined within parentheses\nSpace separated\n\nData extracted by referencing position\n\n\n\n\narr_foo=({a..d})\narr_fruit=(apple orange banana)\necho ${arr_foo[0]}\necho ${arr_fruit[2]}\n\na\nbanana\n\n\n\n\nWhy was ${arr_fruit[2]} used and not ${arr_fruit[3]}?"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-position",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays-position",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "Arrays: position",
+    "text": "Arrays: position\n\n\n\n\nSpecial syntax to reference array indices\n\n${!arr[@]}\n! queries indices\n@ references all array values\n\nUseful for iterations through array positions\n\n\n\n\narr=({a..d})\necho \"Array positions are ${!arr[@]}\"\n\nfor pos in ${!arr[@]}; do\n    echo \"Array position $pos value is ${arr[$pos]}\"\ndone\n\nArray positions are 0 1 2 3\nArray position 0 value is a\nArray position 1 value is b\nArray position 2 value is c\nArray position 3 value is d"
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#arrays-length",
+    "href": "lectures/06-for_loops/06-for_loops.html#arrays-length",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "Arrays: length",
+    "text": "Arrays: length\n\n\n\n\nSpecial syntax to extract array length\n\n${#arr[@]}\n# queries length\n\nUseful for extracting positions from multiple arrays\n\n\n\n\nhero=(batman superman aquaman)\ncolor=(black red green)\necho \"hero array length is ${#hero[@]}\"\n\n# Check arrays are same length\n[ ${#hero[@]} == ${#color[@]} ] \\\n    || echo \"Array length mismatch\"\n\nidx=0\nwhile [ $idx -lt ${#hero[@]} ]; do\n    echo \"The hero ${hero[$idx]} wears ${color[$idx]}\"\n    let idx+=1\ndone\n\nhero array length is 3\nThe hero batman wears black\nThe hero superman wears red\nThe hero aquaman wears green\n\n\n\n\nDo I need to consider 0-indexing in my while assertion?\nNote the extraction of array information with variable."
+  },
+  {
+    "objectID": "lectures/06-for_loops/06-for_loops.html#building-arrays-and-variables",
+    "href": "lectures/06-for_loops/06-for_loops.html#building-arrays-and-variables",
+    "title": "For Loops, cont’d: Arrays, counters, dynamic control",
+    "section": "Building arrays and variables",
+    "text": "Building arrays and variables\n\n\n\n\nVariables and arrays can be built\nOperator += allows for concatentation\n\nIn addition to increasing integer values\n\nCommand unset clears variables\n\n\n\n\nunset var_foo\nunset arr_foo\n\n[ -z $var_foo ] && echo empty\n\nfor i in {1..4}; do\n    var_foo+=\"$i\"\n    arr_foo+=($i)\ndone\n\n[ -z $var_foo ] || echo full\n\necho $var_foo\necho ${var_foo[@]}\n\nempty\nfull\n1234\n1234"
+  },
+  {
+    "objectID": "lectures/07-shells/07-practice.html",
+    "href": "lectures/07-shells/07-practice.html",
+    "title": "For Loops, cont’d: practice",
+    "section": "",
+    "text": "Use (a) the CLI and (b) a script to demonstrate that global variables can be set in the parent shell.\nShow that global variables set in a subshell are not accessible in the parent shell.\nDemonstrate that non-global variables are shell-specific.\nSend these examples to your instructor."
+  },
+  {
+    "objectID": "lectures/07-shells/07-practice.html#shells-and-variables",
+    "href": "lectures/07-shells/07-practice.html#shells-and-variables",
+    "title": "For Loops, cont’d: practice",
+    "section": "",
+    "text": "Use (a) the CLI and (b) a script to demonstrate that global variables can be set in the parent shell.\nShow that global variables set in a subshell are not accessible in the parent shell.\nDemonstrate that non-global variables are shell-specific.\nSend these examples to your instructor."
+  },
+  {
+    "objectID": "lectures/07-shells/07-practice.html#style-prompt",
+    "href": "lectures/07-shells/07-practice.html#style-prompt",
+    "title": "For Loops, cont’d: practice",
+    "section": "Style Prompt",
+    "text": "Style Prompt\n\nAdd you computer’s name to, and change the color of, the command prompt.\n(OSx) Turn on CLI colors and set color schemes for ls.\nSend a screenshot of your prompt and ls output to your instructor."
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#purpose",
+    "href": "lectures/08-cluster/08-cluster.html#purpose",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn how to access Notre Dame’s compute cluster\nSkill:\n\nUndestand how clusters differ\nMake an account\nAccess account\nMove data\n\nWhy:\n\nProcess large datasets"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#why-learn-to-use-a-cluster",
+    "href": "lectures/08-cluster/08-cluster.html#why-learn-to-use-a-cluster",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Why learn to use a cluster",
+    "text": "Why learn to use a cluster\n\n\nModern MRI: large data initiatives\n\nHuman Connectome Project (HCP)\nAdolescent Brain Cognitive Development (ABCD)\nData repositories (OpenNeuro, NIMH, FITBIR)\n\nNeed for larger sample sizes\nComplicated analytic pipelines"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#description-of-cluster",
+    "href": "lectures/08-cluster/08-cluster.html#description-of-cluster",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Description of cluster",
+    "text": "Description of cluster\n\n\n\nThe Center for Research Computing (CRC) provides cluster computing resources\n\nNetwork of compute nodes (~8K CPUs) and RAM\n\nTheir Wiki contains valuable resources for accessing, using cluster\nMain components\n\nLogin point: manage data, submit requests\nScheduler: index resources, manage request queue\nCluster: CPUs and RAM\nStorage: file system\n\n\n\n\n\n\n\n\nflowchart TB\n  A[Work Machine] -- Internet --&gt; B[Login Node]\n  B -- Scheduler --&gt; C[Cluster]\n  B --&gt; D[File Structure]\n  C --&gt; D\n\n\n\n\n\n\n\n\nResist running processes on login node! They will be killed."
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#make-an-account",
+    "href": "lectures/08-cluster/08-cluster.html#make-an-account",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Make an account",
+    "text": "Make an account\n\n\n\nSubmit an account request here\n\nAccount approval may take a day\nThe instructor or your lab PI can endorse your account"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#access-account-terminal",
+    "href": "lectures/08-cluster/08-cluster.html#access-account-terminal",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Access account: terminal",
+    "text": "Access account: terminal\n\n\n\nFor off-campus access:\n\nInstall Cisco AnyConnect\nConnect to Notre Dame’s VPN: vpnaccess.nd.edu\n\nUse terminal to login, with help from the CRC Connection Resources:\n\nssh user@crcfe01.crc.nd.edu\nUse ND user ID and password"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#access-account-web-browser",
+    "href": "lectures/08-cluster/08-cluster.html#access-account-web-browser",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Access account: web browser",
+    "text": "Access account: web browser\n\n\n\nFrom a web browser go to https://crcfe01.crc.nd.edu\nSupply ND user ID and password\nStart a Graphical session"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes-front-end",
+    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes-front-end",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Types of nodes: Front End",
+    "text": "Types of nodes: Front End\n\n\n\nInteractive, login nodes\n\ndetails\ncrcfe01 and crcfe02\n32 Cores, 256 GB RAM\nShared by all users\n\nUsage:\n\nLogin\nManage data\nDevelopment\n\nDo not lose your account!"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#types-of-nodes-back-end",
+    "href": "lectures/08-cluster/08-cluster.html#types-of-nodes-back-end",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Types of nodes: Back End",
+    "text": "Types of nodes: Back End\n\n\n\nNon-interactive, work nodes\n\ndetails\n8200+ Cores\nControlled by scheduler\n\nUsage:\n\nSend work via QSUB scheduler\nSpecify:\n\nType of processes (serial, parallel)\nQueue type (long, gpu)\nJob name\nWork for scheduled nodes"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#file-systems-afs",
+    "href": "lectures/08-cluster/08-cluster.html#file-systems-afs",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "File systems: AFS",
+    "text": "File systems: AFS\n\n\n\nhome managed by AFS\nUsers allocated 100GB for files\nquota: check total usage\nPurpose:\n\nSmall data\nCode\nEnvironments\n\nMore info here and here"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#file-systems-panasas",
+    "href": "lectures/08-cluster/08-cluster.html#file-systems-panasas",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "File systems: PANASAS",
+    "text": "File systems: PANASAS\n\n\n\nscratch managed by Panasas\nRequest access\n\nUsers allocated 250GB\nAccess at /scratch365/userid\n\nPurged yearly\npan_df: check total usage\nPurpose:\n\nComputing, intermediates\n\nMore info here and here"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-scp",
+    "href": "lectures/08-cluster/08-cluster.html#moving-data-scp",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Moving data: scp",
+    "text": "Moving data: scp\n\n\nscp: Copy files over an SSH connection\n\nCopies entire file or directory\n\nAnatomy of command:\n\nscp [OPTS] source destination\nSeparate computer from path with ‘:’\n\nCan be used to both push and pull data:\n\nscp file.txt user@crcfe01.crc.nd.edu:~\n\nSend file.txt from local to CRC home\n\nscp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop\n\nPull ~/project directory from CRC to the local desktop\n\n\nSee here for more details"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
+    "href": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Moving data: rsync",
+    "text": "Moving data: rsync\n\n\nDo not often desire to send entire directory\n\ne.g. files exist at src and dst, new files made at dst\n\nrsync: Index both src and dst\n\nMove only difference\n\nAnatomy of command:\n\nrsync [OPTS] source destination\n\nSimilar to scp, can both push and pull data\n\nrsync -rauv ~/project user@crcfe01.crc.nd.edu:~\nCompares local project to remote, sends any difference\n\nSee here for more details"
+  },
+  {
+    "objectID": "lectures/08-cluster/08-cluster.html#moving-data-graphic-user-interface",
+    "href": "lectures/08-cluster/08-cluster.html#moving-data-graphic-user-interface",
+    "title": "Cluster Computing: what is it, login, move data",
+    "section": "Moving data: Graphic User Interface",
+    "text": "Moving data: Graphic User Interface\n\n\nGUI-based options available\n\nCyberduck (OSx)\nMobaXterm (Windows)\n\nThe CRC has documentation here"
+  },
+  {
+    "objectID": "lectures/09-schedule/09-practice.html",
+    "href": "lectures/09-schedule/09-practice.html",
+    "title": "Scheduling: practice",
+    "section": "",
+    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
+  },
+  {
+    "objectID": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
+    "href": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
+    "title": "Scheduling: practice",
+    "section": "",
+    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#purpose",
+    "href": "lectures/10-conda/10-conda.html#purpose",
+    "title": "Conda: environments and software",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Learn to build and manage environments\nSkill:\n\nActivate conda\nBuild and manage environments\nSave and remove environments\n\nWhy:\n\nManage software version dependencies\nWork within a consistent environment"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#need-for-conda",
+    "href": "lectures/10-conda/10-conda.html#need-for-conda",
+    "title": "Conda: environments and software",
+    "section": "Need for conda",
+    "text": "Need for conda\n\n\nResearch involves specific software\n\nAs software develops, new versions function differently\nSoftware suites often call on other suites\nSoftware version can have specific hardware requirements\nTogether, a chance for dependency hell\n\nProjects take years:\n\nNeed to hold versions constant for on-going projects\nNeed to use newer versions for new projects\n\nReplication dependent on specific software versions\nConda is a package and environment manager\n\nBuild environments with specific software versions"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#conda-on-the-crc",
+    "href": "lectures/10-conda/10-conda.html#conda-on-the-crc",
+    "title": "Conda: environments and software",
+    "section": "Conda on the CRC",
+    "text": "Conda on the CRC\n\n\n\nConda is provided as a module on the CRC\n\nSee here for their documentation\nFind module via module avail | grep conda\n\nActivate conda via:\n\nmodule load conda\nconda init\nsource ~/.bashrc\n\nWhy use source instead of ./?\n\nmodule unload conda\n\nVerify via conda info"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#named-environments",
+    "href": "lectures/10-conda/10-conda.html#named-environments",
+    "title": "Conda: environments and software",
+    "section": "Named environments",
+    "text": "Named environments\n\n\n\nEnvironments can be named\n\nPurposes (e.g. python3.8, r4.1)\nProjects (e.g. rest_fmri, proj_name)\n\nUse conda by envoking command conda and supply arguments\nconda create -n test_name: build named environment test_name\n\nNote the build location in ~/.conda\n\nconda env list: see available environments\nconda activate test_name: activate test_name enironment\nconda deactivate: exits environment"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#prefix-path-environments",
+    "href": "lectures/10-conda/10-conda.html#prefix-path-environments",
+    "title": "Conda: environments and software",
+    "section": "Prefix (path) environments",
+    "text": "Prefix (path) environments\n\n\n\nAll named envs have paths\nPossible to make only prefixed (path) envs\n\nSave env to specific location\nMake env available to other users (e.g. RAs)\n\nconda create -p ~/test_path\nNote:\n\nthe build location\nAbsence of a name\n\nActivate by path\nTip: add env_prompt: '({name})' to .condarc to only see the name of env (and not full path)"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#installing-packages",
+    "href": "lectures/10-conda/10-conda.html#installing-packages",
+    "title": "Conda: environments and software",
+    "section": "Installing packages",
+    "text": "Installing packages\n\n\n\nconda list: show packages installed in current env\nconda install: install specific package name\n\nDefault is to search for package at conda-forge\n\nconda install -c conda-forge python=3.10: install python version 3.10 from conda-forge repository into current env\nNote: strength of conda - also installs dependencies!\n\nAnd manages versions if conflicts arise\nOnly when installed through conda, not other package managers (e.g. pip)"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#multiple-environments",
+    "href": "lectures/10-conda/10-conda.html#multiple-environments",
+    "title": "Conda: environments and software",
+    "section": "Multiple environments",
+    "text": "Multiple environments\n\n\n\nEnvironments do not conflict with each other\nSeparate environments allow for separate software versions\nApplicable to Python, R, Java, C, C++, and others\nUseful for differing projects!\nRecommendation: one environment per project\n\nAllows to lock in versions\nEnables newer versions for newer projects"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#exporting-environments",
+    "href": "lectures/10-conda/10-conda.html#exporting-environments",
+    "title": "Conda: environments and software",
+    "section": "Exporting environments",
+    "text": "Exporting environments\n\n\n\nSaving environment:\n\nBackup\nShare with collaborators\nAdd to code repository\n\nconda env export &gt; env_name.yml: save environment as YAML file\n\nPreferred method\n\nconda list --explicit &gt; env_name.txt: save environment sources as text file\n\nNot as robust\n\nEnvironments can be built from files using the -f option (see here)"
+  },
+  {
+    "objectID": "lectures/10-conda/10-conda.html#deleting-environments",
+    "href": "lectures/10-conda/10-conda.html#deleting-environments",
+    "title": "Conda: environments and software",
+    "section": "Deleting environments",
+    "text": "Deleting environments\n\n\n\nClean unused environments\n\nCan always rebuild from backup file\n(Assuming versions work on hardware or OS version)\n\nRemoval is similar to creation\n\nconda env remove -n test_name: remove named env test_name\nconda env remove -p ~/test_path: remove previx env test_path"
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-practice.html",
+    "href": "lectures/11-proj_envs/11-practice.html",
+    "title": "Project Environments: practice",
+    "section": "",
+    "text": "Create a project environment shell script that:\n\nPrints the name of the project to STDOUT\nLoads, activates, and configures the FreeSurfer module\nAdds a project directory to your path\nSets global variables\nActivates the conda environment from the previous lesson\n\nShare evidence of the environment script working with your instructor"
+  },
+  {
+    "objectID": "lectures/11-proj_envs/11-practice.html#build-an-environment",
+    "href": "lectures/11-proj_envs/11-practice.html#build-an-environment",
+    "title": "Project Environments: practice",
+    "section": "",
+    "text": "Create a project environment shell script that:\n\nPrints the name of the project to STDOUT\nLoads, activates, and configures the FreeSurfer module\nAdds a project directory to your path\nSets global variables\nActivates the conda environment from the previous lesson\n\nShare evidence of the environment script working with your instructor"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#purpose",
+    "href": "lectures/12-git_basic/12-git_basic.html#purpose",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Purpose",
+    "text": "Purpose\n\n\nKnowledge: Include Git and GitHub in your development workflow\nSkill:\n\nConnect local Git to GitHub\nTrack changes\n\nWhy:\n\nFoundational skillset for research and industry\nProtect your code, facilitate maintenance and simultaneous development"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#git",
+    "href": "lectures/12-git_basic/12-git_basic.html#git",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Git",
+    "text": "Git\n\n\n\nGit is software designed to track changes\n\n“Who did what and when”\nResolved version control problems on collaborative projects\n\nMonitors requested directories and files\n\nCreates a log of what changed and how\n\nControl Git with a series of simple commands\nNative in Linux distributions\n\nNeed to install in Windows, Mac\n\n\n\n\n\n\nhttps://git-scm.com"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#github",
+    "href": "lectures/12-git_basic/12-git_basic.html#github",
+    "title": "Git and GitHub: tracking changes",
+    "section": "GitHub",
+    "text": "GitHub\n\n\n\nGitHub is a centralized platform\nAllows developers to create, store, manage, share their code\nGreat for research:\n\nRedundancy\nTransparency\nCollaboration\nInternal reliability\nExternal replicability\n\nCreate an account\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/GitHub"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-crc",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-crc",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: CRC",
+    "text": "Setup: CRC\n\n\n\nGit provided with default login shell\nNeed to:\n\nConfigure git for your user\nConnect git to your GitHub account"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-config-files",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-config-files",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: config files",
+    "text": "Setup: config files\n\n\n\nCreate config file: ~/.gitconfig\nCopy provided code to ~/.gitconfig\n\nWhitespace (tabs) included\nProvide your name (will be added to git logs)\nProvide email address (will be added to git logs)\n\nMany config options available, we will keep it simple here\n\n\n\n[credential]\n    helper = store\n[user]\n    name = &lt;your name&gt;\n    email = &lt;your github email&gt;"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-1",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-1",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 1",
+    "text": "Setup: credential 1\n\n\n\nGoal:\n\nCreate GitHub Personal Access Token (PAT)\nAdd PAT to CRC\n\n\nMore info here\n\nLogin to GitHub\nNavigate to user Settings"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-2",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-2",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 2",
+    "text": "Setup: credential 2\n\n\n\nNavigate on the left to “Developer settings”\n\n(Bottom of list)"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-3",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-3",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 3",
+    "text": "Setup: credential 3\n\n\n\nUnder “Personal access tokens” select “classic”"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-4",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-4",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 4",
+    "text": "Setup: credential 4\n\n\n\nTip 1: Name tokens after instutitions or machines for easy management\nTip 2: Do not follow my bad example on expiration dates"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-5",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-5",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 5",
+    "text": "Setup: credential 5\n\n\n\nGenerate new token\n\nGive a useful Note (or name)\nSet expiration date\nOnly “repo” Scope needed"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-6",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-6",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 6",
+    "text": "Setup: credential 6\n\n\n\nGenerate token\nNext screen contains token string\n\nNote: this is only available while this tab is open!\nOnce this page is refreshed, the token will be unavailable\n\nThe PAT is used instead of an account password\n\nANY machine or person with the PAT can make edits\nIs it secret, is it safe?"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#setup-credential-7",
+    "href": "lectures/12-git_basic/12-git_basic.html#setup-credential-7",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Setup: credential 7",
+    "text": "Setup: credential 7\n\n\n\nLog into your CRC cluster account\nCreate credential file: ~/.git-credentials\nAdd your user and credential in format:\n\nhttps://&lt;user&gt;:&lt;PAT&gt;@github.com\n\nYou’re done!"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#create-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#create-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Create repository",
+    "text": "Create repository\n\n\n\nRepository: directory of files with git tracking logs\nPossible: create locally with git init\nEasier: make on GitHub\n\nBring locally via git pull"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#configure-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#configure-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Configure repository",
+    "text": "Configure repository\n\n\n\nSelect an informative name\nSupply a description\nSelect private vs public repo\nAdd a README so the repo has a file"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#view-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#view-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "View repository",
+    "text": "View repository\n\n\n\nFirst items to note:\n\nTask bar for managing project (code, pull requests, etc)\nIdentification of branches\nGreen code: download or clone help\nList of files (only README here)"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#pull-repository",
+    "href": "lectures/12-git_basic/12-git_basic.html#pull-repository",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Pull repository",
+    "text": "Pull repository"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#add-files",
+    "href": "lectures/12-git_basic/12-git_basic.html#add-files",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Add files",
+    "text": "Add files"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#track",
+    "href": "lectures/12-git_basic/12-git_basic.html#track",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Track",
+    "text": "Track"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#stage",
+    "href": "lectures/12-git_basic/12-git_basic.html#stage",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Stage",
+    "text": "Stage"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#commit",
+    "href": "lectures/12-git_basic/12-git_basic.html#commit",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Commit",
+    "text": "Commit"
+  },
+  {
+    "objectID": "lectures/12-git_basic/12-git_basic.html#push",
+    "href": "lectures/12-git_basic/12-git_basic.html#push",
+    "title": "Git and GitHub: tracking changes",
+    "section": "Push",
+    "text": "Push"
   }
 ]

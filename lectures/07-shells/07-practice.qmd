@@ -10,12 +10,12 @@ execute:
 ---
 
 ## Shells and variables
-1. Use the CLI and a script to demonstrate that global variables can be set in the parent shell.
-1. Also show that globals set in subshell are not accessible in the parent shell.
-1. Demonstrate that variables are shell-specific.
-1. Send these example to your instructor.
+1. Use (a) the CLI and (b) a script to demonstrate that global variables can be set in the parent shell.
+1. Show that global variables set in a subshell are not accessible in the parent shell.
+1. Demonstrate that non-global variables are shell-specific.
+1. Send these examples to your instructor.
 
 ## Style Prompt
-1. Add you computer's name to, and change the color of, the prompt.
+1. Add you computer's name to, and change the color of, the command prompt.
 1. (OSx) Turn on CLI colors and set color schemes for `ls`.
 1. Send a screenshot of your prompt and `ls` output to your instructor.
