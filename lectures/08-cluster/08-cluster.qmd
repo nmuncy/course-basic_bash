@@ -205,7 +205,7 @@ flowchart TB
 ## Moving data: scp
 :::: {style="font-size: 65%;"}
 - `scp`: Copy files over an SSH connection
-    - Copies entire file or directory
+    - Copy entire file or directory
 - Anatomy of command:
     - `scp` [OPTS] source destination
     - Separate computer from path with '`:`'
@@ -220,7 +220,7 @@ flowchart TB
 ## Moving data: rsync
 :::: {style="font-size: 65%;"}
 - Do not often desire to send entire directory
-    - e.g. files exist at `src` and `dst`, new files made at `dst`
+    - e.g. files exist at `src` and `dst`, new files made at `src`
 - `rsync`: Index both `src` and `dst`
     - Move only difference
 - Anatomy of command:

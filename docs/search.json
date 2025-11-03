@@ -907,14 +907,14 @@
     "href": "lectures/08-cluster/08-cluster.html#moving-data-scp",
     "title": "Cluster Computing: what is it, login, move data",
     "section": "Moving data: scp",
-    "text": "Moving data: scp\n\n\nscp: Copy files over an SSH connection\n\nCopies entire file or directory\n\nAnatomy of command:\n\nscp [OPTS] source destination\nSeparate computer from path with ‘:’\n\nCan be used to both push and pull data:\n\nscp file.txt user@crcfe01.crc.nd.edu:~\n\nSend file.txt from local to CRC home\n\nscp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop\n\nPull ~/project directory from CRC to the local desktop\n\n\nSee here for more details"
+    "text": "Moving data: scp\n\n\nscp: Copy files over an SSH connection\n\nCopy entire file or directory\n\nAnatomy of command:\n\nscp [OPTS] source destination\nSeparate computer from path with ‘:’\n\nCan be used to both push and pull data:\n\nscp file.txt user@crcfe01.crc.nd.edu:~\n\nSend file.txt from local to CRC home\n\nscp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop\n\nPull ~/project directory from CRC to the local desktop\n\n\nSee here for more details"
   },
   {
     "objectID": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
     "href": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
     "title": "Cluster Computing: what is it, login, move data",
     "section": "Moving data: rsync",
-    "text": "Moving data: rsync\n\n\nDo not often desire to send entire directory\n\ne.g. files exist at src and dst, new files made at dst\n\nrsync: Index both src and dst\n\nMove only difference\n\nAnatomy of command:\n\nrsync [OPTS] source destination\n\nSimilar to scp, can both push and pull data\n\nrsync -rauv ~/project user@crcfe01.crc.nd.edu:~\nCompares local project to remote, sends any difference\n\nSee here for more details"
+    "text": "Moving data: rsync\n\n\nDo not often desire to send entire directory\n\ne.g. files exist at src and dst, new files made at src\n\nrsync: Index both src and dst\n\nMove only difference\n\nAnatomy of command:\n\nrsync [OPTS] source destination\n\nSimilar to scp, can both push and pull data\n\nrsync -rauv ~/project user@crcfe01.crc.nd.edu:~\nCompares local project to remote, sends any difference\n\nSee here for more details"
   },
   {
     "objectID": "lectures/08-cluster/08-cluster.html#moving-data-graphic-user-interface",
