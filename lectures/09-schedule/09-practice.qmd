@@ -9,11 +9,17 @@ execute:
     echo: true
 ---
 
-## Schedule a batch of jobs
+# Schedule a batch of jobs
+## Make a job script
 1. Construct a 'job' script that contains a resource request and receives three arguments.
-1. Have the job script print the first two arguments to STDOUT and the third argument to STDERR.
-1. Construct a 'wrapper' script that will write logs to `/scratch365/user/prac_submit`.
+1. In this 'job' script, print the first two arguments to STDOUT and the third argument to STDERR.
+
+## Start a wrapper script
+1. Construct a 'wrapper' script that will write logs to `/scratch365/<user>/prac_submit`.
 1. In the wrapper script, populate the three arrays 'hero', 'color', and 'power' with 5 items. E.g. 'hero' has batman, superman, aquaman, wonderwoman, and the hulk.
-1. Iterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.
-1. Validate the logging directory strucutre, file name, and content.
-1. Send the script and evidence of its efficacy to your instructor.
+
+## Wrap the job
+1. Iterate through these array in the 'wrapper' script to submit the 'job' script, where the hero is passed to the 'job' script as argument 1, color as argument 2, and power as argument 3.
+1. Name the job and output file after the hero.
+1. Submit the work and validate the logging directory strucutre, file name, and content.
+1. Send the scripts and evidence of their efficacy to your instructor.

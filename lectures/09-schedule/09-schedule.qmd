@@ -132,11 +132,17 @@ engine: knitr
 - Common: Load modules in job script
     - After resource request
 - Preferred: Load in project environment
-    - (Lecture 11 [TBD])
+    - See [Module 2.5](../11-proj_envs/11-proj_envs.qmd){target="_blank"}
 :::
 
 :::: {.column width="\"50%"}
-![](submit_1.png)
+::: {layout-nrow="2"}
+
+![](module_1.png)
+
+![](module_2.png)
+
+:::
 ::::
 :::::
 
@@ -149,7 +155,7 @@ engine: knitr
     - Passes arguments to the job script
 - Used as the researcher-editable file
     - No need to edit job script
-- Research could pass args to wrapper script
+- Researcher could pass args to wrapper script
     - (more advanced)
 :::
 
@@ -248,7 +254,7 @@ engine: knitr
     - ***Your request is large***
 - Tips:
     - Optimize resource usage
-    - Consider parent and child jobs
+    - Consider parent and child jobs via [tmux](https://www.redhat.com/en/blog/introduction-tmux-linux)
     - Consider job [arrays](https://docs.crc.nd.edu/new_user/quick_start.html#job-arrays)
     - Lower cluster use at night, on weekends
 - `qstat`: (without options) check entire queue

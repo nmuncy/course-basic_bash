@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nathan Muncy">
-<meta name="dcterms.date" content="2025-11-03">
+<meta name="dcterms.date" content="2025-11-05">
 
 <title>Scheduling: practice – Bash Esssentials</title>
 <style>
@@ -122,7 +122,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#schedule-a-batch-of-jobs" id="toc-schedule-a-batch-of-jobs" class="nav-link active" data-scroll-target="#schedule-a-batch-of-jobs">Schedule a batch of jobs</a></li>
+  <li><a href="#schedule-a-batch-of-jobs" id="toc-schedule-a-batch-of-jobs" class="nav-link active" data-scroll-target="#schedule-a-batch-of-jobs">Schedule a batch of jobs</a>
+  <ul class="collapse">
+  <li><a href="#make-a-job-script" id="toc-make-a-job-script" class="nav-link" data-scroll-target="#make-a-job-script">Make a job script</a></li>
+  <li><a href="#start-a-wrapper-script" id="toc-start-a-wrapper-script" class="nav-link" data-scroll-target="#start-a-wrapper-script">Start a wrapper script</a></li>
+  <li><a href="#wrap-the-job" id="toc-wrap-the-job" class="nav-link" data-scroll-target="#wrap-the-job">Wrap the job</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -148,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 3, 2025</p>
+      <p class="date">November 5, 2025</p>
     </div>
   </div>
   
@@ -160,19 +165,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="schedule-a-batch-of-jobs" class="level2">
-<h2 class="anchored" data-anchor-id="schedule-a-batch-of-jobs">Schedule a batch of jobs</h2>
+<section id="schedule-a-batch-of-jobs" class="level1">
+<h1>Schedule a batch of jobs</h1>
+<section id="make-a-job-script" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-job-script">Make a job script</h2>
 <ol type="1">
 <li>Construct a ‘job’ script that contains a resource request and receives three arguments.</li>
-<li>Have the job script print the first two arguments to STDOUT and the third argument to STDERR.</li>
-<li>Construct a ‘wrapper’ script that will write logs to <code>/scratch365/user/prac_submit</code>.</li>
+<li>In this ‘job’ script, print the first two arguments to STDOUT and the third argument to STDERR.</li>
+</ol>
+</section>
+<section id="start-a-wrapper-script" class="level2">
+<h2 class="anchored" data-anchor-id="start-a-wrapper-script">Start a wrapper script</h2>
+<ol type="1">
+<li>Construct a ‘wrapper’ script that will write logs to <code>/scratch365/&lt;user&gt;/prac_submit</code>.</li>
 <li>In the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.</li>
-<li>Iterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.</li>
-<li>Validate the logging directory strucutre, file name, and content.</li>
-<li>Send the script and evidence of its efficacy to your instructor.</li>
+</ol>
+</section>
+<section id="wrap-the-job" class="level2">
+<h2 class="anchored" data-anchor-id="wrap-the-job">Wrap the job</h2>
+<ol type="1">
+<li>Iterate through these array in the ‘wrapper’ script to submit the ‘job’ script, where the hero is passed to the ‘job’ script as argument 1, color as argument 2, and power as argument 3.</li>
+<li>Name the job and output file after the hero.</li>
+<li>Submit the work and validate the logging directory strucutre, file name, and content.</li>
+<li>Send the scripts and evidence of their efficacy to your instructor.</li>
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
