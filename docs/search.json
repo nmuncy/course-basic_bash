@@ -102,14 +102,14 @@
     "href": "lectures/09-schedule/09-schedule.html#modules",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Modules",
-    "text": "Modules\n\n\n\nCRC supplies software packages as modules\n\nmodule avail: See available modules\nmodule load foo: Load module ‘foo’\n\nCommon: Load modules in job script\n\nAfter resource request\n\nPreferred: Load in project environment\n\n(Lecture 11 [TBD])"
+    "text": "Modules\n\n\n\nCRC supplies software packages as modules\n\nmodule avail: See available modules\nmodule load foo: Load module ‘foo’\n\nCommon: Load modules in job script\n\nAfter resource request\n\nPreferred: Load in project environment\n\nSee Module 2.5"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
     "href": "lectures/09-schedule/09-schedule.html#wrapper-scripts",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Wrapper Scripts",
-    "text": "Wrapper Scripts\n\n\n\nWrapper script purpose:\n\nSubmits job script by envoking qsub command\nPasses arguments to the job script\n\nUsed as the researcher-editable file\n\nNo need to edit job script\n\nResearch could pass args to wrapper script\n\n(more advanced)"
+    "text": "Wrapper Scripts\n\n\n\nWrapper script purpose:\n\nSubmits job script by envoking qsub command\nPasses arguments to the job script\n\nUsed as the researcher-editable file\n\nNo need to edit job script\n\nResearcher could pass args to wrapper script\n\n(more advanced)"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#make-log-directory",
@@ -137,7 +137,7 @@
     "href": "lectures/09-schedule/09-schedule.html#long-queue-times",
     "title": "Cluster Computing: pass arguments, schedule and check jobs",
     "section": "Long queue times",
-    "text": "Long queue times\n\n\n\nSometimes jobs queue (status qw) for a long time\n\nBeginning of semster (students learning)\nEnd of semester (students running final projects)\nTeams conducting large analyses\nYour request is large\n\nTips:\n\nOptimize resource usage\nConsider parent and child jobs\nConsider job arrays\nLower cluster use at night, on weekends\n\nqstat: (without options) check entire queue\n\n\n\n\nSee here for using | (pipes)"
+    "text": "Long queue times\n\n\n\nSometimes jobs queue (status qw) for a long time\n\nBeginning of semster (students learning)\nEnd of semester (students running final projects)\nTeams conducting large analyses\nYour request is large\n\nTips:\n\nOptimize resource usage\nConsider parent and child jobs via tmux\nConsider job arrays\nLower cluster use at night, on weekends\n\nqstat: (without options) check entire queue\n\n\n\n\nSee here for using | (pipes)"
   },
   {
     "objectID": "lectures/09-schedule/09-schedule.html#check-available-resources",
@@ -907,14 +907,14 @@
     "href": "lectures/08-cluster/08-cluster.html#moving-data-scp",
     "title": "Cluster Computing: what is it, login, move data",
     "section": "Moving data: scp",
-    "text": "Moving data: scp\n\n\nscp: Copy files over an SSH connection\n\nCopies entire file or directory\n\nAnatomy of command:\n\nscp [OPTS] source destination\nSeparate computer from path with ‘:’\n\nCan be used to both push and pull data:\n\nscp file.txt user@crcfe01.crc.nd.edu:~\n\nSend file.txt from local to CRC home\n\nscp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop\n\nPull ~/project directory from CRC to the local desktop\n\n\nSee here for more details"
+    "text": "Moving data: scp\n\n\nscp: Copy files over an SSH connection\n\nCopy entire file or directory\n\nAnatomy of command:\n\nscp [OPTS] source destination\nSeparate computer from path with ‘:’\n\nCan be used to both push and pull data:\n\nscp file.txt user@crcfe01.crc.nd.edu:~\n\nSend file.txt from local to CRC home\n\nscp -r user@crcfe01.crc.nd.edu:~/project ~/Desktop\n\nPull ~/project directory from CRC to the local desktop\n\n\nSee here for more details"
   },
   {
     "objectID": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
     "href": "lectures/08-cluster/08-cluster.html#moving-data-rsync",
     "title": "Cluster Computing: what is it, login, move data",
     "section": "Moving data: rsync",
-    "text": "Moving data: rsync\n\n\nDo not often desire to send entire directory\n\ne.g. files exist at src and dst, new files made at dst\n\nrsync: Index both src and dst\n\nMove only difference\n\nAnatomy of command:\n\nrsync [OPTS] source destination\n\nSimilar to scp, can both push and pull data\n\nrsync -rauv ~/project user@crcfe01.crc.nd.edu:~\nCompares local project to remote, sends any difference\n\nSee here for more details"
+    "text": "Moving data: rsync\n\n\nDo not often desire to send entire directory\n\ne.g. files exist at src and dst, new files made at src\n\nrsync: Index both src and dst\n\nMove only difference\n\nAnatomy of command:\n\nrsync [OPTS] source destination\n\nSimilar to scp, can both push and pull data\n\nrsync -rauv ~/project user@crcfe01.crc.nd.edu:~\nCompares local project to remote, sends any difference\n\nSee here for more details"
   },
   {
     "objectID": "lectures/08-cluster/08-cluster.html#moving-data-graphic-user-interface",
@@ -928,14 +928,28 @@
     "href": "lectures/09-schedule/09-practice.html",
     "title": "Scheduling: practice",
     "section": "",
-    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
+    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nIn this ‘job’ script, print the first two arguments to STDOUT and the third argument to STDERR.\n\n\n\n\n\nConstruct a ‘wrapper’ script that will write logs to /scratch365/&lt;user&gt;/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\n\n\n\n\n\nIterate through these array in the ‘wrapper’ script to submit the ‘job’ script, where the hero is passed to the ‘job’ script as argument 1, color as argument 2, and power as argument 3.\nName the job and output file after the hero.\nSubmit the work and validate the logging directory strucutre, file name, and content.\nSend the scripts and evidence of their efficacy to your instructor."
   },
   {
-    "objectID": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
-    "href": "lectures/09-schedule/09-practice.html#schedule-a-batch-of-jobs",
+    "objectID": "lectures/09-schedule/09-practice.html#make-a-job-script",
+    "href": "lectures/09-schedule/09-practice.html#make-a-job-script",
     "title": "Scheduling: practice",
     "section": "",
-    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nHave the job script print the first two arguments to STDOUT and the third argument to STDERR.\nConstruct a ‘wrapper’ script that will write logs to /scratch365/user/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk.\nIterate through these array to submit jobs, where the hero is passed to the job script as argument 1, color as argument 2, and power as argument 3. Name the job and output file after the hero.\nValidate the logging directory strucutre, file name, and content.\nSend the script and evidence of its efficacy to your instructor."
+    "text": "Construct a ‘job’ script that contains a resource request and receives three arguments.\nIn this ‘job’ script, print the first two arguments to STDOUT and the third argument to STDERR."
+  },
+  {
+    "objectID": "lectures/09-schedule/09-practice.html#start-a-wrapper-script",
+    "href": "lectures/09-schedule/09-practice.html#start-a-wrapper-script",
+    "title": "Scheduling: practice",
+    "section": "",
+    "text": "Construct a ‘wrapper’ script that will write logs to /scratch365/&lt;user&gt;/prac_submit.\nIn the wrapper script, populate the three arrays ‘hero’, ‘color’, and ‘power’ with 5 items. E.g. ‘hero’ has batman, superman, aquaman, wonderwoman, and the hulk."
+  },
+  {
+    "objectID": "lectures/09-schedule/09-practice.html#wrap-the-job",
+    "href": "lectures/09-schedule/09-practice.html#wrap-the-job",
+    "title": "Scheduling: practice",
+    "section": "",
+    "text": "Iterate through these array in the ‘wrapper’ script to submit the ‘job’ script, where the hero is passed to the ‘job’ script as argument 1, color as argument 2, and power as argument 3.\nName the job and output file after the hero.\nSubmit the work and validate the logging directory strucutre, file name, and content.\nSend the scripts and evidence of their efficacy to your instructor."
   },
   {
     "objectID": "lectures/10-conda/10-conda.html#purpose",

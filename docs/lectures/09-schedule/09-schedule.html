@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-10-29">
+  <meta name="dcterms.date" content="2025-11-05">
   <title>Bash Esssentials – Cluster Computing: pass arguments, schedule and check jobs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -138,7 +138,7 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-10-29</p>
+  <p class="date">2025-11-05</p>
 </section>
 <section id="purpose" class="slide level2">
 <h2>Purpose</h2>
@@ -282,11 +282,22 @@ Nathan M. Muncy
 </ul></li>
 <li>Preferred: Load in project environment
 <ul>
-<li>(Lecture 11 [TBD])</li>
+<li>See <a href="../../lectures/11-proj_envs/11-proj_envs.html" target="_blank">Module 2.5</a></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
-<p><img data-src="submit_1.png"></p>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="module_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="module_2.png"></p>
+</div>
+</div>
+</div>
 </div></div>
 </section>
 <section id="wrapper-scripts" class="slide level2">
@@ -303,7 +314,7 @@ Nathan M. Muncy
 <ul>
 <li>No need to edit job script</li>
 </ul></li>
-<li>Research could pass args to wrapper script
+<li>Researcher could pass args to wrapper script
 <ul>
 <li>(more advanced)</li>
 </ul></li>
@@ -411,7 +422,7 @@ Nathan M. Muncy
 <li>Tips:
 <ul>
 <li>Optimize resource usage</li>
-<li>Consider parent and child jobs</li>
+<li>Consider parent and child jobs via <a href="https://www.redhat.com/en/blog/introduction-tmux-linux">tmux</a></li>
 <li>Consider job <a href="https://docs.crc.nd.edu/new_user/quick_start.html#job-arrays">arrays</a></li>
 <li>Lower cluster use at night, on weekends</li>
 </ul></li>
