@@ -1,0 +1,19 @@
+{
+  "hash": "352a1cff4423ee9ff7b96279434324f0",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Team Development: branches, merging, and pull requests\"\nauthor: Nathan M. Muncy\ndate: today\nexecute:\n    freeze: auto\n    # echo: true\nformat:\n  revealjs:\n    footer: \"Productivity: team development\"\n    logo: ../../media/nd_logo.png\n    transition: slide\n    slide-number: true\nengine: knitr\n---\n\n## Purpose\n::: {style=\"font-size: 65%;\"}\n- **Knowledge**: Coordinate development\n- **Skill**:\n    - Develop on branches\n    - Send and manage pull requests\n- **Why**:\n    - Foundational skillset for research and industry\n    - Protect your code, facilitate maintenance and simultaneous development\n    - Organize development for yourself, a team\n:::\n\n## Motivation\n\n:::: columns\n::: {.column width=\"50%\" style=\"font-size: 65%;\"}\n- Often need to change codebase for development, maintenance, or refactoring\n- Strong desire to not break code that works\n- Git facilitates isolated changes\n:::\n\n::: {.column width=\"\\\"50%\"}\n```{mermaid}\nflowchart TB\n  A[Develop] --> B{Test}\n  B --> C[Deploy]\n  B --> D[Maintenance]\n  E[Refactor] --> A\n  D --> E\n\n```\n:::\n::::\n\n## Growing log\n\n:::: columns\n::: {.column width=\"50%\" style=\"font-size: 65%;\"}\n- Each commit adds to the `log` or commit history\n- `HEAD`: most recent commit\n- Conceptualize: vine growing from tip\n:::\n\n::: {.column width=\"\\\"50%\"}\n```{mermaid}\nflowchart LR\n  A(cmt1) --> B(cmt2) --> C(cmt3) --> D(HEAD)\n```\n:::\n::::\n\n## Branches\n\n:::: columns\n::: {.column width=\"50%\" style=\"font-size: 65%;\"}\n- Each commit adds to the `log` or commit history\n- `HEAD`: most recent commit\n- Conceptualize: vine growing from tip\n:::\n\n::: {.column width=\"\\\"50%\"}\n```{mermaid}\nflowchart LR\n  A(cmt1) --> B(cmt2) --> C(cmt3) --> D(HEAD)\n  C --> E(cmt5) --> F(cmt6)\n```\n:::\n::::\n\n## Merging\n\n## Pull Requests\n:::: columns\n::: {.column width=\"50%\" style=\"font-size: 65%;\"}\n- Types of merge\n:::\n\n::: {.column width=\"\\\"50%\"}\n\n:::\n::::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,97 @@
+---
+title: "Team Development: branches, merging, and pull requests"
+author: Nathan M. Muncy
+date: today
+execute:
+    freeze: auto
+    # echo: true
+format:
+  revealjs:
+    footer: "Productivity: team development"
+    logo: ../../media/nd_logo.png
+    transition: slide
+    slide-number: true
+engine: knitr
+---
+
+## Purpose
+::: {style="font-size: 65%;"}
+- **Knowledge**: Coordinate development
+- **Skill**:
+    - Develop on branches
+    - Send and manage pull requests
+- **Why**:
+    - Foundational skillset for research and industry
+    - Protect your code, facilitate maintenance and simultaneous development
+    - Organize development for yourself, a team
+:::
+
+## Motivation
+
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Often need to change codebase for development, maintenance, or refactoring
+- Strong desire to not break code that works
+- Git facilitates isolated changes
+:::
+
+::: {.column width="\"50%"}
+```{mermaid}
+flowchart TB
+  A[Develop] --> B{Test}
+  B --> C[Deploy]
+  B --> D[Maintenance]
+  E[Refactor] --> A
+  D --> E
+
+```
+:::
+::::
+
+## Growing log
+
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Each commit adds to the `log` or commit history
+- `HEAD`: most recent commit
+- Conceptualize: vine growing from tip
+:::
+
+::: {.column width="\"50%"}
+```{mermaid}
+flowchart LR
+  A(cmt1) --> B(cmt2) --> C(cmt3) --> D(HEAD)
+```
+:::
+::::
+
+## Branches
+
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Each commit adds to the `log` or commit history
+- `HEAD`: most recent commit
+- Conceptualize: vine growing from tip
+:::
+
+::: {.column width="\"50%"}
+```{mermaid}
+flowchart LR
+  A(cmt1) --> B(cmt2) --> C(cmt3) --> D(HEAD)
+  C --> E(cmt5) --> F(cmt6)
+```
+:::
+::::
+
+## Merging
+
+## Pull Requests
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Types of merge
+:::
+
+::: {.column width="\"50%"}
+
+:::
+::::
