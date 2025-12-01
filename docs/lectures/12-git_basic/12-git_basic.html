@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-11-05">
-  <title>Bash Esssentials – Git and GitHub: tracking changes</title>
+  <meta name="dcterms.date" content="2025-12-01">
+  <title>Bash Esssentials – Tracking Changes: Git and GitHub</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -194,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Git and GitHub: tracking changes</h1>
+  <h1 class="title">Tracking Changes: Git and GitHub</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -204,7 +204,7 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-11-05</p>
+  <p class="date">2025-12-01</p>
 </section>
 <section id="purpose" class="slide level2">
 <h2>Purpose</h2>
@@ -479,21 +479,202 @@ Nathan M. Muncy
 </section>
 <section id="pull-repository" class="slide level2">
 <h2>Pull repository</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Navigate to project code directory</li>
+<li>Get a copy of repository with <code>git</code> command:
+<ul>
+<li><code>git clone https://github.com/&lt;user&gt;/&lt;repo_name&gt;.git</code></li>
+<li>URL is available at green <code>Code</code> button on GitHub</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="pull_1.png"></p>
+</div></div>
 </section>
-<section id="add-files" class="slide level2">
-<h2>Add files</h2>
+<section id="file-status-overview" class="slide level2">
+<h2>File status: Overview</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Tracking changes - manage file status</li>
+<li>4 statuses:
+<ol type="1">
+<li>Untracked - not tracking</li>
+<li>Unmodified - tracking, no changes</li>
+<li>Modified - tracking, changes</li>
+<li>Staged - tracking, changes ready</li>
+</ol></li>
+<li>Use <code>git</code> commands to move files through statuses</li>
+<li><code>git status</code> to view file status of CWD</li>
+</ul>
+</div><div class="column" style="font-size: 50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="stages_1.png"></p>
+<figcaption>https://git-scm.com/book/id/v2/Git-Basics-Recording-Changes-to-the-Repository</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
-<section id="track" class="slide level2">
-<h2>Track</h2>
+<section id="file-status-add" class="slide level2">
+<h2>File status: Add</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>git add &lt;foo&gt;</code>: advance file to ‘stage’ status</li>
+<li>Functionally, two roles:
+<ol type="1">
+<li>Start tracking file</li>
+<li>Stage file, after modification</li>
+</ol></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="add_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="add_2.png"></p>
+</div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="stage" class="slide level2">
-<h2>Stage</h2>
+<section id="file-status-modify" class="slide level2">
+<h2>File status: Modify</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Possible to add, modify multiple files</li>
+<li>Need to ‘stage’ or <code>add</code> a file after edits</li>
+<li>Possible to add all files: <code>git add .</code>
+<ul>
+<li>Use with caution</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="r-stack">
+<p><img data-src="add_3.png" class="fragment"></p>
+<p><img data-src="add_4.png" class="fragment"></p>
+<p><img data-src="add_5.png" class="fragment"></p>
+</div>
+</div></div>
 </section>
-<section id="commit" class="slide level2">
-<h2>Commit</h2>
+<section id="file-status-commit" class="slide level2">
+<h2>File status: Commit</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>git commit -m "foo"</code>: Create a repository snapshot
+<ul>
+<li>Similar to ‘save point’ in video game</li>
+</ul></li>
+<li>Receive unique hash</li>
+<li>Repository can be rolled back to this point</li>
+<li>Common labels for commit messages:
+<ul>
+<li>DEV: development</li>
+<li>DOC: documentation</li>
+<li>FIX: bug fix</li>
+<li>MNT: maintenance</li>
+<li>REF: refactor</li>
+<li>TST: testing, unit tests</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="commit_1.png"></p>
+</div></div>
+</section>
+<section id="file-status-commit-contd" class="slide level2">
+<h2>File Status: Commit, cont’d</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Git will track multiple files</li>
+<li>Commit after a series of updates
+<ul>
+<li>Important: commits should occur only for code that works!</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="commit_2.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="commit_3.png"></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="log" class="slide level2">
+<h2>Log</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Each commit receives a unique hash</li>
+<li><code>git log</code>: shows commit history
+<ul>
+<li>Full commit hash</li>
+<li>Author</li>
+<li>Date</li>
+<li>Message</li>
+</ul></li>
+<li>Allow to know who broke what, and when!
+<ul>
+<li>Role code back to previous working state</li>
+</ul></li>
+<li>Common: <code>git log --oneline</code></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="log_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="log_2.png"></p>
+</div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="push" class="slide level2">
 <h2>Push</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Remember: we are working with a clone of the repository</li>
+<li>Need to send changes to origin/main repository (upstream)</li>
+<li><code>git status</code> compares clone to origin</li>
+<li><code>git push</code> sends changes to origin</li>
+<li>(now verify <code>push</code> at GitHub)</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="push_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="push_2.png"></p>
+</div>
+</div>
+</div>
+</div></div>
 
 
 </section>

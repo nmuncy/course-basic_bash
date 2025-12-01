@@ -1,0 +1,18 @@
+---
+title: "Tracking Changes: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Version course code
+- Create a repository on GitHub called "bash_essentials"
+- Clone this repository locally
+- Add the various scripts you've generated this course
+- Commit these files, using an appropriate commit label
+- Push these changes to origin
+- Send evidence to your instructor
