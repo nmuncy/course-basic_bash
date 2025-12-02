@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Nathan M. Muncy">
-  <meta name="dcterms.date" content="2025-12-01">
+  <meta name="dcterms.date" content="2025-12-02">
   <title>Bash Esssentials – Team Development: branches, merging, and pull requests</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -141,7 +141,7 @@ Nathan M. Muncy
 </div>
 </div>
 
-  <p class="date">2025-12-01</p>
+  <p class="date">2025-12-02</p>
 </section>
 <section id="purpose" class="slide level2">
 <h2>Purpose</h2>
@@ -180,10 +180,8 @@ Nathan M. Muncy
 <pre class="mermaid mermaid-js">flowchart TB
   A[Develop] --&gt; B{Test}
   B --&gt; C[Deploy]
-  B --&gt; D[Maintenance]
-  E[Refactor] --&gt; A
-  D --&gt; E
-
+  B &lt;--&gt; D[Maintenance]
+  B &lt;--&gt; E[Refactor]
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -192,8 +190,8 @@ Nathan M. Muncy
 </div>
 </div></div>
 </section>
-<section id="growing-log" class="slide level2">
-<h2>Growing log</h2>
+<section id="commit-history" class="slide level2">
+<h2>Commit history</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
@@ -208,7 +206,7 @@ Nathan M. Muncy
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3) --&gt; D(HEAD)
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3/HEAD)
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -217,14 +215,18 @@ Nathan M. Muncy
 </div>
 </div></div>
 </section>
-<section id="branches" class="slide level2">
-<h2>Branches</h2>
+<section id="branching-history" class="slide level2">
+<h2>Branching history</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li>Each commit adds to the <code>log</code> or commit history</li>
-<li><code>HEAD</code>: most recent commit</li>
-<li>Conceptualize: vine growing from tip</li>
+<li>Split the commit history with a branch</li>
+<li>Changes are maintained to each branch</li>
+<li>Best practice:
+<ul>
+<li><code>main</code> branch kept clean, working</li>
+<li>New branch for additions, maintenance, refactors etc</li>
+</ul></li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
 <div class="cell" data-reveal="true" data-layout-align="default">
@@ -233,28 +235,355 @@ Nathan M. Muncy
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3) --&gt; D(HEAD)
-  C --&gt; E(cmt5) --&gt; F(cmt6)
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3/HEAD)
+  B --&gt; D(cmt4) --&gt; E(cmt5)
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
+</div>
+</div></div>
+</section>
+<section id="branch-make" class="slide level2">
+<h2>Branch: make</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>git branch</code>: determine current branch</li>
+<li><code>git branch foo</code>: create branch “foo”</li>
+<li><code>git checkout foo</code>: switch to branch “foo”</li>
+<li>Best practice - label branches for purpose:
+<ul>
+<li>dev-feat_a</li>
+<li>fix-that_bug</li>
+<li>ref-module_b</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="branch_1.png"></p>
+</div></div>
+</section>
+<section id="branch-modify-files" class="slide level2">
+<h2>Branch: modify files</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>New files can now be added to branch</li>
+<li>Existing files can be modified</li>
+<li>New commits are specific to branch</li>
+<li>Note log demonstrates:
+<ul>
+<li>Branch creation</li>
+<li>Separate commit history</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="branch_2.png"> <img data-src="branch_3.png"></p>
+</div></div>
+</section>
+<section id="branch-compare" class="slide level2">
+<h2>Branch: compare</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Untracked files available to all branches</li>
+<li>Tracked (added, committed) files exist only on branch</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="branch_4.png"></p>
+</div></div>
+</section>
+<section id="branch-push" class="slide level2">
+<h2>Branch: push</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Intend to send modifications to origin</li>
+<li>Issue: branch does not exist at origin</li>
+<li>Solution: build branch at origin (upstream), then push branch
+<ul>
+<li><code>git push --set-upstream origin &lt;name&gt;</code></li>
+</ul></li>
+<li>Verify at origin (GitHub)</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="branch_5.png"> <img data-src="branch_6.png"></p>
+</div></div>
+</section>
+<section id="branch-verify" class="slide level2">
+<h2>Branch: verify</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Verify at origin (GitHub)</li>
+<li>Multiple branches</li>
+<li>Different files, modifcations on branches</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="r-stack">
+<p><img data-src="branch_7.png"></p>
+<p><img data-src="branch_8.png" class="fragment"></p>
+<p><img data-src="branch_9.png" class="fragment"></p>
+</div>
+</div></div>
+</section>
+<section id="pull-requests-create" class="slide level2">
+<h2>Pull Requests: create</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Desire to combine branch commit history with another (main)</li>
+<li>Send a request to pull the changes: “pull request”
+<ul>
+<li>Follow tab or green link</li>
+</ul></li>
+<li>Specify source and destination</li>
+<li>Add title, description of work</li>
+<li>Create or send pull request</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="r-stack">
+<p><img data-src="pull_1.png"></p>
+<p><img data-src="pull_2.png" class="fragment"></p>
+</div>
+</div></div>
+</section>
+<section id="pull-requests-verify" class="slide level2">
+<h2>Pull Requests: verify</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Each pull request (and issue) is labeled</li>
+<li>Conflicts must be resolved before merging</li>
+<li>Review commit history</li>
+<li>Review files changed</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="r-stack">
+<p><img data-src="pull_3.png"></p>
+<p><img data-src="pull_4.png" class="fragment"></p>
+<p><img data-src="pull_5.png" class="fragment"></p>
 </div>
 </div></div>
 </section>
 <section id="merging" class="slide level2">
 <h2>Merging</h2>
-</section>
-<section id="pull-requests" class="slide level2">
-<h2>Pull Requests</h2>
 <div class="columns">
 <div class="column" style="font-size: 65%;">
 <ul>
-<li>Types of merge</li>
+<li>Merge: add commit history of one branch to another</li>
+<li>Three methods to merge:
+<ul>
+<li>New commit</li>
+<li>Squash</li>
+<li>Rebase</li>
+</ul></li>
+<li>New commit and Squash are most common</li>
+<li>Rebase often used for trouble shooting</li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
-
+<p><img data-src="merge_1.png"></p>
+</div></div>
+</section>
+<section id="merge-new-commit" class="slide level2">
+<h2>Merge: new commit</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Create a new commit for merge</li>
+<li>Maintain branch history</li>
+<li>Add branch history, new commit to <code>main</code></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3/HEAD)
+  B --&gt; D(cmt4) --&gt; E(cmt5)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3) --&gt; D(cmt4)
+  D --&gt; E(cmt5) --&gt; F(mrg1/HEAD)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="merge-squash" class="slide level2">
+<h2>Merge: squash</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Create a new commit for merge</li>
+<li>Collapse branch history</li>
+<li>Only new commit sent to <code>main</code></li>
+<li>Useful for keeping <code>main</code> clean</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3/HEAD)
+  B --&gt; D(cmt4) --&gt; E(cmt5)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3) --&gt; D(mrg1/HEAD)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="merge-rebase" class="slide level2">
+<h2>Merge: rebase</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>Create a new commit for merge</li>
+<li>Replace <code>main</code> HEAD with new commit</li>
+<li>Useful for fixing bad commit</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(cmt1) --&gt; B(cmt2) --&gt; C(cmt3/HEAD)
+  B --&gt; D(cmt4) --&gt; E(cmt5)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(cmt1) --&gt; B(cmt2) --&gt; D(mrg1/HEAD)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="merge-accept-and-prune" class="slide level2">
+<h2>Merge: accept and prune</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>After deciding merge type, confirm</li>
+<li>Good practice: clean (prune) merged branches</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="r-stack">
+<p><img data-src="merge_2.png"></p>
+<p><img data-src="merge_3.png" class="fragment"></p>
+</div>
+</div></div>
+</section>
+<section id="pull-bring-updates-locally" class="slide level2">
+<h2>Pull: bring updates locally</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>git pull</code>: update current branch with origin</li>
+<li><code>git branch -a</code>: see local and origin branches</li>
+<li>Note: outdated references
+<ul>
+<li>Local contains branch</li>
+<li>Origin has branch (but we removed it)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="update_1.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="update_2.png"></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="fetch-and-prune" class="slide level2">
+<h2>Fetch and prune</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li><code>git fetch</code>: connect to origin, download changes
+<ul>
+<li>Does not update current branch</li>
+</ul></li>
+<li><code>git fetch --prune</code>: remove connections to dead branches</li>
+<li><code>git branch -d foo</code>: delete local branch “foo”</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="update_3.png"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="update_4.png"></p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="review-commit-history" class="slide level2">
+<h2>Review commit history</h2>
+<div class="columns">
+<div class="column" style="font-size: 65%;">
+<ul>
+<li>History of <code>main</code> now reflects commit history from branch</li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="update_5.png"></p>
 </div></div>
 
 

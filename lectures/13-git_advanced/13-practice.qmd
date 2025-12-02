@@ -1,0 +1,20 @@
+---
+title: "Team Development: practice"
+author:
+  name: "Nathan Muncy"
+  email: "nmuncy@nd.edu"
+date: today
+execute:
+    freeze: auto
+    echo: true
+---
+
+## Manage branches
+- Locally, create and switch to a new branch
+- Add new files, edit existing files
+- Commit these changes
+- Push the branch to GitHub
+- Open, review, and merge a pull request
+- Delete the merged branch
+- Update the local repo to reflect these changes
+- Send your command history to your instructor
