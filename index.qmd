@@ -36,4 +36,5 @@ We start with understanding and writing simple blocks of code, then advance to r
 | 7. Scheduling jobs | TBD | Module 2.3 |
 | 8. Conda and project environments | TBD | Module 2.4, 2.5 |
 | 9. Tracking changes | TBD | Module 2.6 |
-| 10. Team development | TBD | Module 2.7 |
+| 10. Tracking changes, cont'd | TBD | Module 2.6 |
+| 11. Team development | TBD | Module 2.7 |

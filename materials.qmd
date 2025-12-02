@@ -31,7 +31,7 @@ execute:
 | 3. Scheduling Jobs | [Slides](lectures/09-schedule/09-schedule.qmd){target="_blank"} | [Code](code/09_schedule.sh){target="_blank"} | [Practice](lectures/09-schedule/09-practice.qmd){target="_blank"} |
 | 4. Conda | [Slides](lectures/10-conda/10-conda.qmd){target="_blank"} | [Code](code/10_conda.sh){target="_blank"} | [Practice](lectures/10-conda/10-practice.qmd){target="_blank"} |
 | 5. Project environments | [Slides](lectures/11-proj_envs/11-proj_envs.qmd){target="_blank"} | [Code](code/11_envs.sh){target="_blank"} | [Practice](lectures/11-proj_envs/11-practice.qmd){target="_blank"} |
-| 6. Tracking changes | Slides | Code | Practice |
-| 7. Team development | Slides | Code | Practice |
+| 6. Tracking changes | [Slides](lectures/12-git_basic/12-git_basic.qmd){target="_blank"} | [Code](code/12_git_basic.sh){target="_blank"} | [Practice](lectures/12-git_basic/12-practice.qmd){target="_blank"} |
+| 7. Team development | [Slides](lectures/13-git_advanced/13-git_advanced.qmd){target="_blank"} | [Code](code/13_git_advances.sh){target="_blank"} | [Practice](lectures/13-git_advanced/13-practice.qmd){target="_blank"} |
 
 </details>

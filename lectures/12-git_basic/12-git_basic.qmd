@@ -1,5 +1,5 @@
 ---
-title: "Git and GitHub: tracking changes"
+title: "Tracking Changes: Git and GitHub"
 author: Nathan M. Muncy
 date: today
 execute:
@@ -276,12 +276,165 @@ engine: knitr
 
 ## Pull repository
 
-## Add files
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Navigate to project code directory
+- Get a copy of repository with `git` command:
+    - `git clone https://github.com/<user>/<repo_name>.git`
+    - URL is available at green `Code` button on GitHub
+:::
 
-## Track
+::: {.column width="\"50%"}
 
-## Stage
+![](pull_1.png)
 
-## Commit
+:::
+::::
+
+## File status: Overview
+
+:::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Tracking changes - manage file status
+- 4 statuses:
+    1. Untracked - not tracking
+    1. Unmodified - tracking, no changes
+    1. Modified - tracking, changes
+    1. Staged - tracking, changes ready
+- Use `git` commands to move files through statuses
+- `git status` to view file status of CWD
+:::
+
+::: {.column width="\"50%" style="font-size: 50%;"}
+
+![https://git-scm.com/book/id/v2/Git-Basics-Recording-Changes-to-the-Repository](stages_1.png)
+
+:::
+::::
+
+## File status: Add
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- `git add <foo>`: advance file to 'stage' status
+- Functionally, two roles:
+    1. Start tracking file
+    1. Stage file, after modification
+:::
+
+:::: {.column width="\"50%"}
+::: {layout-nrow="2"}
+![](add_1.png)
+
+![](add_2.png)
+:::
+::::
+:::::
+
+## File status: Modify
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Possible to add, modify multiple files
+- Need to 'stage' or `add` a file after edits
+- Possible to add all files: `git add .`
+    - Use with caution
+:::
+
+:::: {.column width="\"50%"}
+::: {.r-stack}
+![](add_3.png){.fragment}
+
+![](add_4.png){.fragment}
+
+![](add_5.png){.fragment}
+:::
+::::
+:::::
+
+
+## File status: Commit
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- `git commit -m "foo"`: Create a repository snapshot
+    - Similar to 'save point' in video game
+- Receive unique hash
+- Repository can be rolled back to this point
+- Common labels for commit messages:
+    - DEV: development
+    - DOC: documentation
+    - FIX: bug fix
+    - MNT: maintenance
+    - REF: refactor
+    - TST: testing, unit tests
+:::
+
+::: {.column width="\"50%"}
+
+![](commit_1.png)
+
+:::
+:::::
+
+## File Status: Commit, cont'd
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Git will track multiple files
+- Commit after a series of updates
+    - Important: commits should occur only for code that works!
+:::
+
+:::: {.column width="\"50%"}
+::: {layout-nrow="2"}
+![](commit_2.png)
+
+![](commit_3.png)
+:::
+::::
+:::::
+
+## Log
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Each commit receives a unique hash
+- `git log`: shows commit history
+    - Full commit hash
+    - Author
+    - Date
+    - Message
+- Allow to know who broke what, and when!
+    - Role code back to previous working state
+- Common: `git log --oneline`
+:::
+
+:::: {.column width="\"50%"}
+::: {layout-nrow="2"}
+![](log_1.png)
+
+![](log_2.png)
+:::
+::::
+:::::
 
 ## Push
+
+::::: columns
+::: {.column width="50%" style="font-size: 65%;"}
+- Remember: we are working with a clone of the repository
+- Need to send changes to origin/main repository (upstream)
+- `git status` compares clone to origin
+- `git push` sends changes to origin
+- (now verify `push` at GitHub)
+:::
+
+:::: {.column width="\"50%"}
+::: {layout-nrow="2"}
+![](push_1.png)
+
+![](push_2.png)
+:::
+::::
+:::::
