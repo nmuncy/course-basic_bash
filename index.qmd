@@ -1,5 +1,5 @@
 ---
-title: "Computing Essentials"
+title: "Computational Foundations for Neuroimaging"
 author:
   name: "Nathan Muncy"
   email: "nmuncy@nd.edu"
@@ -9,32 +9,8 @@ execute:
   freeze: auto
 ---
 
-## About
-Neuroimaging is a fascinating and exciting technique that allows researchers to "look under the hood" and study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.
+## Welcome!
 
-The modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.
+Before you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.
 
-The topics and practices here are designed to teach essential computing skills to the would-be neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.
-
-We start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code.
-
-
-## Course Materials
-- [Slides, Code, and Practices](materials.qmd)
-
-
-## (Tentative) Lesson Schedule
-
-| Lesson | Date | Material |
-|--------|------|-----------|
-| 1. Terminal and variables | TBD | Module 1.1, 1.2 |
-| 2. Scripting and for loops | TBD | Module 1.3, 1.4 |
-| 3. Conditional statements | TBD | Module 1.5 |
-| 4. Advanced looping | TBD | Module 1.6 |
-| 5. Shells | TBD | Module 2.1 |
-| 6. Cluster computing | TBD | Module 2.2 |
-| 7. Scheduling jobs | TBD | Module 2.3 |
-| 8. Conda and project environments | TBD | Module 2.4, 2.5 |
-| 9. Tracking changes | TBD | Module 2.6 |
-| 10. Tracking changes, cont'd | TBD | Module 2.6 |
-| 11. Team development | TBD | Module 2.7 |
+We’re glad you’re here: it’s time to move beyond the desktop and into the terminal.

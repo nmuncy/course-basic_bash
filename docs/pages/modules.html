@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course Slides, Code, and Practice Materials – Bash Esssentials</title>
+<title>Modules – Bash Esssentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -79,8 +78,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./media/nd_logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../media/nd_logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -89,18 +88,26 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Course materials</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-navigate" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Navigate</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-navigate">    
         <li>
-    <a class="dropdown-item" href="./materials.html">
- <span class="dropdown-text">Slides, Code, and Practices</span></a>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">Home</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/about.html">
+ <span class="dropdown-text">About</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/modules.html">
+ <span class="dropdown-text">Modules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/schedule.html">
+ <span class="dropdown-text">Schedule</span></a>
   </li>  
     </ul>
   </li>
@@ -123,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course Slides, Code, and Practice Materials</h1>
+<h1 class="title">Modules</h1>
 </div>
 
 
@@ -158,49 +165,49 @@ Module 1: Bash Syntax
 <tbody>
 <tr class="odd">
 <td>1. The terminal</td>
-<td><a href="./lectures/01-the_terminal/01-the_terminal.html" target="_blank">Slides</a></td>
-<td><a href="code/01_the_terminal.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/01-the_terminal/01-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/01-the_terminal/01-the_terminal.html" target="_blank">Slides</a></td>
+<td><a href="../code/01_the_terminal.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/01-the_terminal/01-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>2. Variables</td>
-<td><a href="./lectures/02-variables/02-variables.html" target="_blank">Slides</a></td>
-<td><a href="code/02_variables.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/02-variables/02-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/02-variables/02-variables.html" target="_blank">Slides</a></td>
+<td><a href="../code/02_variables.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/02-variables/02-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>3. Scripting</td>
-<td><a href="./lectures/03-scripting/03-scripting.html" target="_blank">Slides</a></td>
-<td><a href="code/03_scripting.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/03-scripting/03-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/03-scripting/03-scripting.html" target="_blank">Slides</a></td>
+<td><a href="../code/03_scripting.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/03-scripting/03-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>4. For Loops</td>
-<td><a href="./lectures/04-for_loops/04-for_loops.html" target="_blank">Slides</a></td>
-<td><a href="code/04_for_loops.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/04-for_loops/04-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/04-for_loops/04-for_loops.html" target="_blank">Slides</a></td>
+<td><a href="../code/04_for_loops.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/04-for_loops/04-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>5. Conditionals</td>
-<td><a href="./lectures/05-conditionals/05-conditionals.html" target="_blank">Slides</a></td>
-<td><a href="code/05_conditionals.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/05-conditionals/05-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/05-conditionals/05-conditionals.html" target="_blank">Slides</a></td>
+<td><a href="../code/05_conditionals.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/05-conditionals/05-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>6. For Loops, cont’d</td>
-<td><a href="./lectures/06-for_loops/06-for_loops.html" target="_blank">Slides</a></td>
-<td><a href="code/06_for_loops_contd.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/06-for_loops/06-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/06-for_loops/06-for_loops.html" target="_blank">Slides</a></td>
+<td><a href="../code/06_for_loops_contd.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/06-for_loops/06-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -225,57 +232,57 @@ Module 2: Productivity
 <tbody>
 <tr class="odd">
 <td>1. Shells</td>
-<td><a href="./lectures/07-shells/07-shells.html" target="_blank">Slides</a></td>
-<td><a href="code/07_shells.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/07-shells/07-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/07-shells/07-shells.html" target="_blank">Slides</a></td>
+<td><a href="../code/07_shells.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/07-shells/07-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>2. Cluster Computing</td>
-<td><a href="./lectures/08-cluster/08-cluster.html" target="_blank">Slides</a></td>
-<td><a href="code/08_cluster.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/08-cluster/08-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/08-cluster/08-cluster.html" target="_blank">Slides</a></td>
+<td><a href="../code/08_cluster.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/08-cluster/08-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>3. Scheduling Jobs</td>
-<td><a href="./lectures/09-schedule/09-schedule.html" target="_blank">Slides</a></td>
-<td><a href="code/09_schedule.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/09-schedule/09-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/09-schedule/09-schedule.html" target="_blank">Slides</a></td>
+<td><a href="../code/09_schedule.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/09-schedule/09-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>4. Conda</td>
-<td><a href="./lectures/10-conda/10-conda.html" target="_blank">Slides</a></td>
-<td><a href="code/10_conda.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/10-conda/10-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/10-conda/10-conda.html" target="_blank">Slides</a></td>
+<td><a href="../code/10_conda.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/10-conda/10-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>5. Project environments</td>
-<td><a href="./lectures/11-proj_envs/11-proj_envs.html" target="_blank">Slides</a></td>
-<td><a href="code/11_envs.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/11-proj_envs/11-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/11-proj_envs/11-proj_envs.html" target="_blank">Slides</a></td>
+<td><a href="../code/11_envs.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/11-proj_envs/11-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>6. Tracking changes</td>
-<td><a href="./lectures/12-git_basic/12-git_basic.html" target="_blank">Slides</a></td>
-<td><a href="code/12_git_basic.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/12-git_basic/12-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/12-git_basic/12-git_basic.html" target="_blank">Slides</a></td>
+<td><a href="../code/12_git_basic.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/12-git_basic/12-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>7. Team development</td>
-<td><a href="./lectures/13-git_advanced/13-git_advanced.html" target="_blank">Slides</a></td>
-<td><a href="code/13_git_advances.sh" target="_blank">Code</a></td>
-<td><a href="./lectures/13-git_advanced/13-practice.html" target="_blank">Practice</a></td>
+<td><a href="../lectures/13-git_advanced/13-git_advanced.html" target="_blank">Slides</a></td>
+<td><a href="../code/13_git_advances.sh" target="_blank">Code</a></td>
+<td><a href="../lectures/13-git_advanced/13-practice.html" target="_blank">Practice</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -692,7 +699,7 @@ Module 2: Productivity
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2025 Nathan M. Muncy. Powered by <a href="https://www.quarto.org">Quarto</a>.</p>
+<p>© 2026 Nathan M. Muncy. Powered by <a href="https://www.quarto.org">Quarto</a>.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

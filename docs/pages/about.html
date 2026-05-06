@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nathan Muncy">
-<meta name="dcterms.date" content="2026-05-06">
 
-<title>Scripting: practice – Bash Esssentials</title>
+<title>About – Bash Esssentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,8 +78,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../media/nd_logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../media/nd_logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -96,19 +94,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-navigate">    
         <li>
-    <a class="dropdown-item" href="../../index.html">
+    <a class="dropdown-item" href="../index.html">
  <span class="dropdown-text">Home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../pages/about.html">
+    <a class="dropdown-item" href="../pages/about.html">
  <span class="dropdown-text">About</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../pages/modules.html">
+    <a class="dropdown-item" href="../pages/modules.html">
  <span class="dropdown-text">Modules</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../pages/schedule.html">
+    <a class="dropdown-item" href="../pages/schedule.html">
  <span class="dropdown-text">Schedule</span></a>
   </li>  
     </ul>
@@ -129,7 +127,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#moving-to-scripts" id="toc-moving-to-scripts" class="nav-link active" data-scroll-target="#moving-to-scripts">Moving to scripts</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a></li>
   </ul>
 </nav>
     </div>
@@ -138,26 +137,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Scripting: practice</h1>
+<h1 class="title">About</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nathan Muncy <a href="mailto:nmuncy@nd.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -167,16 +154,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="moving-to-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="moving-to-scripts">Moving to scripts</h2>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Neuroimaging is a fascinating and exciting technique that allows researchers to study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.</p>
+<p>The modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.</p>
+</section>
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<p>The topics and practices here are designed to teach essential computing skills to the aspiring neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.</p>
+<!-- We start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code. -->
+<!-- Most graduate students enter neuroimaging eager to study brain structure and function, only to be met with a daunting technical barrier: the command line. While software like FSL, FreeSurfer, and ANTs are powerful, they are only as effective as the scripts that run them and the environments that support them. -->
+<!-- This course covers the "hidden curriculum" of computational research—the essential toolkit that sits between your raw data and your final analysis.  -->
+<p>We have curated these specific modules to address the demands of modern MRI processing, focusing on four core pillars:</p>
 <ol type="1">
-<li>Write and execute a script that builds the directory tree from <a href="../../lectures/01-the_terminal/01-practice.html">Practice 1</a>.
-<ul>
-<li>Remember to make the script executable for all users.</li>
-</ul></li>
-<li>Write a script that completes <a href="../../lectures/02-variables/02-practice.html">Practice 2</a>.</li>
-<li>Send these scripts to your instructor.</li>
+<li><p>Bash Scripting: You will learn to treat the terminal as a powerful laboratory tool. By mastering variables, for-loops, and conditional statements, you will transform repetitive manual tasks into automated scripts that can process entire cohorts with a single command.</p></li>
+<li><p>High-Performance Computing (HPC): MRI data is computationally expensive. We bridge the gap between local computing and cluster environments, teaching you how to navigate shells, manage resources, and schedule jobs so you can leverage hundreds of processors simultaneously.</p></li>
+<li><p>Environment Management (Conda): Science is only as good as its reproducibility. You will learn to use Conda to create isolated project environments, ensuring that your software versions remain consistent across different machines and over the course of your degree.</p></li>
+<li><p>Version Control (Git): Research is a collaborative and iterative process. We dedicate significant time to Git, moving from tracking your own local changes to managing team-based development. You’ll learn how to “undo” mistakes, document your progress, and collaborate seamlessly with other researchers.</p></li>
 </ol>
+<p>By the end of this course, you won’t just be running neuroimaging commands—you’ll be building the infrastructure that makes sophisticated, large-scale brain research possible.</p>
 
 
 </section>

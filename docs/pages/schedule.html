@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nathan Muncy">
-<meta name="dcterms.date" content="2026-05-06">
 
-<title>Scripting: practice – Bash Esssentials</title>
+<title>Schedule – Bash Esssentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-aa7ab17dc3e7d0d34a26d46f2553ec94.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,8 +78,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../media/nd_logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../media/nd_logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -96,19 +94,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-navigate">    
         <li>
-    <a class="dropdown-item" href="../../index.html">
+    <a class="dropdown-item" href="../index.html">
  <span class="dropdown-text">Home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../pages/about.html">
+    <a class="dropdown-item" href="../pages/about.html">
  <span class="dropdown-text">About</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../pages/modules.html">
+    <a class="dropdown-item" href="../pages/modules.html">
  <span class="dropdown-text">Modules</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../pages/schedule.html">
+    <a class="dropdown-item" href="../pages/schedule.html">
  <span class="dropdown-text">Schedule</span></a>
   </li>  
     </ul>
@@ -124,40 +122,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#moving-to-scripts" id="toc-moving-to-scripts" class="nav-link active" data-scroll-target="#moving-to-scripts">Moving to scripts</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Scripting: practice</h1>
+<h1 class="title">Schedule</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nathan Muncy <a href="mailto:nmuncy@nd.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -167,19 +147,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="moving-to-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="moving-to-scripts">Moving to scripts</h2>
-<ol type="1">
-<li>Write and execute a script that builds the directory tree from <a href="../../lectures/01-the_terminal/01-practice.html">Practice 1</a>.
-<ul>
-<li>Remember to make the script executable for all users.</li>
-</ul></li>
-<li>Write a script that completes <a href="../../lectures/02-variables/02-practice.html">Practice 2</a>.</li>
-<li>Send these scripts to your instructor.</li>
-</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Lesson</th>
+<th>Date</th>
+<th>Material</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Terminal and variables</td>
+<td>TBD</td>
+<td>Module 1.1, 1.2</td>
+</tr>
+<tr class="even">
+<td>2. Scripting and for loops</td>
+<td>TBD</td>
+<td>Module 1.3, 1.4</td>
+</tr>
+<tr class="odd">
+<td>3. Conditional statements</td>
+<td>TBD</td>
+<td>Module 1.5</td>
+</tr>
+<tr class="even">
+<td>4. Advanced looping</td>
+<td>TBD</td>
+<td>Module 1.6</td>
+</tr>
+<tr class="odd">
+<td>5. Shells</td>
+<td>TBD</td>
+<td>Module 2.1</td>
+</tr>
+<tr class="even">
+<td>6. Cluster computing</td>
+<td>TBD</td>
+<td>Module 2.2</td>
+</tr>
+<tr class="odd">
+<td>7. Scheduling jobs</td>
+<td>TBD</td>
+<td>Module 2.3</td>
+</tr>
+<tr class="even">
+<td>8. Conda and project environments</td>
+<td>TBD</td>
+<td>Module 2.4, 2.5</td>
+</tr>
+<tr class="odd">
+<td>9. Tracking changes</td>
+<td>TBD</td>
+<td>Module 2.6</td>
+</tr>
+<tr class="even">
+<td>10. Tracking changes, cont’d</td>
+<td>TBD</td>
+<td>Module 2.6</td>
+</tr>
+<tr class="odd">
+<td>11. Team development</td>
+<td>TBD</td>
+<td>Module 2.7</td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

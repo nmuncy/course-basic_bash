@@ -1,0 +1,31 @@
+---
+title: About
+---
+
+## Motivation
+Neuroimaging is a fascinating and exciting technique that allows researchers to study how the brain is structured, functions, and changed during development or as a result of insult. These findings have broad implications for our understanding of the human experience and help to bridge the diverse fields of biology, neuroscience, psychology, and sociology.
+
+The modern neuroimager requires a diverse set of skills to effectively conduct their research, which include an understanding of: MRI physics, neurobiology, computer science, and advanced statistics. From the outset these can seem as a barrier to entry, especially for disciplines which may not emphasize certain technical skills.
+
+## Content
+The topics and practices here are designed to teach essential computing skills to the aspiring neuroimager who has limited experience in computing, perhaps only word processing and web browsing. The topics will serve as an introductory sample to the computing skills needed to conduct collaborative research using resources at Notre Dame.
+
+<!-- We start with understanding and writing simple blocks of code, then advance to running code on more powerful machines, and finally we will learn how to organize our compute environments and code. -->
+
+
+<!-- Most graduate students enter neuroimaging eager to study brain structure and function, only to be met with a daunting technical barrier: the command line. While software like FSL, FreeSurfer, and ANTs are powerful, they are only as effective as the scripts that run them and the environments that support them. -->
+
+<!-- This course covers the "hidden curriculum" of computational research—the essential toolkit that sits between your raw data and your final analysis.  -->
+
+We have curated these specific modules to address the demands of modern MRI processing, focusing on four core pillars:
+
+1. Bash Scripting: You will learn to treat the terminal as a powerful laboratory tool. By mastering variables, for-loops, and conditional statements, you will transform repetitive manual tasks into automated scripts that can process entire cohorts with a single command.
+
+2. High-Performance Computing (HPC): MRI data is computationally expensive. We bridge the gap between local computing and cluster environments, teaching you how to navigate shells, manage resources, and schedule jobs so you can leverage hundreds of processors simultaneously.
+
+3. Environment Management (Conda): Science is only as good as its reproducibility. You will learn to use Conda to create isolated project environments, ensuring that your software versions remain consistent across different machines and over the course of your degree.
+
+4. Version Control (Git): Research is a collaborative and iterative process. We dedicate significant time to Git, moving from tracking your own local changes to managing team-based development. You’ll learn how to "undo" mistakes, document your progress, and collaborate seamlessly with other researchers.
+
+By the end of this course, you won't just be running neuroimaging commands—you’ll be building the infrastructure that makes sophisticated, large-scale brain research possible.
+
