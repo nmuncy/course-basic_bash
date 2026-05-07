@@ -1,12 +1,30 @@
 ---
 title: "Computational Foundations for Neuroimaging"
+image: media/computer_brain.jpg
+  # text: Pixabay/CC0 Public Domain
+  # https://medicalxpress.com/news/2024-09-scientists-ethics-guidance-portable-neuroimaging.html
 author:
   name: "Nathan Muncy"
   email: "nmuncy@nd.edu"
+credit:
+  name: Pixabay/CC0 Public Domain
 # date: today
 toc: false
 execute:
   freeze: auto
+about: # https://quarto.org/docs/websites/website-about.html
+  template: jolla
+  image-width: 15em
+  # links:
+  #   - text: About
+  #     href: pages/about.qmd
+  #   - text: Modules
+  #     href: pages/modules.qmd
+  #   - text: Schedule
+  #     href: pages/schedule.qmd
+
+---
+
 ---
 
 ## Welcome!
@@ -14,3 +32,13 @@ execute:
 Before you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.
 
 We’re glad you’re here: it’s time to move beyond the desktop and into the terminal.
+
+
+
+[About](pages/about.qmd) | [Modules](pages/modules.qmd) | [Schedule](pages/schedule.qmd)
+
+---
+
+::: {style="font-size: 0.75em;"}
+Image Credit: [Pixabay/CC0 Public Domain](https://medicalxpress.com/news/2024-09-scientists-ethics-guidance-portable-neuroimaging.html)
+:::

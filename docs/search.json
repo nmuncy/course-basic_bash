@@ -788,14 +788,14 @@
     "href": "index.html",
     "title": "Computational Foundations for Neuroimaging",
     "section": "",
-    "text": "Before you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.\nWe’re glad you’re here: it’s time to move beyond the desktop and into the terminal."
+    "text": "Before you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.\nWe’re glad you’re here: it’s time to move beyond the desktop and into the terminal.\n\nAbout | Modules | Schedule\n\nImage Credit: Pixabay/CC0 Public Domain"
   },
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
     "title": "Computational Foundations for Neuroimaging",
-    "section": "",
-    "text": "Before you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.\nWe’re glad you’re here: it’s time to move beyond the desktop and into the terminal."
+    "section": "Welcome!",
+    "text": "Welcome!\nBefore you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.\nWe’re glad you’re here: it’s time to move beyond the desktop and into the terminal.\nAbout | Modules | Schedule\n\n\nImage Credit: Pixabay/CC0 Public Domain"
   },
   {
     "objectID": "lectures/00-why_program/00-why_program.html#neuroimaging-is-cool",

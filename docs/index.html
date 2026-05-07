@@ -34,7 +34,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -125,51 +124,40 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla">
+  <img src="media/computer_brain.jpg" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Computational Foundations for Neuroimaging</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Nathan Muncy <a href="mailto:nmuncy@nd.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
           </div>
   </div>
-    
-  
-    
   </div>
-  
-
-
-</header>
-
-
+</header><main class="content" id="quarto-document-content">
+<hr>
 <section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
+<h2 data-anchor-id="welcome">Welcome!</h2>
 <p>Before you can map the complexities of the human brain, you have to master the environment where that mapping happens. If you’ve ever found yourself manually renaming a hundred NIfTI files or waiting three days for a single subject to finish processing on your laptop, you’re in the right place. This course is designed to teach you to build robust, automated, and reproducible research pipelines.</p>
 <p>We’re glad you’re here: it’s time to move beyond the desktop and into the terminal.</p>
+<p><a href="./pages/about.html">About</a> | <a href="./pages/modules.html">Modules</a> | <a href="./pages/schedule.html">Schedule</a></p>
+<hr>
+<div style="font-size: 0.75em;">
+<p>Image Credit: <a href="https://medicalxpress.com/news/2024-09-scientists-ethics-guidance-portable-neuroimaging.html">Pixabay/CC0 Public Domain</a></p>
+</div>
 
 
 </section>
-
-</main> <!-- /main -->
+</main>  
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
