@@ -1,13 +1,9 @@
 ---
 title: "Computational Foundations for Neuroimaging"
 image: media/computer_brain.jpg
-  # text: Pixabay/CC0 Public Domain
-  # https://medicalxpress.com/news/2024-09-scientists-ethics-guidance-portable-neuroimaging.html
 author:
   name: "Nathan Muncy"
   email: "nmuncy@nd.edu"
-credit:
-  name: Pixabay/CC0 Public Domain
 # date: today
 toc: false
 execute:
